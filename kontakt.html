@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontakt &amp; boka möte — EMK Marketing</title>
-  <meta name="description" content="Boka ett kostnadsfritt möte med EMK Marketing eller skicka ett meddelande så hör vi av oss inom 24 timmar." />
+  <title>Kontakt — EMK Marketing</title>
+  <meta name="description" content="Boka ett kostnadsfritt möte eller skicka ett meddelande. Vi svarar inom 24 timmar." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
@@ -20,6 +20,7 @@
     <nav class="nav__links">
       <a href="index.html">Hem</a>
       <a href="tjanster.html">Tjänster</a>
+      <a href="case.html">Case</a>
       <a href="om-oss.html">Om oss</a>
       <a href="kontakt.html" class="is-active">Kontakt</a>
     </nav>
@@ -28,29 +29,26 @@
   </header>
 
   <section class="page-hero">
-    <h1>Boka ett <span class="underline-accent">möte</span></h1>
-    <p>Kostnadsfritt, förutsättningslöst och rakt på sak. Vi går igenom era mål och föreslår ett upplägg.</p>
+    <h1>Boka ett <span class="underline-accent">möte</span>.</h1>
+    <p>Kostnadsfritt, förutsättningslöst och rakt på sak. Vi pratar om dig, dina mål och om vi är rätt match.</p>
   </section>
 
-  <!-- BOKA MÖTE (Calendly embed) -->
   <section class="booking" id="boka">
     <div class="booking__inner">
-      <h2>Välj en tid som passar er</h2>
-      <p class="booking__sub">Mötet tar 30 minuter och sker via videosamtal eller telefon.</p>
+      <h2>Välj en tid som passar dig.</h2>
+      <p class="booking__sub">Mötet tar 30 minuter. Video eller telefon.</p>
 
-      <!-- Calendly inline widget — ersätt URL:en med din egen när du skapat ditt konto -->
       <div class="calendly-inline-widget" data-url="https://calendly.com/emk-marketing/30min?hide_gdpr_banner=1&background_color=000000&text_color=ffffff&primary_color=f5b800" style="min-width:320px;height:720px;"></div>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-      <p class="booking__fallback">Föredrar du att skicka ett meddelande istället? Använd formuläret nedan.</p>
+      <p class="booking__fallback">Föredrar du att skriva istället? Använd formuläret nedan.</p>
     </div>
   </section>
 
-  <!-- FORMULÄR -->
   <section class="contact" id="kontakt">
     <div class="section-title">
       <span class="section-title__line"></span>
-      <h2>ELLER SKICKA ETT MEDDELANDE</h2>
+      <h2>ELLER SKRIV TILL OSS</h2>
       <span class="section-title__line"></span>
     </div>
 
@@ -60,15 +58,14 @@
         <input type="text" name="name" placeholder="Namn" required />
         <input type="email" name="email" placeholder="E-post" required />
         <input type="tel" name="phone" placeholder="Telefon (valfritt)" />
-        <input type="text" name="company" placeholder="Företag / organisation" />
-        <textarea name="message" rows="5" placeholder="Berätta kort om ert behov..." required></textarea>
-        <button type="submit" class="btn-outline btn-outline--full">SKICKA IN</button>
+        <input type="text" name="company" placeholder="Företag eller organisation" />
+        <textarea name="message" rows="5" placeholder="Berätta kort om vad du behöver hjälp med..." required></textarea>
+        <button type="submit" class="btn-outline btn-outline--full">SKICKA</button>
         <p class="form-status" id="formStatus"></p>
       </form>
     </div>
   </section>
 
-  <!-- DIREKTKONTAKT -->
   <section class="direct-contact">
     <div class="direct-contact__grid">
       <div>
@@ -100,12 +97,13 @@
           <h4>Företag</h4>
           <a href="om-oss.html">Om oss</a>
           <a href="tjanster.html">Tjänster</a>
+          <a href="case.html">Case</a>
           <a href="kontakt.html">Kontakt</a>
         </div>
         <div>
           <h4>Juridik</h4>
           <a href="#">Allmänna villkor</a>
-          <a href="#">GDPR</a>
+          <a href="#">Integritetspolicy</a>
         </div>
         <div>
           <h4>Kontakt</h4>
