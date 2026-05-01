@@ -3,76 +3,211 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EMK Marketing — Marknadsföring som driver försäljning</title>
-  <meta name="description" content="Vi hjälper små och medelstora företag växa online. Content, annonser, SEO och hemsidor. Allt från ett ställe." />
+  <title>EMK Marketing — Showreel</title>
+  <meta name="description" content="EMK Marketings showreel. Bilder, film och ögonblick vi fångat det senaste året." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="EMK_LOGO.png" />
 </head>
-<body>
+<body class="subpage showreel-body">
 
   <!-- HERO -->
-  <section class="hero hero--cinematic" id="top">
-    <div class="hero__bg" style="background-image: url('images/Bildspel.JPG');"></div>
-    <div class="hero__overlay"></div>
-    <div class="hero__spotlight"></div>
-    <div class="hero__grain"></div>
+  <section class="showreel-hero" id="top">
+    <video class="showreel-hero__bg" autoplay muted loop playsinline poster="images/Bildspel5.JPG">
+      <source src="videos/hero-bg.mp4" type="video/mp4" />
+    </video>
+    <div class="showreel-hero__vignette"></div>
+    <div class="showreel-hero__spotlight"></div>
+    <div class="showreel-hero__grain"></div>
 
-    <header class="nav">
+    <header class="nav nav--minimal">
       <a href="index.html" class="nav__logo">
         <img src="EMK_Marketing_logotyp_transparent.png" alt="EMK Marketing" class="nav__logo-img" />
       </a>
-      <nav class="nav__links">
-        <a href="index.html" class="is-active">Hem</a>
-        <a href="tjanster.html">Tjänster</a>
-        <a href="showreel.html">Showreel</a>
-        <a href="om-oss.html">Om oss</a>
-        <a href="kontakt.html">Kontakt</a>
-      </nav>
-      <a href="kontakt.html" class="btn-outline btn-outline--small nav__cta">Boka möte</a>
-      <button class="nav__burger" aria-label="Meny">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="mailto:info@emkmarketing.se" class="btn-outline btn-outline--small nav__cta">Kontakt</a>
     </header>
 
-    <div class="hero__content">
-      <span class="hero__eyebrow">EMK MARKETING · STOCKHOLM</span>
-      <h1 class="hero__title hero__title--reveal">
-        <span class="reveal-line"><span>Marknadsföring som</span></span>
-        <span class="reveal-line"><span>driver <span class="underline-accent">försäljning</span>.</span></span>
+    <div class="showreel-hero__content">
+      <span class="showreel-hero__eyebrow">EMK · FILM &amp; FOTO · 2025</span>
+      <h1 class="showreel-hero__title">
+        <span class="reveal-word">Show</span><span class="reveal-word reveal-word--accent">reel</span>
       </h1>
-      <p class="hero__sub">Vi hjälper små och medelstora företag växa online. Content, annonser, SEO och hemsidor. Allt från ett ställe.</p>
-
-      <div class="hero__cta">
-        <a href="kontakt.html" class="btn-outline">Boka ett möte</a>
-        <a href="showreel.html" class="btn-outline btn-outline--ghost">Se showreel</a>
-      </div>
-
-      <div class="hero__icons">
-        <div class="hero-icon"><span>SEO</span></div>
-        <div class="hero-icon"><span>Facebook Ads</span></div>
-        <div class="hero-icon"><span>Hemsidor</span></div>
-        <div class="hero-icon"><span>Sociala medier</span></div>
-        <div class="hero-icon"><span>Film och foto</span></div>
+      <p class="showreel-hero__sub">Bilder, film, ögonblick. Allt vi fångat det senaste året — på ett ställe.</p>
+      <div class="showreel-hero__cta">
+        <a href="#spotlight" class="btn-outline">Spela reel</a>
+        <a href="mailto:info@emkmarketing.se" class="btn-outline btn-outline--ghost">Kontakta oss</a>
       </div>
     </div>
 
-    <a href="#tjanster" class="hero__scroll" aria-label="Scrolla ner">
+    <a href="#spotlight" class="showreel-hero__scroll" aria-label="Scrolla ner">
       <span>Scrolla</span>
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
     </a>
   </section>
 
-  <!-- TAGLINE -->
-  <section class="tagline-strip">
-    <span class="tagline-strip__line"></span>
-    <p>Inga långa processer. Inga floskler. Bara sånt som fungerar.</p>
-    <span class="tagline-strip__line"></span>
+  <!-- SPOTLIGHT REEL -->
+  <section class="showreel-spotlight" id="spotlight">
+    <div class="section-title">
+      <span class="section-title__line"></span>
+      <h2>HUVUDREEL</h2>
+      <span class="section-title__line"></span>
+    </div>
+
+    <div class="showreel-spotlight__frame">
+      <video class="showreel-spotlight__video" id="mainReel" muted playsinline poster="images/Bildspel.JPG">
+        <source src="videos/showreel-2025.mp4" type="video/mp4" />
+      </video>
+      <button class="showreel-spotlight__playbtn" id="mainReelPlay" aria-label="Spela huvudreel">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <button class="showreel-spotlight__mute" id="mainReelMute" aria-label="Slå på ljud">
+        <svg class="icon-muted" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+        <svg class="icon-unmuted" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+      </button>
+    </div>
+
+    <p class="showreel-spotlight__meta">EMK Showreel · 2025 · 1:42</p>
   </section>
 
-  <!-- CLIENT MARQUEE -->
+  <!-- FILTER CHIPS -->
+  <section class="showreel-filters">
+    <div class="showreel-filters__inner">
+      <button class="filter-chip is-active" data-filter="all">Allt</button>
+      <button class="filter-chip" data-filter="film">Film</button>
+      <button class="filter-chip" data-filter="foto">Foto</button>
+      <button class="filter-chip" data-filter="some">Sociala medier</button>
+      <button class="filter-chip" data-filter="event">Event</button>
+    </div>
+  </section>
+
+  <!-- BENTO GRID — del 1 -->
+  <section class="showreel-grid-wrap">
+    <div class="showreel-grid">
+      <figure class="showreel-item span-6 row-2" data-tag="foto" data-client="Hammarbygymnasterna">
+        <img src="images/Bildspel.JPG" alt="Hammarbygymnasterna" loading="lazy" />
+        <figcaption><span class="showreel-item__client">Hammarbygymnasterna</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-6 row-1" data-tag="film" data-client="Fjällfrid">
+        <video autoplay muted loop playsinline preload="metadata" poster="images/Bildspel.JPG">
+          <source src="videos/clip-01.mp4" type="video/mp4" />
+        </video>
+        <figcaption><span class="showreel-item__client">Fjällfrid</span><span class="showreel-item__type">Film</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-3 row-1" data-tag="foto" data-client="STG">
+        <img src="images/Handstående.jpg" alt="Handstående" loading="lazy" />
+        <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-3 row-1" data-tag="foto" data-client="STG">
+        <img src="images/I barren.jpg" alt="I barren" loading="lazy" />
+        <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-4 row-2" data-tag="event" data-client="Nobelpriset">
+        <video autoplay muted loop playsinline preload="metadata" poster="images/Bildspel5.JPG">
+          <source src="videos/clip-02.mp4" type="video/mp4" />
+        </video>
+        <figcaption><span class="showreel-item__client">Nobelfesten 2025</span><span class="showreel-item__type">Event · Film</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="Hammarbygymnasterna">
+        <img src="images/Bildspel3.JPG" alt="Hammarby träning" loading="lazy" />
+        <figcaption><span class="showreel-item__client">Hammarbygymnasterna</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="Bakifrån">
+        <img src="images/Bakifrån.jpg" alt="Bakifrån" loading="lazy" />
+        <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- SCROLL STORYTELLING BREAK -->
+  <section class="showreel-storytelling">
+    <video class="showreel-storytelling__bg" autoplay muted loop playsinline poster="images/Bildspel19.JPG">
+      <source src="videos/storytelling.mp4" type="video/mp4" />
+    </video>
+    <div class="showreel-storytelling__overlay"></div>
+    <div class="showreel-storytelling__content">
+      <span class="eyebrow">UTVALT CASE</span>
+      <h2>Vi filmade <span class="underline-accent">Nobelprisets efterfest</span> 2025.</h2>
+      <p>Hela produktionen från planering till färdig film. Levererat på deadline. Material som arrangören använt i sin egen marknadsföring året efter.</p>
+    </div>
+  </section>
+
+  <!-- BENTO GRID — del 2 -->
+  <section class="showreel-grid-wrap showreel-grid-wrap--alt">
+    <div class="showreel-grid">
+      <figure class="showreel-item span-4 row-2" data-tag="some" data-client="William Broman">
+        <video autoplay muted loop playsinline preload="metadata" poster="images/Bildspel7.JPG">
+          <source src="videos/clip-03.mp4" type="video/mp4" />
+        </video>
+        <figcaption><span class="showreel-item__client">William Broman</span><span class="showreel-item__type">Sociala medier · Film</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-8 row-2" data-tag="foto" data-client="EMK">
+        <img src="images/DSC00175-5 (1).jpg" alt="Sport-foto" loading="lazy" />
+        <figcaption><span class="showreel-item__client">EMK Production</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-4 row-1" data-tag="film" data-client="BallersApp">
+        <video autoplay muted loop playsinline preload="metadata" poster="images/Bildspel10.JPG">
+          <source src="videos/clip-04.mp4" type="video/mp4" />
+        </video>
+        <figcaption><span class="showreel-item__client">BallersApp</span><span class="showreel-item__type">Film</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="Hammarbygymnasterna">
+        <img src="images/Bildspel12.JPG" alt="Hammarby träning" loading="lazy" />
+        <figcaption><span class="showreel-item__client">Hammarbygymnasterna</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-4 row-1" data-tag="some" data-client="Indie Pen">
+        <video autoplay muted loop playsinline preload="metadata" poster="images/Bildspel19.JPG">
+          <source src="videos/clip-05.mp4" type="video/mp4" />
+        </video>
+        <figcaption><span class="showreel-item__client">Indie Pen Publishing</span><span class="showreel-item__type">Sociala medier</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-6 row-1" data-tag="foto" data-client="STG">
+        <img src="images/Bildspel16.JPG" alt="STG" loading="lazy" />
+        <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-3 row-1" data-tag="foto" data-client="Hammarbygymnasterna">
+        <img src="images/Bildspel20.JPG" alt="Träning" loading="lazy" />
+        <figcaption><span class="showreel-item__client">Hammarbygymnasterna</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-3 row-1" data-tag="foto" data-client="EMK">
+        <img src="images/Bildspel17.JPG" alt="Foto" loading="lazy" />
+        <figcaption><span class="showreel-item__client">EMK Production</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-6 row-2" data-tag="event" data-client="Festivalborg">
+        <video autoplay muted loop playsinline preload="metadata" poster="images/Bildspel4.JPG">
+          <source src="videos/clip-06.mp4" type="video/mp4" />
+        </video>
+        <figcaption><span class="showreel-item__client">Festivalborg</span><span class="showreel-item__type">Event · Film</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-3 row-1" data-tag="foto" data-client="STG">
+        <img src="images/Bildspel6.JPG" alt="STG" loading="lazy" />
+        <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <figure class="showreel-item span-3 row-1" data-tag="foto" data-client="STG">
+        <img src="images/Bildspel8.JPG" alt="STG" loading="lazy" />
+        <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- KLIENT MARQUEE -->
   <section class="clients">
     <div class="marquee">
       <div class="marquee__track">
@@ -82,208 +217,20 @@
     </div>
   </section>
 
-  <!-- TJÄNSTER -->
-  <section class="services" id="tjanster">
-    <div class="section-title">
-      <span class="section-title__line"></span>
-      <h2>VAD VI GÖR</h2>
-      <span class="section-title__line"></span>
-    </div>
-
-    <p class="section-lead">Fem tjänster, ett team. Du väljer det du behöver. Vi gör resten.</p>
-
-    <div class="services__grid services__grid--5">
-      <a href="tjanster.html#seo" class="service-tile">
-        <div class="service-tile__img" style="background-image: url('images/Bildspel10.JPG');"></div>
-        <h3 class="underline-accent">SEO</h3>
-        <p>Syns på Google när dina kunder faktiskt söker dig.</p>
-      </a>
-      <a href="tjanster.html#ads" class="service-tile">
-        <div class="service-tile__img" style="background-image: url('images/Bildspel3.JPG');"></div>
-        <h3 class="underline-accent">Facebook Ads</h3>
-        <p>Annonser som testas, mäts och skalas. Inga pengar i sjön.</p>
-      </a>
-      <a href="tjanster.html#hemsidor" class="service-tile">
-        <div class="service-tile__img" style="background-image: url('images/Bildspel16.JPG');"></div>
-        <h3 class="underline-accent">Hemsidor</h3>
-        <p>Snabba, snygga och byggda för att sälja. Nyckelfärdigt.</p>
-      </a>
-      <a href="tjanster.html#some" class="service-tile">
-        <div class="service-tile__img" style="background-image: url('images/Bildspel4.JPG');"></div>
-        <h3 class="underline-accent">Sociala medier</h3>
-        <p>Vi tar över kontot. Plan, produktion, publicering. Klart.</p>
-      </a>
-      <a href="tjanster.html#filmfoto" class="service-tile">
-        <div class="service-tile__img" style="background-image: url('images/Bildspel7.JPG');"></div>
-        <h3 class="underline-accent">Film och foto</h3>
-        <p>Proffsmaterial som faktiskt syns bland alla inlägg.</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- CASE -->
-  <section class="cases" id="case">
-    <div class="section-title">
-      <span class="section-title__line"></span>
-      <h2>DET HÄR HAR VI GJORT</h2>
-      <span class="section-title__line"></span>
-    </div>
-
-    <p class="section-lead">Några exempel på vad vi levererat den senaste tiden.</p>
-
-    <div class="cases__grid">
-      <article class="case-card">
-        <div class="case-card__img" style="background-image: url('images/Bildspel_1.jpg');"></div>
-        <div class="case-card__body">
-          <span class="case-card__tag">Fjällfrid</span>
-          <h3>9 gånger pengarna tillbaka</h3>
-          <p class="case-card__metric">217 000 kr i intäkter på 23 000 kr i annonsbudget</p>
-          <p>SEO och Facebook Ads för en stuguthyrning i Bruksvallarna. Fokus på rätt sökord och rätt säsong.</p>
-        </div>
-      </article>
-
-      <article class="case-card">
-        <div class="case-card__img" style="background-image: url('images/Bildspel19.JPG');"></div>
-        <div class="case-card__body">
-          <span class="case-card__tag">Indie Pen Publishing</span>
-          <h3>9x ROAS på bokförsäljning</h3>
-          <p class="case-card__metric">Nio gånger tillbaka på varje annonskrona</p>
-          <p>Facebook Ads kopplat till Shopify. Smala målgrupper, tydliga budskap, skarpa kreativa.</p>
-        </div>
-      </article>
-
-      <article class="case-card">
-        <div class="case-card__img" style="background-image: url('images/C8DDEA47-2733-4231-AE3B-67F62121E78C.JPG');"></div>
-        <div class="case-card__body">
-          <span class="case-card__tag">BallersApp</span>
-          <h3>1 krona per nedladdning</h3>
-          <p class="case-card__metric">CPI på 1 kr över hela kampanjen</p>
-          <p>Facebook Ads för en basketapp. Tight målgruppsarbete och video som talade direkt till användaren.</p>
-        </div>
-      </article>
-
-      <article class="case-card">
-        <div class="case-card__img" style="background-image: url('images/Bildspel5.JPG');"></div>
-        <div class="case-card__body">
-          <span class="case-card__tag">Nobelprisets efterfest 2025</span>
-          <h3>Film på ett av Sveriges största event</h3>
-          <p class="case-card__metric">Filmning och redigering av hela kvällen</p>
-          <p>Hela produktionen, från planering till färdig film. Levererat på deadline.</p>
-        </div>
-      </article>
-    </div>
-
-    <div class="cases__cta">
-      <a href="case.html" class="btn-outline">Se fler case</a>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="trust" id="referenser">
-    <div class="section-title">
-      <span class="section-title__line"></span>
-      <h2>VAD KUNDERNA SÄGER</h2>
-      <span class="section-title__line"></span>
-    </div>
-
-    <div class="testimonials">
-      <article class="testimonial-card">
-        <div class="testimonial-card__img">M</div>
-        <h4>Monika Lykvist</h4>
-        <p class="testimonial-card__role">Digital Marketing Manager, We Travel Group</p>
-        <p class="testimonial-card__quote">"Ett team som förstod vårt varumärke från dag ett. Leveranserna håller genomgående hög kvalitet."</p>
-      </article>
-      <article class="testimonial-card">
-        <div class="testimonial-card__img">W</div>
-        <h4>William Broman</h4>
-        <p class="testimonial-card__role">Idrottsinfluencer</p>
-        <p class="testimonial-card__quote">"EMK har varit en viktig del av min digitala utveckling. Engagerade, vassa, och de levererar."</p>
-      </article>
-      <article class="testimonial-card">
-        <div class="testimonial-card__img">K</div>
-        <h4>Katarina Skugge</h4>
-        <p class="testimonial-card__role">Director of Marketing, Grand Tours</p>
-        <p class="testimonial-card__quote">"Resultaten pratar för sig själva. Skönt att slippa förklara saker två gånger."</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- SÅ JOBBAR VI -->
-  <section class="process">
-    <div class="section-title">
-      <span class="section-title__line"></span>
-      <h2>SÅ JOBBAR VI</h2>
-      <span class="section-title__line"></span>
-    </div>
-
-    <div class="process__cards">
-      <article class="process-card">
-        <div class="process-card__head">
-          <span class="process-card__num">1.</span>
-          <h3>VI PRATAR</h3>
-        </div>
-        <p>Boka ett kort möte. Du berättar om företaget och vad du vill uppnå. Vi lyssnar och kommer tillbaka med ett upplägg som faktiskt passar dig.</p>
-      </article>
-      <article class="process-card">
-        <div class="process-card__head">
-          <span class="process-card__num">2.</span>
-          <h3>VI BYGGER</h3>
-        </div>
-        <p>När planen är klar sätter vi igång. Du ser vad som händer längs vägen. Inga svarta lådor, inga överraskningar på fakturan.</p>
-      </article>
-      <article class="process-card">
-        <div class="process-card__head">
-          <span class="process-card__num">3.</span>
-          <h3>VI LEVERERAR</h3>
-        </div>
-        <p>Löpande innehåll, löpande rapportering, löpande resultat. Vi följer siffrorna och justerar där det behövs.</p>
-      </article>
-    </div>
-
-    <div class="process__cta">
-      <a href="kontakt.html" class="btn-outline">Boka ett möte</a>
-    </div>
-  </section>
-
-  <!-- OM OSS TEASER -->
-  <section class="about-teaser">
-    <div class="about-teaser__inner">
-      <div class="about-teaser__text">
-        <span class="eyebrow">OM EMK MARKETING</span>
-        <h2>Ett litet team. Stora ambitioner.</h2>
-        <p>Vi är tre personer som brinner för content, film och siffror. Vi startade EMK för att vi tröttnade på byråmodeller med långa beslutsvägar och mager leverans. Hos oss pratar du alltid med den som faktiskt gör jobbet.</p>
-        <a href="om-oss.html" class="btn-outline">Läs om oss</a>
-      </div>
-      <div class="about-teaser__img" style="background-image: url('images/DSC00175-5 (1).jpg');"></div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
+  <!-- CTA -->
   <section class="cta-band">
-    <h2>Prata med oss.</h2>
-    <p>Ett möte kostar ingenting och tar 30 minuter. Om det inte passar så är det inga hårda känslor.</p>
-    <a href="kontakt.html" class="btn-outline">Boka möte</a>
+    <h2>Vill du ha lika snyggt material?</h2>
+    <p>Hör av dig så pratar vi. Vi visar gärna mer och berättar hur en produktion läggs upp hos oss.</p>
+    <a href="mailto:info@emkmarketing.se" class="btn-outline">Kontakta oss</a>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer footer--minimal">
     <div class="footer__inner">
       <div class="footer__brand">
         <img src="EMK_Marketing_logotyp_transparent.png" alt="EMK Marketing" class="footer__logo" />
       </div>
       <div class="footer__cols">
-        <div>
-          <h4>Företag</h4>
-          <a href="om-oss.html">Om oss</a>
-          <a href="tjanster.html">Tjänster</a>
-          <a href="case.html">Case</a>
-          <a href="kontakt.html">Kontakt</a>
-        </div>
-        <div>
-          <h4>Juridik</h4>
-          <a href="#">Allmänna villkor</a>
-          <a href="#">Integritetspolicy</a>
-        </div>
         <div>
           <h4>Kontakt</h4>
           <a href="mailto:info@emkmarketing.se">info@emkmarketing.se</a>
@@ -292,7 +239,6 @@
         <div>
           <h4>Socials</h4>
           <a href="https://www.instagram.com/emk.marketing/" target="_blank" rel="noopener">Instagram</a>
-          <a href="#">Facebook</a>
         </div>
       </div>
     </div>
@@ -301,6 +247,15 @@
       <span>Org.nr 559415-5090</span>
     </div>
   </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Stäng">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" aria-label="Föregående">‹</button>
+    <button class="lightbox__nav lightbox__nav--next" aria-label="Nästa">›</button>
+    <div class="lightbox__stage" id="lightboxStage"></div>
+    <div class="lightbox__caption" id="lightboxCaption"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>
