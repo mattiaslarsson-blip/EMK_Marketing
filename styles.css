@@ -2535,6 +2535,9 @@ body.lightbox-open { overflow: hidden; }
     aspect-ratio: 4 / 5 !important;
     min-height: 0 !important;
     max-height: none !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    position: relative !important;
   }
 
   #foto .showreel-grid > .showreel-item > img,
@@ -2543,6 +2546,38 @@ body.lightbox-open { overflow: hidden; }
     height: 100% !important;
     object-fit: cover !important;
     display: block !important;
+    border-radius: 14px !important;
+  }
+
+  /* Captions alltid synliga på mobil — namn + typ */
+  #foto .showreel-grid > .showreel-item > figcaption {
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding: 0.9rem 1rem !important;
+    background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%) !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: none !important;
+    border-radius: 14px !important;
+  }
+  #foto .showreel-grid > .showreel-item .showreel-item__client {
+    color: #fff !important;
+    font-weight: 700 !important;
+    font-size: 0.88rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.01em !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  }
+  #foto .showreel-grid > .showreel-item .showreel-item__type {
+    color: var(--accent) !important;
+    font-weight: 700 !important;
+    font-size: 0.62rem !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    margin-top: 0.25rem !important;
   }
 
   /* Sektion-titel-spacing på mobil */
