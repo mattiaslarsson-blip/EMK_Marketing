@@ -251,15 +251,36 @@ if (lightbox && stage) {
   const track = carousel.querySelector('.foto-carousel__track');
   if (!track) return;
 
+  const mq = window.matchMedia('(max-width: 768px)');
+  let originalCount = 0;
+
+  const getSetWidth = () => {
+    const first = track.children[0];
+    if (!first || originalCount === 0) return 0;
+    const itemWidth = first.getBoundingClientRect().width;
+    const gap = parseFloat(getComputedStyle(track).gap) || 12;
+    return (itemWidth + gap) * originalCount;
+  };
+
+  // Hoppa scrollLeft direkt utan smooth — kringgår 'behavior: instant'-stöd
+  const jump = (newLeft) => {
+    const prev = carousel.style.scrollBehavior;
+    carousel.style.scrollBehavior = 'auto';
+    carousel.scrollLeft = newLeft;
+    // Force reflow
+    void carousel.offsetWidth;
+    carousel.style.scrollBehavior = prev || '';
+  };
+
   const initCarousel = () => {
-    // Bara på mobil
-    if (!window.matchMedia('(max-width: 640px)').matches) return;
+    if (!mq.matches) return;
     if (carousel.dataset.cloned === '1') return;
 
     const originals = Array.from(track.children);
     if (originals.length === 0) return;
+    originalCount = originals.length;
 
-    // Klona items 2 gånger till → totalt 3 set: [klon1][original][klon2]
+    // Klona items 2 set till → [klon1][original][klon2]
     const beforeClones = originals.map(el => el.cloneNode(true));
     const afterClones = originals.map(el => el.cloneNode(true));
     beforeClones.reverse().forEach(c => track.insertBefore(c, track.firstChild));
@@ -267,37 +288,30 @@ if (lightbox && stage) {
 
     carousel.dataset.cloned = '1';
 
-    // Sätt scroll-position till mitten (start av original-setet)
+    // Vänta på att bilder fått sin storlek innan vi sätter scroll-pos
     requestAnimationFrame(() => {
-      const setWidth = getSetWidth(originals.length);
-      carousel.scrollLeft = setWidth;
+      requestAnimationFrame(() => {
+        jump(getSetWidth());
+      });
     });
   };
 
-  const getSetWidth = (count) => {
-    const first = track.children[0];
-    if (!first) return 0;
-    const itemWidth = first.getBoundingClientRect().width;
-    const gap = parseFloat(getComputedStyle(track).gap) || 12;
-    return (itemWidth + gap) * count;
-  };
-
-  // Silently jump tillbaka till mitten när användaren når kanterna
+  // Snap-back när användaren scrollar in i klon-set
   let scrollTimer;
   carousel.addEventListener('scroll', () => {
     if (carousel.dataset.cloned !== '1') return;
     clearTimeout(scrollTimer);
     scrollTimer = setTimeout(() => {
-      const originalCount = track.children.length / 3;
-      const setWidth = getSetWidth(originalCount);
+      const setWidth = getSetWidth();
+      if (setWidth === 0) return;
       const sl = carousel.scrollLeft;
 
       if (sl < setWidth * 0.5) {
-        carousel.scrollTo({ left: sl + setWidth, behavior: 'instant' });
-      } else if (sl > setWidth * 1.5 + setWidth * 0.5) {
-        carousel.scrollTo({ left: sl - setWidth, behavior: 'instant' });
+        jump(sl + setWidth);
+      } else if (sl > setWidth * 2.5) {
+        jump(sl - setWidth);
       }
-    }, 120);
+    }, 140);
   }, { passive: true });
 
   // Init när DOM är redo
@@ -307,8 +321,11 @@ if (lightbox && stage) {
     initCarousel();
   }
 
-  // Init också om viewport ändras (från desktop → mobil)
-  window.addEventListener('resize', () => {
-    if (carousel.dataset.cloned !== '1') initCarousel();
-  });
+  // Init om viewport ändras till mobil
+  const onChange = () => {
+    if (mq.matches && carousel.dataset.cloned !== '1') initCarousel();
+  };
+  if (mq.addEventListener) mq.addEventListener('change', onChange);
+  else if (mq.addListener) mq.addListener(onChange);
+  window.addEventListener('resize', onChange);
 })();

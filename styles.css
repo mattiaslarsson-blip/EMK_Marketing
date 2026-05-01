@@ -2455,12 +2455,12 @@ body.lightbox-open { overflow: hidden; }
 }
 
 /* ===========================
-   FOTO CAROUSEL (mobile-only)
+   FOTO CAROUSEL + 2-COL GRID (mobile)
    =========================== */
 .foto-carousel { display: none; }
 
-@media (max-width: 640px) {
-  /* Carousel — visas bara på mobil */
+@media (max-width: 768px) {
+  /* ---- Carousel ---- */
   .foto-carousel {
     display: block;
     overflow-x: auto;
@@ -2484,14 +2484,15 @@ body.lightbox-open { overflow: hidden; }
 
   .foto-carousel__item {
     flex: 0 0 calc(100vw - 2 * var(--pad));
-    aspect-ratio: 1080 / 1350;
+    aspect-ratio: 4 / 5;
     border-radius: 14px;
     overflow: hidden;
     background: #0a0a0a;
     scroll-snap-align: center;
     scroll-snap-stop: always;
-    box-shadow: 0 20px 50px -20px rgba(0,0,0,0.6);
+    box-shadow: 0 20px 50px -20px rgba(0,0,0,0.7);
     position: relative;
+    margin: 0;
   }
   .foto-carousel__item img {
     width: 100%;
@@ -2504,31 +2505,46 @@ body.lightbox-open { overflow: hidden; }
     position: absolute;
     inset: 0;
     border-radius: 14px;
-    box-shadow: inset 0 0 0 1px rgba(245,184,0,0.1);
+    box-shadow: inset 0 0 0 1px rgba(245,184,0,0.15);
     pointer-events: none;
   }
 
-  /* FOTO grid på mobil → 2 kolumner med 4:5 aspect */
+  /* ---- FOTO grid: 2 kolumner med 4:5 (override över befintlig mobile-regel) ---- */
   #foto .showreel-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: none !important;
     grid-auto-rows: auto !important;
-    gap: 10px;
+    grid-auto-flow: row !important;
+    gap: 8px !important;
+    align-items: stretch !important;
   }
-  #foto .showreel-item,
-  #foto .showreel-item.span-3,
-  #foto .showreel-item.span-4,
-  #foto .showreel-item.span-5,
-  #foto .showreel-item.span-6,
-  #foto .showreel-item.span-8 {
-    grid-column: span 1 !important;
-    grid-row: span 1 !important;
-    aspect-ratio: 1080 / 1350;
-    height: auto;
+
+  /* Nuke alla span-klasser som arvs från desktop bento */
+  #foto .showreel-grid > .showreel-item,
+  #foto .showreel-grid > .showreel-item.span-3,
+  #foto .showreel-grid > .showreel-item.span-4,
+  #foto .showreel-grid > .showreel-item.span-5,
+  #foto .showreel-grid > .showreel-item.span-6,
+  #foto .showreel-grid > .showreel-item.span-8,
+  #foto .showreel-grid > .showreel-item.row-2 {
+    grid-column: auto / span 1 !important;
+    grid-row: auto / span 1 !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 5 !important;
+    min-height: 0 !important;
+    max-height: none !important;
   }
-  #foto .showreel-item img,
-  #foto .showreel-item video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+  #foto .showreel-grid > .showreel-item > img,
+  #foto .showreel-grid > .showreel-item > video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
   }
+
+  /* Sektion-titel-spacing på mobil */
+  #foto .section-title { padding: 3rem var(--pad) 2rem; }
 }
