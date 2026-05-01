@@ -14,9 +14,11 @@
 <body>
 
   <!-- HERO -->
-  <section class="hero" id="top">
+  <section class="hero hero--cinematic" id="top">
     <div class="hero__bg" style="background-image: url('images/Bildspel.JPG');"></div>
     <div class="hero__overlay"></div>
+    <div class="hero__spotlight"></div>
+    <div class="hero__grain"></div>
 
     <header class="nav">
       <a href="index.html" class="nav__logo">
@@ -25,7 +27,7 @@
       <nav class="nav__links">
         <a href="index.html" class="is-active">Hem</a>
         <a href="tjanster.html">Tjänster</a>
-        <a href="case.html">Case</a>
+        <a href="showreel.html">Showreel</a>
         <a href="om-oss.html">Om oss</a>
         <a href="kontakt.html">Kontakt</a>
       </nav>
@@ -36,15 +38,16 @@
     </header>
 
     <div class="hero__content">
-      <h1 class="hero__title">
-        Marknadsföring som<br/>
-        driver <span class="underline-accent">försäljning</span>.
+      <span class="hero__eyebrow">EMK MARKETING · STOCKHOLM</span>
+      <h1 class="hero__title hero__title--reveal">
+        <span class="reveal-line"><span>Marknadsföring som</span></span>
+        <span class="reveal-line"><span>driver <span class="underline-accent">försäljning</span>.</span></span>
       </h1>
       <p class="hero__sub">Vi hjälper små och medelstora företag växa online. Content, annonser, SEO och hemsidor. Allt från ett ställe.</p>
 
       <div class="hero__cta">
         <a href="kontakt.html" class="btn-outline">Boka ett möte</a>
-        <a href="case.html" class="btn-outline btn-outline--ghost">Se våra case</a>
+        <a href="showreel.html" class="btn-outline btn-outline--ghost">Se showreel</a>
       </div>
 
       <div class="hero__icons">
@@ -55,6 +58,11 @@
         <div class="hero-icon"><span>Film och foto</span></div>
       </div>
     </div>
+
+    <a href="#tjanster" class="hero__scroll" aria-label="Scrolla ner">
+      <span>Scrolla</span>
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
   </section>
 
   <!-- TAGLINE -->

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Showreel — EMK Marketing</title>
+  <meta name="description" content="EMK Marketings showreel. Bilder, film och ögonblick vi fångat det senaste året." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="EMK_LOGO.png" />
+</head>
+<body class="subpage showreel-body">
+
+  <!-- HERO -->
+  <section class="showreel-hero" id="top">
+    <video class="showreel-hero__bg" autoplay muted loop playsinline poster="images/Bildspel_1.jpg">
+      <source src="videos/hero-bg.mp4" type="video/mp4" />
+    </video>
+    <div class="showreel-hero__vignette"></div>
+    <div class="showreel-hero__spotlight"></div>
+    <div class="showreel-hero__grain"></div>
+
+    <header class="nav">
+      <a href="index.html" class="nav__logo">
+        <img src="EMK_Marketing_logotyp_transparent.png" alt="EMK Marketing" class="nav__logo-img" />
+      </a>
+      <nav class="nav__links">
+        <a href="index.html">Hem</a>
+        <a href="tjanster.html">Tjänster</a>
+        <a href="showreel.html" class="is-active">Showreel</a>
+        <a href="om-oss.html">Om oss</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+      <a href="kontakt.html" class="btn-outline btn-outline--small nav__cta">Boka möte</a>
+      <button class="nav__burger" aria-label="Meny"><span></span><span></span><span></span></button>
+    </header>
+
+    <div class="showreel-hero__content">
+      <span class="showreel-hero__eyebrow">EMK · 2025</span>
+      <h1 class="showreel-hero__title">
+        <span class="reveal-word">Show</span><span class="reveal-word reveal-word--accent">reel</span>
+      </h1>
+      <p class="showreel-hero__sub">Bilder, film, ögonblick. Allt vi fångat det senaste året — på ett ställe.</p>
+    </div>
+
+    <a href="#spotlight" class="showreel-hero__scroll" aria-label="Scrolla ner">
+      <span>Scrolla</span>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </section>
+
+  <!-- SPOTLIGHT REEL -->
+  <section class="showreel-spotlight" id="spotlight">
+    <div class="section-title">
+      <span class="section-title__line"></span>
+      <h2>HUVUDREEL</h2>
+      <span class="section-title__line"></span>
+    </div>
+
+    <div class="showreel-spotlight__frame">
+      <video class="showreel-spotlight__video" id="mainReel" muted playsinline poster="images/Bildspel5.JPG">
+        <source src="videos/showreel-2025.mp4" type="video/mp4" />
+      </video>
+      <button class="showreel-spotlight__playbtn" id="mainReelPlay" aria-label="Spela huvudreel">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <button class="showreel-spotlight__mute" id="mainReelMute" aria-label="Slå på ljud">
+        <svg class="icon-muted" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+        <svg class="icon-unmuted" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+      </button>
+    </div>
+
+    <p class="showreel-spotlight__meta">EMK Showreel · 2025 · 1:42</p>
+  </section>
+
+  <!-- FILTER CHIPS -->
+  <section class="showreel-filters">
+    <div class="showreel-filters__inner">
+      <button class="filter-chip is-active" data-filter="all">Allt</button>
+      <button class="filter-chip" data-filter="film">Film</button>
+      <button class="filter-chip" data-filter="foto">Foto</button>
+      <button class="filter-chip" data-filter="some">Sociala medier</button>
+      <button class="filter-chip" data-filter="event">Event</button>
+    </div>
+  </section>
+
+  <!-- BENTO GRID — del 1 -->
+  <section class="showreel-grid-wrap">
+    <div class="showreel-grid">
+      <!-- Stort foto -->
+      <figure class="showreel-item span-6 row-2" data-tag="foto" data-client="Hammarbygymnasterna">
+        <img src="images/Bildspel.JPG" alt="Hammarbygymnasterna" loading="lazy" />
+        <figcaption><span class="showreel-item__client">Hammarbygymnasterna</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <!-- Video loop -->
+      <figure class="showreel-item span-6 row-1" data-tag="film" data-client="Fjällfrid">
+        <video autoplay muted loop playsinline preload="metadata" poster="images/Bildspel_1.jpg">
+          <source src="videos/clip-01.mp4" type="video/mp4" />
+        </video>
+        <figcaption><span class="showreel-item__client">Fjällfrid</span><span class="showreel-item__type">Film</span></figcaption>
+      </figure>
+
+      <!-- Foto -->
+      <figure class="showreel-item span-3 row-1" data-tag="foto" data-client="STG">
+        <img src="images/Handstående.jpg" alt="Handstående" loading="lazy" />
+        <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <!-- Foto -->
+      <figure class="showreel-item span-3 row-1" data-tag="foto" data-client="STG">
+        <img src="images/I barren.jpg" alt="I barren" loading="lazy" />
+        <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <!-- Video event -->
+      <figure class="showreel-item span-4 row-2" data-tag="event" data-client="Nobelpriset">
+        <video autoplay muted loop playsinline preload="metadata" poster="images/Bildspel5.JPG">
+          <source src="videos/clip-02.mp4" type="video/mp4" />
+        </video>
+        <figcaption><span class="showreel-item__client">Nobelfesten 2025</span><span class="showreel-item__type">Event · Film</span></figcaption>
+      </figure>
+
+      <!-- Foto -->
+      <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="Hammarbygymnasterna">
+        <img src="images/Bildspel3.JPG" alt="Hammarby träning" loading="lazy" />
+        <figcaption><span class="showreel-item__client">Hammarbygymnasterna</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <!-- Foto -->
+      <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="Bakifrån">
+        <img src="images/Bakifrån.jpg" alt="Bakifrån" loading="lazy" />
+        <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- SCROLL STORYTELLING BREAK -->
+  <section class="showreel-storytelling">
+    <video class="showreel-storytelling__bg" autoplay muted loop playsinline poster="images/Bildspel5.JPG">
+      <source src="videos/storytelling.mp4" type="video/mp4" />
+    </video>
+    <div class="showreel-storytelling__overlay"></div>
+    <div class="showreel-storytelling__content">
+      <span class="eyebrow">UTVALT CASE</span>
+      <h2>Vi filmade <span class="underline-accent">Nobelprisets efterfest</span> 2025.</h2>
+      <p>Hela produktionen från planering till färdig film. Levererat på deadline. Material som arrangören använt i sin egen marknadsföring året efter.</p>
+      <a href="case.html" class="btn-outline">Läs hela caset</a>
+    </div>
+  </section>
+
+  <!-- BENTO GRID — del 2 -->
+  <section class="showreel-grid-wrap showreel-grid-wrap--alt">
+    <div class="showreel-grid">
+      <!-- Video some -->
+      <figure class="showreel-item span-4 row-2" data-tag="some" data-client="William Broman">
+        <video autoplay muted loop playsinline preload="metadata" poster="images/Bildspel7.JPG">
+          <source src="videos/clip-03.mp4" type="video/mp4" />
+        </video>
+        <figcaption><span class="showreel-item__client">William Broman</span><span class="showreel-item__type">Sociala medier · Film</span></figcaption>
+      </figure>
+
+      <!-- Foto stort -->
+      <figure class="showreel-item span-8 row-2" data-tag="foto" data-client="EMK">
+        <img src="images/DSC00175-5 (1).jpg" alt="Sport-foto" loading="lazy" />
+        <figcaption><span class="showreel-item__client">EMK Production</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <!-- Video film -->
+      <figure class="showreel-item span-4 row-1" data-tag="film" data-client="BallersApp">
+        <video autoplay muted loop playsinline preload="metadata" poster="images/Bildspel10.JPG">
+          <source src="videos/clip-04.mp4" type="video/mp4" />
+        </video>
+        <figcaption><span class="showreel-item__client">BallersApp</span><span class="showreel-item__type">Film</span></figcaption>
+      </figure>
+
+      <!-- Foto -->
+      <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="Hammarbygymnasterna">
+        <img src="images/Bildspel12.JPG" alt="Hammarby träning" loading="lazy" />
+        <figcaption><span class="showreel-item__client">Hammarbygymnasterna</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <!-- Video some -->
+      <figure class="showreel-item span-4 row-1" data-tag="some" data-client="Indie Pen">
+        <video autoplay muted loop playsinline preload="metadata" poster="images/Bildspel19.JPG">
+          <source src="videos/clip-05.mp4" type="video/mp4" />
+        </video>
+        <figcaption><span class="showreel-item__client">Indie Pen Publishing</span><span class="showreel-item__type">Sociala medier</span></figcaption>
+      </figure>
+
+      <!-- Foto -->
+      <figure class="showreel-item span-6 row-1" data-tag="foto" data-client="STG">
+        <img src="images/Bildspel16.JPG" alt="STG" loading="lazy" />
+        <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <!-- Foto -->
+      <figure class="showreel-item span-3 row-1" data-tag="foto" data-client="Hammarbygymnasterna">
+        <img src="images/Bildspel20.JPG" alt="Träning" loading="lazy" />
+        <figcaption><span class="showreel-item__client">Hammarbygymnasterna</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <!-- Foto -->
+      <figure class="showreel-item span-3 row-1" data-tag="foto" data-client="EMK">
+        <img src="images/Bildspel17.JPG" alt="Foto" loading="lazy" />
+        <figcaption><span class="showreel-item__client">EMK Production</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <!-- Video event -->
+      <figure class="showreel-item span-6 row-2" data-tag="event" data-client="Festivalborg">
+        <video autoplay muted loop playsinline preload="metadata" poster="images/Bildspel4.JPG">
+          <source src="videos/clip-06.mp4" type="video/mp4" />
+        </video>
+        <figcaption><span class="showreel-item__client">Festivalborg</span><span class="showreel-item__type">Event · Film</span></figcaption>
+      </figure>
+
+      <!-- Foto -->
+      <figure class="showreel-item span-3 row-1" data-tag="foto" data-client="STG">
+        <img src="images/Bildspel6.JPG" alt="STG" loading="lazy" />
+        <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+
+      <!-- Foto -->
+      <figure class="showreel-item span-3 row-1" data-tag="foto" data-client="STG">
+        <img src="images/Bildspel8.JPG" alt="STG" loading="lazy" />
+        <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Foto</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- KLIENT MARQUEE -->
+  <section class="clients">
+    <div class="marquee">
+      <div class="marquee__track">
+        <span>Fjällfrid</span><span>Indie Pen Publishing</span><span>BallersApp</span><span>Heylinn</span><span>Linsblockers</span><span>Hammarbygymnasterna</span><span>STG</span><span>Tapas28</span><span>Caliente</span><span>GTG Golf</span><span>Joina</span><span>Reseskaparna</span><span>Grand Tours</span><span>Äventyrsresor</span><span>Föreningen Ekonomerna</span><span>Festivalborg</span><span>Svenska Gymnastikförbundet</span><span>The Lobby</span><span>Coach Dan Gymnastics</span><span>We Travel Group</span><span>William Broman</span>
+        <span>Fjällfrid</span><span>Indie Pen Publishing</span><span>BallersApp</span><span>Heylinn</span><span>Linsblockers</span><span>Hammarbygymnasterna</span><span>STG</span><span>Tapas28</span><span>Caliente</span><span>GTG Golf</span><span>Joina</span><span>Reseskaparna</span><span>Grand Tours</span><span>Äventyrsresor</span><span>Föreningen Ekonomerna</span><span>Festivalborg</span><span>Svenska Gymnastikförbundet</span><span>The Lobby</span><span>Coach Dan Gymnastics</span><span>We Travel Group</span><span>William Broman</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <h2>Vill du ha lika snyggt material?</h2>
+    <p>Boka ett möte. Vi visar gärna mer och berättar hur en produktion läggs upp hos oss.</p>
+    <a href="kontakt.html" class="btn-outline">Boka möte</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="EMK_Marketing_logotyp_transparent.png" alt="EMK Marketing" class="footer__logo" />
+      </div>
+      <div class="footer__cols">
+        <div>
+          <h4>Företag</h4>
+          <a href="om-oss.html">Om oss</a>
+          <a href="tjanster.html">Tjänster</a>
+          <a href="showreel.html">Showreel</a>
+          <a href="kontakt.html">Kontakt</a>
+        </div>
+        <div>
+          <h4>Juridik</h4>
+          <a href="#">Allmänna villkor</a>
+          <a href="#">Integritetspolicy</a>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <a href="mailto:info@emkmarketing.se">info@emkmarketing.se</a>
+          <span>Läggestavägen 34<br/>124 31 Stockholm</span>
+        </div>
+        <div>
+          <h4>Socials</h4>
+          <a href="https://www.instagram.com/emk.marketing/" target="_blank" rel="noopener">Instagram</a>
+          <a href="#">Facebook</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© EMK Marketing <span id="year"></span></span>
+      <span>Org.nr 559415-5090</span>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Stäng">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" aria-label="Föregående">‹</button>
+    <button class="lightbox__nav lightbox__nav--next" aria-label="Nästa">›</button>
+    <div class="lightbox__stage" id="lightboxStage"></div>
+    <div class="lightbox__caption" id="lightboxCaption"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
