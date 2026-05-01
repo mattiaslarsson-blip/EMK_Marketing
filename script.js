@@ -241,3 +241,74 @@ if (lightbox && stage) {
     if (e.key === 'ArrowLeft') prev();
   });
 }
+
+// ===========================
+// FOTO CAROUSEL — infinite swipe (mobile)
+// ===========================
+(function() {
+  const carousel = document.getElementById('fotoCarousel');
+  if (!carousel) return;
+  const track = carousel.querySelector('.foto-carousel__track');
+  if (!track) return;
+
+  const initCarousel = () => {
+    // Bara på mobil
+    if (!window.matchMedia('(max-width: 640px)').matches) return;
+    if (carousel.dataset.cloned === '1') return;
+
+    const originals = Array.from(track.children);
+    if (originals.length === 0) return;
+
+    // Klona items 2 gånger till → totalt 3 set: [klon1][original][klon2]
+    const beforeClones = originals.map(el => el.cloneNode(true));
+    const afterClones = originals.map(el => el.cloneNode(true));
+    beforeClones.reverse().forEach(c => track.insertBefore(c, track.firstChild));
+    afterClones.forEach(c => track.appendChild(c));
+
+    carousel.dataset.cloned = '1';
+
+    // Sätt scroll-position till mitten (start av original-setet)
+    requestAnimationFrame(() => {
+      const setWidth = getSetWidth(originals.length);
+      carousel.scrollLeft = setWidth;
+    });
+  };
+
+  const getSetWidth = (count) => {
+    const first = track.children[0];
+    if (!first) return 0;
+    const itemWidth = first.getBoundingClientRect().width;
+    const gap = parseFloat(getComputedStyle(track).gap) || 12;
+    return (itemWidth + gap) * count;
+  };
+
+  // Silently jump tillbaka till mitten när användaren når kanterna
+  let scrollTimer;
+  carousel.addEventListener('scroll', () => {
+    if (carousel.dataset.cloned !== '1') return;
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      const originalCount = track.children.length / 3;
+      const setWidth = getSetWidth(originalCount);
+      const sl = carousel.scrollLeft;
+
+      if (sl < setWidth * 0.5) {
+        carousel.scrollTo({ left: sl + setWidth, behavior: 'instant' });
+      } else if (sl > setWidth * 1.5 + setWidth * 0.5) {
+        carousel.scrollTo({ left: sl - setWidth, behavior: 'instant' });
+      }
+    }, 120);
+  }, { passive: true });
+
+  // Init när DOM är redo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousel);
+  } else {
+    initCarousel();
+  }
+
+  // Init också om viewport ändras (från desktop → mobil)
+  window.addEventListener('resize', () => {
+    if (carousel.dataset.cloned !== '1') initCarousel();
+  });
+})();

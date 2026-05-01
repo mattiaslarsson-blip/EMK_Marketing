@@ -2453,3 +2453,82 @@ body.lightbox-open { overflow: hidden; }
   }
   .hero__spotlight { display: none; }
 }
+
+/* ===========================
+   FOTO CAROUSEL (mobile-only)
+   =========================== */
+.foto-carousel { display: none; }
+
+@media (max-width: 640px) {
+  /* Carousel — visas bara på mobil */
+  .foto-carousel {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    margin: 0 calc(-1 * var(--pad)) 1.5rem;
+    padding: 0 var(--pad) 1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .foto-carousel::-webkit-scrollbar { display: none; }
+
+  .foto-carousel__track {
+    display: flex;
+    gap: 12px;
+    width: max-content;
+  }
+
+  .foto-carousel__item {
+    flex: 0 0 calc(100vw - 2 * var(--pad));
+    aspect-ratio: 1080 / 1350;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #0a0a0a;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    box-shadow: 0 20px 50px -20px rgba(0,0,0,0.6);
+    position: relative;
+  }
+  .foto-carousel__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .foto-carousel__item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    box-shadow: inset 0 0 0 1px rgba(245,184,0,0.1);
+    pointer-events: none;
+  }
+
+  /* FOTO grid på mobil → 2 kolumner med 4:5 aspect */
+  #foto .showreel-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-auto-rows: auto !important;
+    gap: 10px;
+  }
+  #foto .showreel-item,
+  #foto .showreel-item.span-3,
+  #foto .showreel-item.span-4,
+  #foto .showreel-item.span-5,
+  #foto .showreel-item.span-6,
+  #foto .showreel-item.span-8 {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+    aspect-ratio: 1080 / 1350;
+    height: auto;
+  }
+  #foto .showreel-item img,
+  #foto .showreel-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
