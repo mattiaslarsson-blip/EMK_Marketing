@@ -3,6 +3,17 @@
    Match till Squarespace-design
    =========================== */
 
+@font-face {
+  font-family: 'Bropella';
+  src: url('fonts/Bropella.woff2') format('woff2'),
+       url('fonts/Bropella.woff') format('woff'),
+       url('fonts/Bropella.otf') format('opentype'),
+       url('fonts/Bropella.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #000000;
   --bg-2: #0a0f14;
@@ -724,9 +735,14 @@ h1, h2, h3, h4 {
    LOGO IMAGE
    =========================== */
 .nav__logo-img {
-  height: 54px;
+  height: 88px;
   width: auto;
   display: block;
+  transition: opacity 0.2s;
+}
+.nav__logo:hover .nav__logo-img { opacity: 0.85; }
+@media (max-width: 640px) {
+  .nav__logo-img { height: 60px; }
 }
 .footer__logo {
   height: 64px;
@@ -1461,9 +1477,10 @@ h1, h2, h3, h4 {
   animation: fadeUp 0.7s 0.05s ease forwards;
 }
 .showreel-hero__title {
+  font-family: 'Bropella', 'Montserrat', sans-serif;
   font-size: clamp(3.2rem, 13vw, 11rem);
   font-weight: 900;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   line-height: 0.95;
   text-transform: uppercase;
   display: inline-flex;
@@ -1492,12 +1509,14 @@ h1, h2, h3, h4 {
 }
 
 .showreel-hero__sub {
-  margin-top: 1.8rem;
-  max-width: 560px;
-  font-size: clamp(1rem, 1.4vw, 1.2rem);
-  color: rgba(255,255,255,0.92);
-  line-height: 1.6;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+  margin-top: 1.6rem;
+  max-width: 460px;
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  font-weight: 600;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
   opacity: 0;
   animation: fadeUp 0.7s 0.4s ease forwards;
 }
@@ -1956,9 +1975,12 @@ body.lightbox-open { overflow: hidden; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.6rem var(--pad);
+  padding: 2rem var(--pad);
   max-width: var(--max);
   margin: 0 auto;
+}
+@media (max-width: 640px) {
+  .nav--minimal { padding: 1.2rem var(--pad); }
 }
 .nav--minimal .nav__cta { margin-left: 0; }
 
