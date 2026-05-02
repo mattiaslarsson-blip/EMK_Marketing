@@ -2459,6 +2459,9 @@ body.lightbox-open { overflow: hidden; }
    =========================== */
 .foto-carousel { display: none; }
 
+/* Inga caption-labels på FOTO-griden — bara rena bilder */
+#foto .showreel-item figcaption { display: none !important; }
+
 @media (max-width: 768px) {
   /* ---- Carousel ---- */
   .foto-carousel {
