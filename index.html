@@ -1,309 +1,408 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EMK Marketing — Showreel</title>
-  <meta name="description" content="EMK Marketings showreel. Bilder, film och ögonblick vi fångat det senaste året." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EMK Marketing – Vässa din digitala närvaro</title>
+  <meta name="description" content="EMK Marketing hjälper företag att växa genom datadriven annonsering och konverterande webbdesign. Boka ett kostnadsfritt strategimöte.">
   <link rel="icon" type="image/png" href="EMK_LOGO.png" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap');
+
+    body {
+      margin: 0;
+      background: #14130F;
+    }
+
+    #emk-lp {
+      --ink: #F5F1E8;
+      --bg: #14130F;
+      --card: #1F1D17;
+      --line: #34312A;
+      --line-soft: #2A2820;
+      --muted: #908C80;
+      --muted-2: #BDB8AB;
+      --red: #7A2021;
+      --red-accent: #C9534E;
+      --red-dark: #5A1719;
+      --gold: #DFA438;
+      --gold-deep: #E2B25C;
+      --gold-light: rgba(223, 164, 56, 0.14);
+      --badge: #2A2820;
+      --cream: #F2EEE4;
+      --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.45);
+
+      font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+    }
+    #emk-lp * { box-sizing: border-box; margin: 0; padding: 0; }
+    #emk-lp h1, #emk-lp h2, #emk-lp h3, #emk-lp h4, #emk-lp .emk-num, #emk-lp .emk-eyebrow, #emk-lp .emk-btn, #emk-lp .emk-pct {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    #emk-lp::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(100% 80% at 85% -5%, rgba(223, 164, 56, 0.12), transparent 50%),
+        radial-gradient(90% 70% at -5% 105%, rgba(122, 32, 33, 0.18), transparent 60%);
+    }
+    #emk-lp .emk-wrap { position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+    /* Top Nav */
+    #emk-lp .emk-nav {
+      position: relative; z-index: 2;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 0 8px; gap: 16px;
+    }
+    #emk-lp .emk-nav__logo img { height: 34px; width: auto; display: block; }
+    #emk-lp .emk-nav__links { display: flex; align-items: center; gap: 26px; }
+    #emk-lp .emk-nav__links a {
+      color: var(--muted-2); text-decoration: none; font-size: 14.5px; font-weight: 600;
+      letter-spacing: 0.3px; transition: color 0.2s ease;
+    }
+    #emk-lp .emk-nav__links a:hover { color: var(--ink); }
+
+    /* Hero Section */
+    #emk-lp .emk-hero {
+      padding: 72px 24px 80px;
+      text-align: center;
+      position: relative;
+      border-radius: 32px;
+      margin-top: 24px;
+      margin-bottom: 40px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-lg);
+    }
+    #emk-lp .emk-eyebrow {
+      display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 2.5px;
+      text-transform: uppercase; color: #fff;
+      border: none; border-radius: 100px; padding: 8px 20px; margin-bottom: 28px;
+      background: var(--red);
+      box-shadow: 0 4px 16px rgba(122, 32, 33, 0.4);
+    }
+    #emk-lp h1 {
+      font-size: clamp(36px, 6vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 20px;
+    }
+    #emk-lp h1 em { font-style: normal; color: var(--gold); display: block; margin-top: 4px;}
+    #emk-lp .emk-lede {
+      font-size: clamp(16px, 2.5vw, 19px); color: var(--muted-2); max-width: 600px; margin: 0 auto 40px; font-weight: 400;
+    }
+
+    /* Buttons */
+    #emk-lp .emk-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--cream); color: #14130F; font-weight: 700; font-size: 16px;
+      padding: 16px 36px; border-radius: 100px; text-decoration: none; border: none; cursor: pointer;
+      box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.6);
+      transition: all 0.2s ease; letter-spacing: 0.5px;
+    }
+    #emk-lp .emk-btn:hover { transform: translateY(-2px); background: #fff; box-shadow: 0 18px 36px -10px rgba(0, 0, 0, 0.8); }
+    #emk-lp .emk-btn .emk-arr { transition: transform 0.2s ease; }
+    #emk-lp .emk-btn:hover .emk-arr { transform: translateX(5px); }
+    #emk-lp .emk-btn-gold { background: var(--gold); color: #14130F; box-shadow: 0 12px 28px -10px rgba(223, 164, 56, 0.5); }
+    #emk-lp .emk-btn-gold:hover { background: #ecb44b; }
+
+    /* Images */
+    #emk-lp .emk-img {
+      width: 100%; object-fit: cover; border-radius: 16px; margin-bottom: 24px; display: block; background: var(--badge);
+    }
+
+    /* Offers Cards */
+    #emk-lp .emk-offers { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 20px 0; }
+    #emk-lp .emk-card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 24px;
+      padding: 32px; text-align: left; position: relative; overflow: hidden; box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    }
+    #emk-lp .emk-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    #emk-lp .emk-card.ads { border-top: 4px solid var(--red-accent); }
+    #emk-lp .emk-card.web { border-top: 4px solid var(--gold); }
+    #emk-lp .emk-card .emk-img { height: 220px; }
+
+    #emk-lp .emk-card .emk-season { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    #emk-lp .emk-card.ads .emk-season { color: var(--red-accent); }
+    #emk-lp .emk-card.web .emk-season { color: var(--gold); }
+    #emk-lp .emk-season-icon { width: 18px; height: 18px; }
+
+    #emk-lp .emk-pct { font-size: clamp(40px, 7vw, 56px); font-weight: 800; line-height: 1; letter-spacing: -2px; margin-bottom: 8px;}
+
+    #emk-lp .emk-card h3 { font-size: 20px; font-weight: 700; margin: 0 0 8px; }
+    #emk-lp .emk-card p { font-size: 15px; color: var(--muted-2); margin-bottom: 0; line-height: 1.6; }
+
+    /* Booking Section */
+    #emk-lp .emk-boka { padding: 80px 0 40px; scroll-margin-top: 100px; }
+    #emk-lp .emk-boka h2 { font-size: clamp(28px, 5vw, 40px); font-weight: 800; letter-spacing: -1px; text-align: center; margin-bottom: 12px; }
+    #emk-lp .emk-boka .emk-boka-sub { text-align: center; color: var(--muted-2); font-size: 16px; max-width: 540px; margin: 0 auto 40px; }
+    #emk-lp .emk-boka .emk-boka-sub b { color: var(--gold); font-weight: 700; background: var(--gold-light); padding: 2px 6px; border-radius: 4px;}
+    #emk-lp .emk-widget-box {
+      background: var(--card); border: 1px solid var(--line); border-radius: 24px;
+      padding: 40px 30px; box-shadow: var(--shadow-lg); min-height: 400px; display:flex; align-items:center; justify-content:center; flex-direction:column;
+    }
+
+    /* Value Props / Why us */
+    #emk-lp .emk-why { padding: 60px 0 40px; }
+    #emk-lp .emk-why h2 { font-size: clamp(26px, 4.5vw, 36px); font-weight: 800; letter-spacing: -0.8px; text-align: center; margin-bottom: 48px; }
+    #emk-lp .emk-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    #emk-lp .emk-feat { text-align: center; }
+    #emk-lp .emk-feat .emk-img { height: 260px; box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    #emk-lp .emk-feat:hover .emk-img { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    #emk-lp .emk-feat h4 { font-family: 'Manrope'; font-size: 19px; font-weight: 700; margin-bottom: 10px; color: var(--ink); }
+    #emk-lp .emk-feat p { font-size: 15px; color: var(--muted-2); line-height: 1.6; padding: 0 12px; }
+
+    /* FAQ Section */
+    #emk-lp .emk-faq { padding: 60px 0; max-width: 720px; margin: 0 auto; }
+    #emk-lp .emk-faq h2 { font-size: clamp(26px, 4.5vw, 36px); font-weight: 800; letter-spacing: -0.8px; text-align: center; margin-bottom: 40px; }
+    #emk-lp .emk-accordion { border-top: 1px solid var(--line); }
+    #emk-lp .emk-acc-item { border-bottom: 1px solid var(--line); }
+    #emk-lp .emk-acc-btn {
+      width: 100%; text-align: left; background: none; border: none;
+      padding: 24px 0; font-size: 18px; font-weight: 700; color: var(--ink);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Manrope', sans-serif; transition: color 0.2s;
+    }
+    #emk-lp .emk-acc-btn:hover { color: var(--gold); }
+    #emk-lp .emk-acc-btn::after {
+      content: "+"; font-size: 24px; font-weight: 400; transition: transform 0.3s ease; color: var(--muted);
+    }
+    #emk-lp .emk-acc-btn.active::after { transform: rotate(45deg); color: var(--gold); }
+    #emk-lp .emk-acc-content {
+      max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+    }
+    #emk-lp .emk-acc-content p {
+      padding-bottom: 24px; color: var(--muted-2); font-size: 16px; line-height: 1.6; padding-right: 24px;
+    }
+
+    /* Final CTA */
+    #emk-lp .emk-final {
+      margin: 20px 0 40px; background: var(--red); border-radius: 32px; padding: 70px 32px; text-align: center; color: #FDFBF7; position: relative; overflow: hidden;
+      box-shadow: 0 24px 50px rgba(122, 32, 33, 0.35);
+    }
+    #emk-lp .emk-final::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 80% 0%, rgba(255,255,255,0.1), transparent 50%); }
+    #emk-lp .emk-final::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 20% 100%, rgba(223, 164, 56, 0.22), transparent 60%); }
+    #emk-lp .emk-final h2 { font-size: clamp(28px, 5vw, 42px); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; position: relative; z-index: 2; color: #fff;}
+    #emk-lp .emk-final p { color: rgba(253, 251, 247, 0.85); max-width: 520px; margin: 0 auto 36px; font-size: 17px; position: relative; z-index: 2; }
+    #emk-lp .emk-final .emk-btn { position: relative; z-index: 2; }
+
+    /* Fine Print */
+    #emk-lp .emk-fine { padding: 20px 0 60px; text-align: center; }
+    #emk-lp .emk-fine p { font-size: 12.5px; color: var(--muted); max-width: 720px; margin: 0 auto; line-height: 1.8; }
+
+    /* Sticky Bottom Mobile Bar */
+    #emk-lp .emk-sticky-bottom {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(20, 19, 15, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 16px 20px;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+      z-index: 99;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    #emk-lp .emk-sticky-bottom .emk-btn { width: 100%; padding: 14px 20px; }
+
+    /* Animations */
+    #emk-lp .emk-rise { opacity: 0; transform: translateY(20px); animation: emkRise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    #emk-lp .emk-d1 { animation-delay: 0.1s } #emk-lp .emk-d2 { animation-delay: 0.2s } #emk-lp .emk-d3 { animation-delay: 0.3s } #emk-lp .emk-d4 { animation-delay: 0.4s }
+    @keyframes emkRise { to { opacity: 1; transform: translateY(0) } }
+    @media (prefers-reduced-motion: reduce) { #emk-lp .emk-rise { animation: none; opacity: 1; transform: none; } }
+
+    /* Responsive adjustments */
+    @media(max-width: 768px) {
+      #emk-lp { padding-bottom: 90px; }
+      #emk-lp .emk-nav__links { gap: 18px; }
+      #emk-lp .emk-offers { grid-template-columns: 1fr; gap: 20px; }
+      #emk-lp .emk-grid3 { grid-template-columns: 1fr; gap: 32px; }
+      #emk-lp .emk-hero { padding: 48px 16px 64px; border-radius: 24px; margin-top: 16px; }
+      #emk-lp .emk-widget-box { padding: 24px 16px; border-radius: 16px;}
+      #emk-lp .emk-card { padding: 32px 24px; border-radius: 20px;}
+      #emk-lp .emk-final { padding: 50px 24px; border-radius: 24px;}
+      #emk-lp .emk-sticky-bottom { display: block; }
+    }
+  </style>
 </head>
-<body class="subpage showreel-body">
+<body>
 
-  <!-- HERO -->
-  <section class="showreel-hero" id="top">
-    <video class="showreel-hero__bg" autoplay muted loop playsinline poster="images/foto/foreningar/Bildspel5.JPG">
-      <source src="videos/hero-bg.mp4" type="video/mp4" />
-    </video>
-    <div class="showreel-hero__vignette"></div>
-    <div class="showreel-hero__spotlight"></div>
-    <div class="showreel-hero__grain"></div>
+<div id="emk-lp">
 
-    <header class="nav nav--minimal">
-      <a href="index.html" class="nav__logo">
-        <img src="EMK_Marketing_logotyp_transparent.png" alt="EMK Marketing" class="nav__logo-img" />
+  <div class="emk-wrap">
+
+    <!-- Top Nav -->
+    <nav class="emk-nav">
+      <a href="index.html" class="emk-nav__logo" aria-label="EMK Marketing">
+        <img src="EMK_Marketing_logotyp_transparent.png" alt="EMK Marketing">
       </a>
-      <a href="mailto:info@emkmarketing.se" class="btn-outline btn-outline--small nav__cta">Kontakt</a>
+      <div class="emk-nav__links">
+        <a href="showreel.html">Showreel</a>
+        <a href="#emk-boka">Boka möte</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="emk-hero">
+      <span class="emk-eyebrow emk-rise emk-d1">Partnererbjudande Q3</span>
+      <h1 class="emk-rise emk-d2">Ta din marknadsföring<br><em>till nästa nivå.</em></h1>
+      <p class="emk-lede emk-rise emk-d2">Vi på EMK Marketing hjälper företag att växa genom datadriven annonsering och konverterande webbdesign. Säkra din plats idag och få rabatt på din första setup.</p>
+
+      <a class="emk-btn emk-rise emk-d3" id="emk-cta-top" href="#emk-boka">
+        Boka strategimöte <span class="emk-arr">→</span>
+      </a>
     </header>
 
-    <div class="showreel-hero__content">
-      <span class="showreel-hero__eyebrow">EMK MARKETING · FILM &amp; FOTO</span>
-      <h1 class="showreel-hero__title">
-        <span class="reveal-word">Show</span><span class="reveal-word reveal-word--accent">reel</span>
-      </h1>
-      <p class="showreel-hero__sub">Det vi gjort. Det vi står för.</p>
-      <div class="showreel-hero__cta">
-        <a href="#film" class="btn-outline">Film</a>
-        <a href="#foto" class="btn-outline">Foto</a>
-        <a href="mailto:info@emkmarketing.se" class="btn-outline btn-outline--ghost">Kontakt</a>
-      </div>
-    </div>
+    <!-- Offers -->
+    <section class="emk-offers">
+      <div class="emk-card ads emk-rise emk-d3">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Digital annonsering och data" class="emk-img">
 
-    <a href="#spotlight" class="showreel-hero__scroll" aria-label="Scrolla ner">
-      <span>Scrolla</span>
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    </a>
-  </section>
-
-  <!-- SPOTLIGHT REEL -->
-  <section class="showreel-spotlight" id="spotlight">
-    <div class="section-title">
-      <span class="section-title__line"></span>
-      <h2>HUVUDREEL</h2>
-      <span class="section-title__line"></span>
-    </div>
-
-    <div class="showreel-spotlight__frame">
-      <video class="showreel-spotlight__video" id="mainReel" muted playsinline poster="images/foto/foreningar/Bildspel.JPG">
-        <source src="videos/showreel-2025.mp4" type="video/mp4" />
-      </video>
-      <button class="showreel-spotlight__playbtn" id="mainReelPlay" aria-label="Spela huvudreel">
-        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-      </button>
-      <button class="showreel-spotlight__mute" id="mainReelMute" aria-label="Slå på ljud">
-        <svg class="icon-muted" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
-        <svg class="icon-unmuted" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
-      </button>
-    </div>
-
-    <p class="showreel-spotlight__meta">EMK Showreel · 2025 · 1:42</p>
-  </section>
-
-  <!-- FILM SECTION -->
-  <section class="showreel-section" id="film">
-    <div class="section-title">
-      <span class="section-title__line"></span>
-      <h2>FILM</h2>
-      <span class="section-title__line"></span>
-    </div>
-    <div class="showreel-grid-wrap">
-      <div class="showreel-grid">
-        <figure class="showreel-item span-8 row-2" data-tag="film" data-client="Fjällfrid">
-          <video autoplay muted loop playsinline preload="metadata" poster="images/foto/foreningar/Bildspel.JPG">
-            <source src="videos/clip-01.mp4" type="video/mp4" />
-          </video>
-          <figcaption><span class="showreel-item__client">Fjällfrid</span><span class="showreel-item__type">Film</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-4 row-2" data-tag="film" data-client="Nobelpriset">
-          <video autoplay muted loop playsinline preload="metadata" poster="images/foto/foreningar/Bildspel5.JPG">
-            <source src="videos/clip-02.mp4" type="video/mp4" />
-          </video>
-          <figcaption><span class="showreel-item__client">Nobelfesten 2025</span><span class="showreel-item__type">Event · Film</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-6 row-1" data-tag="film" data-client="William Broman">
-          <video autoplay muted loop playsinline preload="metadata" poster="images/foto/foreningar/Bildspel7.JPG">
-            <source src="videos/clip-03.mp4" type="video/mp4" />
-          </video>
-          <figcaption><span class="showreel-item__client">William Broman</span><span class="showreel-item__type">Sociala medier · Film</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-6 row-1" data-tag="film" data-client="BallersApp">
-          <video autoplay muted loop playsinline preload="metadata" poster="images/foto/traningsapp/Bildspel10.JPG">
-            <source src="videos/clip-04.mp4" type="video/mp4" />
-          </video>
-          <figcaption><span class="showreel-item__client">BallersApp</span><span class="showreel-item__type">Film</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-4 row-1" data-tag="film" data-client="Indie Pen">
-          <video autoplay muted loop playsinline preload="metadata" poster="images/foto/traningsapp/Bildspel19.JPG">
-            <source src="videos/clip-05.mp4" type="video/mp4" />
-          </video>
-          <figcaption><span class="showreel-item__client">Indie Pen Publishing</span><span class="showreel-item__type">Sociala medier · Film</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-8 row-1" data-tag="film" data-client="Festivalborg">
-          <video autoplay muted loop playsinline preload="metadata" poster="images/foto/foreningar/Bildspel4.JPG">
-            <source src="videos/clip-06.mp4" type="video/mp4" />
-          </video>
-          <figcaption><span class="showreel-item__client">Festivalborg</span><span class="showreel-item__type">Event · Film</span></figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- SCROLL STORYTELLING BREAK -->
-  <section class="showreel-storytelling">
-    <video class="showreel-storytelling__bg" autoplay muted loop playsinline poster="images/foto/foreningar/Bildspel5.JPG">
-      <source src="videos/storytelling.mp4" type="video/mp4" />
-    </video>
-    <div class="showreel-storytelling__overlay"></div>
-    <div class="showreel-storytelling__content">
-      <span class="eyebrow">UTVALT CASE</span>
-      <h2>Vi filmade <span class="underline-accent">Nobelprisets efterfest</span> 2025.</h2>
-      <p>Hela produktionen från planering till färdig film. Levererat på deadline. Material som arrangören använt i sin egen marknadsföring året efter.</p>
-    </div>
-  </section>
-
-  <!-- FOTO SECTION -->
-  <section class="showreel-section" id="foto">
-    <div class="section-title">
-      <span class="section-title__line"></span>
-      <h2>FOTO</h2>
-      <span class="section-title__line"></span>
-    </div>
-
-    <!-- MOBIL CAROUSEL (visas bara på mobil) -->
-    <div class="foto-carousel" id="fotoCarousel" aria-label="Foto-bildspel">
-      <div class="foto-carousel__track">
-        <figure class="foto-carousel__item"><img src="images/foto/foreningar/Bildspel.JPG" alt="Hammarbygymnasterna" loading="lazy" /></figure>
-        <figure class="foto-carousel__item"><img src="images/foto/portratt/DSC00175-5 (1).jpg" alt="Porträtt" loading="lazy" /></figure>
-        <figure class="foto-carousel__item"><img src="images/foto/golf/GTG 14.jpg" alt="GTG Golf" loading="lazy" /></figure>
-        <figure class="foto-carousel__item"><img src="images/foto/bar/IMG_2466.jpg" alt="Bar &amp; restaurang" loading="lazy" /></figure>
-        <figure class="foto-carousel__item"><img src="images/foto/traningsapp/Bildspel10.JPG" alt="Träningsapp" loading="lazy" /></figure>
-        <figure class="foto-carousel__item"><img src="images/foto/ovrigt/IMG_8175 2.jpg" alt="Övrigt" loading="lazy" /></figure>
-      </div>
-    </div>
-
-    <div class="showreel-grid-wrap showreel-grid-wrap--alt">
-      <div class="showreel-grid">
-        <figure class="showreel-item span-6 row-2" data-tag="foto" data-client="STG">
-          <img src="images/foto/foreningar/Handstående.jpg" alt="Handstående" loading="lazy" />
-          <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Föreningsfoto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-3 row-2" data-tag="foto" data-client="STG">
-          <img src="images/foto/foreningar/I barren.jpg" alt="I barren" loading="lazy" />
-          <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Föreningsfoto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-3 row-2" data-tag="foto" data-client="GTG Golf">
-          <img src="images/foto/golf/GTG 5.jpg" alt="GTG Golf" loading="lazy" />
-          <figcaption><span class="showreel-item__client">GTG Golf</span><span class="showreel-item__type">Foto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="STG">
-          <img src="images/foto/foreningar/Bakifrån.jpg" alt="Bakifrån" loading="lazy" />
-          <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Föreningsfoto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="Bar &amp; restaurang">
-          <img src="images/foto/bar/IMG_2332.jpg" alt="Bar och restaurang" loading="lazy" />
-          <figcaption><span class="showreel-item__client">Bar &amp; Restaurang</span><span class="showreel-item__type">Foto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="Hammarbygymnasterna">
-          <img src="images/foto/foreningar/Bildspel20.JPG" alt="Hammarby träning" loading="lazy" />
-          <figcaption><span class="showreel-item__client">Hammarbygymnasterna</span><span class="showreel-item__type">Föreningsfoto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-8 row-2" data-tag="foto" data-client="STG">
-          <img src="images/foto/foreningar/Bildspel16.JPG" alt="STG" loading="lazy" />
-          <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Föreningsfoto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="Träningsapp">
-          <img src="images/foto/traningsapp/Bildspel3.JPG" alt="Träningsapp" loading="lazy" />
-          <figcaption><span class="showreel-item__client">Träningsapp</span><span class="showreel-item__type">Foto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="GTG Golf">
-          <img src="images/foto/golf/GTG 7.jpg" alt="GTG Golf" loading="lazy" />
-          <figcaption><span class="showreel-item__client">GTG Golf</span><span class="showreel-item__type">Foto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-6 row-1" data-tag="foto" data-client="Porträtt">
-          <img src="images/foto/portratt/580E75D9-7C49-4B3E-8AD1-587A264B07D0 (1) 4 copy.jpg" alt="Porträtt" loading="lazy" />
-          <figcaption><span class="showreel-item__client">Porträtt</span><span class="showreel-item__type">Foto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-3 row-1" data-tag="foto" data-client="Hammarbygymnasterna">
-          <img src="images/foto/foreningar/Bildspel12.JPG" alt="Hammarby träning" loading="lazy" />
-          <figcaption><span class="showreel-item__client">Hammarbygymnasterna</span><span class="showreel-item__type">Föreningsfoto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-3 row-1" data-tag="foto" data-client="STG">
-          <img src="images/foto/foreningar/Bildspel8.JPG" alt="STG" loading="lazy" />
-          <figcaption><span class="showreel-item__client">STG</span><span class="showreel-item__type">Föreningsfoto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="GTG Golf">
-          <img src="images/foto/golf/GTG 16.jpg" alt="GTG Golf" loading="lazy" />
-          <figcaption><span class="showreel-item__client">GTG Golf</span><span class="showreel-item__type">Foto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="Hammarbygymnasterna">
-          <img src="images/foto/foreningar/Bildspel7.JPG" alt="Hammarby träning" loading="lazy" />
-          <figcaption><span class="showreel-item__client">Hammarbygymnasterna</span><span class="showreel-item__type">Föreningsfoto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="Bar &amp; restaurang">
-          <img src="images/foto/bar/IMG_2657.jpg" alt="Bar och restaurang" loading="lazy" />
-          <figcaption><span class="showreel-item__client">Bar &amp; Restaurang</span><span class="showreel-item__type">Foto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="EMK">
-          <img src="images/foto/ovrigt/DSC02274.JPG" alt="Övrigt" loading="lazy" />
-          <figcaption><span class="showreel-item__client">EMK Production</span><span class="showreel-item__type">Foto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="Träningsapp">
-          <img src="images/foto/traningsapp/Bildspel19.JPG" alt="Träningsapp" loading="lazy" />
-          <figcaption><span class="showreel-item__client">Träningsapp</span><span class="showreel-item__type">Foto</span></figcaption>
-        </figure>
-
-        <figure class="showreel-item span-4 row-1" data-tag="foto" data-client="EMK">
-          <img src="images/foto/ovrigt/IMG_5380 copy.jpg" alt="Övrigt" loading="lazy" />
-          <figcaption><span class="showreel-item__client">EMK Production</span><span class="showreel-item__type">Foto</span></figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- KLIENT MARQUEE -->
-  <section class="clients">
-    <div class="marquee">
-      <div class="marquee__track">
-        <span>Fjällfrid</span><span>Indie Pen Publishing</span><span>BallersApp</span><span>Heylinn</span><span>Linsblockers</span><span>Hammarbygymnasterna</span><span>STG</span><span>Tapas28</span><span>Caliente</span><span>GTG Golf</span><span>Joina</span><span>Reseskaparna</span><span>Grand Tours</span><span>Äventyrsresor</span><span>Föreningen Ekonomerna</span><span>Festivalborg</span><span>Svenska Gymnastikförbundet</span><span>The Lobby</span><span>Coach Dan Gymnastics</span><span>We Travel Group</span><span>William Broman</span>
-        <span>Fjällfrid</span><span>Indie Pen Publishing</span><span>BallersApp</span><span>Heylinn</span><span>Linsblockers</span><span>Hammarbygymnasterna</span><span>STG</span><span>Tapas28</span><span>Caliente</span><span>GTG Golf</span><span>Joina</span><span>Reseskaparna</span><span>Grand Tours</span><span>Äventyrsresor</span><span>Föreningen Ekonomerna</span><span>Festivalborg</span><span>Svenska Gymnastikförbundet</span><span>The Lobby</span><span>Coach Dan Gymnastics</span><span>We Travel Group</span><span>William Broman</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-band">
-    <h2>Vill du ha lika snyggt material?</h2>
-    <p>Hör av dig så pratar vi. Vi visar gärna mer och berättar hur en produktion läggs upp hos oss.</p>
-    <a href="mailto:info@emkmarketing.se" class="btn-outline">Kontakta oss</a>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer footer--minimal">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <img src="EMK_Marketing_logotyp_transparent.png" alt="EMK Marketing" class="footer__logo" />
-      </div>
-      <div class="footer__cols">
-        <div>
-          <h4>Kontakt</h4>
-          <a href="mailto:info@emkmarketing.se">info@emkmarketing.se</a>
-          <span>Läggestavägen 34<br/>124 31 Stockholm</span>
+        <div class="emk-season">
+          <svg class="emk-season-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          Google & Meta Ads
         </div>
-        <div>
-          <h4>Socials</h4>
-          <a href="https://www.instagram.com/emk.marketing/" target="_blank" rel="noopener">Instagram</a>
+        <div class="emk-pct">15%</div>
+        <h3>Rabatt på setup-fasen</h3>
+        <p>Låt oss bygga kampanjer som faktiskt driver försäljning. Få 15% rabatt på uppsättningen av ditt nya annonskonto – nämn erbjudandet när du bokar mötet.</p>
+      </div>
+
+      <div class="emk-card web emk-rise emk-d4">
+        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80&w=800" alt="Webbdesign" class="emk-img">
+
+        <div class="emk-season">
+          <svg class="emk-season-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+          Webb & Konvertering
+        </div>
+        <div class="emk-pct">20%</div>
+        <h3>På valfri webbanalys</h3>
+        <p>Får du trafik men inga kunder? Vi analyserar din hemsida och ger konkreta UX- och SEO-åtgärder för ökad konvertering.</p>
+      </div>
+    </section>
+
+    <!-- Booking Widget -->
+    <section class="emk-boka" id="emk-boka">
+      <h2>Boka ditt fria strategimöte</h2>
+      <p class="emk-boka-sub">Välj en tid som passar dig i kalendern nedan. Nämn att du kommer via <b>partnererbjudandet</b> så aktiverar vi rabatten vid avtal.</p>
+
+      <div class="emk-widget-box">
+        <!-- CALENDLY EMBED START -->
+        <!-- Byt ut URL:en nedan mot din egen Calendly-länk -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/ditt-namn" style="min-width:320px;height:700px;width:100%;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- CALENDLY EMBED END -->
+      </div>
+    </section>
+
+    <!-- Value Props -->
+    <section class="emk-why">
+      <h2>Därför väljer kunder EMK Marketing</h2>
+      <div class="emk-grid3">
+        <div class="emk-feat">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600" alt="Datadrivna resultat" class="emk-img">
+          <h4>Mätbara resultat</h4>
+          <p>Vi gissar inte. Varje krona du spenderar spåras, analyseras och optimeras för att ge högsta möjliga ROI (Return on Investment).</p>
+        </div>
+        <div class="emk-feat">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600" alt="Strategiskt partnerskap" class="emk-img">
+          <h4>Ett nära partnerskap</h4>
+          <p>Vi ser oss som en förlängning av ditt team. Transparent kommunikation, tydliga rapporter och snabba svarstider är vår standard.</p>
+        </div>
+        <div class="emk-feat">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=600" alt="Skräddarsydd strategi" class="emk-img">
+          <h4>Skräddarsydd strategi</h4>
+          <p>Inga standardmallar. Din affär är unik, och därför skapar vi en digital strategi som är helt anpassad efter din bransch och målgrupp.</p>
         </div>
       </div>
-    </div>
-    <div class="footer__bottom">
-      <span>© EMK Marketing <span id="year"></span></span>
-      <span>Org.nr 559415-5090</span>
-    </div>
-  </footer>
+    </section>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox__close" aria-label="Stäng">×</button>
-    <button class="lightbox__nav lightbox__nav--prev" aria-label="Föregående">‹</button>
-    <button class="lightbox__nav lightbox__nav--next" aria-label="Nästa">›</button>
-    <div class="lightbox__stage" id="lightboxStage"></div>
-    <div class="lightbox__caption" id="lightboxCaption"></div>
+    <!-- FAQ Section -->
+    <section class="emk-faq">
+      <h2>Vanliga frågor</h2>
+      <div class="emk-accordion">
+        <div class="emk-acc-item">
+          <button class="emk-acc-btn">Binder jag upp mig på långa avtal?</button>
+          <div class="emk-acc-content">
+            <p>Nej, vi tror på att leverera värde från dag ett. Därför har vi flexibla samarbetsformer och korta uppsägningstider om du av någon anledning skulle vilja avsluta samarbetet.</p>
+          </div>
+        </div>
+        <div class="emk-acc-item">
+          <button class="emk-acc-btn">Hur snabbt ser vi resultat av annonseringen?</button>
+          <div class="emk-acc-content">
+            <p>Med betald annonsering (Google/Meta Ads) kan du ofta se trafik och leads inom några dagar. För att algoritmerna ska optimeras fullt ut rekommenderar vi dock att utvärdera efter 1-3 månader.</p>
+          </div>
+        </div>
+        <div class="emk-acc-item">
+          <button class="emk-acc-btn">Vilka plattformar är ni specialister på?</button>
+          <div class="emk-acc-content">
+            <p>Vi arbetar dagligen med Google Ads, Meta (Facebook & Instagram), LinkedIn Ads, SEO och konverteringsoptimering för webbplatser.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="emk-final">
+      <h2>Redo att öka din försäljning?</h2>
+      <p>Säkra din rabatt redan idag. Boka ett helt förutsättningslöst möte där vi kikar på din nuvarande data.</p>
+      <a class="emk-btn emk-btn-gold" id="emk-cta-bottom" href="#emk-boka">
+        Gå till kalendern <span class="emk-arr">→</span>
+      </a>
+    </section>
+
+    <!-- Fine Print -->
+    <footer class="emk-fine">
+      <p>Erbjudandet gäller endast nya kunder till EMK Marketing och kan inte kombineras med andra rabatter. Erbjudandet måste nämnas vid första kontakt eller i bokningsformuläret och är giltigt till och med 30 juni 2026 kl. 23:59. Annonserbjudandet ger 15% rabatt på setup-avgiften för nya annonskonton. Webberbjudandet ger 20% rabatt på valfri SEO- eller UX-analys.</p>
+    </footer>
+
   </div>
 
-  <script src="script.js"></script>
+  <!-- Sticky Bottom CTA för Mobilen -->
+  <div class="emk-sticky-bottom">
+    <a class="emk-btn emk-btn-gold" href="#emk-boka">
+      Boka strategimöte <span class="emk-arr">→</span>
+    </a>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var root = document.getElementById('emk-lp');
+
+  // Smooth scroll
+  root.querySelectorAll('a[href="#emk-boka"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var tgt = document.getElementById('emk-boka');
+      if(tgt && a.getAttribute('href') === '#emk-boka'){
+        e.preventDefault();
+        tgt.scrollIntoView({behavior: 'smooth', block: 'start'});
+      }
+    });
+  });
+
+  // FAQ Accordion
+  root.querySelectorAll('.emk-acc-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      this.classList.toggle('active');
+      var content = this.nextElementSibling;
+      if(content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  });
+
+})();
+</script>
+
 </body>
 </html>
