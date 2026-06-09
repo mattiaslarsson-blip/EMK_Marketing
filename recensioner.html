@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recensioner – EMK Marketing</title>
+  <meta name="description" content="Vad våra kunder säger om att jobba med EMK Marketing.">
+  <link rel="icon" type="image/png" href="EMK_LOGO.png" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap');
+
+    body { margin: 0; background: #14130F; }
+
+    #emk-rev {
+      --ink: #F5F1E8;
+      --bg: #14130F;
+      --card: #1F1D17;
+      --line: #34312A;
+      --muted: #908C80;
+      --muted-2: #BDB8AB;
+      --gold: #DFA438;
+      --gold-deep: #E2B25C;
+      --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.45);
+      font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink); background: var(--bg); line-height: 1.6;
+      -webkit-font-smoothing: antialiased; position: relative; overflow: hidden; min-height: 100vh;
+    }
+    #emk-rev * { box-sizing: border-box; margin: 0; padding: 0; }
+    #emk-rev h1, #emk-rev h2, #emk-rev .emk-btn { font-family: 'Manrope', sans-serif; }
+    #emk-rev a:focus-visible, #emk-rev button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+
+    #emk-rev::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(100% 80% at 85% -5%, rgba(223, 164, 56, 0.12), transparent 50%),
+        radial-gradient(90% 70% at -5% 105%, rgba(122, 32, 33, 0.18), transparent 60%);
+    }
+    #emk-rev .emk-wrap { position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    #emk-rev .emk-nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0 8px; gap: 16px; }
+    #emk-rev .emk-nav__logo img { height: 34px; width: auto; display: block; }
+    #emk-rev .emk-nav__links { display: flex; gap: 26px; }
+    #emk-rev .emk-nav__links a { color: var(--muted-2); text-decoration: none; font-size: 14.5px; font-weight: 600; transition: color 0.2s ease; }
+    #emk-rev .emk-nav__links a:hover { color: var(--ink); }
+
+    /* Header */
+    #emk-rev .emk-head { text-align: center; padding: 64px 0 48px; }
+    #emk-rev .emk-back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 600; margin-bottom: 22px; transition: color 0.2s ease; }
+    #emk-rev .emk-back:hover { color: var(--gold); }
+    #emk-rev h1 { font-size: clamp(30px, 5.5vw, 46px); font-weight: 800; letter-spacing: -1px; margin-bottom: 14px; }
+    #emk-rev .emk-head p { color: var(--muted-2); font-size: 17px; max-width: 540px; margin: 0 auto; }
+
+    /* Grid */
+    #emk-rev .emk-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; padding-bottom: 20px; }
+    #emk-rev .emk-quote {
+      background: var(--card); border: 1px solid var(--line); border-radius: 24px;
+      padding: 34px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    #emk-rev .emk-quote:hover { transform: translateY(-3px); border-color: var(--gold); }
+    #emk-rev .emk-quote__mark { font-family: 'Manrope'; font-size: 52px; line-height: 0.5; color: var(--gold); margin-bottom: 16px; }
+    #emk-rev .emk-quote__text { font-size: 17px; color: var(--ink); line-height: 1.6; font-style: italic; margin-bottom: 24px; }
+    #emk-rev .emk-quote__by { margin-top: auto; }
+    #emk-rev .emk-quote__name { font-family: 'Manrope'; font-weight: 800; font-size: 15.5px; color: var(--ink); }
+    #emk-rev .emk-quote__role { display: block; font-size: 13.5px; color: var(--muted); margin-top: 3px; }
+
+    /* CTA */
+    #emk-rev .emk-cta { text-align: center; padding: 56px 0 72px; }
+    #emk-rev .emk-btn {
+      display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: #14130F;
+      font-weight: 700; font-size: 16px; padding: 16px 36px; border-radius: 100px; text-decoration: none;
+      box-shadow: 0 12px 28px -10px rgba(223, 164, 56, 0.5); transition: all 0.2s ease;
+    }
+    #emk-rev .emk-btn:hover { transform: translateY(-2px); background: #ecb44b; }
+
+    /* Footer */
+    #emk-rev .emk-footer { padding: 32px 0 48px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+    #emk-rev .emk-footer a { color: var(--muted); text-decoration: none; }
+    #emk-rev .emk-footer a:hover { color: var(--gold); }
+
+    @media(max-width: 768px) {
+      #emk-rev .emk-grid { grid-template-columns: 1fr; gap: 16px; }
+      #emk-rev .emk-head { padding: 44px 0 36px; }
+      #emk-rev .emk-quote { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="emk-rev">
+  <div class="emk-wrap">
+
+    <nav class="emk-nav">
+      <a href="index.html" class="emk-nav__logo" aria-label="EMK Marketing">
+        <img src="EMK_Marketing_logotyp_transparent.png" alt="EMK Marketing">
+      </a>
+      <div class="emk-nav__links">
+        <a href="index.html">Hem</a>
+        <a href="showreel.html">Showreel</a>
+      </div>
+    </nav>
+
+    <header class="emk-head">
+      <a href="index.html" class="emk-back">&larr; Tillbaka till startsidan</a>
+      <h1>Vad kunderna säger</h1>
+      <p>Riktiga ord från företag vi jobbar med – och fortsätter växa tillsammans med.</p>
+    </header>
+
+    <!-- LÄGG TILL FLER RECENSIONER: kopiera ett .emk-quote-block och fyll i text, namn och roll -->
+    <section class="emk-grid">
+
+      <div class="emk-quote">
+        <div class="emk-quote__mark">&ldquo;</div>
+        <p class="emk-quote__text">EMK Marketing har varit en avgörande partner i vår digitala utveckling — med kreativitet, struktur och leveranser i toppklass.</p>
+        <div class="emk-quote__by"><span class="emk-quote__name">Monika Lykvist</span><span class="emk-quote__role">Digital Marketing Manager, We Travel Group AB</span></div>
+      </div>
+
+      <div class="emk-quote">
+        <div class="emk-quote__mark">&ldquo;</div>
+        <p class="emk-quote__text">Vi anlitade EMK Marketing och fick en partner som verkligen förstod vårt varumärke och våra mål.</p>
+        <div class="emk-quote__by"><span class="emk-quote__name">Katarina Skugge</span><span class="emk-quote__role">Director of Marketing, Grand Tours</span></div>
+      </div>
+
+      <div class="emk-quote">
+        <div class="emk-quote__mark">&ldquo;</div>
+        <p class="emk-quote__text">EMK levererar innehåll som engagerar och bygger min profil — på riktigt.</p>
+        <div class="emk-quote__by"><span class="emk-quote__name">William Broman</span><span class="emk-quote__role">Idrottsinfluencer</span></div>
+      </div>
+
+    </section>
+
+    <div class="emk-cta">
+      <a class="emk-btn" href="index.html#emk-boka">Bli vår nästa nöjda kund <span>→</span></a>
+    </div>
+
+    <footer class="emk-footer">
+      <span>© <span id="emk-rev-year"></span> EMK Marketing. Alla rättigheter reserverade.</span>
+      <span><a href="mailto:info@emkmarketing.se">info@emkmarketing.se</a></span>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+  var y = document.getElementById('emk-rev-year');
+  if(y) y.textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

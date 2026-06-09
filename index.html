@@ -9,10 +9,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap');
 
-    body {
-      margin: 0;
-      background: #14130F;
-    }
+    body { margin: 0; background: #14130F; }
 
     #emk-lp {
       --ink: #F5F1E8;
@@ -32,20 +29,15 @@
       --cream: #F2EEE4;
       --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.3);
       --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.45);
-
       font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      position: relative;
-      overflow: hidden;
-      margin: 0;
+      color: var(--ink); background: var(--bg); line-height: 1.6;
+      -webkit-font-smoothing: antialiased; position: relative; overflow: hidden; margin: 0;
     }
     #emk-lp * { box-sizing: border-box; margin: 0; padding: 0; }
-    #emk-lp h1, #emk-lp h2, #emk-lp h3, #emk-lp h4, #emk-lp .emk-btn, #emk-lp .emk-stat-num {
-      font-family: 'Manrope', sans-serif;
-    }
+    #emk-lp h1, #emk-lp h2, #emk-lp h3, #emk-lp h4, #emk-lp .emk-btn, #emk-lp .emk-resx__num { font-family: 'Manrope', sans-serif; }
+
+    /* Synlig keyboard-focus (tillgänglighet) */
+    #emk-lp a:focus-visible, #emk-lp button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
 
     #emk-lp::before {
       content: ""; position: absolute; inset: 0; pointer-events: none;
@@ -56,48 +48,21 @@
     #emk-lp .emk-wrap { position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
     /* Top Nav */
-    #emk-lp .emk-nav {
-      position: relative; z-index: 2;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 22px 0 8px; gap: 16px;
-    }
+    #emk-lp .emk-nav { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; padding: 22px 0 8px; gap: 16px; }
     #emk-lp .emk-nav__logo img { height: 34px; width: auto; display: block; }
     #emk-lp .emk-nav__links { display: flex; align-items: center; gap: 26px; }
-    #emk-lp .emk-nav__links a {
-      color: var(--muted-2); text-decoration: none; font-size: 14.5px; font-weight: 600;
-      letter-spacing: 0.3px; transition: color 0.2s ease;
-    }
+    #emk-lp .emk-nav__links a { color: var(--muted-2); text-decoration: none; font-size: 14.5px; font-weight: 600; letter-spacing: 0.3px; transition: color 0.2s ease; }
     #emk-lp .emk-nav__links a:hover { color: var(--ink); }
 
     /* Hero Section */
-    #emk-lp .emk-hero {
-      padding: 72px 24px 80px;
-      text-align: center;
-      position: relative;
-      border-radius: 32px;
-      margin-top: 24px;
-      margin-bottom: 40px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-lg);
-    }
-    #emk-lp h1 {
-      font-size: clamp(36px, 6vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 20px;
-    }
+    #emk-lp .emk-hero { padding: 72px 24px 80px; text-align: center; position: relative; border-radius: 32px; margin-top: 24px; margin-bottom: 40px; background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow-lg); }
+    #emk-lp h1 { font-size: clamp(34px, 6vw, 56px); font-weight: 800; line-height: 1.08; letter-spacing: -1px; margin-bottom: 20px; }
     #emk-lp h1 em { font-style: normal; color: var(--gold); }
-    #emk-lp .emk-lede {
-      font-size: clamp(16px, 2.5vw, 19px); color: var(--muted-2); max-width: 620px; margin: 0 auto 40px; font-weight: 400;
-    }
+    #emk-lp .emk-lede { font-size: clamp(16px, 2.5vw, 19px); color: var(--muted-2); max-width: 620px; margin: 0 auto 40px; font-weight: 400; }
     #emk-lp .emk-hero__cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
     /* Buttons */
-    #emk-lp .emk-btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      background: var(--cream); color: #14130F; font-weight: 700; font-size: 16px;
-      padding: 16px 36px; border-radius: 100px; text-decoration: none; border: none; cursor: pointer;
-      box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.6);
-      transition: all 0.2s ease; letter-spacing: 0.5px;
-    }
+    #emk-lp .emk-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--cream); color: #14130F; font-weight: 700; font-size: 16px; padding: 16px 36px; border-radius: 100px; text-decoration: none; border: none; cursor: pointer; box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.6); transition: all 0.2s ease; letter-spacing: 0.5px; }
     #emk-lp .emk-btn:hover { transform: translateY(-2px); background: #fff; box-shadow: 0 18px 36px -10px rgba(0, 0, 0, 0.8); }
     #emk-lp .emk-btn .emk-arr { transition: transform 0.2s ease; }
     #emk-lp .emk-btn:hover .emk-arr { transform: translateX(5px); }
@@ -113,39 +78,45 @@
 
     /* Resultat */
     #emk-lp .emk-results { padding: 40px 0; }
-    #emk-lp .emk-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    #emk-lp .emk-stat {
-      background: var(--card); border: 1px solid var(--line); border-radius: 24px;
-      padding: 38px 28px; text-align: center; box-shadow: var(--shadow-sm);
-      transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-    #emk-lp .emk-stat:hover { transform: translateY(-3px); border-color: var(--gold); }
-    #emk-lp .emk-stat-num { display: block; font-size: clamp(42px, 7vw, 58px); font-weight: 800; line-height: 1; letter-spacing: -2px; color: var(--gold); }
-    #emk-lp .emk-stat-lab { display: block; margin-top: 16px; font-size: 14.5px; color: var(--muted-2); line-height: 1.55; }
+    #emk-lp .emk-resx__stage { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 28px; box-shadow: var(--shadow-lg); overflow: hidden; outline: none; touch-action: pan-y; }
+    #emk-lp .emk-resx__stage:focus-visible { box-shadow: var(--shadow-lg), 0 0 0 2px var(--gold); }
+    #emk-lp .emk-resx__viewport { position: relative; z-index: 1; overflow: hidden; }
+    #emk-lp .emk-resx__track { display: flex; will-change: transform; }
+    #emk-lp .emk-resx__slide { flex: 0 0 100%; position: relative; min-height: 380px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    #emk-lp .emk-resx__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; pointer-events: none; -webkit-user-drag: none; user-select: none; }
+    #emk-lp .emk-resx__scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(20,19,15,0.45) 0%, rgba(20,19,15,0.30) 38%, rgba(20,19,15,0.82) 100%), radial-gradient(72% 64% at 50% 48%, rgba(0,0,0,0.12), rgba(0,0,0,0.48)); }
+    #emk-lp .emk-resx__content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 48px 56px; user-select: none; }
+    #emk-lp .emk-resx__tag { font-family: 'Manrope'; font-size: 11.5px; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase; color: var(--gold); background: rgba(20,19,15,0.55); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border: 1px solid rgba(223,164,56,0.35); padding: 7px 14px; border-radius: 100px; margin-bottom: 22px; }
+    #emk-lp .emk-resx__num { font-family: 'Manrope'; font-weight: 800; font-size: clamp(58px, 12vw, 128px); line-height: 0.88; letter-spacing: -3px; color: var(--gold); font-variant-numeric: tabular-nums; text-shadow: 0 2px 30px rgba(0,0,0,0.55); }
+    #emk-lp .emk-resx__label { margin-top: 22px; max-width: 440px; font-size: 16.5px; color: rgba(245,241,232,0.92); line-height: 1.5; text-shadow: 0 1px 14px rgba(0,0,0,0.65); }
+    #emk-lp .emk-resx__arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.18); background: rgba(20,19,15,0.45); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5; transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+    #emk-lp .emk-resx__arrow:hover { border-color: var(--gold); color: var(--gold); background: rgba(20,19,15,0.7); }
+    #emk-lp .emk-resx__arrow svg { width: 20px; height: 20px; }
+    #emk-lp .emk-resx__arrow--prev { left: 18px; }
+    #emk-lp .emk-resx__arrow--next { right: 18px; }
+    #emk-lp .emk-resx__progress { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: rgba(255,255,255,0.10); z-index: 4; }
+    #emk-lp .emk-resx__bar { height: 100%; width: 0; background: var(--gold); }
+    #emk-lp .emk-resx__bar.run { animation: emkBar 4500ms linear forwards; }
+    #emk-lp .emk-resx__stage.is-paused .emk-resx__bar { animation-play-state: paused; }
+    @keyframes emkBar { from { width: 0 } to { width: 100% } }
+    #emk-lp .emk-resx__dots { display: flex; justify-content: center; gap: 10px; margin-top: 26px; }
+    #emk-lp .emk-resx__dot { width: 9px; height: 9px; border-radius: 50%; border: none; background: var(--line); cursor: pointer; padding: 0; transition: background 0.2s ease, transform 0.2s ease; }
+    #emk-lp .emk-resx__dot:hover { background: var(--muted); }
+    #emk-lp .emk-resx__dot.is-active { background: var(--gold); transform: scale(1.3); }
 
     /* Tjänster / Cards */
     #emk-lp .emk-services { padding: 60px 0 40px; scroll-margin-top: 24px; }
     #emk-lp .emk-svc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    /* Bild-baserade tjänstekort (1080x1350 / 4:5) */
-    #emk-lp .emk-svc { position: relative; display: block; aspect-ratio: 1080 / 1350; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow-sm); text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; background: var(--card); }
+    #emk-lp .emk-svc { position: relative; display: block; aspect-ratio: 1080 / 1920; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow-sm); text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; background: var(--card); }
     #emk-lp .emk-svc:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    #emk-lp .emk-svc img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-    #emk-lp .emk-svc__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.4) 42%, rgba(0,0,0,0) 70%); }
-    #emk-lp .emk-svc__tag { position: absolute; top: 14px; left: 14px; z-index: 2; font-family: 'Manrope'; font-size: 10.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink); background: rgba(20,19,15,0.7); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); padding: 6px 11px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); }
-    #emk-lp .emk-svc__body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 22px 20px; }
-    #emk-lp .emk-svc__title { font-family: 'Manrope'; font-weight: 800; font-size: 21px; color: #fff; letter-spacing: -0.3px; margin-bottom: 4px; }
-    #emk-lp .emk-svc__sub { font-size: 13.5px; color: rgba(245,241,232,0.78); }
-    #emk-lp .emk-card {
-      background: var(--card); border: 1px solid var(--line); border-radius: 24px;
-      padding: 32px; text-align: left; position: relative; overflow: hidden; box-shadow: var(--shadow-sm);
-      transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-      display: flex; flex-direction: column;
-    }
+    #emk-lp .emk-svc img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    #emk-lp .emk-svc:hover img { transform: scale(1.05); }
+    #emk-lp .emk-svc__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 38%, rgba(0,0,0,0) 65%); }
+    #emk-lp .emk-svc__body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 24px 18px; text-align: center; }
+    #emk-lp .emk-svc__title { font-family: 'Manrope'; font-weight: 800; font-size: clamp(17px, 1.9vw, 21px); color: #fff; letter-spacing: -0.3px; line-height: 1.15; }
+    #emk-lp .emk-card { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 32px; text-align: left; position: relative; overflow: hidden; box-shadow: var(--shadow-sm); transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease; display: flex; flex-direction: column; }
     #emk-lp .emk-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: var(--gold); }
-    #emk-lp .emk-svc-icon {
-      width: 46px; height: 46px; border-radius: 12px; background: var(--gold-light);
-      display: flex; align-items: center; justify-content: center; color: var(--gold); margin-bottom: 18px; flex-shrink: 0;
-    }
+    #emk-lp .emk-svc-icon { width: 46px; height: 46px; border-radius: 12px; background: var(--gold-light); display: flex; align-items: center; justify-content: center; color: var(--gold); margin-bottom: 18px; flex-shrink: 0; }
     #emk-lp .emk-svc-icon svg { width: 24px; height: 24px; }
     #emk-lp .emk-card h3 { font-size: 20px; font-weight: 700; margin: 0 0 8px; }
     #emk-lp .emk-card p { font-size: 15px; color: var(--muted-2); margin: 0; line-height: 1.6; }
@@ -154,62 +125,49 @@
     #emk-lp .emk-why { padding: 60px 0 40px; }
     #emk-lp .emk-logos { margin-bottom: 56px; text-align: center; }
     #emk-lp .emk-logos__title { font-family: 'Manrope'; font-size: 12px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
-    #emk-lp .emk-logowall { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-    #emk-lp .emk-logo {
-      font-family: 'Manrope'; font-size: 15px; font-weight: 700; color: var(--muted-2);
-      border: 1px solid var(--line); border-radius: 100px; padding: 9px 18px;
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-    #emk-lp .emk-logo:hover { color: var(--gold); border-color: var(--gold); }
+    #emk-lp .emk-bubbles { position: relative; height: 520px; margin-top: 30px; overflow: hidden; }
+    #emk-lp .emk-bubble { position: absolute; top: 0; left: 0; will-change: transform; transform-origin: center center; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.2px; color: var(--muted-2); background: rgba(31,29,23,0.6); border: 1px solid var(--line); border-radius: 100px; padding: 11px 20px; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: color 0.2s ease, border-color 0.2s ease, background 0.25s ease, box-shadow 0.3s ease; user-select: none; }
+    #emk-lp .emk-bubble:hover { color: var(--ink); border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold), 0 10px 30px -12px rgba(223,164,56,0.5); }
+    #emk-lp .emk-bubble.is-active { color: #14130F; background: var(--gold); border-color: var(--gold); box-shadow: 0 24px 60px -14px rgba(223,164,56,0.6); }
+    #emk-lp .emk-bubbles__card { position: absolute; left: 50%; top: 60%; transform: translateX(-50%) translateY(10px); width: min(440px, 86%); text-align: center; opacity: 0; pointer-events: none; transition: opacity 0.35s ease, transform 0.35s ease; z-index: 40; }
+    #emk-lp .emk-bubbles__card.is-visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+    #emk-lp .emk-bubbles__card-name { font-family: 'Manrope'; font-weight: 800; font-size: 19px; color: var(--gold); margin-bottom: 8px; letter-spacing: -0.2px; }
+    #emk-lp .emk-bubbles__card-desc { font-size: 15.5px; color: var(--muted-2); line-height: 1.55; }
+    #emk-lp .emk-bubbles__hint { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); font-size: 13px; color: var(--muted); letter-spacing: 0.3px; transition: opacity 0.3s ease; pointer-events: none; }
+    #emk-lp .emk-bubbles.has-active .emk-bubbles__hint { opacity: 0; }
     #emk-lp .emk-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
     /* Referenser */
     #emk-lp .emk-refs { padding: 60px 0 40px; }
-    #emk-lp .emk-ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    #emk-lp .emk-quote {
-      background: var(--card); border: 1px solid var(--line); border-radius: 24px;
-      padding: 32px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-    #emk-lp .emk-quote:hover { transform: translateY(-3px); border-color: var(--gold); }
-    #emk-lp .emk-quote__mark { font-family: 'Manrope'; font-size: 48px; line-height: 0.6; color: var(--gold); margin-bottom: 8px; }
-    #emk-lp .emk-quote__text { font-size: 16px; color: var(--ink); line-height: 1.6; font-style: italic; margin-bottom: 20px; }
-    #emk-lp .emk-quote__by { margin-top: auto; }
-    #emk-lp .emk-quote__name { font-family: 'Manrope'; font-weight: 700; font-size: 15px; color: var(--ink); }
-    #emk-lp .emk-quote__role { display: block; font-size: 13.5px; color: var(--muted); margin-top: 2px; }
+    #emk-lp .emk-revq { max-width: 620px; }
+    #emk-lp .emk-revq__mark { font-family: 'Manrope'; font-size: 64px; line-height: 0.5; color: var(--gold); margin-bottom: 18px; }
+    #emk-lp .emk-revq__text { font-size: clamp(19px, 2.6vw, 26px); line-height: 1.5; font-style: italic; color: var(--ink); margin-bottom: 26px; }
+    #emk-lp .emk-revq__name { font-family: 'Manrope'; font-weight: 800; font-size: 16px; color: var(--ink); }
+    #emk-lp .emk-revq__role { display: block; font-size: 13.5px; color: var(--muted); margin-top: 3px; }
+    #emk-lp .emk-refs__more { text-align: center; margin-top: 34px; }
 
     /* FAQ Section */
     #emk-lp .emk-faq { padding: 60px 0; max-width: 720px; margin: 0 auto; }
     #emk-lp .emk-faq h2 { font-size: clamp(26px, 4.5vw, 36px); font-weight: 800; letter-spacing: -0.8px; text-align: center; margin-bottom: 40px; }
     #emk-lp .emk-accordion { border-top: 1px solid var(--line); }
     #emk-lp .emk-acc-item { border-bottom: 1px solid var(--line); }
-    #emk-lp .emk-acc-btn {
-      width: 100%; text-align: left; background: none; border: none;
-      padding: 24px 0; font-size: 18px; font-weight: 700; color: var(--ink);
-      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
-      font-family: 'Manrope', sans-serif; transition: color 0.2s;
-    }
+    #emk-lp .emk-acc-btn { width: 100%; text-align: left; background: none; border: none; padding: 24px 0; font-size: 18px; font-weight: 700; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-family: 'Manrope', sans-serif; transition: color 0.2s; }
     #emk-lp .emk-acc-btn:hover { color: var(--gold); }
-    #emk-lp .emk-acc-btn::after {
-      content: "+"; font-size: 24px; font-weight: 400; transition: transform 0.3s ease; color: var(--muted);
-    }
+    #emk-lp .emk-acc-btn::after { content: "+"; font-size: 24px; font-weight: 400; transition: transform 0.3s ease; color: var(--muted); flex-shrink: 0; }
     #emk-lp .emk-acc-btn.active::after { transform: rotate(45deg); color: var(--gold); }
-    #emk-lp .emk-acc-content {
-      max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
-    }
-    #emk-lp .emk-acc-content p {
-      padding-bottom: 24px; color: var(--muted-2); font-size: 16px; line-height: 1.6; padding-right: 24px;
-    }
+    #emk-lp .emk-acc-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    #emk-lp .emk-acc-content p { padding-bottom: 24px; color: var(--muted-2); font-size: 16px; line-height: 1.6; padding-right: 24px; }
 
-    /* Booking Section */
+    /* Booking / Kontakt-CTA */
     #emk-lp .emk-boka { padding: 70px 0 40px; scroll-margin-top: 24px; }
     #emk-lp .emk-boka h2 { font-size: clamp(28px, 5vw, 40px); font-weight: 800; letter-spacing: -1px; text-align: center; margin-bottom: 12px; }
     #emk-lp .emk-boka .emk-boka-sub { text-align: center; color: var(--muted-2); font-size: 16px; max-width: 540px; margin: 0 auto 40px; }
     #emk-lp .emk-boka .emk-boka-sub b { color: var(--gold); font-weight: 700; background: var(--gold-light); padding: 2px 6px; border-radius: 4px;}
-    #emk-lp .emk-widget-box {
-      background: var(--card); border: 1px solid var(--line); border-radius: 24px;
-      padding: 40px 30px; box-shadow: var(--shadow-lg); min-height: 400px; display:flex; align-items:center; justify-content:center; flex-direction:column;
-    }
+    #emk-lp .emk-cta-box { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 56px 32px; box-shadow: var(--shadow-lg); text-align: center; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+    #emk-lp .emk-cta-box h3 { font-size: clamp(22px, 3.5vw, 28px); font-weight: 800; letter-spacing: -0.5px; max-width: 460px; }
+    #emk-lp .emk-cta-box .emk-cta-alt { font-size: 15px; color: var(--muted); }
+    #emk-lp .emk-cta-box .emk-cta-alt a { color: var(--gold); text-decoration: none; font-weight: 700; }
+    #emk-lp .emk-cta-box .emk-cta-alt a:hover { text-decoration: underline; }
 
     /* Footer */
     #emk-lp .emk-footer { margin-top: 40px; padding: 56px 0 40px; border-top: 1px solid var(--line); }
@@ -222,57 +180,74 @@
     #emk-lp .emk-footer__col a:hover { color: var(--gold); }
     #emk-lp .emk-footer__social { display: flex; gap: 16px; margin-top: 4px; }
     #emk-lp .emk-footer__social a { display: inline-block; margin-bottom: 0; }
-    #emk-lp .emk-footer__bottom {
-      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-      margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line);
-      font-size: 13px; color: var(--muted);
-    }
+    #emk-lp .emk-footer__bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
     #emk-lp .emk-footer__bottom a { color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
     #emk-lp .emk-footer__bottom a:hover { color: var(--gold); }
 
     /* Sticky Bottom Mobile Bar */
-    #emk-lp .emk-sticky-bottom {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(20, 19, 15, 0.95);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      padding: 16px 20px;
-      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
-      z-index: 99;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-    #emk-lp .emk-sticky-bottom .emk-btn { width: 100%; padding: 14px 20px; }
+    #emk-lp .emk-sticky-bottom { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(20, 19, 15, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 14px 20px calc(14px + env(safe-area-inset-bottom)); box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4); z-index: 99; border-top: 1px solid rgba(255,255,255,0.06); }
+    #emk-lp .emk-sticky-bottom .emk-btn { width: 100%; padding: 15px 20px; }
 
     /* Animations */
     #emk-lp .emk-rise { opacity: 0; transform: translateY(20px); animation: emkRise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     #emk-lp .emk-d1 { animation-delay: 0.1s } #emk-lp .emk-d2 { animation-delay: 0.2s } #emk-lp .emk-d3 { animation-delay: 0.3s } #emk-lp .emk-d4 { animation-delay: 0.4s }
     @keyframes emkRise { to { opacity: 1; transform: translateY(0) } }
-    @media (prefers-reduced-motion: reduce) { #emk-lp .emk-rise { animation: none; opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { #emk-lp .emk-rise { animation: none; opacity: 1; transform: none; } #emk-lp .emk-svc:hover img { transform: none; } #emk-lp .emk-resx__track { transition: none !important; } #emk-lp .emk-resx__bar.run { animation: none; } }
 
-    /* Responsive adjustments */
+    /* Responsive — surfplatta */
+    @media(max-width: 900px) {
+      #emk-lp .emk-svc-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    }
+
+    /* Responsive — mobil */
     @media(max-width: 768px) {
-      #emk-lp { padding-bottom: 90px; }
-      #emk-lp .emk-nav__links { gap: 16px; }
-      #emk-lp .emk-stats { grid-template-columns: 1fr; gap: 16px; }
+      #emk-lp { padding-bottom: 96px; }
+      #emk-lp .emk-wrap { padding: 0 18px; }
+      #emk-lp .emk-nav { padding: 18px 0 4px; }
+      #emk-lp .emk-nav__logo img { height: 30px; }
+      #emk-lp .emk-nav__links { gap: 20px; }
+      #emk-lp .emk-nav__links a { font-size: 14px; }
+      #emk-lp .emk-nav__links a[href="#emk-boka"] { display: none; }
+      #emk-lp .emk-hero { padding: 48px 18px 56px; border-radius: 24px; margin-top: 16px; margin-bottom: 32px; }
+      #emk-lp .emk-results { padding: 24px 0; }
+      #emk-lp .emk-resx__slide { min-height: 320px; }
+      #emk-lp .emk-resx__content { padding: 40px 22px; }
+      #emk-lp .emk-resx__num { letter-spacing: -2px; }
+      #emk-lp .emk-resx__label { font-size: 15.5px; }
+      #emk-lp .emk-resx__arrow { width: 40px; height: 40px; }
+      #emk-lp .emk-resx__arrow--prev { left: 8px; }
+      #emk-lp .emk-resx__arrow--next { right: 8px; }
+      #emk-lp .emk-services { padding: 44px 0 32px; }
       #emk-lp .emk-svc-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      #emk-lp .emk-grid3 { grid-template-columns: 1fr; gap: 20px; }
-      #emk-lp .emk-ref-grid { grid-template-columns: 1fr; gap: 20px; }
-      #emk-lp .emk-hero { padding: 48px 16px 64px; border-radius: 24px; margin-top: 16px; }
-      #emk-lp .emk-widget-box { padding: 24px 16px; border-radius: 16px;}
-      #emk-lp .emk-card { padding: 32px 24px; border-radius: 20px;}
+      #emk-lp .emk-svc__body { padding: 18px 12px; }
+      #emk-lp .emk-why { padding: 44px 0 32px; }
+      #emk-lp .emk-bubbles { height: 580px; margin-top: 22px; }
+      #emk-lp .emk-bubble { font-size: 12.5px; padding: 9px 14px; }
+      #emk-lp .emk-bubbles__card-name { font-size: 17px; }
+      #emk-lp .emk-bubbles__card-desc { font-size: 14.5px; }
+      #emk-lp .emk-grid3 { grid-template-columns: 1fr; gap: 16px; }
+      #emk-lp .emk-card { padding: 28px 24px; border-radius: 20px; }
+      #emk-lp .emk-refs { padding: 44px 0 32px; }
+      #emk-lp .emk-faq { padding: 44px 0; }
+      #emk-lp .emk-boka { padding: 48px 0 32px; }
+      #emk-lp .emk-cta-box { padding: 40px 24px; border-radius: 20px; }
+      #emk-lp .emk-sec-head { margin-bottom: 36px; }
+      #emk-lp .emk-footer { padding: 44px 0 32px; }
       #emk-lp .emk-footer__inner { grid-template-columns: 1fr; gap: 32px; }
+      #emk-lp .emk-footer__bottom { flex-direction: column; gap: 8px; }
       #emk-lp .emk-sticky-bottom { display: block; }
+    }
+
+    /* Responsive — liten mobil */
+    @media(max-width: 380px) {
+      #emk-lp .emk-nav__links { gap: 14px; }
+      #emk-lp .emk-hero__cta .emk-btn { width: 100%; }
     }
   </style>
 </head>
 <body>
 
 <div id="emk-lp">
-
   <div class="emk-wrap">
 
     <!-- Top Nav -->
@@ -291,14 +266,9 @@
     <header class="emk-hero">
       <h1 class="emk-rise emk-d1">Skala din affär med <em>lönsam marknadsföring.</em></h1>
       <p class="emk-lede emk-rise emk-d2">Vi är EMK Marketing. Vi hjälper ambitiösa företag att förvandla klick till betalande kunder genom datadrivna strategier, träffsäker annonsering och genuint innehåll.</p>
-
       <div class="emk-hero__cta emk-rise emk-d3">
-        <a class="emk-btn" id="emk-cta-top" href="#emk-boka">
-          Boka ett fritt strategimöte <span class="emk-arr">→</span>
-        </a>
-        <a class="emk-btn emk-btn-ghost" href="#emk-tjanster">
-          Se våra tjänster
-        </a>
+        <a class="emk-btn" id="emk-cta-top" href="#emk-boka">Boka ett fritt strategimöte <span class="emk-arr">→</span></a>
+        <a class="emk-btn emk-btn-ghost" href="#emk-tjanster">Se våra tjänster</a>
       </div>
     </header>
 
@@ -308,18 +278,75 @@
         <h2>Mätbara resultat som känns på sista raden.</h2>
         <p>Bra marknadsföring är en investering, inte en kostnad. Vi mäter vår framgång i din tillväxt.</p>
       </div>
-      <div class="emk-stats">
-        <div class="emk-stat">
-          <span class="emk-stat-num">+240%</span>
-          <span class="emk-stat-lab">Genomsnittlig ökning av ROAS (Return On Ad Spend) för våra e-handelskunder under första kvartalet.</span>
+      <div class="emk-resx">
+        <div class="emk-resx__stage" data-dur="4500" aria-roledescription="carousel" aria-label="Resultat">
+          <div class="emk-resx__viewport">
+            <div class="emk-resx__track">
+              <!-- BYT BILD: ersätt src nedan med din egen bild, t.ex. images/resultat/app-kampanj.jpg (liggande, ca 1600x900) -->
+              <div class="emk-resx__slide">
+                <img class="emk-resx__img" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1600&h=900&q=80" alt="" draggable="false">
+                <div class="emk-resx__scrim"></div>
+                <div class="emk-resx__content">
+                  <span class="emk-resx__tag">App · Paid Social</span>
+                  <span class="emk-resx__num" data-prefix="" data-value="0.7" data-dec="1" data-suffix="&nbsp;kr">0,7&nbsp;kr</span>
+                  <p class="emk-resx__label">i snittkostnad per app-nedladdning under en sexveckorskampanj.</p>
+                </div>
+              </div>
+              <!-- BYT BILD -->
+              <div class="emk-resx__slide">
+                <img class="emk-resx__img" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1600&h=900&q=80" alt="" draggable="false">
+                <div class="emk-resx__scrim"></div>
+                <div class="emk-resx__content">
+                  <span class="emk-resx__tag">Räckvidd · 2 mån</span>
+                  <span class="emk-resx__num" data-prefix="" data-value="299000" data-dec="0" data-suffix="">299 000</span>
+                  <p class="emk-resx__label">konton nådda för en kund på bara två månader.</p>
+                </div>
+              </div>
+              <!-- BYT BILD -->
+              <div class="emk-resx__slide">
+                <img class="emk-resx__img" src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=1600&h=900&q=80" alt="" draggable="false">
+                <div class="emk-resx__scrim"></div>
+                <div class="emk-resx__content">
+                  <span class="emk-resx__tag">Strategi</span>
+                  <span class="emk-resx__num" data-prefix="+" data-value="565" data-dec="0" data-suffix="&nbsp;%">+565&nbsp;%</span>
+                  <p class="emk-resx__label">ökning i räckvidd efter ny innehålls- och annonsstrategi.</p>
+                </div>
+              </div>
+              <!-- BYT BILD -->
+              <div class="emk-resx__slide">
+                <img class="emk-resx__img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&h=900&q=80" alt="" draggable="false">
+                <div class="emk-resx__scrim"></div>
+                <div class="emk-resx__content">
+                  <span class="emk-resx__tag">Konvertering</span>
+                  <span class="emk-resx__num" data-prefix="+" data-value="1940" data-dec="0" data-suffix="&nbsp;%">+1 940&nbsp;%</span>
+                  <p class="emk-resx__label">fler externa länkklick — trafik rakt in i affären.</p>
+                </div>
+              </div>
+              <!-- BYT BILD -->
+              <div class="emk-resx__slide">
+                <img class="emk-resx__img" src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1600&h=900&q=80" alt="" draggable="false">
+                <div class="emk-resx__scrim"></div>
+                <div class="emk-resx__content">
+                  <span class="emk-resx__tag">Tillväxt</span>
+                  <span class="emk-resx__num" data-prefix="+" data-value="50.8" data-dec="1" data-suffix="&nbsp;%">+50,8&nbsp;%</span>
+                  <p class="emk-resx__label">följartillväxt under perioden, helt organiskt driven.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="emk-resx__arrow emk-resx__arrow--prev" aria-label="Föregående resultat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+          <button class="emk-resx__arrow emk-resx__arrow--next" aria-label="Nästa resultat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></button>
+
+          <div class="emk-resx__progress"><div class="emk-resx__bar"></div></div>
         </div>
-        <div class="emk-stat">
-          <span class="emk-stat-num">3x</span>
-          <span class="emk-stat-lab">Så mycket ökar våra B2B-kunder ofta sin leadgenerering efter en teknisk webbanalys och ny annonsstrategi.</span>
-        </div>
-        <div class="emk-stat">
-          <span class="emk-stat-num">0 kr</span>
-          <span class="emk-stat-lab">Spenderat på &rdquo;fluff&rdquo;. Vi lägger din budget där datan visar att den ger bäst avkastning.</span>
+
+        <div class="emk-resx__dots">
+          <button class="emk-resx__dot is-active" aria-label="Resultat 1"></button>
+          <button class="emk-resx__dot" aria-label="Resultat 2"></button>
+          <button class="emk-resx__dot" aria-label="Resultat 3"></button>
+          <button class="emk-resx__dot" aria-label="Resultat 4"></button>
+          <button class="emk-resx__dot" aria-label="Resultat 5"></button>
         </div>
       </div>
     </section>
@@ -330,104 +357,80 @@
         <h2>Så hjälper vi dig att ta marknadsandelar.</h2>
         <p>Heltäckande lösningar eller riktade punktinsatser – vi anpassar strategin efter dina mål.</p>
       </div>
+      <!-- PÅ RIKTIGA SAJTEN: byt img-src nedan till dina 1080x1920-bilder (9:16), t.ex. images/foto/... -->
       <div class="emk-svc-grid">
-
-        <!-- PLATSHÅLLARBILDER: byt src mot dina egna 1080x1350-bilder (4:5) -->
         <div class="emk-svc">
-          <img src="images/foto/traningsapp/Bildspel10.JPG" alt="Paid Social" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1080&h=1920&q=80" alt="Paid Social">
           <div class="emk-svc__overlay"></div>
-          <span class="emk-svc__tag">01 · Paid</span>
-          <div class="emk-svc__body">
-            <div class="emk-svc__title">Paid Social</div>
-            <div class="emk-svc__sub">Meta · TikTok · LinkedIn</div>
-          </div>
+          <div class="emk-svc__body"><div class="emk-svc__title">Paid Social</div></div>
         </div>
-
         <div class="emk-svc">
-          <img src="images/foto/traningsapp/Bildspel19.JPG" alt="Google Ads" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1080&h=1920&q=80" alt="Google Ads">
           <div class="emk-svc__overlay"></div>
-          <span class="emk-svc__tag">02 · SEM</span>
-          <div class="emk-svc__body">
-            <div class="emk-svc__title">Google Ads</div>
-            <div class="emk-svc__sub">Sök · Display · Shopping</div>
-          </div>
+          <div class="emk-svc__body"><div class="emk-svc__title">Google Ads</div></div>
         </div>
-
         <div class="emk-svc">
-          <img src="images/foto/foreningar/Bildspel16.JPG" alt="Organisk tillväxt" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1080&h=1920&q=80" alt="Organisk tillväxt">
           <div class="emk-svc__overlay"></div>
-          <span class="emk-svc__tag">03 · SEO</span>
-          <div class="emk-svc__body">
-            <div class="emk-svc__title">Organisk tillväxt</div>
-            <div class="emk-svc__sub">SEO · Innehåll · Community</div>
-          </div>
+          <div class="emk-svc__body"><div class="emk-svc__title">Organisk tillväxt</div></div>
         </div>
-
         <a class="emk-svc" href="showreel.html">
-          <img src="images/foto/ovrigt/DSC02274.JPG" alt="Foto &amp; film" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1080&h=1920&q=80" alt="Foto &amp; film">
           <div class="emk-svc__overlay"></div>
-          <span class="emk-svc__tag">04 · Content</span>
-          <div class="emk-svc__body">
-            <div class="emk-svc__title">Foto &amp; film</div>
-            <div class="emk-svc__sub">Foto · Reels · Drönarfilm</div>
-          </div>
+          <div class="emk-svc__body"><div class="emk-svc__title">Foto &amp; film</div></div>
         </a>
-
       </div>
     </section>
 
     <!-- 4. Varför kunder väljer oss + logotyper -->
     <section class="emk-why">
-      <div class="emk-sec-head">
-        <h2>Varför företag stannar hos EMK</h2>
-      </div>
-
+      <div class="emk-sec-head"><h2>Varför företag stannar hos EMK</h2></div>
       <div class="emk-logos">
         <div class="emk-logos__title">Företag vi hjälpt växa</div>
-        <div class="emk-logowall">
-          <span class="emk-logo">Fjällfrid</span>
-          <span class="emk-logo">Indie Pen Publishing</span>
-          <span class="emk-logo">BallersApp</span>
-          <span class="emk-logo">Heylinn</span>
-          <span class="emk-logo">Linsblockers</span>
-          <span class="emk-logo">Hammarbygymnasterna</span>
-          <span class="emk-logo">STG</span>
-          <span class="emk-logo">Tapas28</span>
-          <span class="emk-logo">Caliente</span>
-          <span class="emk-logo">GTG Golf</span>
-          <span class="emk-logo">Joina</span>
-          <span class="emk-logo">Reseskaparna</span>
-          <span class="emk-logo">Grand Tours</span>
-          <span class="emk-logo">Äventyrsresor</span>
-          <span class="emk-logo">Föreningen Ekonomerna</span>
-          <span class="emk-logo">Festivalborg</span>
-          <span class="emk-logo">Svenska Gymnastikförbundet</span>
-          <span class="emk-logo">The Lobby</span>
-          <span class="emk-logo">Coach Dan Gymnastics</span>
-          <span class="emk-logo">We Travel Group</span>
-          <span class="emk-logo">William Broman</span>
+        <!-- BUBBELMOLN: data-desc = kort beskrivning per företag. Redigera fritt — verifiera gärna att varje rad stämmer. -->
+        <div class="emk-bubbles" id="emk-bubbles">
+          <button class="emk-bubble" data-desc="Stuguthyrning i Bruksvallarna. SEO och Google Ads.">Fjällfrid</button>
+          <button class="emk-bubble" data-desc="Bokförlag. Marknadsföring och Shopify.">Indie Pen Publishing</button>
+          <button class="emk-bubble" data-desc="App. Paid social och nedladdningskampanjer.">BallersApp</button>
+          <button class="emk-bubble" data-desc="Varumärke. Content och annonsering.">Heylinn</button>
+          <button class="emk-bubble" data-desc="Varumärke. Sociala medier och content.">Linsblockers</button>
+          <button class="emk-bubble" data-desc="Gymnastikförening. Innehåll och digital närvaro.">Hammarbygymnasterna</button>
+          <button class="emk-bubble" data-desc="Förening. Sociala medier och content.">STG</button>
+          <button class="emk-bubble" data-desc="Foto, film och sociala medier.">Tapas28</button>
+          <button class="emk-bubble" data-desc="Foto, film och sociala medier.">Caliente</button>
+          <button class="emk-bubble" data-desc="Golf. Annonsering och content.">GTG Golf</button>
+          <button class="emk-bubble" data-desc="Varumärke. Paid social och tillväxt.">Joina</button>
+          <button class="emk-bubble" data-desc="Resebyrå. Content och annonsering.">Reseskaparna</button>
+          <button class="emk-bubble" data-desc="Resebyrå. Strategi, content och annonser.">Grand Tours</button>
+          <button class="emk-bubble" data-desc="Resebyrå. Sociala medier och annonsering.">Äventyrsresor</button>
+          <button class="emk-bubble" data-desc="Studentförening. Innehåll och närvaro.">Föreningen Ekonomerna</button>
+          <button class="emk-bubble" data-desc="Valborgsfestival. Film- och videoproduktion.">Festivalborg</button>
+          <button class="emk-bubble" data-desc="Förbund. Innehåll och kommunikation.">Svenska Gymnastikförbundet</button>
+          <button class="emk-bubble" data-desc="Varumärke. Content och sociala medier.">The Lobby</button>
+          <button class="emk-bubble" data-desc="Gymnastik. Innehåll och digital närvaro.">Coach Dan Gymnastics</button>
+          <button class="emk-bubble" data-desc="Resekoncern. Digital marknadsföring och strategi.">We Travel Group</button>
+          <button class="emk-bubble" data-desc="Idrottsinfluencer. Content som bygger profilen.">William Broman</button>
+
+          <div class="emk-bubbles__card" id="emk-bubbles-card" aria-live="polite">
+            <div class="emk-bubbles__card-name"></div>
+            <div class="emk-bubbles__card-desc"></div>
+          </div>
+          <div class="emk-bubbles__hint">Klicka på en bubbla för att läsa mer</div>
         </div>
       </div>
-
       <div class="emk-grid3">
         <div class="emk-card">
-          <div class="emk-svc-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><rect x="7" y="11" width="3" height="6"></rect><rect x="13" y="7" width="3" height="10"></rect></svg>
-          </div>
+          <div class="emk-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><rect x="7" y="11" width="3" height="6"></rect><rect x="13" y="7" width="3" height="10"></rect></svg></div>
           <h3>Data före magkänsla.</h3>
           <p>Vi fattar inga beslut baserat på vad vi tror fungerar. Vi A/B-testar, analyserar och optimerar kontinuerligt för att maximera din ROI.</p>
         </div>
         <div class="emk-card">
-          <div class="emk-svc-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-          </div>
+          <div class="emk-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
           <h3>Transparens i varje steg.</h3>
           <p>Hos oss vet du alltid exakt vad vi gör och varför. Du får tydliga, lättbegripliga rapporter som visar vad din investering faktiskt genererar.</p>
         </div>
         <div class="emk-card">
-          <div class="emk-svc-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-          </div>
+          <div class="emk-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
           <h3>Ett genuint partnerskap.</h3>
           <p>Vi agerar som en förlängning av ditt eget team. Vi lär känna din affär på djupet och finns alltid ett snabbt samtal bort när du behöver oss.</p>
         </div>
@@ -436,35 +439,51 @@
 
     <!-- 5. Referenser från kunder -->
     <section class="emk-refs">
-      <div class="emk-sec-head">
-        <h2>Vad kunderna säger</h2>
-        <p>Riktiga ord från företag vi jobbar med. <!-- PLATSHÅLLARE: byt ut mot riktiga omdömen --></p>
+      <div class="emk-sec-head"><h2>Vad kunderna säger</h2><p>Riktiga ord från företag vi jobbar med.</p></div>
+      <div class="emk-resx">
+        <div class="emk-resx__stage" data-dur="5500" aria-roledescription="carousel" aria-label="Recensioner">
+          <div class="emk-resx__viewport">
+            <div class="emk-resx__track">
+              <div class="emk-resx__slide">
+                <div class="emk-resx__content emk-revq">
+                  <div class="emk-revq__mark">&ldquo;</div>
+                  <p class="emk-revq__text">EMK Marketing har varit en avgörande partner i vår digitala utveckling — med kreativitet, struktur och leveranser i toppklass.</p>
+                  <div class="emk-revq__by"><span class="emk-revq__name">Monika Lykvist</span><span class="emk-revq__role">Digital Marketing Manager, We Travel Group AB</span></div>
+                </div>
+              </div>
+              <div class="emk-resx__slide">
+                <div class="emk-resx__content emk-revq">
+                  <div class="emk-revq__mark">&ldquo;</div>
+                  <p class="emk-revq__text">Vi anlitade EMK Marketing och fick en partner som verkligen förstod vårt varumärke och våra mål.</p>
+                  <div class="emk-revq__by"><span class="emk-revq__name">Katarina Skugge</span><span class="emk-revq__role">Director of Marketing, Grand Tours</span></div>
+                </div>
+              </div>
+              <div class="emk-resx__slide">
+                <div class="emk-resx__content emk-revq">
+                  <div class="emk-revq__mark">&ldquo;</div>
+                  <p class="emk-revq__text">EMK levererar innehåll som engagerar och bygger min profil — på riktigt.</p>
+                  <div class="emk-revq__by"><span class="emk-revq__name">William Broman</span><span class="emk-revq__role">Idrottsinfluencer</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="emk-resx__arrow emk-resx__arrow--prev" aria-label="Föregående recension"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+          <button class="emk-resx__arrow emk-resx__arrow--next" aria-label="Nästa recension"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></button>
+
+          <div class="emk-resx__progress"><div class="emk-resx__bar"></div></div>
+        </div>
+
+        <div class="emk-resx__dots">
+          <button class="emk-resx__dot is-active" aria-label="Recension 1"></button>
+          <button class="emk-resx__dot" aria-label="Recension 2"></button>
+          <button class="emk-resx__dot" aria-label="Recension 3"></button>
+        </div>
       </div>
-      <div class="emk-ref-grid">
-        <div class="emk-quote">
-          <div class="emk-quote__mark">&ldquo;</div>
-          <p class="emk-quote__text">EMK tog vår annonsering till en helt ny nivå. Vi fick fler leads redan första månaden och äntligen koll på vad som faktiskt fungerar.</p>
-          <div class="emk-quote__by">
-            <span class="emk-quote__name">Förnamn Efternamn</span>
-            <span class="emk-quote__role">Roll, Företag</span>
-          </div>
-        </div>
-        <div class="emk-quote">
-          <div class="emk-quote__mark">&ldquo;</div>
-          <p class="emk-quote__text">Proffsiga, snabba och lätta att jobba med. Materialet de levererade höjde hela vårt varumärke och engagemanget på sociala medier ökade direkt.</p>
-          <div class="emk-quote__by">
-            <span class="emk-quote__name">Förnamn Efternamn</span>
-            <span class="emk-quote__role">Roll, Företag</span>
-          </div>
-        </div>
-        <div class="emk-quote">
-          <div class="emk-quote__mark">&ldquo;</div>
-          <p class="emk-quote__text">Känns som att ha ett eget marknadsteam fast utan att anställa. Tydlig rapportering och resultat vi kan följa varje vecka.</p>
-          <div class="emk-quote__by">
-            <span class="emk-quote__name">Förnamn Efternamn</span>
-            <span class="emk-quote__role">Roll, Företag</span>
-          </div>
-        </div>
+
+      <!-- LÄNK TILL FRAMTIDA RECENSIONSSIDA: byt href när sidan finns -->
+      <div class="emk-refs__more">
+        <a class="emk-btn emk-btn-ghost" href="recensioner.html">Läs alla recensioner <span class="emk-arr">&rarr;</span></a>
       </div>
     </section>
 
@@ -472,38 +491,20 @@
     <section class="emk-faq">
       <h2>Vanliga frågor</h2>
       <div class="emk-accordion">
-        <div class="emk-acc-item">
-          <button class="emk-acc-btn">Binder jag upp mig på långa avtal?</button>
-          <div class="emk-acc-content">
-            <p>Nej, vi tror på att leverera värde från dag ett. Därför har vi flexibla samarbetsformer och korta uppsägningstider om du av någon anledning skulle vilja avsluta samarbetet.</p>
-          </div>
-        </div>
-        <div class="emk-acc-item">
-          <button class="emk-acc-btn">Hur snabbt ser vi resultat av annonseringen?</button>
-          <div class="emk-acc-content">
-            <p>Med betald annonsering (Google/Meta Ads) kan du ofta se trafik och leads inom några dagar. För att algoritmerna ska optimeras fullt ut rekommenderar vi dock att utvärdera efter 1-3 månader.</p>
-          </div>
-        </div>
-        <div class="emk-acc-item">
-          <button class="emk-acc-btn">Vilka plattformar är ni specialister på?</button>
-          <div class="emk-acc-content">
-            <p>Vi arbetar dagligen med Google Ads, Meta (Facebook & Instagram), TikTok Ads, LinkedIn Ads, SEO och konverteringsoptimering för webbplatser.</p>
-          </div>
-        </div>
+        <div class="emk-acc-item"><button class="emk-acc-btn">Binder jag upp mig på långa avtal?</button><div class="emk-acc-content"><p>Nej, vi tror på att leverera värde från dag ett. Därför har vi flexibla samarbetsformer och korta uppsägningstider om du av någon anledning skulle vilja avsluta samarbetet.</p></div></div>
+        <div class="emk-acc-item"><button class="emk-acc-btn">Hur snabbt ser vi resultat av annonseringen?</button><div class="emk-acc-content"><p>Med betald annonsering (Google/Meta Ads) kan du ofta se trafik och leads inom några dagar. För att algoritmerna ska optimeras fullt ut rekommenderar vi dock att utvärdera efter 1-3 månader.</p></div></div>
+        <div class="emk-acc-item"><button class="emk-acc-btn">Vilka plattformar är ni specialister på?</button><div class="emk-acc-content"><p>Vi arbetar dagligen med Google Ads, Meta (Facebook & Instagram), TikTok Ads, LinkedIn Ads, SEO och konverteringsoptimering för webbplatser.</p></div></div>
       </div>
     </section>
 
-    <!-- 7. Bokning (Calendly) -->
+    <!-- 7. Boka / Kontakt -->
     <section class="emk-boka" id="emk-boka">
       <h2>Boka ditt fria strategimöte</h2>
-      <p class="emk-boka-sub">Välj en tid som passar dig i kalendern nedan så ses vi för ett <b>förutsättningslöst samtal</b> om hur vi kan hjälpa dig växa.</p>
-
-      <div class="emk-widget-box">
-        <!-- CALENDLY EMBED START -->
-        <!-- Byt ut URL:en nedan mot din egen Calendly-länk -->
-        <div class="calendly-inline-widget" data-url="https://calendly.com/ditt-namn" style="min-width:320px;height:700px;width:100%;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        <!-- CALENDLY EMBED END -->
+      <p class="emk-boka-sub">Hör av dig så bokar vi in ett <b>förutsättningslöst samtal</b> om hur vi kan hjälpa dig växa.</p>
+      <div class="emk-cta-box">
+        <h3>Berätta vart du vill – vi visar hur vi tar dig dit.</h3>
+        <a class="emk-btn emk-btn-gold" href="mailto:info@emkmarketing.se?subject=Strategim%C3%B6te%20med%20EMK%20Marketing">Mejla oss så hörs vi <span class="emk-arr">→</span></a>
+        <p class="emk-cta-alt">Eller skriv direkt till <a href="mailto:info@emkmarketing.se">info@emkmarketing.se</a></p>
       </div>
     </section>
 
@@ -517,22 +518,13 @@
         </div>
         <div class="emk-footer__col">
           <h4>Tjänster</h4>
-          <a href="#emk-tjanster">Paid Ads</a>
-          <a href="#emk-tjanster">Google Ads</a>
-          <a href="#emk-tjanster">SEO &amp; Organiskt</a>
-          <a href="#emk-tjanster">Foto &amp; Filmproduktion</a>
-          <a href="#emk-tjanster">Webb &amp; Projekt</a>
+          <a href="#emk-tjanster">Paid Ads</a><a href="#emk-tjanster">Google Ads</a><a href="#emk-tjanster">SEO &amp; Organiskt</a><a href="#emk-tjanster">Foto &amp; Filmproduktion</a><a href="#emk-tjanster">Webb &amp; Projekt</a>
         </div>
         <div class="emk-footer__col">
           <h4>Ta kontakt</h4>
-          <a href="mailto:hej@emkmarketing.se">hej@emkmarketing.se</a>
-          <span>[Telefonnummer]</span>
+          <a href="mailto:info@emkmarketing.se">info@emkmarketing.se</a>
           <span>Läggestavägen 34, 124 31 Stockholm</span>
-          <div class="emk-footer__social">
-            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://www.instagram.com/emk.marketing/" target="_blank" rel="noopener">Instagram</a>
-            <a href="#" target="_blank" rel="noopener">Facebook</a>
-          </div>
+          <div class="emk-footer__social"><a href="#">LinkedIn</a><a href="https://www.instagram.com/emk.marketing/">Instagram</a><a href="#">Facebook</a></div>
         </div>
       </div>
       <div class="emk-footer__bottom">
@@ -543,49 +535,271 @@
 
   </div>
 
-  <!-- Sticky Bottom CTA för Mobilen -->
+  <!-- Sticky Bottom CTA (mobil) -->
   <div class="emk-sticky-bottom">
-    <a class="emk-btn emk-btn-gold" href="#emk-boka">
-      Boka strategimöte <span class="emk-arr">→</span>
-    </a>
+    <a class="emk-btn emk-btn-gold" href="#emk-boka">Boka strategimöte <span class="emk-arr">→</span></a>
   </div>
-
 </div>
 
 <script>
 (function(){
   var root = document.getElementById('emk-lp');
-
-  // Sätt årtal i footern
   var yr = document.getElementById('emk-year');
   if(yr) yr.textContent = new Date().getFullYear();
-
-  // Smooth scroll för interna ankarlänkar
   root.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click', function(e){
       var id = a.getAttribute('href').slice(1);
       if(!id) return;
       var tgt = document.getElementById(id);
-      if(tgt){
-        e.preventDefault();
-        tgt.scrollIntoView({behavior: 'smooth', block: 'start'});
-      }
+      if(tgt){ e.preventDefault(); tgt.scrollIntoView({behavior:'smooth', block:'start'}); }
     });
   });
-
-  // FAQ Accordion
   root.querySelectorAll('.emk-acc-btn').forEach(function(btn){
     btn.addEventListener('click', function(){
       this.classList.toggle('active');
       var content = this.nextElementSibling;
-      if(content.style.maxHeight){
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
+      if(content.style.maxHeight){ content.style.maxHeight = null; }
+      else { content.style.maxHeight = content.scrollHeight + "px"; }
     });
   });
 
+  /* Carousel-motor (glidande loop) — driver både resultat och recensioner */
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function emkFmt(v, dec){ return new Intl.NumberFormat('sv-SE', {minimumFractionDigits: dec, maximumFractionDigits: dec}).format(v); }
+  function emkRender(el, v){ return (el.getAttribute('data-prefix') || '') + emkFmt(v, +el.getAttribute('data-dec')) + (el.getAttribute('data-suffix') || ''); }
+  function emkCountUp(cell){
+    var el = cell.querySelector('.emk-resx__num');
+    if(!el) return;
+    var target = parseFloat(el.getAttribute('data-value'));
+    if(reduceMotion){ el.innerHTML = emkRender(el, target); return; }
+    var start = performance.now(), dur = 1200;
+    function tick(now){
+      var t = Math.min(1, (now - start) / dur);
+      var e = 1 - Math.pow(1 - t, 3);
+      el.innerHTML = emkRender(el, target * e);
+      if(t < 1){ requestAnimationFrame(tick); } else { el.innerHTML = emkRender(el, target); }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function emkInitSlider(stage){
+    var track = stage.querySelector('.emk-resx__track');
+    if(!track) return;
+    var real = Array.prototype.slice.call(track.children);
+    var n = real.length;
+    if(n < 1) return;
+    var wrap = stage.parentElement;
+    var dots = Array.prototype.slice.call(wrap.querySelectorAll('.emk-resx__dot'));
+    var bar  = stage.querySelector('.emk-resx__bar');
+    var DUR  = parseInt(stage.getAttribute('data-dur'), 10) || 4500;
+    var hasNum = !!stage.querySelector('.emk-resx__num');
+    var onShow = hasNum ? emkCountUp : function(){};
+    var timer = null, isAnim = false;
+
+    var firstClone = real[0].cloneNode(true);
+    var lastClone  = real[n - 1].cloneNode(true);
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, real[0]);
+    var cells = Array.prototype.slice.call(track.children);
+    var pos = 1;
+
+    function setX(animate){
+      track.style.transition = (animate && !reduceMotion) ? 'transform 0.6s cubic-bezier(0.4,0,0.2,1)' : 'none';
+      track.style.transform = 'translateX(' + (-pos * 100) + '%)';
+    }
+    function realIndex(p){ if(p === 0) return n - 1; if(p === n + 1) return 0; return p - 1; }
+    function restartBar(){ if(reduceMotion || !bar) return; bar.classList.remove('run'); void bar.offsetWidth; bar.classList.add('run'); }
+    function updateDots(r){ dots.forEach(function(d, k){ d.classList.toggle('is-active', k === r); }); }
+    function settle(){
+      if(pos === n + 1){ pos = 1; setX(false); }
+      else if(pos === 0){ pos = n; setX(false); }
+      isAnim = false;
+    }
+    track.addEventListener('transitionend', function(e){
+      if(e.target !== track || e.propertyName !== 'transform') return;
+      settle();
+    });
+    function move(dir){
+      if(isAnim) return;
+      isAnim = true;
+      pos += dir;
+      updateDots(realIndex(pos));
+      onShow(cells[pos]);
+      restartBar();
+      if(reduceMotion){ setX(false); settle(); } else { setX(true); }
+    }
+    function goReal(r){
+      if(isAnim) return;
+      isAnim = true;
+      pos = r + 1;
+      updateDots(r);
+      onShow(cells[pos]);
+      restartBar();
+      if(reduceMotion){ setX(false); isAnim = false; } else { setX(true); }
+    }
+    function next(){ move(1); }
+    function prev(){ move(-1); }
+    function play(){ if(reduceMotion) return; stop(); timer = setInterval(next, DUR); restartBar(); }
+    function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+
+    setX(false);
+
+    stage.querySelector('.emk-resx__arrow--next').addEventListener('click', function(){ next(); play(); });
+    stage.querySelector('.emk-resx__arrow--prev').addEventListener('click', function(){ prev(); play(); });
+    dots.forEach(function(d, k){ d.addEventListener('click', function(){ goReal(k); play(); }); });
+
+    stage.addEventListener('mouseenter', function(){ stop(); stage.classList.add('is-paused'); });
+    stage.addEventListener('mouseleave', function(){ stage.classList.remove('is-paused'); play(); });
+
+    var x0 = null;
+    stage.addEventListener('pointerdown', function(e){ x0 = e.clientX; });
+    stage.addEventListener('pointerup', function(e){
+      if(x0 === null) return;
+      var dx = e.clientX - x0;
+      if(Math.abs(dx) > 40){ dx < 0 ? next() : prev(); play(); }
+      x0 = null;
+    });
+    stage.addEventListener('pointercancel', function(){ x0 = null; });
+
+    stage.setAttribute('tabindex', '0');
+    stage.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowRight'){ next(); play(); }
+      else if(e.key === 'ArrowLeft'){ prev(); play(); }
+    });
+
+    var started = false;
+    function startOnce(){ if(started) return; started = true; updateDots(0); onShow(cells[pos]); play(); }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if(en.isIntersecting){ startOnce(); io.disconnect(); } });
+      }, {threshold: 0.4});
+      io.observe(stage);
+    } else { startOnce(); }
+  }
+
+  Array.prototype.slice.call(root.querySelectorAll('.emk-resx__stage')).forEach(emkInitSlider);
+
+  /* Bubbelmoln — driver runt, klicka för att förstora i mitten med beskrivning */
+  var bubblesWrap = root.querySelector('#emk-bubbles');
+  if(bubblesWrap){
+    var card     = root.querySelector('#emk-bubbles-card');
+    var cardName = card.querySelector('.emk-bubbles__card-name');
+    var cardDesc = card.querySelector('.emk-bubbles__card-desc');
+    var els      = Array.prototype.slice.call(bubblesWrap.querySelectorAll('.emk-bubble'));
+    var W = 0, H = 0, active = null, items = [], raf = null, running = false;
+
+    function rand(a, b){ return Math.random() * (b - a) + a; }
+
+    function layout(){
+      W = bubblesWrap.clientWidth;
+      H = bubblesWrap.clientHeight;
+      var cx = W / 2, cy = H * 0.40;
+      var rx = W * 0.40, ry = H * 0.30;
+      var n = els.length;
+      items = els.map(function(el, i){
+        var w = el.offsetWidth, h = el.offsetHeight;
+        var ang = -Math.PI / 2 + (i / n) * Math.PI * 2 + rand(-0.06, 0.06);
+        var rad = rand(0.82, 1.0);
+        var hx = cx + Math.cos(ang) * rx * rad - w / 2;
+        var hy = cy + Math.sin(ang) * ry * rad - h / 2;
+        hx = Math.max(0, Math.min(W - w, hx));
+        hy = Math.max(0, Math.min(H - h, hy));
+        var r = rand(8, 16);
+        var phase = rand(0, Math.PI * 2);
+        var speed = (reduceMotion ? 0 : rand(0.0018, 0.0042)) * (Math.random() < 0.5 ? 1 : -1);
+        return { el: el, w: w, h: h, x: hx, y: hy, hx: hx, hy: hy, ox: hx, oy: hy, r: r, phase: phase, speed: speed, scale: 1, hovered: false };
+      });
+      items.forEach(draw);
+    }
+    function draw(it){
+      it.el.style.transform = 'translate(' + it.x + 'px,' + it.y + 'px) scale(' + it.scale + ')';
+    }
+    function bigScale(it){ return Math.min(1.7, (W * 0.9) / it.w); }
+
+    function frame(){
+      var cx = W / 2, cy = H * 0.40;
+      for(var i = 0; i < items.length; i++){
+        var it = items[i];
+        if(it === active){
+          var tx = cx - it.w / 2, ty = cy - it.h / 2;
+          it.x += (tx - it.x) * 0.14;
+          it.y += (ty - it.y) * 0.14;
+          it.scale += (bigScale(it) - it.scale) * 0.14;
+        } else {
+          it.phase += it.speed;
+          if(!it.hovered){
+            var px = it.hx + Math.cos(it.phase) * it.r;
+            var py = it.hy + Math.sin(it.phase) * it.r;
+            it.x += (px - it.x) * 0.08;
+            it.y += (py - it.y) * 0.08;
+          }
+          var ts = it.hovered ? 1.12 : 1;
+          it.scale += (ts - it.scale) * 0.2;
+        }
+        draw(it);
+      }
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(running || reduceMotion) return; running = true; raf = requestAnimationFrame(frame); }
+    function stop(){ running = false; if(raf) cancelAnimationFrame(raf); }
+
+    function activate(it){
+      if(active === it){ deactivate(); return; }
+      if(active){ active.el.classList.remove('is-active'); active.el.setAttribute('aria-pressed', 'false'); active.el.style.zIndex = ''; }
+      active = it;
+      it.el.classList.add('is-active');
+      it.el.setAttribute('aria-pressed', 'true');
+      it.el.style.zIndex = '50';
+      cardName.textContent = it.el.textContent;
+      cardDesc.textContent = it.el.getAttribute('data-desc') || '';
+      card.classList.add('is-visible');
+      bubblesWrap.classList.add('has-active');
+      if(reduceMotion){
+        it.scale = bigScale(it);
+        it.x = W / 2 - it.w / 2;
+        it.y = H * 0.40 - it.h / 2;
+        draw(it);
+      }
+    }
+    function deactivate(){
+      if(!active) return;
+      active.el.classList.remove('is-active');
+      active.el.setAttribute('aria-pressed', 'false');
+      active.el.style.zIndex = '';
+      if(reduceMotion){ active.x = active.ox; active.y = active.oy; active.scale = 1; draw(active); }
+      active = null;
+      card.classList.remove('is-visible');
+      bubblesWrap.classList.remove('has-active');
+    }
+
+    els.forEach(function(el, i){
+      el.setAttribute('aria-pressed', 'false');
+      el.addEventListener('click', function(e){ e.stopPropagation(); activate(items[i]); });
+      el.addEventListener('mouseenter', function(){ items[i].hovered = true; });
+      el.addEventListener('mouseleave', function(){ items[i].hovered = false; });
+    });
+    bubblesWrap.addEventListener('click', function(e){ if(e.target === bubblesWrap) deactivate(); });
+
+    var rt = null;
+    window.addEventListener('resize', function(){
+      clearTimeout(rt);
+      rt = setTimeout(function(){
+        var wasActive = active;
+        layout();
+        if(wasActive){ var idx = els.indexOf(wasActive.el); active = null; activate(items[idx]); }
+      }, 200);
+    });
+
+    layout();
+    window.addEventListener('load', layout);
+    if('IntersectionObserver' in window){
+      var bio = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if(en.isIntersecting){ start(); } else { stop(); } });
+      }, {threshold: 0.05});
+      bio.observe(bubblesWrap);
+    } else { start(); }
+  }
 })();
 </script>
 
