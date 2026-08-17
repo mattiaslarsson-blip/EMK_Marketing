@@ -94,7 +94,7 @@
     #emk-lp .emk-nav__burger.is-open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
     #emk-lp .emk-nav__burger.is-open span:nth-child(2) { opacity:0; }
     #emk-lp .emk-nav__burger.is-open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-    /* z-index 120: måste ligga över .emk-sticky-bottom (99) på mobil */
+    /* z-index 120: overlayen ska ligga över allt sidinnehåll */
     #emk-lp .emk-mobilemenu { position:fixed; inset:0; background:rgba(20,19,15,.97); z-index:120;
       display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
       opacity:0; pointer-events:none; transition:opacity .3s ease; }
@@ -286,10 +286,6 @@
     #emk-lp .emk-footer__bottom a { color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
     #emk-lp .emk-footer__bottom a:hover { color: var(--gold); }
 
-    /* Sticky Bottom Mobile Bar */
-    #emk-lp .emk-sticky-bottom { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(20, 19, 15, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 14px 20px calc(14px + env(safe-area-inset-bottom)); box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4); z-index: 99; border-top: 1px solid rgba(255,255,255,0.06); }
-    #emk-lp .emk-sticky-bottom .emk-btn { width: 100%; padding: 15px 20px; }
-
     /* Animations */
     #emk-lp .emk-rise { opacity: 0; transform: translateY(20px); animation: emkRise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     #emk-lp .emk-d1 { animation-delay: 0.1s } #emk-lp .emk-d2 { animation-delay: 0.2s } #emk-lp .emk-d3 { animation-delay: 0.3s } #emk-lp .emk-d4 { animation-delay: 0.4s }
@@ -303,7 +299,6 @@
 
     /* Responsive — mobil */
     @media(max-width: 768px) {
-      #emk-lp { padding-bottom: 96px; }
       #emk-lp .emk-wrap { padding: 0 18px; }
 
       #emk-lp .emk-bubbles__center-title { font-size: 22px; }
@@ -338,7 +333,6 @@
       #emk-lp .emk-footer { padding: 44px 0 32px; }
       #emk-lp .emk-footer__inner { grid-template-columns: 1fr; gap: 32px; }
       #emk-lp .emk-footer__bottom { flex-direction: column; gap: 8px; }
-      #emk-lp .emk-sticky-bottom { display: block; }
     }
 
   </style>
@@ -641,10 +635,6 @@
 
   </div>
 
-  <!-- Sticky Bottom CTA (mobil) -->
-  <div class="emk-sticky-bottom">
-    <a class="emk-btn emk-btn-gold" href="#emk-boka">Boka strategimöte <span class="emk-arr">→</span></a>
-  </div>
 </div>
 
 <script>
