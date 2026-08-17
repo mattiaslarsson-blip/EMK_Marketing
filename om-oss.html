@@ -61,30 +61,26 @@ body { margin:0; background:#14130F; }
 #emk-lp .emk-om-team { padding:70px 0; border-bottom:1px solid var(--line-soft); }
 #emk-lp .emk-om-team__head { margin-bottom:38px; }
 #emk-lp .emk-om-team__head h2 { font-size:clamp(26px,4vw,40px); font-weight:800; letter-spacing:-0.8px; }
-#emk-lp .emk-team-grid { display:flex; gap:16px; align-items:flex-start; }
-#emk-lp .emk-member { flex:1; position:relative; display:block; border-radius:0 0 20px 20px; overflow:hidden; aspect-ratio:9/13; text-decoration:none;
+#emk-lp .emk-team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; align-items:stretch; }
+#emk-lp .emk-member { position:relative; display:block; border-radius:20px; overflow:hidden; aspect-ratio:9/12; text-decoration:none;
   transition:transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s ease; }
 #emk-lp .emk-member img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
   transition:transform .7s cubic-bezier(.2,.8,.2,1), filter .5s ease; }
 #emk-lp .emk-member::after { content:""; position:absolute; inset:0; pointer-events:none;
   background:linear-gradient(180deg, rgba(20,19,15,.15), transparent 30%, transparent 52%, rgba(20,19,15,.94)); }
-#emk-lp .emk-member:hover { transform:translateY(8px); box-shadow:0 26px 64px -14px rgba(0,0,0,.7), 0 0 46px -10px rgba(223,164,56,.4); }
+#emk-lp .emk-member:hover { transform:translateY(-6px); box-shadow:0 26px 64px -14px rgba(0,0,0,.7), 0 0 46px -10px rgba(223,164,56,.4); }
 #emk-lp .emk-member:hover img { transform:scale(1.05); filter:brightness(1.05); }
-#emk-lp .emk-member:nth-child(1) { margin-top:16px; }
-#emk-lp .emk-member:nth-child(3) { margin-top:26px; }
-#emk-lp .emk-member:nth-child(4) { margin-top:10px; }
 #emk-lp .emk-member__info { position:absolute; left:20px; right:20px; bottom:18px; z-index:2; }
 #emk-lp .emk-member__name { color:var(--cream); font-family:'Manrope'; font-size:18px; font-weight:800; letter-spacing:-0.3px; }
 #emk-lp .emk-member__role { color:var(--muted); font-family:'Manrope'; font-size:10.5px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; margin-top:5px; }
-/* Rekryterings-panel */
-#emk-lp .emk-member--join { background:linear-gradient(180deg,#1c1a14,#17150f); border:1px dashed rgba(223,164,56,.4);
-  display:flex; align-items:center; justify-content:center; text-align:center; }
-#emk-lp .emk-member--join::after { display:none; }
-#emk-lp .emk-member--join:hover { border-color:var(--gold); border-style:solid; }
-#emk-lp .emk-member--join .emk-join-inner { padding:20px; }
-#emk-lp .emk-member--join .emk-join-plus { color:var(--gold); font-family:'Manrope'; font-size:44px; font-weight:300; line-height:1; margin-bottom:12px; }
-#emk-lp .emk-member--join .emk-join-txt { color:var(--muted); font-size:14px; line-height:1.55; }
-#emk-lp .emk-member--join .emk-join-txt b { color:var(--gold); font-weight:700; display:block; margin-top:6px; }
+/* Rekryterings-rad under teamet */
+#emk-lp .emk-join-row { display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;
+  margin-top:28px; padding:24px 28px; border:1px dashed rgba(223,164,56,.4); border-radius:16px;
+  text-decoration:none; transition:border-color .25s ease, background .25s ease; }
+#emk-lp .emk-join-row:hover { border-color:var(--gold); border-style:solid; background:rgba(223,164,56,.05); }
+#emk-lp .emk-join-row__txt { color:var(--muted-2); font-size:15.5px; }
+#emk-lp .emk-join-row__txt b { color:var(--cream); font-weight:700; font-family:'Manrope'; }
+#emk-lp .emk-join-row__cta { color:var(--gold); font-family:'Manrope'; font-weight:700; font-size:14px; white-space:nowrap; }
 
 /* Slut-CTA */
 #emk-lp .emk-om-cta { padding:76px 0 90px; display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap; }
@@ -120,15 +116,14 @@ body { margin:0; background:#14130F; }
   #emk-lp .emk-om-vision { padding:44px 0; }
   #emk-lp .emk-om-about { padding:44px 0; grid-template-columns:1fr; gap:18px; }
   #emk-lp .emk-om-team { padding:48px 0; }
-  #emk-lp .emk-team-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-  #emk-lp .emk-member { margin-top:0 !important; aspect-ratio:9/12; border-radius:0 0 14px 14px; }
+  #emk-lp .emk-team-grid { grid-template-columns:1fr; gap:12px; }
+  #emk-lp .emk-member { aspect-ratio:9/10; border-radius:16px; }
   #emk-lp .emk-member:hover { transform:none; box-shadow:none; }
   #emk-lp .emk-member:hover img { transform:none; filter:none; }
   #emk-lp .emk-member__info { left:14px; right:14px; bottom:12px; }
   #emk-lp .emk-member__name { font-size:15px; }
   #emk-lp .emk-member__role { font-size:9px; letter-spacing:1.4px; }
-  #emk-lp .emk-member--join .emk-join-plus { font-size:34px; }
-  #emk-lp .emk-member--join .emk-join-txt { font-size:12px; }
+  #emk-lp .emk-join-row { flex-direction:column; align-items:flex-start; gap:8px; padding:18px 18px; margin-top:16px; }
   #emk-lp .emk-om-cta { padding:48px 0 56px; flex-direction:column; align-items:flex-start; }
   #emk-lp .emk-om-cta .emk-btn { width:100%; justify-content:center; }
   #emk-lp .emk-footer { flex-direction:column; gap:8px; }
@@ -184,33 +179,31 @@ body { margin:0; background:#14130F; }
       </div>
       <div class="emk-team-grid">
         <div class="emk-member">
-          <img src="images/foto/portratt/DSC00175-5%20(1).jpg" alt="Mattias Larsson">
+          <img src="images/foto/portratt/Mattias_bild.jpg" alt="Mattias Larsson">
           <div class="emk-member__info">
             <div class="emk-member__name">Mattias Larsson</div>
-            <div class="emk-member__role">Grundare · Strategi &amp; film</div>
+            <div class="emk-member__role">Creative Strategist</div>
           </div>
         </div>
         <div class="emk-member">
-          <img src="images/foto/portratt/580E75D9-7C49-4B3E-8AD1-587A264B07D0%20(1)%204%20copy.jpg" alt="Frida">
+          <img src="images/foto/portratt/580E75D9-7C49-4B3E-8AD1-587A264B07D0%20(1)%204%20copy.jpg" alt="Frida Jutgård">
           <div class="emk-member__info">
-            <div class="emk-member__name">Frida</div>
-            <div class="emk-member__role">Video &amp; kort format</div>
+            <div class="emk-member__name">Frida Jutgård</div>
+            <div class="emk-member__role">Content Producer</div>
           </div>
         </div>
         <div class="emk-member">
-          <img src="images/foto/ovrigt/IMG_5322%202%20copy.jpg" alt="Ella">
+          <img src="images/foto/ovrigt/IMG_5322%202%20copy.jpg" alt="Ella Pertoft">
           <div class="emk-member__info">
-            <div class="emk-member__name">Ella</div>
-            <div class="emk-member__role">Carousels &amp; statics</div>
+            <div class="emk-member__name">Ella Pertoft</div>
+            <div class="emk-member__role">Creative Designer</div>
           </div>
         </div>
-        <a class="emk-member emk-member--join" href="mailto:info@emkmarketing.se?subject=Jag%20vill%20jobba%20med%20EMK">
-          <div class="emk-join-inner">
-            <div class="emk-join-plus">+</div>
-            <div class="emk-join-txt">Nästa stjärna?<b>Hör av dig →</b></div>
-          </div>
-        </a>
       </div>
+      <a class="emk-join-row" href="mailto:info@emkmarketing.se?subject=Jag%20vill%20jobba%20med%20EMK">
+        <span class="emk-join-row__txt"><b>Nästa stjärna?</b> Vi växer när rätt person dyker upp.</span>
+        <span class="emk-join-row__cta">Hör av dig →</span>
+      </a>
     </section>
 
     <!-- 4. SLUT-CTA -->
