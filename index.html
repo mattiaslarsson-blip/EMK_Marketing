@@ -208,7 +208,6 @@
     /* Varför oss + logotyper */
     #emk-lp .emk-why { padding: 60px 0 40px; }
     #emk-lp .emk-logos { margin-bottom: 56px; text-align: center; }
-    #emk-lp .emk-logos__title { font-family: 'Manrope'; font-size: 12px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
     #emk-lp .emk-bubbles { position: relative; height: 520px; margin-top: 30px; overflow: hidden; }
     #emk-lp .emk-bubble { position: absolute; top: 0; left: 0; will-change: transform; transform-origin: center center; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.2px; color: var(--muted-2); background: rgba(31,29,23,0.6); border: 1px solid var(--line); border-radius: 100px; padding: 11px 20px; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: color 0.2s ease, border-color 0.2s ease, background 0.25s ease, box-shadow 0.3s ease; user-select: none; }
     #emk-lp .emk-bubble:hover { color: #14130F; background: var(--gold); border-color: var(--gold); box-shadow: 0 14px 40px -10px rgba(223,164,56,0.65); }
@@ -286,11 +285,7 @@
     #emk-lp .emk-footer__bottom a { color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
     #emk-lp .emk-footer__bottom a:hover { color: var(--gold); }
 
-    /* Animations */
-    #emk-lp .emk-rise { opacity: 0; transform: translateY(20px); animation: emkRise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
-    #emk-lp .emk-d1 { animation-delay: 0.1s } #emk-lp .emk-d2 { animation-delay: 0.2s } #emk-lp .emk-d3 { animation-delay: 0.3s } #emk-lp .emk-d4 { animation-delay: 0.4s }
-    @keyframes emkRise { to { opacity: 1; transform: translateY(0) } }
-    @media (prefers-reduced-motion: reduce) { #emk-lp .emk-rise { animation: none; opacity: 1; transform: none; } #emk-lp .emk-svc:hover img { transform: none; } #emk-lp .emk-edq__slide { transition: none; } }
+    @media (prefers-reduced-motion: reduce) { #emk-lp .emk-svc:hover img { transform: none; } #emk-lp .emk-edq__slide { transition: none; } }
 
     /* Responsive — surfplatta */
     @media(max-width: 900px) {
