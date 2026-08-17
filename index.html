@@ -47,36 +47,39 @@
     }
     #emk-lp .emk-wrap { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 
-    /* ===== HERO: PANELKOLLAGE (Telia-stil) ===== */
+    /* ===== HERO: PANELKOLLAGE v2 ===== */
     #emk-lp .emk-hero-full { position:relative; width:100%; overflow:hidden; background:var(--bg); }
-    #emk-lp .emk-hero-full__stage { position:relative; min-height:min(92vh, 780px); }
+    #emk-lp .emk-hero-full__stage { position:relative; min-height:min(94vh, 800px); }
 
-    /* Paneler */
-    #emk-lp .emk-panels { position:absolute; inset:0; display:flex; gap:14px; padding:0 4%; align-items:flex-start; }
-    #emk-lp .emk-panel { flex:1; display:block; border-radius:0 0 20px 20px; position:relative; overflow:hidden;
+    /* Mjuk ton i botten – heron smälter in i nästa sektion */
+    #emk-lp .emk-hero-full::after { content:""; position:absolute; left:0; right:0; bottom:0; height:200px;
+      background:linear-gradient(180deg, transparent, var(--bg) 82%); pointer-events:none; z-index:2; }
+
+    /* Paneler – rundade hörn uppe OCH nere, börjar under navet (padding-top) */
+    #emk-lp .emk-panels { position:absolute; inset:0; display:flex; gap:14px; padding:96px 4% 0; align-items:flex-start; }
+    #emk-lp .emk-panel { flex:1; display:block; border-radius:20px; position:relative; overflow:hidden;
       transition:transform .5s cubic-bezier(.2,.8,.2,1), flex .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s ease; }
     #emk-lp .emk-panel img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
       transition:transform .7s cubic-bezier(.2,.8,.2,1), filter .5s ease; }
     #emk-lp .emk-panel::after { content:""; position:absolute; inset:0; pointer-events:none;
-      background:linear-gradient(180deg, rgba(20,19,15,.25), transparent 30%, transparent 60%, rgba(20,19,15,.45)); }
+      background:linear-gradient(180deg, rgba(20,19,15,.22), transparent 30%, transparent 58%, rgba(20,19,15,.5)); }
     #emk-lp .emk-panel:hover { transform:translateY(10px); flex:1.28;
       box-shadow:0 26px 64px -14px rgba(0,0,0,.7), 0 0 46px -10px rgba(223,164,56,.45); }
     #emk-lp .emk-panel:hover img { transform:scale(1.06); filter:brightness(1.06); }
-    /* Rytmen: höjd + förskjutning per panel */
-    #emk-lp .emk-panel:nth-child(1) { height:78%; margin-top:6%; }
-    #emk-lp .emk-panel:nth-child(2) { height:90%; }
-    #emk-lp .emk-panel:nth-child(3) { height:72%; margin-top:9%; }
-    #emk-lp .emk-panel:nth-child(4) { height:86%; margin-top:3%; }
-    #emk-lp .emk-panel:nth-child(5) { height:80%; margin-top:7%; }
+    #emk-lp .emk-panel:nth-child(1) { height:70%; margin-top:5%; }
+    #emk-lp .emk-panel:nth-child(2) { height:82%; }
+    #emk-lp .emk-panel:nth-child(3) { height:64%; margin-top:8%; }
+    #emk-lp .emk-panel:nth-child(4) { height:78%; margin-top:2.5%; }
+    #emk-lp .emk-panel:nth-child(5) { height:72%; margin-top:6%; }
 
-    /* Gradient: vänster + botten (läsbarhet) */
+    /* Gradient vänster + botten (läsbarhet för texten) */
     #emk-lp .emk-hero-grad { position:absolute; inset:0; pointer-events:none; z-index:1;
       background:
         linear-gradient(90deg, rgba(20,19,15,.93) 0%, rgba(20,19,15,.5) 26%, transparent 50%),
         linear-gradient(0deg, rgba(20,19,15,.96) 0%, rgba(20,19,15,.4) 24%, transparent 44%); }
 
-    /* Nav */
-    #emk-lp .emk-nav { position:absolute; top:0; left:0; right:0; z-index:3;
+    /* Nav – ligger ovanför panelerna (panelerna börjar 96px ner) */
+    #emk-lp .emk-nav { position:absolute; top:0; left:0; right:0; z-index:5;
       display:flex; justify-content:space-between; align-items:center; padding:24px 4.5%; }
     #emk-lp .emk-nav__logo { color:var(--gold); font-family:'Manrope'; font-weight:800; font-size:18px; text-decoration:none; }
     #emk-lp .emk-nav__links { display:flex; gap:26px; }
@@ -84,8 +87,24 @@
       text-shadow:0 1px 10px rgba(0,0,0,.5); transition:color .2s; }
     #emk-lp .emk-nav__links a:hover { color:#fff; }
 
-    /* Innehåll nere till vänster */
-    #emk-lp .emk-hero-content { position:absolute; left:4.5%; bottom:9%; max-width:560px; z-index:3; }
+    /* Hamburgare (dold på desktop) + mobilmeny */
+    #emk-lp .emk-nav__burger { display:none; background:none; border:none; cursor:pointer; padding:8px; z-index:7; }
+    #emk-lp .emk-nav__burger span { display:block; width:22px; height:2px; background:var(--cream); margin:5px 0; border-radius:2px;
+      transition:transform .3s ease, opacity .3s ease; }
+    #emk-lp .emk-nav__burger.is-open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    #emk-lp .emk-nav__burger.is-open span:nth-child(2) { opacity:0; }
+    #emk-lp .emk-nav__burger.is-open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    /* z-index 120: måste ligga över .emk-sticky-bottom (99) på mobil */
+    #emk-lp .emk-mobilemenu { position:fixed; inset:0; background:rgba(20,19,15,.97); z-index:120;
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+      opacity:0; pointer-events:none; transition:opacity .3s ease; }
+    #emk-lp .emk-mobilemenu.is-open { opacity:1; pointer-events:auto; }
+    #emk-lp .emk-mobilemenu a { color:var(--cream); text-decoration:none; font-family:'Manrope'; font-size:24px; font-weight:800;
+      padding:14px 24px; letter-spacing:-0.4px; }
+    #emk-lp .emk-mobilemenu a:hover { color:var(--gold); }
+
+    /* Innehåll nere till vänster (desktop) */
+    #emk-lp .emk-hero-content { position:absolute; left:4.5%; bottom:10%; max-width:560px; z-index:3; }
     #emk-lp .emk-kicker { display:inline-flex; align-items:center; gap:9px; margin-bottom:16px; }
     #emk-lp .emk-kicker::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
     #emk-lp .emk-kicker span { color:var(--muted); font-family:'Manrope'; font-size:11px; font-weight:800; letter-spacing:2.4px; text-transform:uppercase; }
@@ -104,35 +123,43 @@
     #emk-lp .emk-btn--ghost:hover { border-color:var(--gold); color:var(--gold); }
 
     @media (prefers-reduced-motion: reduce){
-      #emk-lp .emk-panel, #emk-lp .emk-panel img { transition:none; }
+      #emk-lp .emk-panel, #emk-lp .emk-panel img, #emk-lp .emk-mobilemenu { transition:none; }
       #emk-lp .emk-panel:hover { transform:none; flex:1; }
     }
 
-    /* ===== HERO — MOBIL: kompakt kollage, text över ===== */
+    /* ===== HERO — MOBIL: paneler överst, text UNDER i eget fält ===== */
     @media (max-width:768px){
-      #emk-lp .emk-hero-full__stage { min-height:0; aspect-ratio:9/11.5; }
-      #emk-lp .emk-panels { gap:5px; padding:0 3%; }
-      #emk-lp .emk-panel { border-radius:0 0 10px 10px; }
+      #emk-lp .emk-hero-full__stage { min-height:0; }
+      /* Panelerna blir ett eget block med fast höjd istället för absolut fyllnad */
+      #emk-lp .emk-panels { position:relative; inset:auto; height:46vh; min-height:300px; max-height:420px;
+        gap:6px; padding:76px 3% 0; }
+      #emk-lp .emk-panel { border-radius:12px; }
       #emk-lp .emk-panel:hover { transform:none; flex:1; box-shadow:none; }
       #emk-lp .emk-panel:hover img { transform:none; filter:none; }
-      #emk-lp .emk-panel:nth-child(1) { height:66%; margin-top:12%; }
-      #emk-lp .emk-panel:nth-child(2) { height:82%; margin-top:0; }
-      #emk-lp .emk-panel:nth-child(3) { height:60%; margin-top:16%; }
-      #emk-lp .emk-panel:nth-child(4) { height:76%; margin-top:5%; }
-      #emk-lp .emk-panel:nth-child(5) { height:68%; margin-top:10%; }
-      #emk-lp .emk-nav { padding:16px 5%; }
-      #emk-lp .emk-nav__logo { font-size:15px; }
-      #emk-lp .emk-nav__links { gap:16px; }
-      #emk-lp .emk-nav__links a { font-size:12.5px; }
-      #emk-lp .emk-nav__links a[href="#emk-boka"] { display:none; }
-      #emk-lp .emk-hero-content { left:5%; right:5%; bottom:5%; max-width:none; text-align:center; }
+      #emk-lp .emk-panel:nth-child(1) { height:74%; margin-top:9%; }
+      #emk-lp .emk-panel:nth-child(2) { height:92%; margin-top:0; }
+      #emk-lp .emk-panel:nth-child(3) { height:66%; margin-top:14%; }
+      #emk-lp .emk-panel:nth-child(4) { height:86%; margin-top:4%; }
+      #emk-lp .emk-panel:nth-child(5) { height:76%; margin-top:8%; }
+      /* Gradienten tonar bara panelernas nederkant */
+      #emk-lp .emk-hero-grad { position:absolute; top:0; height:calc(46vh + 76px); max-height:496px;
+        background:linear-gradient(0deg, var(--bg) 0%, rgba(20,19,15,.55) 14%, transparent 38%); }
+      /* Texten ligger UNDER panelerna i eget utrymme – inget överlapp */
+      #emk-lp .emk-hero-content { position:relative; left:auto; bottom:auto; max-width:none;
+        padding:26px 18px 40px; text-align:center; }
       #emk-lp .emk-kicker { margin-bottom:10px; }
-      #emk-lp .emk-lede { margin-left:auto; margin-right:auto; }
-      #emk-lp .emk-kicker span { font-size:8.5px; letter-spacing:1.8px; }
-      #emk-lp .emk-hero-content h1 { font-size:clamp(24px,7.5vw,30px); margin-bottom:10px; }
-      #emk-lp .emk-lede { font-size:13px; max-width:100%; margin-bottom:16px; }
+      #emk-lp .emk-kicker span { font-size:9px; letter-spacing:1.8px; }
+      #emk-lp .emk-hero-content h1 { font-size:clamp(26px,7.8vw,32px); margin-bottom:10px; text-shadow:none; }
+      #emk-lp .emk-lede { font-size:14px; max-width:100%; margin:0 auto 18px; text-shadow:none; }
       #emk-lp .emk-ctas { flex-direction:column; }
-      #emk-lp .emk-hero-content .emk-btn { width:100%; padding:14px 20px; font-size:14px; }
+      #emk-lp .emk-hero-content .emk-btn { width:100%; padding:15px 20px; font-size:14.5px; }
+      /* Göm länkarna, visa hamburgaren. Navet över menyn (120) så X:et går att trycka på. */
+      #emk-lp .emk-nav { padding:18px 5%; z-index:130; }
+      #emk-lp .emk-nav__logo { font-size:16px; }
+      #emk-lp .emk-nav__links { display:none; }
+      #emk-lp .emk-nav__burger { display:block; }
+      /* Bottenfaden behövs inte på mobil (texten är redan på bakgrunden) */
+      #emk-lp .emk-hero-full::after { display:none; }
     }
 
     /* Buttons */
@@ -320,11 +347,11 @@
 
 <div id="emk-lp">
 
-  <!-- ===== HERO: PANELKOLLAGE ===== -->
+  <!-- ===== HERO: PANELKOLLAGE v2 ===== -->
   <section class="emk-hero-full">
     <div class="emk-hero-full__stage">
 
-      <!-- PANELER: bilderna ÄR bakgrunden. Byt src fritt. Inga etiketter – aria-label för tillgänglighet. -->
+      <!-- PANELER (rundade hörn, börjar under navet) -->
       <div class="emk-panels">
         <a class="emk-panel" href="showreel.html" aria-label="Foto och film">
           <img src="images/foto/ovrigt/IMG_5322%202%20copy.jpg" alt="">
@@ -345,7 +372,7 @@
 
       <div class="emk-hero-grad"></div>
 
-      <!-- NAV -->
+      <!-- NAV med hamburgare för mobil -->
       <nav class="emk-nav">
         <a href="index.html" class="emk-nav__logo">EMK Marketing</a>
         <div class="emk-nav__links">
@@ -354,9 +381,12 @@
           <a href="om-oss.html">Om oss</a>
           <a href="#emk-boka">Boka möte</a>
         </div>
+        <button class="emk-nav__burger" id="emk-burger" aria-label="Öppna meny" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
 
-      <!-- INNEHÅLL nere till vänster -->
+      <!-- INNEHÅLL: över bilden på desktop, under panelerna på mobil -->
       <div class="emk-hero-content">
         <div class="emk-kicker"><span>Marknadsföringsbyrå</span></div>
         <h1>Strategisk marknadsföring med fokus på <em>långsiktig lönsamhet.</em></h1>
@@ -369,6 +399,14 @@
 
     </div>
   </section>
+
+  <!-- MOBILMENY (overlay) -->
+  <div class="emk-mobilemenu" id="emk-mobilemenu" aria-hidden="true">
+    <a href="#emk-tjanster">Tjänster</a>
+    <a href="showreel.html">Showreel</a>
+    <a href="om-oss.html">Om oss</a>
+    <a href="#emk-boka">Boka möte</a>
+  </div>
 
   <div class="emk-wrap">
 
@@ -615,6 +653,25 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var yr = document.getElementById('emk-year');
   if(yr) yr.textContent = new Date().getFullYear();
+
+  /* Hamburgare + mobilmeny (registreras före smooth scroll så menyn hinner
+     stängas – och body-overflow återställas – innan ankarscrollen körs) */
+  (function(){
+    var burger = document.getElementById('emk-burger');
+    var menu = document.getElementById('emk-mobilemenu');
+    if(!burger || !menu) return;
+    function toggle(open){
+      var willOpen = (typeof open === 'boolean') ? open : !menu.classList.contains('is-open');
+      menu.classList.toggle('is-open', willOpen);
+      burger.classList.toggle('is-open', willOpen);
+      burger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      menu.setAttribute('aria-hidden', willOpen ? 'false' : 'true');
+      document.body.style.overflow = willOpen ? 'hidden' : '';
+    }
+    burger.addEventListener('click', function(){ toggle(); });
+    menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ toggle(false); }); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') toggle(false); });
+  })();
 
   /* Smooth scroll för ankarlänkar */
   root.querySelectorAll('a[href^="#"]').forEach(function(a){
