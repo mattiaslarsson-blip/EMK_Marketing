@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Om oss – EMK Marketing</title>
+<meta name="description" content="Lär känna EMK Marketing – byrån vars arbete betalar för sig självt. Möt teamet bakom resultaten.">
+<link rel="icon" type="image/png" href="EMK_LOGO.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap');
+body { margin:0; background:#14130F; }
+#emk-lp {
+  --ink:#F5F1E8; --bg:#14130F; --card:#1F1D17; --line:#34312A; --line-soft:#2A2820; --muted:#908C80; --muted-2:#BDB8AB;
+  --gold:#DFA438; --gold-light:rgba(223,164,56,0.14); --cream:#F2EEE4;
+  --shadow-lg:0 18px 50px rgba(0,0,0,0.45);
+  font-family:'Nunito Sans',sans-serif; color:var(--ink); background:var(--bg); line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+#emk-lp * { box-sizing:border-box; margin:0; padding:0; }
+#emk-lp h1, #emk-lp h2, #emk-lp h3, #emk-lp h4 { font-family:'Manrope',sans-serif; }
+#emk-lp a:focus-visible { outline:2px solid var(--gold); outline-offset:3px; border-radius:6px; }
+#emk-lp .emk-wrap { max-width:1280px; margin:0 auto; padding:0 32px; }
+
+/* Nav */
+#emk-lp .emk-nav { display:flex; justify-content:space-between; align-items:center; padding:24px 0; }
+#emk-lp .emk-nav__logo { color:var(--gold); font-family:'Manrope'; font-weight:800; font-size:18px; text-decoration:none; }
+#emk-lp .emk-nav__links { display:flex; gap:26px; }
+#emk-lp .emk-nav__links a { color:rgba(245,241,232,.85); text-decoration:none; font-size:14.5px; font-weight:600; transition:color .2s; }
+#emk-lp .emk-nav__links a:hover { color:#fff; }
+#emk-lp .emk-nav__links a.is-active { color:var(--gold); }
+
+/* Kicker */
+#emk-lp .emk-kicker { display:inline-flex; align-items:center; gap:9px; margin-bottom:16px; }
+#emk-lp .emk-kicker::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+#emk-lp .emk-kicker span { color:var(--muted); font-family:'Manrope'; font-size:11px; font-weight:800; letter-spacing:2.4px; text-transform:uppercase; }
+
+/* Manifest-hero med bakgrundsbild (kant-till-kant) */
+#emk-lp .emk-om-hero { position:relative; width:100%; min-height:min(58vh, 520px); display:flex; align-items:flex-end; overflow:hidden; }
+#emk-lp .emk-om-hero__bg { position:absolute; inset:0; z-index:0; }
+#emk-lp .emk-om-hero__bg img { width:100%; height:100%; object-fit:cover; display:block; }
+#emk-lp .emk-om-hero__bg::after { content:""; position:absolute; inset:0;
+  background:linear-gradient(0deg, rgba(20,19,15,0.96) 0%, rgba(20,19,15,0.45) 38%, rgba(20,19,15,0.35) 100%); }
+#emk-lp .emk-om-hero__inner { position:relative; z-index:1; max-width:1280px; margin:0 auto; width:100%; padding:0 32px 56px; }
+#emk-lp .emk-om-hero h1 { font-size:clamp(38px,6vw,72px); font-weight:800; line-height:1.04; letter-spacing:-1.5px; text-shadow:0 2px 30px rgba(0,0,0,.55); }
+#emk-lp .emk-om-hero h1 em { font-style:normal; color:var(--gold); }
+/* Nav över bilden */
+#emk-lp .emk-om-topnav { position:absolute; top:0; left:0; right:0; z-index:2; }
+#emk-lp .emk-om-topnav .emk-nav { max-width:1280px; margin:0 auto; padding:24px 32px; }
+#emk-lp .emk-om-topnav .emk-nav__links a { text-shadow:0 1px 10px rgba(0,0,0,.5); }
+
+/* Vår vision + Om EMK */
+#emk-lp .emk-om-vision { padding:64px 0; border-bottom:1px solid var(--line-soft); }
+#emk-lp .emk-om-vision h4 { color:var(--gold); font-size:11.5px; font-weight:800; letter-spacing:2.6px; text-transform:uppercase; margin-bottom:16px; }
+#emk-lp .emk-om-vision p { color:var(--ink); font-family:'Manrope'; font-size:clamp(19px,2.6vw,26px); font-weight:500; line-height:1.5; letter-spacing:-0.3px; max-width:760px; }
+#emk-lp .emk-om-about { padding:64px 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:0.9fr 1.6fr; gap:48px; }
+#emk-lp .emk-om-about h4 { color:var(--gold); font-size:11.5px; font-weight:800; letter-spacing:2.6px; text-transform:uppercase; }
+#emk-lp .emk-om-about__body p { color:var(--muted-2); font-size:16.5px; line-height:1.75; }
+#emk-lp .emk-om-about__body p + p { margin-top:18px; }
+
+/* Team */
+#emk-lp .emk-om-team { padding:70px 0; border-bottom:1px solid var(--line-soft); }
+#emk-lp .emk-om-team__head { margin-bottom:38px; }
+#emk-lp .emk-om-team__head h2 { font-size:clamp(26px,4vw,40px); font-weight:800; letter-spacing:-0.8px; }
+#emk-lp .emk-team-grid { display:flex; gap:16px; align-items:flex-start; }
+#emk-lp .emk-member { flex:1; position:relative; display:block; border-radius:0 0 20px 20px; overflow:hidden; aspect-ratio:9/13; text-decoration:none;
+  transition:transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s ease; }
+#emk-lp .emk-member img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform .7s cubic-bezier(.2,.8,.2,1), filter .5s ease; }
+#emk-lp .emk-member::after { content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(180deg, rgba(20,19,15,.15), transparent 30%, transparent 52%, rgba(20,19,15,.94)); }
+#emk-lp .emk-member:hover { transform:translateY(8px); box-shadow:0 26px 64px -14px rgba(0,0,0,.7), 0 0 46px -10px rgba(223,164,56,.4); }
+#emk-lp .emk-member:hover img { transform:scale(1.05); filter:brightness(1.05); }
+#emk-lp .emk-member:nth-child(1) { margin-top:16px; }
+#emk-lp .emk-member:nth-child(3) { margin-top:26px; }
+#emk-lp .emk-member:nth-child(4) { margin-top:10px; }
+#emk-lp .emk-member__info { position:absolute; left:20px; right:20px; bottom:18px; z-index:2; }
+#emk-lp .emk-member__name { color:var(--cream); font-family:'Manrope'; font-size:18px; font-weight:800; letter-spacing:-0.3px; }
+#emk-lp .emk-member__role { color:var(--muted); font-family:'Manrope'; font-size:10.5px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; margin-top:5px; }
+/* Rekryterings-panel */
+#emk-lp .emk-member--join { background:linear-gradient(180deg,#1c1a14,#17150f); border:1px dashed rgba(223,164,56,.4);
+  display:flex; align-items:center; justify-content:center; text-align:center; }
+#emk-lp .emk-member--join::after { display:none; }
+#emk-lp .emk-member--join:hover { border-color:var(--gold); border-style:solid; }
+#emk-lp .emk-member--join .emk-join-inner { padding:20px; }
+#emk-lp .emk-member--join .emk-join-plus { color:var(--gold); font-family:'Manrope'; font-size:44px; font-weight:300; line-height:1; margin-bottom:12px; }
+#emk-lp .emk-member--join .emk-join-txt { color:var(--muted); font-size:14px; line-height:1.55; }
+#emk-lp .emk-member--join .emk-join-txt b { color:var(--gold); font-weight:700; display:block; margin-top:6px; }
+
+/* Slut-CTA */
+#emk-lp .emk-om-cta { padding:76px 0 90px; display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap; }
+#emk-lp .emk-om-cta h3 { font-size:clamp(24px,3.5vw,34px); font-weight:800; letter-spacing:-0.7px; line-height:1.18; max-width:560px; }
+#emk-lp .emk-om-cta h3 em { font-style:normal; color:var(--gold); }
+#emk-lp .emk-btn { display:inline-flex; align-items:center; gap:9px; font-family:'Manrope'; font-size:15px; font-weight:700;
+  padding:16px 34px; border-radius:100px; text-decoration:none; background:var(--cream); color:#14130F;
+  box-shadow:0 12px 28px -10px rgba(0,0,0,.6); transition:transform .2s, background .2s; letter-spacing:.3px; white-space:nowrap; }
+#emk-lp .emk-btn:hover { background:#fff; transform:translateY(-2px); }
+#emk-lp .emk-btn .emk-arr { transition:transform .2s; }
+#emk-lp .emk-btn:hover .emk-arr { transform:translateX(5px); }
+
+/* Footer (minimal) */
+#emk-lp .emk-footer { border-top:1px solid var(--line-soft); padding:36px 0 44px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+#emk-lp .emk-footer span, #emk-lp .emk-footer a { color:var(--muted); font-size:13px; text-decoration:none; }
+#emk-lp .emk-footer a:hover { color:var(--gold); }
+
+@media (prefers-reduced-motion: reduce){
+  #emk-lp .emk-member, #emk-lp .emk-member img { transition:none; }
+  #emk-lp .emk-member:hover { transform:none; }
+}
+
+/* ===== MOBIL ===== */
+@media (max-width:768px){
+  #emk-lp .emk-wrap { padding:0 18px; }
+  #emk-lp .emk-nav { padding:16px 0; }
+  #emk-lp .emk-nav__logo { font-size:15px; }
+  #emk-lp .emk-nav__links { gap:16px; }
+  #emk-lp .emk-nav__links a { font-size:12.5px; }
+  #emk-lp .emk-om-hero { min-height:46vh; }
+  #emk-lp .emk-om-hero__inner { padding:0 18px 36px; }
+  #emk-lp .emk-om-topnav .emk-nav { padding:16px 18px; }
+  #emk-lp .emk-om-vision { padding:44px 0; }
+  #emk-lp .emk-om-about { padding:44px 0; grid-template-columns:1fr; gap:18px; }
+  #emk-lp .emk-om-team { padding:48px 0; }
+  #emk-lp .emk-team-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  #emk-lp .emk-member { margin-top:0 !important; aspect-ratio:9/12; border-radius:0 0 14px 14px; }
+  #emk-lp .emk-member:hover { transform:none; box-shadow:none; }
+  #emk-lp .emk-member:hover img { transform:none; filter:none; }
+  #emk-lp .emk-member__info { left:14px; right:14px; bottom:12px; }
+  #emk-lp .emk-member__name { font-size:15px; }
+  #emk-lp .emk-member__role { font-size:9px; letter-spacing:1.4px; }
+  #emk-lp .emk-member--join .emk-join-plus { font-size:34px; }
+  #emk-lp .emk-member--join .emk-join-txt { font-size:12px; }
+  #emk-lp .emk-om-cta { padding:48px 0 56px; flex-direction:column; align-items:flex-start; }
+  #emk-lp .emk-om-cta .emk-btn { width:100%; justify-content:center; }
+  #emk-lp .emk-footer { flex-direction:column; gap:8px; }
+}
+</style>
+</head>
+<body>
+<div id="emk-lp">
+
+  <!-- HERO MED BILD (kant-till-kant, nav över) -->
+  <header class="emk-om-hero">
+    <!-- OM-OSS-BAKGRUND: byt src till önskad bild (liggande, gärna team/miljö) -->
+    <div class="emk-om-hero__bg"><img src="images/foto/ovrigt/IMG_5322%202%20copy.jpg" alt="" aria-hidden="true"></div>
+    <div class="emk-om-topnav">
+      <nav class="emk-nav">
+        <a href="index.html" class="emk-nav__logo">EMK Marketing</a>
+        <div class="emk-nav__links">
+          <a href="index.html#emk-tjanster">Tjänster</a>
+          <a href="showreel.html">Showreel</a>
+          <a href="om-oss.html" class="is-active">Om oss</a>
+          <a href="index.html#emk-boka">Boka möte</a>
+        </div>
+      </nav>
+    </div>
+    <div class="emk-om-hero__inner">
+      <h1>Om <em>oss.</em></h1>
+    </div>
+  </header>
+
+  <div class="emk-wrap">
+
+    <!-- 2. VÅR VISION -->
+    <section class="emk-om-vision">
+      <h4>Vår vision</h4>
+      <p>Vi utmanar ständigt oss själva att hitta de smartaste lösningarna för de smartaste kunderna. Vårt mindset är enkelt: bli bättre, för varje dag.</p>
+    </section>
+
+    <!-- 3. OM EMK -->
+    <section class="emk-om-about">
+      <h4>EMK Marketing</h4>
+      <div class="emk-om-about__body">
+        <p>Med EMK Marketing erbjuder vi ett enkelt och effektivt sätt att växa digitalt. Bakom varje kampanj finns vår erfarenhet, vårt hantverk och vår ambition att göra varje kunds marknadsföring bättre.</p>
+        <p>Vi utgår från Stockholm och arbetar med kunder i hela Sverige.</p>
+        <p>Vill du veta mer om hur vi jobbar är du varmt välkommen att höra av dig.</p>
+      </div>
+    </section>
+
+    <!-- 3. TEAMET (byt img-src till riktiga foton, gärna 9:16) -->
+    <section class="emk-om-team">
+      <div class="emk-om-team__head">
+        <div class="emk-kicker"><span>Teamet</span></div>
+        <h2>Teamet.</h2>
+      </div>
+      <div class="emk-team-grid">
+        <div class="emk-member">
+          <img src="images/foto/portratt/DSC00175-5%20(1).jpg" alt="Mattias Larsson">
+          <div class="emk-member__info">
+            <div class="emk-member__name">Mattias Larsson</div>
+            <div class="emk-member__role">Grundare · Strategi &amp; film</div>
+          </div>
+        </div>
+        <div class="emk-member">
+          <img src="images/foto/portratt/580E75D9-7C49-4B3E-8AD1-587A264B07D0%20(1)%204%20copy.jpg" alt="Frida">
+          <div class="emk-member__info">
+            <div class="emk-member__name">Frida</div>
+            <div class="emk-member__role">Video &amp; kort format</div>
+          </div>
+        </div>
+        <div class="emk-member">
+          <img src="images/foto/ovrigt/IMG_5322%202%20copy.jpg" alt="Ella">
+          <div class="emk-member__info">
+            <div class="emk-member__name">Ella</div>
+            <div class="emk-member__role">Carousels &amp; statics</div>
+          </div>
+        </div>
+        <a class="emk-member emk-member--join" href="mailto:info@emkmarketing.se?subject=Jag%20vill%20jobba%20med%20EMK">
+          <div class="emk-join-inner">
+            <div class="emk-join-plus">+</div>
+            <div class="emk-join-txt">Nästa stjärna?<b>Hör av dig →</b></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 4. SLUT-CTA -->
+    <section class="emk-om-cta">
+      <h3>Nyfiken på hur vi kan <em>växla upp er marknadsföring?</em></h3>
+      <a class="emk-btn" href="index.html#emk-boka">Kontakta oss <span class="emk-arr">→</span></a>
+    </section>
+
+    <!-- FOOTER (minimal) -->
+    <footer class="emk-footer">
+      <span>© <span id="emk-year"></span> EMK Marketing</span>
+      <a href="index.html">Till startsidan →</a>
+    </footer>
+
+  </div>
+</div>
+<script>document.getElementById('emk-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
