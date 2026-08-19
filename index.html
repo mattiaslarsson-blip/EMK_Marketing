@@ -15,6 +15,7 @@
       --ink: #F5F1E8;
       --bg: #14130F;
       --card: #1F1D17;
+      --card-deep: #17150F;
       --line: #34312A;
       --line-soft: #2A2820;
       --muted: #908C80;
@@ -236,28 +237,56 @@
     #emk-lp .emk-bubbles.has-active .emk-bubbles__hint { opacity: 0; }
     #emk-lp .emk-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
-    /* Referenser — editorial-växlare */
-    #emk-lp .emk-refs { padding: 60px 0 40px; }
-    #emk-lp .emk-edq { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 64px 72px; overflow: hidden; touch-action: pan-y; outline: none; }
-    #emk-lp .emk-edq:focus-visible { box-shadow: 0 0 0 2px var(--gold); }
-    #emk-lp .emk-edq__mark { position: absolute; top: -70px; left: 16px; font-family: 'Manrope'; font-weight: 800; font-size: 320px; line-height: 1; color: rgba(223,164,56,0.07); pointer-events: none; user-select: none; }
-    #emk-lp .emk-edq__viewport { position: relative; min-height: 220px; }
-    #emk-lp .emk-edq__slide { position: absolute; inset: 0; opacity: 0; transform: translateY(10px); transition: opacity 0.6s ease, transform 0.6s ease; pointer-events: none; display: flex; flex-direction: column; justify-content: center; }
-    #emk-lp .emk-edq__slide.is-active { opacity: 1; transform: none; pointer-events: auto; }
-    #emk-lp .emk-edq__text { font-family: 'Manrope'; font-size: clamp(22px, 3.2vw, 34px); font-weight: 500; line-height: 1.35; letter-spacing: -0.5px; color: var(--ink); max-width: 86%; margin-bottom: 28px; }
-    #emk-lp .emk-edq__text em { font-style: normal; color: var(--gold); }
-    #emk-lp .emk-edq__by { display: flex; align-items: center; gap: 13px; }
-    #emk-lp .emk-edq__avatar { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); flex-shrink: 0; }
-    #emk-lp .emk-edq__avatar--initials { display: flex; align-items: center; justify-content: center; font-family: 'Manrope'; font-weight: 800; font-size: 13px; color: var(--gold); background: var(--bg); }
-    #emk-lp .emk-edq__name { font-family: 'Manrope'; font-weight: 800; font-size: 15px; color: var(--ink); }
-    #emk-lp .emk-edq__role { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; font-weight: 400; }
-    /* Positionsstreck */
-    #emk-lp .emk-edq__bars { position: absolute; right: 72px; bottom: 64px; display: flex; gap: 7px; z-index: 3; }
-    #emk-lp .emk-edq__bar { height: 4px; width: 12px; border-radius: 2px; background: var(--line); border: none; padding: 0; cursor: pointer; transition: width 0.35s cubic-bezier(0.2,0.8,0.2,1), background 0.3s ease; }
-    #emk-lp .emk-edq__bar.is-active { width: 30px; background: var(--gold); }
-    #emk-lp .emk-edq__bar:hover { background: var(--muted); }
-    #emk-lp .emk-edq__bar.is-active:hover { background: var(--gold); }
-    #emk-lp .emk-refs__more { text-align: center; margin-top: 34px; }
+    /* ===== SOCIAL PROOF ===== */
+    #emk-lp .emk-proof { padding: 70px 0; }
+
+    /* 1. Header */
+    #emk-lp .emk-proof__head { text-align: center; margin-bottom: 44px; }
+    #emk-lp .emk-proof__eyebrow { display: block; font-family: 'Manrope'; font-size: 11.5px; font-weight: 800;
+      letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    #emk-lp .emk-proof__head h2 { font-family: 'Manrope'; font-size: clamp(28px, 4.5vw, 42px); font-weight: 800;
+      letter-spacing: -0.9px; color: var(--ink); }
+
+    /* 2. Karusell */
+    #emk-lp .emk-proof__rail { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
+      padding: 8px 32px 26px; margin: 0 -32px;
+      scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch; }
+    #emk-lp .emk-proof__rail::-webkit-scrollbar { display: none; }
+    #emk-lp .emk-review { flex: 0 0 400px; scroll-snap-align: start; position: relative;
+      background: linear-gradient(180deg, var(--card) 0%, var(--card-deep) 100%);
+      border: 1px solid var(--line-soft); border-top: 3px solid var(--gold); border-radius: 18px;
+      padding: 30px 28px 28px; display: flex; flex-direction: column;
+      transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease; }
+    #emk-lp .emk-review:hover { transform: translateY(-6px);
+      box-shadow: 0 22px 50px -16px rgba(0,0,0,.65), 0 0 38px -12px rgba(223,164,56,.35); border-color: var(--line); }
+    #emk-lp .emk-review::before { content: "\201D"; position: absolute; top: 2px; right: 20px;
+      font-family: 'Manrope'; font-size: 110px; font-weight: 800; line-height: 1; color: rgba(223,164,56,.08);
+      pointer-events: none; user-select: none; }
+    #emk-lp .emk-review__by { display: flex; align-items: center; gap: 13px; margin-bottom: 18px; }
+    #emk-lp .emk-review__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
+      border: 2px solid var(--gold); flex-shrink: 0; background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Manrope'; font-weight: 800; font-size: 14px; color: var(--gold); }
+    #emk-lp .emk-review__name { font-family: 'Manrope'; font-weight: 800; font-size: 15.5px; color: var(--ink); letter-spacing: -0.2px; }
+    #emk-lp .emk-review__role { display: block; font-family: 'Manrope'; font-size: 10px; font-weight: 700;
+      letter-spacing: 1.8px; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+    #emk-lp .emk-review__text { font-size: 15px; line-height: 1.65; color: var(--muted-2); font-style: italic; }
+
+    /* 3. Resultat-banner */
+    #emk-lp .emk-proof__banner { margin-top: 44px; background: var(--card); border: 1px solid var(--line-soft);
+      border-radius: 20px; box-shadow: 0 18px 50px rgba(0,0,0,.4);
+      display: grid; grid-template-columns: 1fr 1fr 1fr; overflow: hidden; }
+    #emk-lp .emk-proof__stat { padding: 40px 28px; text-align: center; position: relative; }
+    #emk-lp .emk-proof__stat + .emk-proof__stat { border-left: 1px solid var(--line-soft); }
+    #emk-lp .emk-proof__num { font-family: 'Manrope'; font-weight: 800; font-size: clamp(34px, 4.5vw, 52px);
+      letter-spacing: -2px; line-height: 1; white-space: nowrap; font-variant-numeric: tabular-nums;
+      color: var(--gold); }
+    #emk-lp .emk-proof__label { margin-top: 14px; font-family: 'Manrope'; font-size: 10.5px; font-weight: 700;
+      letter-spacing: 1.8px; text-transform: uppercase; color: var(--muted); line-height: 1.6; max-width: 240px;
+      margin-left: auto; margin-right: auto; }
+
+    /* 4. Länk till recensionssidan */
+    #emk-lp .emk-proof__more { text-align: center; margin-top: 34px; }
 
     /* FAQ Section */
     #emk-lp .emk-faq { padding: 60px 0; max-width: 720px; margin: 0 auto; }
@@ -297,7 +326,7 @@
     #emk-lp .emk-footer__bottom a { color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
     #emk-lp .emk-footer__bottom a:hover { color: var(--gold); }
 
-    @media (prefers-reduced-motion: reduce) { #emk-lp .emk-svc:hover img { transform: none; } #emk-lp .emk-edq__slide { transition: none; } }
+    @media (prefers-reduced-motion: reduce) { #emk-lp .emk-svc:hover img { transform: none; } #emk-lp .emk-review { transition: none; } #emk-lp .emk-review:hover { transform: none; } }
 
     /* Responsive — surfplatta */
     @media(max-width: 900px) {
@@ -310,18 +339,15 @@
 
       #emk-lp .emk-bubbles__center-title { font-size: 22px; }
       #emk-lp .emk-bubbles__center-label { font-size: 10.5px; letter-spacing: 2.2px; }
-      /* Referenser — mobil (centrerad, avatar överst) */
-      #emk-lp .emk-edq { padding: 44px 24px 40px; border-radius: 20px; }
-      #emk-lp .emk-edq__mark { top: 8px; left: 50%; transform: translateX(-50%); font-size: 150px; color: rgba(223,164,56,0.09); }
-      #emk-lp .emk-edq__viewport { min-height: 300px; }
-      #emk-lp .emk-edq__slide { text-align: center; align-items: center; }
-      #emk-lp .emk-edq__by { flex-direction: column; gap: 0; order: -1; margin-bottom: 14px; }
-      #emk-lp .emk-edq__avatar { width: 44px; height: 44px; margin-bottom: 10px; }
-      #emk-lp .emk-edq__text { font-size: 19px; line-height: 1.45; max-width: 100%; margin-bottom: 16px; }
-      #emk-lp .emk-edq__byline { text-align: center; }
-      #emk-lp .emk-edq__name { font-size: 13px; }
-      #emk-lp .emk-edq__role { font-size: 11px; }
-      #emk-lp .emk-edq__bars { position: static; justify-content: center; margin-top: 22px; }
+      /* Social proof — mobil */
+      #emk-lp .emk-proof { padding: 48px 0; }
+      #emk-lp .emk-proof__head { margin-bottom: 30px; }
+      #emk-lp .emk-proof__rail { gap: 12px; padding: 6px 18px 22px; margin: 0 -18px; }
+      #emk-lp .emk-review { flex: 0 0 85vw; padding: 24px 22px 22px; }
+      #emk-lp .emk-review::before { font-size: 88px; right: 16px; }
+      #emk-lp .emk-proof__banner { grid-template-columns: 1fr; margin-top: 30px; }
+      #emk-lp .emk-proof__stat { padding: 28px 22px; }
+      #emk-lp .emk-proof__stat + .emk-proof__stat { border-left: none; border-top: 1px solid var(--line-soft); }
       #emk-lp .emk-services { padding: 44px 0 32px; }
       #emk-lp .emk-svc-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
       #emk-lp .emk-svc__body { padding: 18px 12px; }
@@ -332,7 +358,6 @@
       #emk-lp .emk-bubbles__card-desc { font-size: 14.5px; }
       #emk-lp .emk-grid3 { grid-template-columns: 1fr; gap: 16px; }
       #emk-lp .emk-card { padding: 28px 24px; border-radius: 20px; }
-      #emk-lp .emk-refs { padding: 44px 0 32px; }
       #emk-lp .emk-faq { padding: 44px 0; }
       #emk-lp .emk-boka { padding: 48px 0 32px; }
       #emk-lp .emk-cta-box { padding: 40px 24px; border-radius: 20px; }
@@ -503,95 +528,98 @@
       </div>
     </section>
 
-    <!-- 4. Referenser från kunder (editorial-växlare) -->
-    <section class="emk-refs">
-      <div class="emk-sec-head">
-        <span class="emk-eyebrow">Referenser</span>
-        <h2>Kundreferenser.</h2>
-        <p>Så upplever etablerade verksamheter samarbetet med oss.</p>
+    <!-- 4. Social proof — recensionskarusell + resultat -->
+    <section class="emk-proof">
+
+      <!-- 1. HEADER -->
+      <div class="emk-proof__head">
+        <span class="emk-proof__eyebrow">Utvalt arbete</span>
+        <h2>Låt våra kunder tala</h2>
       </div>
 
-      <div class="emk-edq" id="emk-edq" data-dur="7000" aria-roledescription="carousel" aria-label="Kundreferenser">
-        <div class="emk-edq__mark" aria-hidden="true">&ldquo;</div>
-        <div class="emk-edq__viewport">
+      <!-- 2. RECENSIONS-KARUSELL (swipe/scroll åt höger, scrollbar dold) -->
+      <div class="emk-proof__rail" aria-label="Kundrecensioner">
 
-          <!-- Citat 1. em = guldmarkerade nyckelord. Byt initial-avataren mot <img class="emk-edq__avatar" src="..."> för riktigt foto. -->
-          <div class="emk-edq__slide is-active">
-            <div class="emk-edq__text">En <em>avgörande partner</em> i vår digitala utveckling &mdash; kreativitet, struktur och leveranser i <em>toppklass</em>.</div>
-            <div class="emk-edq__by">
-              <div class="emk-edq__avatar emk-edq__avatar--initials">ML</div>
-              <div class="emk-edq__byline">
-                <span class="emk-edq__name">Monika Lykvist</span>
-                <span class="emk-edq__role">Digital Marketing Manager, We Travel Group AB</span>
-              </div>
-            </div>
+        <article class="emk-review">
+          <div class="emk-review__by">
+            <!-- BYT BILD: <img class="emk-review__avatar" src="..." alt="Monika Lykvist"> -->
+            <div class="emk-review__avatar">ML</div>
+            <div><div class="emk-review__name">Monika Lykvist</div><span class="emk-review__role">We Travel Group AB</span></div>
           </div>
+          <p class="emk-review__text">Vi anlitade EMK Marketing och är mycket nöjda med deras arbete. De visade upp en bred kompetens och innovativt tänkande. Att jobba med EMK Marketing var enkelt, eftersom de alltid var öppna för feedback.</p>
+        </article>
 
-          <!-- Citat 2 -->
-          <div class="emk-edq__slide">
-            <div class="emk-edq__text">Vi fick en partner som <em>verkligen förstod</em> vårt varumärke och våra mål.</div>
-            <div class="emk-edq__by">
-              <div class="emk-edq__avatar emk-edq__avatar--initials">KS</div>
-              <div class="emk-edq__byline">
-                <span class="emk-edq__name">Katarina Skugge</span>
-                <span class="emk-edq__role">Director of Marketing, Grand Tours</span>
-              </div>
-            </div>
+        <article class="emk-review">
+          <div class="emk-review__by">
+            <div class="emk-review__avatar">RC</div>
+            <div><div class="emk-review__name">Rebecka Carlén</div><span class="emk-review__role">Brand Strategist &amp; Growth Hacker</span></div>
           </div>
+          <p class="emk-review__text">EMK Marketing skötte allt content och paid social. De är drivna, lojala, ödmjuka och vill genuint ha ärlig feedback. Det var givande att jobba med dem och jag hoppas få möjlighet att göra det igen!</p>
+        </article>
 
-          <!-- Citat 3 -->
-          <div class="emk-edq__slide">
-            <div class="emk-edq__text">EMK levererar innehåll som <em>engagerar</em> och bygger min profil. <em>På riktigt.</em></div>
-            <div class="emk-edq__by">
-              <div class="emk-edq__avatar emk-edq__avatar--initials">WB</div>
-              <div class="emk-edq__byline">
-                <span class="emk-edq__name">William Broman</span>
-                <span class="emk-edq__role">Idrottsinfluencer</span>
-              </div>
-            </div>
+        <article class="emk-review">
+          <div class="emk-review__by">
+            <div class="emk-review__avatar">CW</div>
+            <div><div class="emk-review__name">Christina Wissinger</div><span class="emk-review__role">Sportchef, STG</span></div>
           </div>
+          <p class="emk-review__text">Samarbetet med EMK Marketing har varit otroligt givande och ett verkligt lyft i sociala medier. EMK har varit lyhörda, proffsiga och enkla att kommunicera med. Jag kan varmt rekommendera dem!</p>
+        </article>
 
-          <!-- Citat 4 — UTKAST (AI-skrivet utifrån kampanjdata, INTE ett riktigt citat).
-               Ersätt text + namn med ett verkligt godkänt citat innan publicering, eller ta bort hela sliden + en bar-knapp nedan. -->
-          <div class="emk-edq__slide">
-            <div class="emk-edq__text">Nedladdningar för <em>under en krona styck</em> &mdash; EMK fick vår kampanjbudget att arbeta hårdare än vi trodde var möjligt.</div>
-            <div class="emk-edq__by">
-              <div class="emk-edq__avatar emk-edq__avatar--initials">BA</div>
-              <div class="emk-edq__byline">
-                <span class="emk-edq__name">BallersApp</span>
-                <span class="emk-edq__role">Paid social &amp; nedladdningskampanjer</span>
-              </div>
-            </div>
+        <article class="emk-review">
+          <div class="emk-review__by">
+            <div class="emk-review__avatar">WB</div>
+            <div><div class="emk-review__name">William Broman</div><span class="emk-review__role">Ex-Captain of the Swedish National Team</span></div>
           </div>
+          <p class="emk-review__text">I&rsquo;m very impressed with the work of EMK Marketing. They demonstrated a high level of professionalism and have been key on building out high quality B2C-content. En avgörande partner i att bygga mitt personliga varumärke.</p>
+        </article>
 
-          <!-- Citat 5 — UTKAST (AI-skrivet utifrån kampanjdata, INTE ett riktigt citat).
-               Ersätt text + namn med ett verkligt godkänt citat innan publicering, eller ta bort hela sliden + en bar-knapp nedan. -->
-          <div class="emk-edq__slide">
-            <div class="emk-edq__text">Vår organiska räckvidd växte med <em>över 500 procent</em> på tre månader &mdash; utan att vi tappade vår egen ton.</div>
-            <div class="emk-edq__by">
-              <div class="emk-edq__avatar emk-edq__avatar--initials">RS</div>
-              <div class="emk-edq__byline">
-                <span class="emk-edq__name">Reseskaparna</span>
-                <span class="emk-edq__role">Content &amp; annonsering</span>
-              </div>
-            </div>
+        <article class="emk-review">
+          <div class="emk-review__by">
+            <div class="emk-review__avatar">ER</div>
+            <div><div class="emk-review__name">Emma Raask</div><span class="emk-review__role">Sportchef, Hammarbygymnasterna</span></div>
           </div>
+          <p class="emk-review__text">Samarbetet har varit otroligt givande och ett lyft för föreningen. EMK Marketing har varit lyhörda, enkla att kommunicera med, kreativa i sina idéer och tagit fram fantastiska filmer och bilder som visar vår glädje, gemenskap och utveckling.</p>
+        </article>
 
+        <article class="emk-review">
+          <div class="emk-review__by">
+            <div class="emk-review__avatar">L</div>
+            <div><div class="emk-review__name">Leo</div><span class="emk-review__role">Co-founder, Heylinn</span></div>
+          </div>
+          <p class="emk-review__text">Vi fick högkvalitativa video-reklamfilmer av EMK Marketing.</p>
+        </article>
+
+        <article class="emk-review">
+          <div class="emk-review__by">
+            <div class="emk-review__avatar">HF</div>
+            <div><div class="emk-review__name">Hassan Fadavi</div><span class="emk-review__role">Entreprenör</span></div>
+          </div>
+          <p class="emk-review__text">Grymma och mycket professionella.</p>
+        </article>
+
+      </div>
+
+      <!-- 3. RESULTAT-BANNER -->
+      <div class="emk-proof__banner">
+        <div class="emk-proof__stat">
+          <div class="emk-proof__num">500&nbsp;000&nbsp;kr</div>
+          <div class="emk-proof__label">Intäkt på 37&nbsp;000&nbsp;kr annonsbudget (13.5x ROAS)</div>
         </div>
-
-        <div class="emk-edq__bars" role="tablist" aria-label="Välj referens">
-          <button class="emk-edq__bar is-active" aria-label="Referens 1"></button>
-          <button class="emk-edq__bar" aria-label="Referens 2"></button>
-          <button class="emk-edq__bar" aria-label="Referens 3"></button>
-          <button class="emk-edq__bar" aria-label="Referens 4"></button>
-          <button class="emk-edq__bar" aria-label="Referens 5"></button>
+        <div class="emk-proof__stat">
+          <div class="emk-proof__num">-30%</div>
+          <div class="emk-proof__label">Sänkt CPA i snitt för våra kunder</div>
+        </div>
+        <div class="emk-proof__stat">
+          <div class="emk-proof__num">+150%</div>
+          <div class="emk-proof__label">Ökad räckvidd och digital närvaro</div>
         </div>
       </div>
 
-      <!-- LÄNK TILL FRAMTIDA RECENSIONSSIDA: byt href när sidan finns -->
-      <div class="emk-refs__more">
+      <!-- 4. LÄNK TILL RECENSIONSSIDAN -->
+      <div class="emk-proof__more">
         <a class="emk-btn emk-btn-ghost" href="recensioner.html">Läs alla recensioner <span class="emk-arr">&rarr;</span></a>
       </div>
+
     </section>
 
     <!-- 5. Vanliga frågor -->
@@ -689,56 +717,6 @@
       else { content.style.maxHeight = content.scrollHeight + "px"; }
     });
   });
-
-  /* Kundreferenser — editorial-växlare */
-  (function(){
-    var stage = document.getElementById('emk-edq');
-    if(!stage) return;
-    var slides = Array.prototype.slice.call(stage.querySelectorAll('.emk-edq__slide'));
-    var bars = Array.prototype.slice.call(stage.querySelectorAll('.emk-edq__bar'));
-    var DUR = parseInt(stage.getAttribute('data-dur'), 10) || 7000;
-    var idx = 0, timer = null;
-
-    function show(i){
-      idx = (i + slides.length) % slides.length;
-      slides.forEach(function(s, k){ s.classList.toggle('is-active', k === idx); });
-      bars.forEach(function(b, k){ b.classList.toggle('is-active', k === idx); });
-    }
-    function next(){ show(idx + 1); }
-    function play(){ if(reduceMotion) return; stop(); timer = setInterval(next, DUR); }
-    function stop(){ if(timer){ clearInterval(timer); timer = null; } }
-
-    bars.forEach(function(b, k){ b.addEventListener('click', function(){ show(k); play(); }); });
-
-    stage.addEventListener('mouseenter', stop);
-    stage.addEventListener('mouseleave', play);
-
-    /* Swipe på mobil */
-    var x0 = null;
-    stage.addEventListener('pointerdown', function(e){ x0 = e.clientX; });
-    stage.addEventListener('pointerup', function(e){
-      if(x0 === null) return;
-      var dx = e.clientX - x0;
-      if(Math.abs(dx) > 40){ show(dx < 0 ? idx + 1 : idx - 1); play(); }
-      x0 = null;
-    });
-    stage.addEventListener('pointercancel', function(){ x0 = null; });
-
-    /* Tangentbord */
-    stage.setAttribute('tabindex', '0');
-    stage.addEventListener('keydown', function(e){
-      if(e.key === 'ArrowRight'){ show(idx + 1); play(); }
-      else if(e.key === 'ArrowLeft'){ show(idx - 1); play(); }
-    });
-
-    /* Starta när sektionen syns */
-    if('IntersectionObserver' in window){
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(en){ if(en.isIntersecting){ play(); io.disconnect(); } });
-      }, {threshold: 0.4});
-      io.observe(stage);
-    } else { play(); }
-  })();
 
   /* Scroll-reveal för kort */
   var revealEls = Array.prototype.slice.call(root.querySelectorAll('.emk-reveal'));
