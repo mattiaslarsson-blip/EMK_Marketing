@@ -86,6 +86,11 @@
     #emk-lp .emk-nav__links a { color:rgba(245,241,232,.85); text-decoration:none; font-size:14.5px; font-weight:600;
       text-shadow:0 1px 10px rgba(0,0,0,.5); transition:color .2s; }
     #emk-lp .emk-nav__links a:hover { color:#fff; }
+    /* Sekundär CTA i nav: guldram, ej fylld – heron äger den fyllda guldknappen */
+    #emk-lp .emk-nav__cta { border:1.5px solid var(--gold); color:var(--gold) !important;
+      padding:9px 20px; border-radius:100px; font-weight:700; white-space:nowrap;
+      transition:background .2s, color .2s; }
+    #emk-lp .emk-nav__cta:hover { background:var(--gold); color:#14130F !important; }
 
     /* Hamburgare (dold på desktop) + mobilmeny */
     #emk-lp .emk-nav__burger { display:none; background:none; border:none; cursor:pointer; padding:8px; z-index:7; }
@@ -102,6 +107,9 @@
     #emk-lp .emk-mobilemenu a { color:var(--cream); text-decoration:none; font-family:'Manrope'; font-size:24px; font-weight:800;
       padding:14px 24px; letter-spacing:-0.4px; }
     #emk-lp .emk-mobilemenu a:hover { color:var(--gold); }
+    #emk-lp .emk-mobilemenu .emk-nav__cta { color:var(--gold) !important; border:1.5px solid var(--gold);
+      border-radius:100px; padding:14px 32px; margin-top:10px; }
+    #emk-lp .emk-mobilemenu .emk-nav__cta:hover { background:var(--gold); color:#14130F !important; }
 
     /* Innehåll nere till vänster (desktop) */
     #emk-lp .emk-hero-content { position:absolute; left:4.5%; bottom:10%; max-width:560px; z-index:3; }
@@ -114,13 +122,6 @@
     #emk-lp .emk-lede { color:rgba(242,238,228,.78); font-size:clamp(14px,1.5vw,17px); line-height:1.55;
       margin-bottom:24px; max-width:88%; text-shadow:0 1px 14px rgba(0,0,0,.6); }
     #emk-lp .emk-ctas { display:flex; gap:12px; flex-wrap:wrap; }
-    #emk-lp .emk-btn--solid { background:var(--cream); color:#14130F; box-shadow:0 12px 28px -10px rgba(0,0,0,.6); }
-    #emk-lp .emk-btn--solid:hover { background:#fff; transform:translateY(-2px); }
-    #emk-lp .emk-btn--solid .emk-arr { transition:transform .2s; }
-    #emk-lp .emk-btn--solid:hover .emk-arr { transform:translateX(5px); }
-    #emk-lp .emk-btn--ghost { background:rgba(20,19,15,.6); color:var(--cream); border:1px solid rgba(255,255,255,.22);
-      -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); }
-    #emk-lp .emk-btn--ghost:hover { border-color:var(--gold); color:var(--gold); }
 
     @media (prefers-reduced-motion: reduce){
       #emk-lp .emk-panel, #emk-lp .emk-panel img, #emk-lp .emk-mobilemenu { transition:none; }
@@ -171,6 +172,17 @@
     #emk-lp .emk-btn-gold:hover { background: #ecb44b; }
     #emk-lp .emk-btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); box-shadow: none; }
     #emk-lp .emk-btn-ghost:hover { background: rgba(255,255,255,0.04); border-color: var(--gold); color: var(--gold); }
+
+    /* Hero-knappar – måste ligga efter bas-.emk-btn ovan för att vinna på kaskaden */
+    #emk-lp .emk-btn--ghost { background:rgba(20,19,15,.6); color:var(--cream); border:1px solid rgba(255,255,255,.22);
+      -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); }
+    #emk-lp .emk-btn--ghost:hover { background:rgba(20,19,15,.75); border-color:var(--gold); color:var(--gold); }
+    /* Primär hero-CTA – egen klass för att inte krocka med .emk-btn-gold i boka-sektionen */
+    #emk-lp .emk-btn--gold-hero { background:var(--gold); color:#14130F;
+      box-shadow:0 12px 28px -10px rgba(223,164,56,.5); }
+    #emk-lp .emk-btn--gold-hero:hover { background:#ecb44b; transform:translateY(-2px); }
+    #emk-lp .emk-btn--gold-hero .emk-arr { transition:transform .2s; }
+    #emk-lp .emk-btn--gold-hero:hover .emk-arr { transform:translateX(5px); }
 
     /* Shared section heading */
     #emk-lp .emk-sec-head { text-align: center; margin-bottom: 48px; }
@@ -368,7 +380,7 @@
           <a href="#emk-tjanster">Tjänster</a>
           <a href="showreel.html">Showreel</a>
           <a href="om-oss.html">Om oss</a>
-          <a href="#emk-boka">Boka möte</a>
+          <a class="emk-nav__cta" href="#emk-boka">Boka möte</a>
         </div>
         <button class="emk-nav__burger" id="emk-burger" aria-label="Öppna meny" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -381,7 +393,7 @@
         <h1>Strategisk marknadsföring med fokus på <em>långsiktig lönsamhet.</em></h1>
         <p class="emk-lede">Vi kombinerar strategisk annonsering, engagerande content och video för att driva mätbar tillväxt.</p>
         <div class="emk-ctas">
-          <a class="emk-btn emk-btn--solid" id="emk-cta-top" href="#emk-boka">Kontakta oss <span class="emk-arr">→</span></a>
+          <a class="emk-btn emk-btn--gold-hero" id="emk-cta-top" href="#emk-boka">Kontakta oss <span class="emk-arr">→</span></a>
           <a class="emk-btn emk-btn--ghost" href="showreel.html">Se vårt arbete</a>
         </div>
       </div>
@@ -394,7 +406,7 @@
     <a href="#emk-tjanster">Tjänster</a>
     <a href="showreel.html">Showreel</a>
     <a href="om-oss.html">Om oss</a>
-    <a href="#emk-boka">Boka möte</a>
+    <a class="emk-nav__cta" href="#emk-boka">Boka möte</a>
   </div>
 
   <div class="emk-wrap">
