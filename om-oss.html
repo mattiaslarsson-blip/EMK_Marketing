@@ -24,7 +24,7 @@ body { margin:0; background:#14130F; }
 /* Nav */
 #emk-lp .emk-nav { display:flex; justify-content:space-between; align-items:center; padding:24px 0; }
 #emk-lp .emk-nav__logo { color:var(--gold); font-family:'Manrope'; font-weight:800; font-size:18px; text-decoration:none; }
-#emk-lp .emk-nav__links { display:flex; gap:26px; }
+#emk-lp .emk-nav__links { display:flex; align-items:center; gap:26px; }
 #emk-lp .emk-nav__links a { color:rgba(245,241,232,.85); text-decoration:none; font-size:14.5px; font-weight:600; transition:color .2s; }
 #emk-lp .emk-nav__links a:hover { color:#fff; }
 #emk-lp .emk-nav__links a.is-active { color:var(--gold); }
@@ -111,12 +111,11 @@ body { margin:0; background:#14130F; }
 /* ===== MOBIL ===== */
 @media (max-width:768px){
   #emk-lp .emk-wrap { padding:0 18px; }
-  #emk-lp .emk-nav { padding:16px 0; }
-  #emk-lp .emk-nav { gap:10px; }
-  #emk-lp .emk-nav__logo { font-size:13px; white-space:nowrap; }
-  #emk-lp .emk-nav__links { gap:8px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
-  #emk-lp .emk-nav__links a { font-size:11.5px; }
-  #emk-lp .emk-nav__cta { padding:6px 10px; border-width:1px; }
+  #emk-lp .emk-nav { padding:16px 0; gap:10px; }
+  #emk-lp .emk-nav__logo { font-size:15px; white-space:nowrap; }
+  #emk-lp .emk-nav__links { gap:14px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
+  #emk-lp .emk-nav__links a { font-size:12.5px; }
+  #emk-lp .emk-nav__cta { padding:7px 14px; }
   #emk-lp .emk-om-hero { min-height:46vh; }
   #emk-lp .emk-om-hero__inner { padding:0 18px 36px; }
   #emk-lp .emk-om-topnav .emk-nav { padding:16px 18px; }
@@ -137,11 +136,11 @@ body { margin:0; background:#14130F; }
 }
 
 /* Extra smala telefoner – håll nav på en rad */
-@media (max-width:389px){
-  #emk-lp .emk-nav__logo { font-size:11.5px; }
-  #emk-lp .emk-nav__links { gap:6px; }
-  #emk-lp .emk-nav__links a { font-size:11px; }
-  #emk-lp .emk-nav__cta { padding:5px 8px; }
+@media (max-width:374px){
+  #emk-lp .emk-nav__logo { font-size:13px; }
+  #emk-lp .emk-nav__links { gap:10px; }
+  #emk-lp .emk-nav__links a { font-size:11.5px; }
+  #emk-lp .emk-nav__cta { padding:6px 11px; }
 }
 </style>
 </head>
@@ -157,7 +156,6 @@ body { margin:0; background:#14130F; }
         <a href="index.html" class="emk-nav__logo">EMK Marketing</a>
         <div class="emk-nav__links">
           <a href="index.html#emk-tjanster">Tjänster</a>
-          <a href="showreel.html">Showreel</a>
           <a href="om-oss.html" class="is-active">Om oss</a>
           <a class="emk-nav__cta" href="index.html#emk-boka">Boka möte</a>
         </div>

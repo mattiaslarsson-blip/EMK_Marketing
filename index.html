@@ -83,7 +83,7 @@
     #emk-lp .emk-nav { position:absolute; top:0; left:0; right:0; z-index:5;
       display:flex; justify-content:space-between; align-items:center; padding:24px 4.5%; }
     #emk-lp .emk-nav__logo { color:var(--gold); font-family:'Manrope'; font-weight:800; font-size:18px; text-decoration:none; }
-    #emk-lp .emk-nav__links { display:flex; gap:26px; }
+    #emk-lp .emk-nav__links { display:flex; align-items:center; gap:26px; }
     #emk-lp .emk-nav__links a { color:rgba(245,241,232,.85); text-decoration:none; font-size:14.5px; font-weight:600;
       text-shadow:0 1px 10px rgba(0,0,0,.5); transition:color .2s; }
     #emk-lp .emk-nav__links a:hover { color:#fff; }
@@ -174,11 +174,8 @@
     #emk-lp .emk-btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); box-shadow: none; }
     #emk-lp .emk-btn-ghost:hover { background: rgba(255,255,255,0.04); border-color: var(--gold); color: var(--gold); }
 
-    /* Hero-knappar – måste ligga efter bas-.emk-btn ovan för att vinna på kaskaden */
-    #emk-lp .emk-btn--ghost { background:rgba(20,19,15,.6); color:var(--cream); border:1px solid rgba(255,255,255,.22);
-      -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); }
-    #emk-lp .emk-btn--ghost:hover { background:rgba(20,19,15,.75); border-color:var(--gold); color:var(--gold); }
-    /* Primär hero-CTA – egen klass för att inte krocka med .emk-btn-gold i boka-sektionen */
+    /* Hero-knapp – måste ligga efter bas-.emk-btn ovan för att vinna på kaskaden.
+       Egen klass för att inte krocka med .emk-btn-gold i boka-sektionen */
     #emk-lp .emk-btn--gold-hero { background:var(--gold); color:#14130F;
       box-shadow:0 12px 28px -10px rgba(223,164,56,.5); }
     #emk-lp .emk-btn--gold-hero:hover { background:#ecb44b; transform:translateY(-2px); }
@@ -379,7 +376,7 @@
 
       <!-- PANELER (rundade hörn, börjar under navet) -->
       <div class="emk-panels">
-        <a class="emk-panel" href="showreel.html" aria-label="Foto och film">
+        <a class="emk-panel" href="#emk-tjanster" aria-label="Foto och film">
           <img src="images/foto/ovrigt/IMG_5322%202%20copy.jpg" alt="">
         </a>
         <a class="emk-panel" href="om-oss.html" aria-label="Om oss">
@@ -388,10 +385,10 @@
         <a class="emk-panel" href="#emk-tjanster" aria-label="Våra tjänster">
           <img src="images/foto/portratt/580E75D9-7C49-4B3E-8AD1-587A264B07D0%20(1)%204%20copy.jpg" alt="">
         </a>
-        <a class="emk-panel" href="showreel.html" aria-label="Kundcase">
+        <a class="emk-panel" href="#emk-tjanster" aria-label="Kundcase">
           <img src="images/foto/traningsapp/41C292C0-5D42-4FC6-8171-C4ABA51DB4C8%202%20copy.JPG" alt="">
         </a>
-        <a class="emk-panel" href="showreel.html" aria-label="Annonsering">
+        <a class="emk-panel" href="#emk-tjanster" aria-label="Annonsering">
           <img src="images/foto/golf/GTG%202.jpg" alt="">
         </a>
       </div>
@@ -403,7 +400,6 @@
         <a href="index.html" class="emk-nav__logo">EMK Marketing</a>
         <div class="emk-nav__links">
           <a href="#emk-tjanster">Tjänster</a>
-          <a href="showreel.html">Showreel</a>
           <a href="om-oss.html">Om oss</a>
           <a class="emk-nav__cta" href="#emk-boka">Boka möte</a>
         </div>
@@ -419,7 +415,6 @@
         <p class="emk-lede">Vi kombinerar strategisk annonsering, engagerande content och video för att driva mätbar tillväxt.</p>
         <div class="emk-ctas">
           <a class="emk-btn emk-btn--gold-hero" id="emk-cta-top" href="#emk-boka">Kontakta oss <span class="emk-arr">→</span></a>
-          <a class="emk-btn emk-btn--ghost" href="showreel.html">Se vårt arbete</a>
         </div>
       </div>
 
@@ -429,7 +424,6 @@
   <!-- MOBILMENY (overlay) -->
   <div class="emk-mobilemenu" id="emk-mobilemenu" aria-hidden="true">
     <a href="#emk-tjanster">Tjänster</a>
-    <a href="showreel.html">Showreel</a>
     <a href="om-oss.html">Om oss</a>
     <a class="emk-nav__cta" href="#emk-boka">Boka möte</a>
   </div>
@@ -459,11 +453,11 @@
           <div class="emk-svc__overlay"></div>
           <div class="emk-svc__body"><div class="emk-svc__title">Organisk tillväxt</div></div>
         </div>
-        <a class="emk-svc" href="showreel.html">
+        <div class="emk-svc">
           <img src="images/foto/ovrigt/IMG_5322%202%20copy.jpg" alt="Foto &amp; film">
           <div class="emk-svc__overlay"></div>
           <div class="emk-svc__body"><div class="emk-svc__title">Foto &amp; film</div></div>
-        </a>
+        </div>
       </div>
     </section>
 
@@ -634,11 +628,11 @@
 
     <!-- 6. Boka / Kontakt -->
     <section class="emk-boka" id="emk-boka">
-      <h2>Boka ett kostnadsfritt strategisamtal</h2>
-      <p class="emk-boka-sub">Kontakta oss för en <b>förutsättningslös dialog</b> om hur vi kan optimera er digitala närvaro och driva mätbar tillväxt.</p>
+      <h2>Kontakta oss</h2>
+      <p class="emk-boka-sub">Berätta vad ni vill uppnå, så hör vi av oss med hur vi kan hjälpa er att växa.</p>
       <div class="emk-cta-box">
         <h3>Definiera era mål. Vi bygger strategin som tar er dit.</h3>
-        <a class="emk-btn emk-btn-gold" href="mailto:info@emkmarketing.se?subject=Strategim%C3%B6te%20med%20EMK%20Marketing">Mejla oss så hörs vi <span class="emk-arr">→</span></a>
+        <a class="emk-btn emk-btn-gold" href="mailto:info@emkmarketing.se?subject=Kontakt%20med%20EMK%20Marketing">Mejla oss så hörs vi <span class="emk-arr">→</span></a>
         <p class="emk-cta-alt">Eller skriv direkt till <a href="mailto:mattias.larsson@emkmarketing.se">mattias.larsson@emkmarketing.se</a></p>
       </div>
     </section>
