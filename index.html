@@ -267,21 +267,34 @@
 
     /* Varför oss + logotyper */
     #emk-lp .emk-why { padding: 60px 0 40px; }
-    #emk-lp .emk-logos { margin-bottom: 56px; text-align: center; }
-    #emk-lp .emk-bubbles { position: relative; height: 520px; margin-top: 30px; overflow: hidden; }
-    #emk-lp .emk-bubble { position: absolute; top: 0; left: 0; will-change: transform; transform-origin: center center; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.2px; color: var(--muted-2); background: rgba(31,29,23,0.6); border: 1px solid var(--line); border-radius: 100px; padding: 11px 20px; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: color 0.2s ease, border-color 0.2s ease, background 0.25s ease, box-shadow 0.3s ease; user-select: none; }
-    #emk-lp .emk-bubble:hover { color: #14130F; background: var(--gold); border-color: var(--gold); box-shadow: 0 14px 40px -10px rgba(223,164,56,0.65); }
-    #emk-lp .emk-bubbles__center { position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%); text-align: center; pointer-events: none; transition: opacity 0.35s ease, transform 0.35s ease; z-index: 5; }
-    #emk-lp .emk-bubbles__center-label { font-family: 'Manrope'; font-size: 12px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-    #emk-lp .emk-bubbles__center-title { font-family: 'Manrope'; font-size: clamp(24px, 3.5vw, 34px); font-weight: 800; letter-spacing: -0.6px; color: var(--ink); }
-    #emk-lp .emk-bubbles.has-active .emk-bubbles__center { opacity: 0; transform: translate(-50%, -50%) scale(0.92); }
-    #emk-lp .emk-bubble.is-active { color: #14130F; background: var(--gold); border-color: var(--gold); box-shadow: 0 24px 60px -14px rgba(223,164,56,0.6); }
-    #emk-lp .emk-bubbles__card { position: absolute; left: 50%; top: 60%; transform: translateX(-50%) translateY(10px); width: min(440px, 86%); text-align: center; opacity: 0; pointer-events: none; transition: opacity 0.35s ease, transform 0.35s ease; z-index: 40; }
-    #emk-lp .emk-bubbles__card.is-visible { opacity: 1; transform: translateX(-50%) translateY(0); }
-    #emk-lp .emk-bubbles__card-name { font-family: 'Manrope'; font-weight: 800; font-size: 19px; color: var(--gold); margin-bottom: 8px; letter-spacing: -0.2px; }
-    #emk-lp .emk-bubbles__card-desc { font-size: 15.5px; color: var(--muted-2); line-height: 1.55; }
-    #emk-lp .emk-bubbles__hint { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); font-size: 13px; color: var(--muted); letter-spacing: 0.3px; transition: opacity 0.3s ease; pointer-events: none; }
-    #emk-lp .emk-bubbles.has-active .emk-bubbles__hint { opacity: 0; }
+    /* Kunder — logotypband */
+    #emk-lp .emk-clients { padding: 64px 0 70px; overflow: hidden; }
+    #emk-lp .emk-clients__head { text-align: center; margin-bottom: 38px; }
+    #emk-lp .emk-clients__head .emk-kicker { margin-bottom: 0; }
+    #emk-lp .emk-clients__head h2 { font-family: 'Manrope'; font-size: clamp(26px, 4vw, 38px); font-weight: 800; letter-spacing: -0.8px; margin-top: 14px; }
+
+    #emk-lp .emk-logo-band { position: relative; display: flex; flex-direction: column; gap: 22px; }
+    #emk-lp .emk-logo-band::before, #emk-lp .emk-logo-band::after { content: ""; position: absolute; top: 0; bottom: 0; width: 160px; z-index: 2; pointer-events: none; }
+    #emk-lp .emk-logo-band::before { left: 0; background: linear-gradient(90deg, var(--bg) 10%, transparent); }
+    #emk-lp .emk-logo-band::after { right: 0; background: linear-gradient(270deg, var(--bg) 10%, transparent); }
+
+    #emk-lp .emk-logo-row { display: flex; width: max-content; animation: emkLogoScroll 46s linear infinite; }
+    #emk-lp .emk-logo-row--rev { animation-direction: reverse; animation-duration: 54s; }
+    #emk-lp .emk-logo-band:hover .emk-logo-row { animation-play-state: paused; }
+    @keyframes emkLogoScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    #emk-lp .emk-logo-group { display: flex; align-items: center; flex-shrink: 0; }
+    #emk-lp .emk-logo { display: flex; align-items: center; justify-content: center; height: 76px; padding: 0 44px; }
+    #emk-lp .emk-logo img { height: 38px; width: auto; max-width: 220px; object-fit: contain; display: block;
+      opacity: .62; filter: grayscale(1) brightness(1.05); transition: opacity .3s ease, filter .3s ease, transform .3s ease; }
+    #emk-lp .emk-logo--tall img { height: 52px; }   /* runda/kvadratiska märken får lite mer höjd */
+    #emk-lp .emk-logo:hover img { opacity: 1; filter: none; transform: scale(1.06); }
+
+    @media (prefers-reduced-motion: reduce) {
+      #emk-lp .emk-logo-row { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
+      #emk-lp .emk-logo-group[aria-hidden="true"] { display: none; }
+    }
+
     #emk-lp .emk-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
     /* ===== SOCIAL PROOF ===== */
@@ -377,8 +390,16 @@
     @media(max-width: 768px) {
       #emk-lp .emk-wrap { padding: 0 18px; }
 
-      #emk-lp .emk-bubbles__center-title { font-size: 22px; }
-      #emk-lp .emk-bubbles__center-label { font-size: 10.5px; letter-spacing: 2.2px; }
+      /* Kunder — mobil */
+      #emk-lp .emk-clients { padding: 46px 0 50px; }
+      #emk-lp .emk-clients__head { margin-bottom: 26px; }
+      #emk-lp .emk-logo-band { gap: 14px; }
+      #emk-lp .emk-logo-band::before, #emk-lp .emk-logo-band::after { width: 70px; }
+      #emk-lp .emk-logo { height: 60px; padding: 0 26px; }
+      #emk-lp .emk-logo img { height: 30px; max-width: 160px; }
+      #emk-lp .emk-logo--tall img { height: 42px; }
+      #emk-lp .emk-logo-row { animation-duration: 34s; }
+      #emk-lp .emk-logo-row--rev { animation-duration: 40s; }
       /* Social proof — mobil */
       #emk-lp .emk-proof { padding: 48px 0; }
       #emk-lp .emk-proof__head { margin-bottom: 30px; }
@@ -399,10 +420,6 @@
       #emk-lp .emk-svc__panel p { font-size: 14px; margin-bottom: 16px; }
       #emk-lp .emk-svc__cta { width: 100%; }
       #emk-lp .emk-why { padding: 44px 0 32px; }
-      #emk-lp .emk-bubbles { height: 580px; margin-top: 22px; }
-      #emk-lp .emk-bubble { font-size: 12.5px; padding: 9px 14px; }
-      #emk-lp .emk-bubbles__card-name { font-size: 17px; }
-      #emk-lp .emk-bubbles__card-desc { font-size: 14.5px; }
       #emk-lp .emk-grid3 { grid-template-columns: 1fr; gap: 16px; }
       #emk-lp .emk-card { padding: 28px 24px; border-radius: 20px; }
       #emk-lp .emk-faq { padding: 44px 0; }
@@ -528,45 +545,63 @@
       </div>
     </section>
 
-    <!-- 3. Varför kunder väljer oss + logotyper -->
+    <!-- 3. Kunder — logotypband -->
+    <section class="emk-clients" aria-label="Ett urval av våra kunder">
+      <div class="emk-clients__head">
+        <div class="emk-kicker"><span>Ett urval av varumärken</span></div>
+        <h2>Kunder vi arbetat med.</h2>
+      </div>
+
+      <div class="emk-logo-band">
+
+        <!-- RAD 1 (rullar vänster). Gruppen dubbleras för sömlös loop. -->
+        <div class="emk-logo-row">
+          <div class="emk-logo-group">
+            <div class="emk-logo"><img src="images/logos/grand-tours.png" alt="Grand Tours"></div>
+            <div class="emk-logo"><img src="images/logos/joina.png" alt="Joina"></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/hg.png" alt="HG"></div>
+            <div class="emk-logo"><img src="images/logos/bonnie.png" alt="Bonnie Stockholm"></div>
+            <div class="emk-logo"><img src="images/logos/heylinn.png" alt="Heylinn"></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/foreningen-ekonomerna.png" alt="Föreningen Ekonomerna"></div>
+            <div class="emk-logo"><img src="images/logos/linsblocker.png" alt="Linsblocker"></div>
+          </div>
+          <div class="emk-logo-group" aria-hidden="true">
+            <div class="emk-logo"><img src="images/logos/grand-tours.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/joina.png" alt=""></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/hg.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/bonnie.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/heylinn.png" alt=""></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/foreningen-ekonomerna.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/linsblocker.png" alt=""></div>
+          </div>
+        </div>
+
+        <!-- RAD 2 (rullar höger) -->
+        <div class="emk-logo-row emk-logo-row--rev">
+          <div class="emk-logo-group">
+            <div class="emk-logo"><img src="images/logos/reseskaparna.png" alt="Reseskaparna"></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/indie-pen-publishing.png" alt="Indie Pen Publishing"></div>
+            <div class="emk-logo"><img src="images/logos/aventyrsresor.png" alt="Äventyrsresor"></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/ballersapp.png" alt="BallersApp"></div>
+            <div class="emk-logo"><img src="images/logos/skarmskold.png" alt="Skärmsköld"></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/coahdan.png" alt="Coach Dan Gymnastics"></div>
+          </div>
+          <div class="emk-logo-group" aria-hidden="true">
+            <div class="emk-logo"><img src="images/logos/reseskaparna.png" alt=""></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/indie-pen-publishing.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/aventyrsresor.png" alt=""></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/ballersapp.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/skarmskold.png" alt=""></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/coahdan.png" alt=""></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Varför kunder väljer oss -->
     <section class="emk-why">
       <div class="emk-sec-head"><h2>Varför företag stannar hos EMK</h2></div>
-      <div class="emk-logos">
-        <!-- BUBBELMOLN: data-desc = kort beskrivning per företag. Redigera fritt — verifiera gärna att varje rad stämmer. -->
-        <div class="emk-bubbles" id="emk-bubbles">
-          <button class="emk-bubble" data-desc="Stuguthyrning i Bruksvallarna. SEO och Google Ads.">Fjällfrid</button>
-          <button class="emk-bubble" data-desc="Bokförlag. Marknadsföring och Shopify.">Indie Pen Publishing</button>
-          <button class="emk-bubble" data-desc="App. Paid social och nedladdningskampanjer.">BallersApp</button>
-          <button class="emk-bubble" data-desc="Varumärke. Content och annonsering.">Heylinn</button>
-          <button class="emk-bubble" data-desc="Varumärke. Sociala medier och content.">Linsblockers</button>
-          <button class="emk-bubble" data-desc="Gymnastikförening. Innehåll och digital närvaro.">Hammarbygymnasterna</button>
-          <button class="emk-bubble" data-desc="Förening. Sociala medier och content.">STG</button>
-          <button class="emk-bubble" data-desc="Foto, film och sociala medier.">Tapas28</button>
-          <button class="emk-bubble" data-desc="Foto, film och sociala medier.">Caliente</button>
-          <button class="emk-bubble" data-desc="Golf. Annonsering och content.">GTG Golf</button>
-          <button class="emk-bubble" data-desc="Varumärke. Paid social och tillväxt.">Joina</button>
-          <button class="emk-bubble" data-desc="Resebyrå. Content och annonsering.">Reseskaparna</button>
-          <button class="emk-bubble" data-desc="Resebyrå. Strategi, content och annonser.">Grand Tours</button>
-          <button class="emk-bubble" data-desc="Resebyrå. Sociala medier och annonsering.">Äventyrsresor</button>
-          <button class="emk-bubble" data-desc="Studentförening. Innehåll och närvaro.">Föreningen Ekonomerna</button>
-          <button class="emk-bubble" data-desc="Valborgsfestival. Film- och videoproduktion.">Festivalborg</button>
-          <button class="emk-bubble" data-desc="Förbund. Innehåll och kommunikation.">Svenska Gymnastikförbundet</button>
-          <button class="emk-bubble" data-desc="Varumärke. Content och sociala medier.">The Lobby</button>
-          <button class="emk-bubble" data-desc="Gymnastik. Innehåll och digital närvaro.">Coach Dan Gymnastics</button>
-          <button class="emk-bubble" data-desc="Resekoncern. Digital marknadsföring och strategi.">We Travel Group</button>
-          <button class="emk-bubble" data-desc="Idrottsinfluencer. Content som bygger profilen.">William Broman</button>
-
-          <div class="emk-bubbles__card" id="emk-bubbles-card" aria-live="polite">
-            <div class="emk-bubbles__card-name"></div>
-            <div class="emk-bubbles__card-desc"></div>
-          </div>
-          <div class="emk-bubbles__center">
-            <div class="emk-bubbles__center-label">ETT URVAL AV VARUMÄRKEN</div>
-            <div class="emk-bubbles__center-title">Kundcase</div>
-          </div>
-          <div class="emk-bubbles__hint">Klicka på en bubbla för att läsa mer</div>
-        </div>
-      </div>
       <div class="emk-grid3">
         <div class="emk-card emk-reveal">
           <span class="emk-card__num">01</span>
@@ -791,155 +826,6 @@
     revealEls.forEach(function(el){ el.classList.add('is-in'); });
   }
 
-  /* Bubbelmoln — driver runt, klicka för att förstora i mitten med beskrivning */
-  var bubblesWrap = root.querySelector('#emk-bubbles');
-  if(bubblesWrap){
-    var card     = root.querySelector('#emk-bubbles-card');
-    var cardName = card.querySelector('.emk-bubbles__card-name');
-    var cardDesc = card.querySelector('.emk-bubbles__card-desc');
-    var els      = Array.prototype.slice.call(bubblesWrap.querySelectorAll('.emk-bubble'));
-    var W = 0, H = 0, active = null, items = [], raf = null, running = false;
-
-    function rand(a, b){ return Math.random() * (b - a) + a; }
-
-    function layout(){
-      W = bubblesWrap.clientWidth;
-      H = bubblesWrap.clientHeight;
-      var cx = W / 2, cy = H * 0.40;
-      var rx = W * 0.36, ry = H * 0.28;
-      var n = els.length;
-      items = els.map(function(el, i){
-        var w = el.offsetWidth, h = el.offsetHeight;
-        var ang = -Math.PI / 2 + (i / n) * Math.PI * 2 + rand(-0.06, 0.06);
-        var rad = rand(0.82, 1.0);
-        var r = rand(8, 16);
-        var padX = r + w * 0.09 + 6;
-        var padY = r + h * 0.09 + 6;
-        var hx = cx + Math.cos(ang) * rx * rad - w / 2;
-        var hy = cy + Math.sin(ang) * ry * rad - h / 2;
-        hx = Math.max(padX, Math.min(W - w - padX, hx));
-        hy = Math.max(padY, Math.min(H - h - padY, hy));
-        var phase = rand(0, Math.PI * 2);
-        var speed = (reduceMotion ? 0 : rand(0.0018, 0.0042)) * (Math.random() < 0.5 ? 1 : -1);
-        return { el: el, w: w, h: h, x: hx, y: hy, hx: hx, hy: hy, ox: hx, oy: hy, r: r, phase: phase, speed: speed, scale: 1, hovered: false };
-      });
-      items.forEach(draw);
-    }
-    function draw(it){
-      it.el.style.transform = 'translate(' + it.x + 'px,' + it.y + 'px) scale(' + it.scale + ')';
-    }
-    function bigScale(it){ return Math.min(1.7, (W * 0.9) / it.w); }
-    function zoneFor(act){
-      var s = bigScale(act);
-      return { x: W / 2, y: H * 0.50, rx: Math.max(act.w * s / 2 + 90, W * 0.26), ry: Math.max(act.h * s / 2 + 150, H * 0.34) };
-    }
-    function pushedPos(it, zone, px, py){
-      var bx = px + it.w / 2, by = py + it.h / 2;
-      var ndx = (bx - zone.x) / zone.rx, ndy = (by - zone.y) / zone.ry;
-      var d = Math.sqrt(ndx * ndx + ndy * ndy);
-      if(d >= 1) return [px, py];
-      if(d < 0.001){ ndx = 1; ndy = 0; d = 1; }
-      var f = 1.08 / d;
-      bx = zone.x + ndx * zone.rx * f;
-      by = zone.y + ndy * zone.ry * f;
-      px = Math.max(4, Math.min(W - it.w - 4, bx - it.w / 2));
-      py = Math.max(4, Math.min(H - it.h - 4, by - it.h / 2));
-      return [px, py];
-    }
-
-    function frame(){
-      var cx = W / 2, cy = H * 0.40;
-      var zone = active ? zoneFor(active) : null;
-      for(var i = 0; i < items.length; i++){
-        var it = items[i];
-        if(it === active){
-          var tx = cx - it.w / 2, ty = cy - it.h / 2;
-          it.x += (tx - it.x) * 0.14;
-          it.y += (ty - it.y) * 0.14;
-          it.scale += (bigScale(it) - it.scale) * 0.14;
-        } else {
-          it.phase += it.speed;
-          var px = it.hx + Math.cos(it.phase) * it.r;
-          var py = it.hy + Math.sin(it.phase) * it.r;
-          if(zone){ var pp = pushedPos(it, zone, px, py); px = pp[0]; py = pp[1]; }
-          if(!it.hovered || zone){
-            it.x += (px - it.x) * 0.08;
-            it.y += (py - it.y) * 0.08;
-          }
-          var ts = it.hovered ? 1.12 : 1;
-          it.scale += (ts - it.scale) * 0.2;
-        }
-        draw(it);
-      }
-      raf = requestAnimationFrame(frame);
-    }
-    function start(){ if(running || reduceMotion) return; running = true; raf = requestAnimationFrame(frame); }
-    function stop(){ running = false; if(raf) cancelAnimationFrame(raf); }
-
-    function activate(it){
-      if(active === it){ deactivate(); return; }
-      if(active){ active.el.classList.remove('is-active'); active.el.setAttribute('aria-pressed', 'false'); active.el.style.zIndex = ''; }
-      active = it;
-      it.el.classList.add('is-active');
-      it.el.setAttribute('aria-pressed', 'true');
-      it.el.style.zIndex = '50';
-      cardName.textContent = it.el.textContent;
-      cardDesc.textContent = it.el.getAttribute('data-desc') || '';
-      card.classList.add('is-visible');
-      bubblesWrap.classList.add('has-active');
-      if(reduceMotion){
-        it.scale = bigScale(it);
-        it.x = W / 2 - it.w / 2;
-        it.y = H * 0.40 - it.h / 2;
-        draw(it);
-        var zn = zoneFor(it);
-        items.forEach(function(o){
-          if(o === it) return;
-          var pp = pushedPos(o, zn, o.hx, o.hy);
-          o.x = pp[0]; o.y = pp[1]; draw(o);
-        });
-      }
-    }
-    function deactivate(){
-      if(!active) return;
-      active.el.classList.remove('is-active');
-      active.el.setAttribute('aria-pressed', 'false');
-      active.el.style.zIndex = '';
-      if(reduceMotion){
-        items.forEach(function(o){ o.x = o.ox; o.y = o.oy; o.scale = 1; draw(o); });
-      }
-      active = null;
-      card.classList.remove('is-visible');
-      bubblesWrap.classList.remove('has-active');
-    }
-
-    els.forEach(function(el, i){
-      el.setAttribute('aria-pressed', 'false');
-      el.addEventListener('click', function(e){ e.stopPropagation(); activate(items[i]); });
-      el.addEventListener('mouseenter', function(){ items[i].hovered = true; });
-      el.addEventListener('mouseleave', function(){ items[i].hovered = false; });
-    });
-    bubblesWrap.addEventListener('click', function(e){ if(e.target === bubblesWrap) deactivate(); });
-
-    var rt = null;
-    window.addEventListener('resize', function(){
-      clearTimeout(rt);
-      rt = setTimeout(function(){
-        var wasActive = active;
-        layout();
-        if(wasActive){ var idx = els.indexOf(wasActive.el); active = null; activate(items[idx]); }
-      }, 200);
-    });
-
-    layout();
-    window.addEventListener('load', layout);
-    if('IntersectionObserver' in window){
-      var bio = new IntersectionObserver(function(entries){
-        entries.forEach(function(en){ if(en.isIntersecting){ start(); } else { stop(); } });
-      }, {threshold: 0.05});
-      bio.observe(bubblesWrap);
-    } else { start(); }
-  }
 })();
 
 /* ===== Tjänster: hover (desktop) / tap (touch) öppnar kortpanelen ===== */
