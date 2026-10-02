@@ -119,6 +119,9 @@ body { margin:0; background:#14130F; }
   #emk-lp .emk-nav__links { gap:14px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
   #emk-lp .emk-nav__links a { font-size:12.5px; }
   #emk-lp .emk-nav__cta { padding:7px 14px; }
+  /* Mobil: dölj "Tjänster" så menyn får plats på en rad */
+  #emk-lp .emk-nav__links a { white-space:nowrap; }
+  #emk-lp .emk-nav__links a[href="index.html#emk-tjanster"] { display:none; }
   #emk-lp .emk-om-hero { min-height:46vh; }
   #emk-lp .emk-om-hero__inner { padding:0 18px 36px; }
   #emk-lp .emk-om-topnav .emk-nav { padding:16px 18px; }
@@ -127,7 +130,7 @@ body { margin:0; background:#14130F; }
   #emk-lp .emk-om-team { padding:48px 0; }
   #emk-lp .emk-team-grid { grid-template-columns:1fr; gap:12px; }
   #emk-lp .emk-member { border-radius:16px; }
-  #emk-lp .emk-member::before { padding-top:111.11%; } /* 9:10 */
+  #emk-lp .emk-member::before { padding-top:133.33%; } /* 9:12 – samma som datorn, hela kroppen syns */
   #emk-lp .emk-member:hover { transform:none; box-shadow:none; }
   #emk-lp .emk-member:hover img { transform:none; filter:none; }
   #emk-lp .emk-member__info { left:14px; right:14px; bottom:12px; }
@@ -160,6 +163,7 @@ body { margin:0; background:#14130F; }
         <a href="index.html" class="emk-nav__logo"><img src="images/logos/emk-logo-gold.svg" alt="EMK Marketing"></a>
         <div class="emk-nav__links">
           <a href="index.html#emk-tjanster">Tjänster</a>
+          <a href="portfolio.html">Portfolio</a>
           <a href="om-oss.html" class="is-active">Om oss</a>
           <a class="emk-nav__cta" href="index.html#emk-boka">Boka möte</a>
         </div>
