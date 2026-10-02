@@ -47,7 +47,9 @@ body { margin:0; background:#14130F; }
   border:1px solid var(--line); padding:10px 20px; border-radius:100px; cursor:pointer; transition:all .2s; }
 #emk-lp .pf-filter button:hover { color:var(--ink); border-color:var(--muted); }
 #emk-lp .pf-filter button.is-active { background:var(--gold); border-color:var(--gold); color:#14130F; }
-#emk-lp .pf-filter__count { opacity:.6; margin-left:4px; font-weight:600; }
+#emk-lp .pf-filter__link { font-family:'Manrope'; font-size:14px; font-weight:700; color:var(--gold); text-decoration:none;
+  border:1px solid rgba(223,164,56,.45); padding:10px 20px; border-radius:100px; transition:all .2s; white-space:nowrap; }
+#emk-lp .pf-filter__link:hover { background:var(--gold); color:#14130F; border-color:var(--gold); }
 
 /* ===== GRID (masonry: höjd räknas ut av JS från bildformatet) ===== */
 #emk-lp .pf-grid { --gap:14px; display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:8px; column-gap:var(--gap); row-gap:var(--gap); grid-auto-flow:dense; }
@@ -151,7 +153,7 @@ body { margin:0; background:#14130F; }
   #emk-lp .pf-hero p { font-size:15px; }
   #emk-lp .pf-filter { flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; margin:0 -14px 14px; padding:10px 14px; }
   #emk-lp .pf-filter::-webkit-scrollbar { display:none; }
-  #emk-lp .pf-filter button { padding:9px 16px; font-size:13px; flex-shrink:0; }
+  #emk-lp .pf-filter button, #emk-lp .pf-filter__link { padding:9px 16px; font-size:13px; flex-shrink:0; }
   /* 2 kolumner på telefon – stående foton/videor sida vid sida, liggande video får hela bredden */
   #emk-lp .pf-grid { grid-template-columns:repeat(2,1fr); --gap:8px; }
   #emk-lp .pf-item { border-radius:12px; }
@@ -201,20 +203,43 @@ body { margin:0; background:#14130F; }
 
     <!-- ===== PORTFOLIO-GRID ===== (mall för nya bilder/videor finns längst ner i rutnätet) -->
     <section class="pf-grid" id="pf-grid">
-      <figure class="pf-item" tabindex="0" data-type="video">
-        <video src="videos/Event.mp4" poster="videos/Event.jpg" muted loop playsinline preload="metadata"></video>
-        <span class="pf-item__play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-15.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
-      <figure class="pf-item" tabindex="0" data-type="video">
-        <video src="videos/Informativ.mp4" poster="videos/Informativ.jpg" muted loop playsinline preload="metadata"></video>
-        <span class="pf-item__play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-14.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-17.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
       <figure class="pf-item" tabindex="0" data-type="video">
         <video src="videos/Underhallande.mp4" poster="videos/Underhallande.jpg" muted loop playsinline preload="metadata"></video>
         <span class="pf-item__play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-01.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+        <img src="images/portfolio/bild-13.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-21.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-04.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-22.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-11.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-07.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="video">
+        <video src="videos/Event.mp4" poster="videos/Event.jpg" muted loop playsinline preload="metadata"></video>
+        <span class="pf-item__play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-19.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
         <img src="images/portfolio/bild-02.jpg" alt="Arbete av EMK Marketing" loading="lazy">
@@ -223,106 +248,47 @@ body { margin:0; background:#14130F; }
         <img src="images/portfolio/bild-03.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-04.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-05.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-06.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-07.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-08.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-09.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-10.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-11.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-12.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-13.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-14.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-15.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
         <img src="images/portfolio/bild-16.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-17.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-18.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-19.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-20.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-21.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-22.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-23.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-24.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-25.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-26.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-27.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-28.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-29.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-30.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-31.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-32.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-33.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-34.jpg" alt="Arbete av EMK Marketing" loading="lazy">
-      </figure>
-      <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-35.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
         <img src="images/portfolio/bild-36.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
-        <img src="images/portfolio/bild-37.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+        <img src="images/portfolio/bild-24.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-05.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-30.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-23.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-18.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="video">
+        <video src="videos/Informativ.mp4" poster="videos/Informativ.jpg" muted loop playsinline preload="metadata"></video>
+        <span class="pf-item__play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-28.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-12.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-09.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-35.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-26.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-08.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
         <img src="images/portfolio/bild-38.jpg" alt="Arbete av EMK Marketing" loading="lazy">
@@ -330,13 +296,49 @@ body { margin:0; background:#14130F; }
       <figure class="pf-item" tabindex="0" data-type="bild">
         <img src="images/portfolio/bild-39.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-06.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-25.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-27.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-10.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-29.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-32.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-01.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-34.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-33.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-37.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-20.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-31.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
 
       <!--
         MALL – kopiera ett block ovanför denna kommentar:
 
         Bild:
         <figure class="pf-item" tabindex="0" data-type="bild">
-          <img src="images/foto/MAPP/FIL.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+          <img src="images/portfolio/FIL.jpg" alt="Arbete av EMK Marketing" loading="lazy">
         </figure>
 
         Videoklipp (format känns av automatiskt):
@@ -345,8 +347,6 @@ body { margin:0; background:#14130F; }
           <span class="pf-item__play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
         </figure>
 
-        Sociala medier (organiskt): lägg till  data-sm="1"  på bilden/videon, t.ex.
-        <figure class="pf-item" tabindex="0" data-type="video" data-sm="1"> ...
       -->
     </section>
 
@@ -470,29 +470,30 @@ body { margin:0; background:#14130F; }
   });
   layout();
 
-  /* Filter: Alla, Bilder, Videoklipp, Sociala medier. Knappar utan innehåll döljs automatiskt. */
+  /* Filter: Alla, Bilder, Videoklipp + länk till Sociala medier-sidan */
   var bar = document.getElementById('pf-filter');
   var FILTERS = [
-    ['alla',  'Alla',           function(){ return true; }],
-    ['bild',  'Bilder',         function(i){ return i.dataset.type === 'bild'; }],
-    ['video', 'Videoklipp',     function(i){ return i.dataset.type === 'video'; }],
-    ['sm',    'Sociala medier', function(i){ return i.dataset.sm === '1'; }]
+    ['alla',  'Alla',       function(){ return true; }],
+    ['bild',  'Bilder',     function(i){ return i.dataset.type === 'bild'; }],
+    ['video', 'Videoklipp', function(i){ return i.dataset.type === 'video'; }]
   ];
   FILTERS.forEach(function(f){
-    var n = items.filter(f[2]).length;
-    if(!n) return;
+    if(!items.filter(f[2]).length) return;
     var b = document.createElement('button');
     b.dataset.filter = f[0];
-    b.innerHTML = f[1] + '<span class="pf-filter__count"> ' + n + '</span>';
+    b.textContent = f[1];
     if(f[0] === current) b.classList.add('is-active');
     b.addEventListener('click', function(){
       current = f[0];
-      Array.prototype.forEach.call(bar.children, function(x){ x.classList.toggle('is-active', x === b); });
+      Array.prototype.forEach.call(bar.querySelectorAll('button'), function(x){ x.classList.toggle('is-active', x === b); });
       items.forEach(function(i){ i.classList.toggle('is-hidden', !f[2](i)); });
       layout(); syncVideos();
     });
     bar.appendChild(b);
   });
+  var sm = document.createElement('a');
+  sm.href = 'sociala-medier.html'; sm.className = 'pf-filter__link'; sm.innerHTML = 'Sociala medier <span aria-hidden="true">→</span>';
+  bar.appendChild(sm);
 
   /* Videor spelas tyst när de syns, pausas utanför skärmen */
   var vids = items.map(function(i){ return i.querySelector('video'); }).filter(Boolean);
