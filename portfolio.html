@@ -62,8 +62,7 @@ body { margin:0; background:#14130F; }
 /* Om en fil saknas: snygg tom ruta istället för trasig bild */
 #emk-lp .pf-item.is-broken { background:linear-gradient(135deg, #2A2820, #1A1813); }
 #emk-lp .pf-item.is-broken img, #emk-lp .pf-item.is-broken video { display:none; }
-#emk-lp .pf-item::after { content:""; position:absolute; inset:0; pointer-events:none;
-  background:linear-gradient(180deg, transparent 55%, rgba(20,19,15,.85)); opacity:0; transition:opacity .35s ease; }
+
 #emk-lp .pf-item__info { position:absolute; left:16px; right:16px; bottom:14px; z-index:2; display:flex; justify-content:space-between; align-items:flex-end; gap:10px;
   opacity:0; transform:translateY(8px); transition:opacity .35s ease, transform .35s ease; }
 #emk-lp .pf-item__client { font-family:'Manrope'; font-weight:800; font-size:15px; color:var(--cream); }
@@ -76,11 +75,11 @@ body { margin:0; background:#14130F; }
 @media (hover:hover) and (pointer:fine){
   #emk-lp .pf-item:hover { transform:translateY(-4px); box-shadow:0 22px 50px -14px rgba(0,0,0,.7), 0 0 40px -12px rgba(223,164,56,.35); }
   #emk-lp .pf-item:hover img, #emk-lp .pf-item:hover video { transform:scale(1.04); }
-  #emk-lp .pf-item:hover::after, #emk-lp .pf-item:hover .pf-item__info { opacity:1; transform:none; }
+  #emk-lp .pf-item:hover .pf-item__info { opacity:1; transform:none; }
 }
 /* Touch: visa overlay direkt */
 @media (hover:none){
-  #emk-lp .pf-item::after, #emk-lp .pf-item__info { opacity:1; transform:none; }
+  #emk-lp .pf-item__info { opacity:1; transform:none; }
 }
 
 /* ===== RESULTAT ===== */
