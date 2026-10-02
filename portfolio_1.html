@@ -143,6 +143,9 @@ body { margin:0; background:#14130F; }
   #emk-lp .emk-nav__links { gap:13px; }
   #emk-lp .emk-nav__links a { font-size:12.5px; }
   #emk-lp .emk-nav__cta { padding:7px 13px; }
+  /* Mobil: dölj "Tjänster" så menyn får plats på en rad */
+  #emk-lp .emk-nav__links a { white-space:nowrap; }
+  #emk-lp .emk-nav__links a[href="index.html#emk-tjanster"] { display:none; }
   #emk-lp .pf-hero { padding:28px 4px 22px; gap:14px; }
   #emk-lp .pf-hero h1 { letter-spacing:-1.2px; }
   #emk-lp .pf-hero p { font-size:15px; }
@@ -177,6 +180,7 @@ body { margin:0; background:#14130F; }
     <nav class="emk-nav">
       <a href="index.html" class="emk-nav__logo"><img src="images/logos/emk-logo-gold.svg" alt="EMK Marketing"></a>
       <div class="emk-nav__links">
+        <a href="index.html#emk-tjanster">Tjänster</a>
         <a href="portfolio.html" class="is-active">Portfolio</a>
         <a href="om-oss.html">Om oss</a>
         <a class="emk-nav__cta" href="index.html#emk-boka">Boka möte</a>
