@@ -82,7 +82,9 @@
     /* Nav – ligger ovanför panelerna (panelerna börjar 96px ner) */
     #emk-lp .emk-nav { position:absolute; top:0; left:0; right:0; z-index:5;
       display:flex; justify-content:space-between; align-items:center; padding:24px 4.5%; }
-    #emk-lp .emk-nav__logo { color:var(--gold); font-family:'Manrope'; font-weight:800; font-size:18px; text-decoration:none; }
+    /* Logotyp (SVG) i navet */
+    #emk-lp .emk-nav__logo { display:block; line-height:0; text-decoration:none; }
+    #emk-lp .emk-nav__logo img { height:40px; width:auto; display:block; filter:drop-shadow(0 1px 10px rgba(0,0,0,.45)); }
     #emk-lp .emk-nav__links { display:flex; align-items:center; gap:26px; }
     #emk-lp .emk-nav__links a { color:rgba(245,241,232,.85); text-decoration:none; font-size:14.5px; font-weight:600;
       text-shadow:0 1px 10px rgba(0,0,0,.5); transition:color .2s; }
@@ -157,7 +159,7 @@
       #emk-lp .emk-hero-content .emk-btn { width:100%; padding:15px 20px; font-size:14.5px; }
       /* Göm länkarna, visa hamburgaren. Navet över menyn (120) så X:et går att trycka på. */
       #emk-lp .emk-nav { padding:18px 5%; z-index:130; }
-      #emk-lp .emk-nav__logo { font-size:16px; }
+      #emk-lp .emk-nav__logo img { height:32px; }
       #emk-lp .emk-nav__links { display:none; }
       #emk-lp .emk-nav__burger { display:block; }
       /* Bottenfaden behövs inte på mobil (texten är redan på bakgrunden) */
@@ -372,7 +374,7 @@
     /* Footer */
     #emk-lp .emk-footer { margin-top: 40px; padding: 56px 0 40px; border-top: 1px solid var(--line); }
     #emk-lp .emk-footer__inner { display: grid; grid-template-columns: 1.6fr 1fr 1.2fr; gap: 48px; }
-    #emk-lp .emk-footer__brand img { height: 40px; width: auto; display: block; margin-bottom: 16px; }
+    #emk-lp .emk-footer__brand img { height: 64px; width: auto; display: block; margin-bottom: 22px; }
     #emk-lp .emk-footer__brand p { color: var(--muted); font-size: 14.5px; max-width: 300px; margin-bottom: 14px; }
     #emk-lp .emk-footer__org { font-size: 13px; color: var(--muted); }
     #emk-lp .emk-footer h4 { font-family: 'Manrope'; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
@@ -428,6 +430,7 @@
       #emk-lp .emk-sec-head { margin-bottom: 36px; }
       #emk-lp .emk-footer { padding: 44px 0 32px; }
       #emk-lp .emk-footer__inner { grid-template-columns: 1fr; gap: 32px; }
+      #emk-lp .emk-footer__brand img { height: 52px; }
       #emk-lp .emk-footer__bottom { flex-direction: column; gap: 8px; }
     }
 
@@ -464,7 +467,7 @@
 
       <!-- NAV med hamburgare för mobil -->
       <nav class="emk-nav">
-        <a href="index.html" class="emk-nav__logo">EMK Marketing</a>
+        <a href="index.html" class="emk-nav__logo"><img src="images/logos/emk-logo-gold.svg" alt="EMK Marketing"></a>
         <div class="emk-nav__links">
           <a href="#emk-tjanster">Tjänster</a>
           <a href="om-oss.html">Om oss</a>
@@ -760,7 +763,7 @@
     <footer class="emk-footer">
       <div class="emk-footer__inner">
         <div class="emk-footer__brand">
-          <img src="EMK_Marketing_logotyp_transparent.png" alt="EMK Marketing">
+          <img src="images/logos/emk-logo-cream.svg" alt="EMK Marketing">
           <p>Strategisk digital marknadsföring med fokus på långsiktig lönsamhet och mätbar tillväxt.</p>
           <span class="emk-footer__org">Org.nr 559415-5090</span>
         </div>
