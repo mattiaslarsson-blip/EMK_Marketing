@@ -153,7 +153,7 @@ body { margin:0; background:#111111; }
   #emk-lp .emk-nav__cta { padding:7px 13px; }
   /* Mobil: dölj "Tjänster" så menyn får plats på en rad */
   #emk-lp .emk-nav__links a { white-space:nowrap; }
-  #emk-lp .emk-nav__links a[href="index.html#emk-tjanster"] { display:none; }
+  #emk-lp .emk-nav__links a[href="/#emk-tjanster"] { display:none; }
   #emk-lp .pf-hero { padding:28px 4px 22px; gap:14px; }
   #emk-lp .pf-hero h1 { letter-spacing:-1.2px; }
   #emk-lp .pf-hero p { font-size:15px; }
@@ -190,12 +190,12 @@ body { margin:0; background:#111111; }
 
     <!-- NAV -->
     <nav class="emk-nav">
-      <a href="index.html" class="emk-nav__logo"><img src="images/logos/emk-logo-gold.svg" alt="EMK Marketing"></a>
+      <a href="/" class="emk-nav__logo"><img src="images/logos/emk-logo-gold.svg" alt="EMK Marketing"></a>
       <div class="emk-nav__links">
-        <a href="index.html#emk-tjanster">Tjänster</a>
-        <a href="portfolio.html" class="is-active">Portfolio</a>
-        <a href="om-oss.html">Om oss</a>
-        <a class="emk-nav__cta" href="index.html#emk-boka">Boka möte</a>
+        <a href="/#emk-tjanster">Tjänster</a>
+        <a href="/portfolio" class="is-active">Portfolio</a>
+        <a href="/om-oss">Om oss</a>
+        <a class="emk-nav__cta" href="/#emk-boka">Boka möte</a>
       </div>
     </nav>
 
@@ -479,12 +479,12 @@ body { margin:0; background:#111111; }
     <!-- CTA -->
     <section class="pf-cta">
       <h3>Har ni något ni vill visa upp? <em>Vi hjälper gärna till.</em></h3>
-      <a class="emk-btn" href="index.html#emk-boka">Hör av er →</a>
+      <a class="emk-btn" href="/#emk-boka">Hör av er →</a>
     </section>
 
     <footer class="emk-footer">
       <span>© <span id="emk-year"></span> EMK Marketing</span>
-      <a href="index.html">Till startsidan →</a>
+      <a href="/">Till startsidan →</a>
     </footer>
 
   </div>
@@ -588,7 +588,7 @@ body { margin:0; background:#111111; }
   });
   /* Sociala medier-länken är avstängd tills vidare (ta bort kommentaren runt raderna nedan för att visa den igen).
   var sm = document.createElement('a');
-  sm.href = 'sociala-medier.html'; sm.className = 'pf-filter__link'; sm.innerHTML = 'Sociala medier <span aria-hidden="true">→</span>';
+  sm.href = '/sociala-medier'; sm.className = 'pf-filter__link'; sm.innerHTML = 'Sociala medier <span aria-hidden="true">→</span>';
   bar.appendChild(sm);
   */
 
