@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sociala medier – EMK Marketing</title>
-<meta name="description" content="Så bygger EMK Marketing karuseller och korta videoklipp för sociala medier – från idé till publicering.">
+<meta name="description" content="EMK Marketing tar hand om era sociala kanaler – strategi, foto, film, redigering och publicering. Se exempel på videoklipp och karuseller vi har gjort.">
 <link rel="icon" type="image/png" href="EMK_LOGO.png">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap');
@@ -61,7 +61,7 @@ body { margin:0; background:#14130F; }
 #emk-lp .sm-post__dots i { width:6px; height:6px; border-radius:50%; background:var(--line); transition:background .2s, transform .2s; }
 #emk-lp .sm-post__dots i.is-on { background:var(--gold); transform:scale(1.25); }
 #emk-lp .sm-post__nav { display:flex; gap:8px; }
-#emk-lp .sm-post__nav button { width:34px; height:34px; border-radius:50%; border:1px solid var(--line); background:transparent; color:var(--cream); cursor:pointer; font-size:15px; transition:all .2s; }
+#emk-lp .sm-post__nav button { width:30px; height:30px; border-radius:50%; border:1px solid var(--line); background:transparent; color:var(--cream); cursor:pointer; font-size:15px; transition:all .2s; }
 #emk-lp .sm-post__nav button:hover { border-color:var(--gold); color:var(--gold); }
 #emk-lp .sm-post__count { color:var(--muted); font-family:'Manrope'; font-size:12px; font-weight:700; }
 
@@ -74,7 +74,6 @@ body { margin:0; background:#14130F; }
 #emk-lp .sm-steps span { color:var(--muted-2); font-size:15px; }
 
 /* VIDEOKLIPP */
-#emk-lp .sm-reels { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
 #emk-lp .sm-reel__phone { position:relative; aspect-ratio:9/16; border-radius:26px; overflow:hidden; background:#000; border:1px solid var(--line);
   box-shadow:0 26px 60px -22px rgba(0,0,0,.75); cursor:pointer; }
 #emk-lp .sm-reel__phone video { width:100%; height:100%; object-fit:cover; display:block; }
@@ -104,7 +103,73 @@ body { margin:0; background:#14130F; }
 #emk-lp .emk-footer span, #emk-lp .emk-footer a { color:var(--muted); font-size:13px; text-decoration:none; }
 #emk-lp .emk-footer a:hover { color:var(--gold); }
 
+
+/* HERO-KNAPPAR */
+#emk-lp .sm-hero__ctas { display:flex; gap:12px; flex-wrap:wrap; margin-top:26px; }
+#emk-lp .emk-btn--ghost { background:transparent; color:var(--ink); border:1px solid var(--line); box-shadow:none; }
+#emk-lp .emk-btn--ghost:hover { background:rgba(255,255,255,.04); border-color:var(--gold); color:var(--gold); }
+
+/* INTRO-CITAT */
+#emk-lp .sm-intro { display:grid; grid-template-columns:1.1fr 1fr; gap:64px; padding:70px 0 10px; border-top:1px solid var(--line-soft); margin-top:30px; }
+#emk-lp .sm-intro blockquote { font-family:'Manrope'; font-size:clamp(24px,3vw,34px); font-weight:800; line-height:1.2; letter-spacing:-0.6px; }
+#emk-lp .sm-intro blockquote em { font-style:normal; color:var(--gold); }
+#emk-lp .sm-intro p { color:var(--muted-2); font-size:16.5px; line-height:1.75; }
+#emk-lp .sm-intro p + p { margin-top:16px; }
+
+/* RESULTAT */
+#emk-lp .sm-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+#emk-lp .sm-stat { background:linear-gradient(180deg,var(--card),var(--card-deep)); border:1px solid var(--line-soft); border-top:3px solid var(--gold); border-radius:18px; padding:30px 26px; }
+#emk-lp .sm-stat b { display:block; font-family:'Manrope'; font-size:clamp(38px,4.5vw,54px); font-weight:800; letter-spacing:-2px; line-height:1; color:var(--gold); }
+#emk-lp .sm-stat span { display:block; margin-top:12px; color:var(--muted-2); font-size:15px; }
+
+/* VIDEO-RAIL */
+#emk-lp .sm-rail-wrap { position:relative; }
+#emk-lp .sm-reels { display:flex; gap:22px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; padding-bottom:8px; }
+#emk-lp .sm-reels::-webkit-scrollbar { display:none; }
+#emk-lp .sm-reel { flex:0 0 calc((100% - 66px) / 4); scroll-snap-align:start; }
+#emk-lp .sm-rail-nav { display:flex; gap:8px; justify-content:flex-end; margin-bottom:18px; }
+#emk-lp .sm-rail-nav button { width:42px; height:42px; border-radius:50%; border:1px solid var(--line); background:transparent; color:var(--cream); cursor:pointer; font-size:17px; transition:all .2s; }
+#emk-lp .sm-rail-nav button:hover { border-color:var(--gold); color:var(--gold); }
+#emk-lp .sm-sec__row { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; }
+
+/* VAD INGÅR */
+#emk-lp .sm-incl { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+#emk-lp .sm-incl div { background:var(--card); border:1px solid var(--line-soft); border-radius:18px; padding:28px 24px; transition:border-color .3s, transform .3s; }
+#emk-lp .sm-incl div:hover { border-color:rgba(223,164,56,.5); transform:translateY(-3px); }
+#emk-lp .sm-incl i { font-style:normal; display:inline-flex; width:42px; height:42px; border-radius:12px; background:rgba(223,164,56,.14); color:var(--gold); align-items:center; justify-content:center; font-size:19px; margin-bottom:16px; }
+#emk-lp .sm-incl h3 { font-size:18px; font-weight:800; margin-bottom:8px; }
+#emk-lp .sm-incl p { color:var(--muted-2); font-size:15px; }
+
+/* FAQ */
+#emk-lp .sm-faq { max-width:780px; }
+#emk-lp .sm-faq details { border-bottom:1px solid var(--line); }
+#emk-lp .sm-faq details:first-child { border-top:1px solid var(--line); }
+#emk-lp .sm-faq summary { list-style:none; cursor:pointer; padding:22px 0; font-family:'Manrope'; font-size:18px; font-weight:700; display:flex; justify-content:space-between; gap:16px; transition:color .2s; }
+#emk-lp .sm-faq summary::-webkit-details-marker { display:none; }
+#emk-lp .sm-faq summary::after { content:"+"; color:var(--muted); font-weight:400; font-size:24px; line-height:1; transition:transform .3s; }
+#emk-lp .sm-faq details[open] summary::after { transform:rotate(45deg); color:var(--gold); }
+#emk-lp .sm-faq summary:hover { color:var(--gold); }
+#emk-lp .sm-faq details p { color:var(--muted-2); font-size:16px; padding:0 30px 22px 0; }
+#emk-lp .sm-cta p { color:var(--muted); font-size:14px; margin-top:10px; }
+
+/* RECENSIONER */
+#emk-lp .sm-revs { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+#emk-lp .sm-rev { position:relative; background:linear-gradient(180deg,var(--card),var(--card-deep)); border:1px solid var(--line-soft); border-radius:18px; padding:30px 28px 26px; display:flex; flex-direction:column; justify-content:space-between; gap:22px; }
+#emk-lp .sm-rev::before { content:"\201D"; position:absolute; top:4px; right:22px; font-family:'Manrope'; font-size:100px; font-weight:800; line-height:1; color:rgba(223,164,56,.10); }
+#emk-lp .sm-rev blockquote { color:var(--ink); font-size:16.5px; line-height:1.7; font-style:italic; position:relative; }
+#emk-lp .sm-rev figcaption { display:flex; align-items:center; gap:12px; }
+#emk-lp .sm-rev__av { width:44px; height:44px; border-radius:50%; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Manrope'; font-weight:800; font-size:13px; color:var(--gold); flex-shrink:0; }
+#emk-lp .sm-rev b { display:block; font-family:'Manrope'; font-size:15px; }
+#emk-lp .sm-rev small { display:block; color:var(--muted); font-size:11px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; margin-top:2px; }
+
+/* KARUSELLER I RUTNÄT */
+#emk-lp .sm-posts { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; align-items:start; }
+
 @media (max-width:1000px){
+  #emk-lp .sm-posts { grid-template-columns:repeat(2,1fr); }
+  #emk-lp .sm-reel { flex-basis:calc((100% - 44px) / 3); }
+  #emk-lp .sm-incl { grid-template-columns:1fr 1fr; }
+  #emk-lp .sm-intro { grid-template-columns:1fr; gap:24px; }
   #emk-lp .sm-case, #emk-lp .sm-case:nth-of-type(even) { grid-template-columns:1fr 1fr; gap:36px; }
   #emk-lp .sm-process { grid-template-columns:1fr 1fr; }
 }
@@ -125,9 +190,17 @@ body { margin:0; background:#14130F; }
   #emk-lp .sm-post__nav { display:none; }
   #emk-lp .sm-steps li { grid-template-columns:1fr; gap:4px; }
   /* Videor: swipe i sidled på mobil */
-  #emk-lp .sm-reels { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:14px; margin:0 -16px; padding:0 16px 8px; scrollbar-width:none; }
-  #emk-lp .sm-reels::-webkit-scrollbar { display:none; }
-  #emk-lp .sm-reel { flex:0 0 78%; scroll-snap-align:center; }
+  #emk-lp .sm-reels { gap:14px; margin:0 -16px; padding:0 16px 8px; scroll-padding:0 16px; }
+  #emk-lp .sm-reel { flex:0 0 72%; }
+  #emk-lp .sm-rail-nav { display:none; }
+  #emk-lp .sm-stats { grid-template-columns:1fr; gap:10px; }
+  #emk-lp .sm-revs { grid-template-columns:1fr; gap:10px; }
+  #emk-lp .sm-posts { grid-template-columns:1fr; gap:14px; }
+  #emk-lp .sm-rev { padding:24px 22px; }
+  #emk-lp .sm-incl { grid-template-columns:1fr; gap:10px; }
+  #emk-lp .sm-intro { padding-top:44px; }
+  #emk-lp .sm-faq summary { font-size:16px; padding:18px 0; }
+  #emk-lp .sm-hero__ctas .emk-btn { width:100%; }
   #emk-lp .sm-reel__phone { border-radius:18px; }
   #emk-lp .sm-process { grid-template-columns:1fr; gap:10px; }
   #emk-lp .sm-cta { margin-top:56px; padding:36px 22px; }
@@ -154,93 +227,155 @@ body { margin:0; background:#14130F; }
 
     <header class="sm-hero">
       <div>
-        <span class="emk-kicker">Sociala medier · organiskt</span>
-        <h1>Innehåll folk <em>stannar för.</em></h1>
+        <span class="emk-kicker">Sociala medier · Organiskt</span>
+        <h1>Folk scrollar. Vi får dem att <em>stanna.</em></h1>
       </div>
-      <p>Så bygger vi karuseller och korta klipp – vad vi tänker på i varje steg, från första bilden till sista sekunden.</p>
+      <div style="max-width:460px">
+        <p>Låt oss sköta era sociala medier. Vi fixar strategin, filmar, klipper och publicerar. Helt friktionsfritt. Ni stänger affärerna, vi sköter flödet.</p>
+        <div class="sm-hero__ctas">
+          <a class="emk-btn" href="index.html#emk-boka">Låt oss snacka →</a>
+          <a class="emk-btn emk-btn--ghost" href="#sm-exempel">Se hur det kan se ut ↓</a>
+        </div>
+      </div>
     </header>
 
-    <!-- ===== KARUSELLER =====
-         Byt bilder och text per case. Antal bilder i en karusell är valfritt – prickarna räknas automatiskt. -->
+    <!-- ===== INTRO ===== -->
+    <section class="sm-intro">
+      <blockquote>Mer effekt. <em>Noll friktion.</em></blockquote>
+      <div>
+        <p>Att synas i sociala medier är ett måste. Men det tar tid. Tid som ni borde lägga på er kärnaffär, inte på att jaga likes eller stressklippa video i mobilen.</p>
+        <p>Vi gör det enkelt. Vi dyker in, hittar er unika vibe och skapar innehåll som inte bara ser snyggt ut – utan faktiskt driver resultat. Enkelt, smidigt och med mätbar effekt.</p>
+      </div>
+    </section>
+
+    <!-- ===== RESULTAT ===== -->
     <section class="sm-sec">
       <div class="sm-sec__head">
-        <h2>Karuseller.</h2>
-        <p>Swipea igenom karusellerna precis som de såg ut i flödet.</p>
+        <span class="emk-kicker">Resultat</span>
+        <h2>Siffrorna talar för sig själva.</h2>
       </div>
+      <div class="sm-stats">
+        <div class="sm-stat"><b>2,5 milj.</b><span>Ögon på innehållet vi har skapat.</span></div>
+        <div class="sm-stat"><b>+150%</b><span>Ökad räckvidd och digital närvaro.</span></div>
+        <div class="sm-stat"><b>Månad 2</b><span>Så snabbt ser våra partners tydlig, mätbar skillnad. Ingen lång väntan.</span></div>
+      </div>
+    </section>
 
-      <article class="sm-case">
+    <!-- ===== VIDEOKLIPP ===== -->
+    <section class="sm-sec" id="sm-exempel">
+      <div class="sm-sec__row">
+        <div class="sm-sec__head">
+          <span class="emk-kicker">Videoklipp</span>
+          <h2>Rörligt som rockar flödet.</h2>
+          <p>Helt in-house. Filmat, klippt och textat av oss. Klippen snurrar tyst i bakgrunden – klicka för ljud.</p>
+        </div>
+        <div class="sm-rail-nav"><button data-rail="-1" aria-label="Föregående klipp">←</button><button data-rail="1" aria-label="Nästa klipp">→</button></div>
+      </div>
+      <div class="sm-reels" id="sm-reels">
+        <div class="sm-reel">
+          <div class="sm-reel__phone">
+            <video src="videos/stg.mp4" poster="videos/stg.jpg" muted loop playsinline preload="none"></video>
+            <button class="sm-reel__sound" aria-label="Slå på ljud">🔇</button>
+          </div>
+        </div>
+        <div class="sm-reel">
+          <div class="sm-reel__phone">
+            <video src="videos/Festi.mp4" poster="videos/Festi.jpg" muted loop playsinline preload="none"></video>
+            <button class="sm-reel__sound" aria-label="Slå på ljud">🔇</button>
+          </div>
+        </div>
+        <div class="sm-reel">
+          <div class="sm-reel__phone">
+            <video src="videos/AR_interjuv.mp4" poster="videos/AR_interjuv.jpg" muted loop playsinline preload="none"></video>
+            <button class="sm-reel__sound" aria-label="Slå på ljud">🔇</button>
+          </div>
+        </div>
+        <div class="sm-reel">
+          <div class="sm-reel__phone">
+            <video src="videos/GT_amalfi.mp4" poster="videos/GT_amalfi.jpg" muted loop playsinline preload="none"></video>
+            <button class="sm-reel__sound" aria-label="Slå på ljud">🔇</button>
+          </div>
+        </div>
+        <div class="sm-reel">
+          <div class="sm-reel__phone">
+            <video src="videos/Sequence%2001_114.mp4" poster="videos/Sequence%2001_114.jpg" muted loop playsinline preload="none"></video>
+            <button class="sm-reel__sound" aria-label="Slå på ljud">🔇</button>
+          </div>
+        </div>
+        <div class="sm-reel">
+          <div class="sm-reel__phone">
+            <video src="videos/IPP_video.mp4" poster="videos/IPP_video.jpg" muted loop playsinline preload="none"></video>
+            <button class="sm-reel__sound" aria-label="Slå på ljud">🔇</button>
+          </div>
+        </div>
+        <div class="sm-reel">
+          <div class="sm-reel__phone">
+            <video src="videos/AR_midsommar.mp4" poster="videos/AR_midsommar.jpg" muted loop playsinline preload="none"></video>
+            <button class="sm-reel__sound" aria-label="Slå på ljud">🔇</button>
+          </div>
+        </div>
+        <div class="sm-reel">
+          <div class="sm-reel__phone">
+            <video src="videos/GT_opera.mp4" poster="videos/GT_opera.jpg" muted loop playsinline preload="none"></video>
+            <button class="sm-reel__sound" aria-label="Slå på ljud">🔇</button>
+          </div>
+        </div>
+        <div class="sm-reel">
+          <div class="sm-reel__phone">
+            <video src="videos/Event.mp4" poster="videos/Event.jpg" muted loop playsinline preload="none"></video>
+            <button class="sm-reel__sound" aria-label="Slå på ljud">🔇</button>
+          </div>
+        </div>
+        <div class="sm-reel">
+          <div class="sm-reel__phone">
+            <video src="videos/Underhallande.mp4" poster="videos/Underhallande.jpg" muted loop playsinline preload="none"></video>
+            <button class="sm-reel__sound" aria-label="Slå på ljud">🔇</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KARUSELLER ===== -->
+    <section class="sm-sec">
+      <div class="sm-sec__head">
+        <span class="emk-kicker">Karuseller</span>
+        <h2>Karuseller som konverterar.</h2>
+        <p>Snyggt paketerat och gjort för att kunden ska swipa vidare direkt till ett köp.</p>
+      </div>
+      <div class="sm-posts">
         <div class="sm-post" data-carousel>
           <div class="sm-post__track">
-            <img src="images/karuseller/k1-1.jpg" alt="Karusell om Filippinerna, bild 1" loading="lazy">
-            <img src="images/karuseller/k1-2.jpg" alt="Karusell om Filippinerna, bild 2" loading="lazy">
-            <img src="images/karuseller/k1-3.jpg" alt="Karusell om Filippinerna, bild 3" loading="lazy">
-            <img src="images/karuseller/k1-4.jpg" alt="Karusell om Filippinerna, bild 4" loading="lazy">
+            <img src="images/karuseller/k1-1.jpg" alt="Karusell om ett resmål, bild 1" loading="lazy">
+            <img src="images/karuseller/k1-2.jpg" alt="Karusell om ett resmål, bild 2" loading="lazy">
+            <img src="images/karuseller/k1-3.jpg" alt="Karusell om ett resmål, bild 3" loading="lazy">
+            <img src="images/karuseller/k1-4.jpg" alt="Karusell om ett resmål, bild 4" loading="lazy">
           </div>
           <div class="sm-post__bar"><div class="sm-post__dots"></div><span class="sm-post__count"></span><div class="sm-post__nav"><button aria-label="Föregående">←</button><button aria-label="Nästa">→</button></div></div>
         </div>
-        <div>
-          <span class="sm-case__tag">Karusell · Resmål</span>
-          <h3>Längtan i fyra bilder.</h3>
-          <p>En karusell som säljer en känsla innan den säljer en resa – från vintermörker till turkost vatten.</p>
-          <ul class="sm-steps">
-            <li><b>Första bilden</b><span>En kontrast alla känner igen: mörkret hemma mot färgerna där borta.</span></li>
-            <li><b>Mitten</b><span>Två miljöer som visar bredden – öarna ovanför vattnet och livet under ytan.</span></li>
-            <li><b>Sista bilden</b><span>Ett tydligt nästa steg: vad resan innehåller och var man bokar.</span></li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="sm-case">
         <div class="sm-post" data-carousel>
           <div class="sm-post__track">
-            <img src="images/karuseller/k2-1.jpg" alt="Karusell från Uganda, bild 1" loading="lazy">
-            <img src="images/karuseller/k2-2.jpg" alt="Karusell från Uganda, bild 2" loading="lazy">
-            <img src="images/karuseller/k2-3.jpg" alt="Karusell från Uganda, bild 3" loading="lazy">
-            <img src="images/karuseller/k2-4.jpg" alt="Karusell från Uganda, bild 4" loading="lazy">
-            <img src="images/karuseller/k2-5.jpg" alt="Karusell från Uganda, bild 5" loading="lazy">
-            <img src="images/karuseller/k2-6.jpg" alt="Karusell från Uganda, bild 6" loading="lazy">
-            <img src="images/karuseller/k2-7.jpg" alt="Karusell från Uganda, bild 7" loading="lazy">
-            <img src="images/karuseller/k2-8.jpg" alt="Karusell från Uganda, bild 8" loading="lazy">
+            <img src="images/karuseller/k2-1.jpg" alt="Karusell från en gruppresa, bild 1" loading="lazy">
+            <img src="images/karuseller/k2-2.jpg" alt="Karusell från en gruppresa, bild 2" loading="lazy">
+            <img src="images/karuseller/k2-3.jpg" alt="Karusell från en gruppresa, bild 3" loading="lazy">
+            <img src="images/karuseller/k2-4.jpg" alt="Karusell från en gruppresa, bild 4" loading="lazy">
+            <img src="images/karuseller/k2-5.jpg" alt="Karusell från en gruppresa, bild 5" loading="lazy">
+            <img src="images/karuseller/k2-6.jpg" alt="Karusell från en gruppresa, bild 6" loading="lazy">
+            <img src="images/karuseller/k2-7.jpg" alt="Karusell från en gruppresa, bild 7" loading="lazy">
+            <img src="images/karuseller/k2-8.jpg" alt="Karusell från en gruppresa, bild 8" loading="lazy">
           </div>
           <div class="sm-post__bar"><div class="sm-post__dots"></div><span class="sm-post__count"></span><div class="sm-post__nav"><button aria-label="Föregående">←</button><button aria-label="Nästa">→</button></div></div>
         </div>
-        <div>
-          <span class="sm-case__tag">Karusell · Reseberättelse</span>
-          <h3>En resa berättad som en dagbok.</h3>
-          <p>Riktiga bilder från resenärerna själva, ordnade så att det känns som att följa med – från första steget till kvällen på verandan.</p>
-          <ul class="sm-steps">
-            <li><b>Första bilden</b><span>Ett kollage med resans höjdpunkter och en uppmaning att swipea.</span></li>
-            <li><b>Mitten</b><span>Kronologiskt: förväntan, vandringen, mötet med gorillorna.</span></li>
-            <li><b>Sista bilden</b><span>Gruppen tillsammans – det man faktiskt minns efter en resa.</span></li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="sm-case">
         <div class="sm-post" data-carousel>
           <div class="sm-post__track">
-            <img src="images/karuseller/k3-1.jpg" alt="Safariquiz, bild 1" loading="lazy">
-            <img src="images/karuseller/k3-2.jpg" alt="Safariquiz, bild 2" loading="lazy">
-            <img src="images/karuseller/k3-3.jpg" alt="Safariquiz, bild 3" loading="lazy">
-            <img src="images/karuseller/k3-4.jpg" alt="Safariquiz, bild 4" loading="lazy">
-            <img src="images/karuseller/k3-5.jpg" alt="Safariquiz, bild 5" loading="lazy">
-            <img src="images/karuseller/k3-6.jpg" alt="Safariquiz, bild 6" loading="lazy">
+            <img src="images/karuseller/k3-1.jpg" alt="Quiz-karusell om safari, bild 1" loading="lazy">
+            <img src="images/karuseller/k3-2.jpg" alt="Quiz-karusell om safari, bild 2" loading="lazy">
+            <img src="images/karuseller/k3-3.jpg" alt="Quiz-karusell om safari, bild 3" loading="lazy">
+            <img src="images/karuseller/k3-4.jpg" alt="Quiz-karusell om safari, bild 4" loading="lazy">
+            <img src="images/karuseller/k3-5.jpg" alt="Quiz-karusell om safari, bild 5" loading="lazy">
+            <img src="images/karuseller/k3-6.jpg" alt="Quiz-karusell om safari, bild 6" loading="lazy">
           </div>
           <div class="sm-post__bar"><div class="sm-post__dots"></div><span class="sm-post__count"></span><div class="sm-post__nav"><button aria-label="Föregående">←</button><button aria-label="Nästa">→</button></div></div>
         </div>
-        <div>
-          <span class="sm-case__tag">Karusell · Quiz</span>
-          <h3>Ett quiz som får folk att kommentera.</h3>
-          <p>Interaktivt innehåll som håller kvar tittaren genom hela karusellen och avslutas med en tydlig uppmaning.</p>
-          <ul class="sm-steps">
-            <li><b>Första bilden</b><span>En utmaning: "Testa dina kunskaper" ger en anledning att swipea.</span></li>
-            <li><b>Mitten</b><span>Tre frågor, en per bild, med svaren samlade på slutet.</span></li>
-            <li><b>Sista bilden</b><span>"Skriv SAFARI i kommentarerna" – engagemang som också ger leads.</span></li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="sm-case">
         <div class="sm-post" data-carousel>
           <div class="sm-post__track">
             <img src="images/karuseller/k4-1.jpg" alt="Karusell om flodkryssningar, bild 1" loading="lazy">
@@ -250,74 +385,87 @@ body { margin:0; background:#14130F; }
           </div>
           <div class="sm-post__bar"><div class="sm-post__dots"></div><span class="sm-post__count"></span><div class="sm-post__nav"><button aria-label="Föregående">←</button><button aria-label="Nästa">→</button></div></div>
         </div>
-        <div>
-          <span class="sm-case__tag">Karusell · Produkt</span>
-          <h3>Tre resor, ett format.</h3>
-          <p>En karusell som fungerar som en meny – varje bild presenterar en resa med samma tydliga upplägg.</p>
-          <ul class="sm-steps">
-            <li><b>Första bilden</b><span>Kategorin och löftet: vakna till nya vyer varje dag.</span></li>
-            <li><b>Mitten</b><span>En bild per resa, med samma typografi så det känns som en helhet.</span></li>
-            <li><b>Sista bilden</b><span>Den mest unika resan sist – med en namnkunnig vinexpert ombord.</span></li>
-          </ul>
-        </div>
-      </article>
-
+      </div>
     </section>
 
-    <!-- ===== VIDEOKLIPP ===== -->
+    <!-- ===== VAD INGÅR ===== -->
     <section class="sm-sec">
       <div class="sm-sec__head">
-        <h2>Videoklipp.</h2>
-        <p>Tre format vi jobbar mycket med. Tryck på ett klipp för att slå på ljudet.</p>
+        <span class="emk-kicker">Vad ingår</span>
+        <h2>Allt ni behöver. Inget strul.</h2>
       </div>
+      <div class="sm-incl">
+        <div><i>◎</i><h3>Strategi & plan</h3><p>Vi sätter gameplanen. Ni lutar er tillbaka.</p></div>
+        <div><i>●</i><h3>Content creation</h3><p>Vi dyker upp, filmar och fotar. Material för veckor, fixat på nolltid.</p></div>
+        <div><i>✂</i><h3>Redigering & text</h3><p>Klippt och optimerat för Insta, TikTok och LinkedIn.</p></div>
+        <div><i>↗</i><h3>Publicering</h3><p>Vi trycker på knappen när det ger max effekt.</p></div>
+        <div><i>✦</i><h3>Community</h3><p>Vi håller igång snacket med era följare – helt i er ton.</p></div>
+        <div><i>▤</i><h3>Uppföljning</h3><p>Svart på vitt varje månad. Vad funkade och hur maxar vi nästa?</p></div>
+      </div>
+    </section>
 
-      <div class="sm-reels">
-        <div class="sm-reel">
-          <div class="sm-reel__phone">
-            <video src="videos/Event.mp4" poster="videos/Event.jpg" muted loop playsinline preload="metadata"></video>
-            <button class="sm-reel__sound" aria-label="Slå på ljud">🔇</button>
-          </div>
-          <span class="sm-reel__tag">Event</span>
-          <h3>Stämning först.</h3>
-          <p>Klippt på musiken och buret av människorna på plats. Kort, rörligt och med en tydlig avslutning.</p>
-        </div>
-        <div class="sm-reel">
-          <div class="sm-reel__phone">
-            <video src="videos/Informativ.mp4" poster="videos/Informativ.jpg" muted loop playsinline preload="metadata"></video>
-            <button class="sm-reel__sound" aria-label="Slå på ljud">🔇</button>
-          </div>
-          <span class="sm-reel__tag">Informativt</span>
-          <h3>Ett budskap per klipp.</h3>
-          <p>Textat från början, eftersom de flesta tittar utan ljud. Poängen kommer inom de första sekunderna.</p>
-        </div>
-        <div class="sm-reel">
-          <div class="sm-reel__phone">
-            <video src="videos/Underhallande.mp4" poster="videos/Underhallande.jpg" muted loop playsinline preload="metadata"></video>
-            <button class="sm-reel__sound" aria-label="Slå på ljud">🔇</button>
-          </div>
-          <span class="sm-reel__tag">Underhållande</span>
-          <h3>Gjort för att delas.</h3>
-          <p>En igenkännbar situation, snabb rytm och en poäng i slutet som får folk att tagga en vän.</p>
-        </div>
+    <!-- ===== RECENSIONER ===== -->
+    <section class="sm-sec">
+      <div class="sm-sec__head">
+        <span class="emk-kicker">Kunderna om oss</span>
+        <h2>Partners som redan gjort det smooth.</h2>
+      </div>
+      <div class="sm-revs">
+        <figure class="sm-rev">
+          <blockquote>”Samarbetet med EMK Marketing har varit ett verkligt lyft i sociala medier. EMK har varit lyhörda, proffsiga och enkla att kommunicera med.”</blockquote>
+          <figcaption><span class="sm-rev__av">CW</span><span><b>Christina Wissinger</b><small>Sportchef</small></span></figcaption>
+        </figure>
+        <figure class="sm-rev">
+          <blockquote>”EMK skötte allt content och paid social. Drivna, lojala och vill genuint ha ärlig feedback. Rekommenderas varmt!”</blockquote>
+          <figcaption><span class="sm-rev__av">RC</span><span><b>Rebecka Carlén</b><small>Brand Strategist & Growth Hacker</small></span></figcaption>
+        </figure>
+        <figure class="sm-rev">
+          <blockquote>”EMK Marketing har varit lyhörda, kreativa i sina idéer och tagit fram fantastiska filmer och bilder som visar vår glädje, gemenskap och utveckling.”</blockquote>
+          <figcaption><span class="sm-rev__av">ER</span><span><b>Emma Raask</b><small>Sportchef</small></span></figcaption>
+        </figure>
+        <figure class="sm-rev">
+          <blockquote>”De visade upp en bred kompetens och innovativt tänkande. Att jobba med EMK Marketing var enkelt.”</blockquote>
+          <figcaption><span class="sm-rev__av">ML</span><span><b>Monika Lykvist</b><small>Kund inom resor</small></span></figcaption>
+        </figure>
       </div>
     </section>
 
     <!-- ===== PROCESS ===== -->
     <section class="sm-sec">
       <div class="sm-sec__head">
-        <h2>Så går det till.</h2>
+        <span class="emk-kicker">Så jobbar vi</span>
+        <h2>Smidigt från start till mål.</h2>
       </div>
       <div class="sm-process">
-        <div><em>01</em><h3>Idé</h3><p>Vi utgår från vad er målgrupp faktiskt stannar för – inte vad som är trendigt just nu.</p></div>
-        <div><em>02</em><h3>Inspelning</h3><p>Vi filmar och fotar själva, ofta allt på samma dag så ni får material för flera veckor.</p></div>
-        <div><em>03</em><h3>Redigering</h3><p>Klipp, text och format anpassat för varje kanal – Reels, TikTok eller karusell.</p></div>
-        <div><em>04</em><h3>Publicering</h3><p>Vi lägger upp, följer siffrorna och tar med det vi lär oss in i nästa omgång.</p></div>
+        <div><em>01</em><h3>Hej!</h3><p>Vi snackar ihop oss om era mål. Inget säljsnack, bara action.</p></div>
+        <div><em>02</em><h3>Gameplan</h3><p>Vi sätter format, kanaler och tempo.</p></div>
+        <div><em>03</em><h3>Skapa magi</h3><p>Vi rycker ut till er och sköter allt framför och bakom kameran.</p></div>
+        <div><em>04</em><h3>Go live</h3><p>Vi publicerar, mäter och skalar upp.</p></div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="sm-sec">
+      <div class="sm-sec__head">
+        <span class="emk-kicker">FAQ</span>
+        <h2>Inga konstigheter.</h2>
+      </div>
+      <div class="sm-faq">
+        <details><summary>Hur ofta publicerar ni?</summary><p>I den takt som ger bäst ROI (Return on Investment). Hellre smart och strategiskt än att spamma flödet.</p></details>
+        <details><summary>Behöver vi vara med när ni filmar?</summary><p>Om ni vill! Men vi förbereder allt så att vi kräver absolut minimum av er tid.</p></details>
+        <details><summary>Vilka kanaler kör ni?</summary><p>Där er målgrupp faktiskt är. TikTok, Insta, Facebook eller LinkedIn. Vi skippar onödigt dödkött.</p></details>
+        <details><summary>När märker vi skillnad?</summary><p>Engagemanget brukar sticka direkt. Inom ett par månader ser ni hur räckvidden och siffrorna växlar upp på riktigt.</p></details>
+        <details><summary>Kan ni kombinera med Ads?</summary><p>Självklart. Organiskt innehåll som flyger är perfekt att boosta vidare med betald annonsering.</p></details>
+        <details><summary>Är det lång bindningstid?</summary><p>Nej tack. Vi gillar flexibelt och friktionsfritt. Vi jobbar med korta uppsägningstider – ni stannar för att vi levererar.</p></details>
       </div>
     </section>
 
     <section class="sm-cta">
-      <h3>Vill ni synas mer i flödet? <em>Vi hjälper gärna till.</em></h3>
-      <a class="emk-btn" href="index.html#emk-boka">Hör av dig →</a>
+      <div>
+        <h3>Redo för ett <em>snyggare flöde?</em></h3>
+        <p>Berätta var ni står idag, så hör vi av oss inom 24 timmar. Let's go.</p>
+      </div>
+      <a class="emk-btn" href="index.html#emk-boka">Boka ett första samtal →</a>
     </section>
 
     <footer class="emk-footer">
@@ -353,6 +501,19 @@ body { margin:0; background:#14130F; }
     update();
   });
 
+
+  /* Resultatkort med "BYT" döljs tills de är ifyllda */
+  document.querySelectorAll('.sm-stat').forEach(function(c){ if(/BYT/.test(c.textContent)) c.style.display='none'; });
+
+  /* Pilar för videoraden */
+  var rail = document.getElementById('sm-reels');
+  document.querySelectorAll('[data-rail]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var card = rail.querySelector('.sm-reel'); var step = card ? card.getBoundingClientRect().width + 22 : 300;
+      rail.scrollBy({ left: step * (+b.dataset.rail), behavior:'smooth' });
+    });
+  });
+
   /* Videor: spelas tyst när de syns. Tryck för ljud (bara ett klipp i taget har ljud). */
   var vids = Array.prototype.slice.call(document.querySelectorAll('.sm-reel video'));
   if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -361,7 +522,7 @@ body { margin:0; background:#14130F; }
         if(e.isIntersecting){ var p = e.target.play(); if(p && p.catch) p.catch(function(){}); }
         else e.target.pause();
       });
-    }, { threshold:0.4 });
+    }, { threshold:0.6 });
     vids.forEach(function(v){ io.observe(v); });
   }
   document.querySelectorAll('.sm-reel__phone').forEach(function(phone){
