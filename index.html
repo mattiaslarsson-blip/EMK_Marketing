@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
   <title>EMK Marketing - Skala ditt företag med lönsam marknadsföring</title>
   <meta name="description" content="EMK Marketing är en digital tillväxtbyrå. Vi hjälper ambitiösa företag att förvandla klick till betalande kunder genom datadrivna strategier, träffsäker annonsering och genuint innehåll.">
   <link rel="icon" type="image/png" href="EMK_LOGO.png" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap');
 
-    body { margin: 0; background: #14130F; }
+    body { margin: 0; background: #111111; }
 
     #emk-lp {
       --ink: #F5F1E8;
-      --bg: #14130F;
-      --card: #1F1D17;
-      --card-deep: #17150F;
-      --line: #34312A;
-      --line-soft: #2A2820;
+      --bg: #111111;
+      --card: #1A1A1A;
+      --card-deep: #151515;
+      --line: #2E2E2E;
+      --line-soft: #242424;
       --muted: #908C80;
       --muted-2: #BDB8AB;
       --red: #7A2021;
@@ -26,7 +27,7 @@
       --gold: #DFA438;
       --gold-deep: #E2B25C;
       --gold-light: rgba(223, 164, 56, 0.14);
-      --badge: #2A2820;
+      --badge: #242424;
       --cream: #F2EEE4;
       --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.3);
       --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.45);
@@ -40,12 +41,7 @@
     /* Synlig keyboard-focus (tillgänglighet) */
     #emk-lp a:focus-visible, #emk-lp button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
 
-    #emk-lp::before {
-      content: ""; position: absolute; inset: 0; pointer-events: none;
-      background:
-        radial-gradient(100% 80% at 85% -5%, rgba(223, 164, 56, 0.12), transparent 50%),
-        radial-gradient(90% 70% at -5% 105%, rgba(122, 32, 33, 0.18), transparent 60%);
-    }
+    #emk-lp::before { content:none; }
     #emk-lp .emk-wrap { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 
     /* ===== HERO: PANELKOLLAGE v2 ===== */
@@ -63,7 +59,7 @@
     #emk-lp .emk-panel img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
       transition:transform .7s cubic-bezier(.2,.8,.2,1), filter .5s ease; }
     #emk-lp .emk-panel::after { content:""; position:absolute; inset:0; pointer-events:none;
-      background:linear-gradient(180deg, rgba(20,19,15,.22), transparent 30%, transparent 58%, rgba(20,19,15,.5)); }
+      background:linear-gradient(180deg, rgba(17,17,17,.22), transparent 30%, transparent 58%, rgba(17,17,17,.5)); }
     #emk-lp .emk-panel:hover { transform:translateY(10px); flex:1.28;
       box-shadow:0 26px 64px -14px rgba(0,0,0,.7), 0 0 46px -10px rgba(223,164,56,.45); }
     #emk-lp .emk-panel:hover img { transform:scale(1.06); filter:brightness(1.06); }
@@ -76,8 +72,8 @@
     /* Gradient vänster + botten (läsbarhet för texten) */
     #emk-lp .emk-hero-grad { position:absolute; inset:0; pointer-events:none; z-index:1;
       background:
-        linear-gradient(90deg, rgba(20,19,15,.93) 0%, rgba(20,19,15,.5) 26%, transparent 50%),
-        linear-gradient(0deg, rgba(20,19,15,.96) 0%, rgba(20,19,15,.4) 24%, transparent 44%); }
+        linear-gradient(90deg, rgba(17,17,17,.93) 0%, rgba(17,17,17,.5) 26%, transparent 50%),
+        linear-gradient(0deg, rgba(17,17,17,.96) 0%, rgba(17,17,17,.4) 24%, transparent 44%); }
 
     /* Nav – ligger ovanför panelerna (panelerna börjar 96px ner) */
     #emk-lp .emk-nav { position:absolute; top:0; left:0; right:0; z-index:5;
@@ -93,7 +89,7 @@
     #emk-lp .emk-nav__cta { border:1.5px solid var(--gold); color:var(--gold) !important;
       padding:9px 20px; border-radius:100px; font-weight:700; white-space:nowrap;
       transition:background .2s, color .2s; }
-    #emk-lp .emk-nav__cta:hover { background:var(--gold); color:#14130F !important; }
+    #emk-lp .emk-nav__cta:hover { background:var(--gold); color:#111111 !important; }
 
     /* Hamburgare (dold på desktop) + mobilmeny */
     #emk-lp .emk-nav__burger { display:none; background:none; border:none; cursor:pointer; padding:8px; z-index:7; }
@@ -103,7 +99,7 @@
     #emk-lp .emk-nav__burger.is-open span:nth-child(2) { opacity:0; }
     #emk-lp .emk-nav__burger.is-open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
     /* z-index 120: overlayen ska ligga över allt sidinnehåll */
-    #emk-lp .emk-mobilemenu { position:fixed; inset:0; background:rgba(20,19,15,.97); z-index:120;
+    #emk-lp .emk-mobilemenu { position:fixed; inset:0; background:rgba(17,17,17,.97); z-index:120;
       display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
       opacity:0; pointer-events:none; transition:opacity .3s ease; }
     #emk-lp .emk-mobilemenu.is-open { opacity:1; pointer-events:auto; }
@@ -112,7 +108,7 @@
     #emk-lp .emk-mobilemenu a:hover { color:var(--gold); }
     #emk-lp .emk-mobilemenu .emk-nav__cta { color:var(--gold) !important; border:1.5px solid var(--gold);
       border-radius:100px; padding:14px 32px; margin-top:10px; }
-    #emk-lp .emk-mobilemenu .emk-nav__cta:hover { background:var(--gold); color:#14130F !important; }
+    #emk-lp .emk-mobilemenu .emk-nav__cta:hover { background:var(--gold); color:#111111 !important; }
 
     /* Innehåll nere till vänster (desktop) */
     #emk-lp .emk-hero-content { position:absolute; left:4.5%; bottom:10%; max-width:560px; z-index:3; }
@@ -147,7 +143,7 @@
       #emk-lp .emk-panel:nth-child(5) { height:76%; margin-top:8%; }
       /* Gradienten tonar bara panelernas nederkant */
       #emk-lp .emk-hero-grad { position:absolute; top:0; height:calc(46vh + 76px); max-height:496px;
-        background:linear-gradient(0deg, var(--bg) 0%, rgba(20,19,15,.55) 14%, transparent 38%); }
+        background:linear-gradient(0deg, var(--bg) 0%, rgba(17,17,17,.55) 14%, transparent 38%); }
       /* Texten ligger UNDER panelerna i eget utrymme – inget överlapp */
       #emk-lp .emk-hero-content { position:relative; left:auto; bottom:auto; max-width:none;
         padding:26px 18px 40px; text-align:center; }
@@ -167,18 +163,18 @@
     }
 
     /* Buttons */
-    #emk-lp .emk-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--cream); color: #14130F; font-weight: 700; font-size: 16px; padding: 16px 36px; border-radius: 100px; text-decoration: none; border: none; cursor: pointer; box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.6); transition: all 0.2s ease; letter-spacing: 0.5px; }
+    #emk-lp .emk-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--cream); color: #111111; font-weight: 700; font-size: 16px; padding: 16px 36px; border-radius: 100px; text-decoration: none; border: none; cursor: pointer; box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.6); transition: all 0.2s ease; letter-spacing: 0.5px; }
     #emk-lp .emk-btn:hover { transform: translateY(-2px); background: #fff; box-shadow: 0 18px 36px -10px rgba(0, 0, 0, 0.8); }
     #emk-lp .emk-btn .emk-arr { transition: transform 0.2s ease; }
     #emk-lp .emk-btn:hover .emk-arr { transform: translateX(5px); }
-    #emk-lp .emk-btn-gold { background: var(--gold); color: #14130F; box-shadow: 0 12px 28px -10px rgba(223, 164, 56, 0.5); }
+    #emk-lp .emk-btn-gold { background: var(--gold); color: #111111; box-shadow: 0 12px 28px -10px rgba(223, 164, 56, 0.5); }
     #emk-lp .emk-btn-gold:hover { background: #ecb44b; }
     #emk-lp .emk-btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); box-shadow: none; }
     #emk-lp .emk-btn-ghost:hover { background: rgba(255,255,255,0.04); border-color: var(--gold); color: var(--gold); }
 
     /* Hero-knapp – måste ligga efter bas-.emk-btn ovan för att vinna på kaskaden.
        Egen klass för att inte krocka med .emk-btn-gold i boka-sektionen */
-    #emk-lp .emk-btn--gold-hero { background:var(--gold); color:#14130F;
+    #emk-lp .emk-btn--gold-hero { background:var(--gold); color:#111111;
       box-shadow:0 12px 28px -10px rgba(223,164,56,.5); }
     #emk-lp .emk-btn--gold-hero:hover { background:#ecb44b; transform:translateY(-2px); }
     #emk-lp .emk-btn--gold-hero .emk-arr { transition:transform .2s; }
@@ -199,7 +195,7 @@
     #emk-lp .emk-svc img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
       transition: transform .7s cubic-bezier(.2,.8,.2,1), filter .5s ease; }
     #emk-lp .emk-svc::after { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
-      background: linear-gradient(180deg, rgba(20,19,15,.1), transparent 35%, transparent 55%, rgba(20,19,15,.9)); }
+      background: linear-gradient(180deg, rgba(17,17,17,.1), transparent 35%, transparent 55%, rgba(17,17,17,.9)); }
     #emk-lp .emk-svc__title { position: absolute; left: 26px; right: 26px; bottom: 26px; z-index: 2;
       font-family: 'Manrope'; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: var(--cream);
       transition: opacity .35s ease, transform .35s ease; }
@@ -207,7 +203,7 @@
     /* Overlay (förklaring + knapp) */
     #emk-lp .emk-svc__panel { position: absolute; inset: 0; z-index: 3; padding: 30px 26px 28px;
       display: flex; flex-direction: column; justify-content: flex-end;
-      background: linear-gradient(180deg, rgba(20,19,15,.55), rgba(20,19,15,.94) 55%);
+      background: linear-gradient(180deg, rgba(17,17,17,.55), rgba(17,17,17,.94) 55%);
       opacity: 0; transition: opacity .4s ease; }
     #emk-lp .emk-svc__panel h3 { font-family: 'Manrope'; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: var(--cream);
       margin-bottom: 12px; transform: translateY(12px); transition: transform .45s cubic-bezier(.2,.8,.2,1); }
@@ -215,7 +211,7 @@
       transform: translateY(12px); transition: transform .5s cubic-bezier(.2,.8,.2,1); }
     #emk-lp .emk-svc__cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; align-self: flex-start;
       font-family: 'Manrope'; font-size: 14px; font-weight: 700; padding: 12px 22px; border-radius: 100px;
-      background: var(--gold); color: #14130F; text-decoration: none;
+      background: var(--gold); color: #111111; text-decoration: none;
       transform: translateY(12px); transition: transform .55s cubic-bezier(.2,.8,.2,1), background .2s ease; }
     #emk-lp .emk-svc__cta:hover { background: #ecb44b; }
 
@@ -238,7 +234,7 @@
     #emk-lp .emk-svc.is-open .emk-svc__cta { transform: translateY(0); }
     /* Diskret "tryck för mer"-hint på touch */
     #emk-lp .emk-svc__hint { display: none; position: absolute; top: 18px; right: 18px; z-index: 2; width: 32px; height: 32px; border-radius: 50%;
-      border: 1px solid rgba(242,238,228,.4); background: rgba(20,19,15,.5); color: var(--cream);
+      border: 1px solid rgba(242,238,228,.4); background: rgba(17,17,17,.5); color: var(--cream);
       font-family: 'Manrope'; font-weight: 700; font-size: 16px; line-height: 30px; text-align: center;
       transition: transform .3s ease, opacity .3s ease; }
     #emk-lp .emk-svc.is-open .emk-svc__hint { transform: rotate(45deg); }
