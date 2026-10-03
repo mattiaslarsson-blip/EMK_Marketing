@@ -39,7 +39,8 @@ body { margin:0; background:#111111; }
 #emk-lp .emk-kicker span { color:var(--muted); font-family:'Manrope'; font-size:11px; font-weight:800; letter-spacing:2.4px; text-transform:uppercase; }
 #emk-lp .pf-hero h1 { font-size:clamp(40px,6.5vw,80px); font-weight:800; line-height:1.02; letter-spacing:-2px; }
 #emk-lp .pf-hero h1 em { font-style:normal; color:var(--gold); }
-#emk-lp .pf-hero p { color:var(--muted-2); font-size:17px; max-width:440px; }
+#emk-lp .pf-hero p { color:var(--muted-2); font-size:17px; }
+#emk-lp .pf-intro { max-width:520px; display:flex; flex-direction:column; gap:12px; }
 
 /* ===== FILTER ===== */
 #emk-lp .pf-filter { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:26px; padding:14px 0; }
@@ -90,16 +91,20 @@ body { margin:0; background:#111111; }
 #emk-lp .pf-sec-head { margin-bottom:34px; }
 #emk-lp .pf-sec-head h2 { font-size:clamp(28px,4.5vw,44px); font-weight:800; letter-spacing:-1px; }
 #emk-lp .pf-sec-head p { color:var(--muted-2); margin-top:10px; max-width:560px; }
-#emk-lp .pf-cases { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-#emk-lp .pf-case { background:linear-gradient(180deg, var(--card), var(--card-deep)); border:1px solid var(--line-soft); border-top:3px solid var(--gold);
-  border-radius:18px; padding:30px 28px; display:flex; flex-direction:column; gap:18px; }
-#emk-lp .pf-case__client { font-family:'Manrope'; font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
-#emk-lp .pf-case__num { font-family:'Manrope'; font-weight:800; font-size:clamp(40px,4.6vw,56px); line-height:1; letter-spacing:-2px; color:var(--gold); }
-#emk-lp .pf-case__label { font-family:'Manrope'; font-weight:700; font-size:15px; color:var(--cream); margin-top:8px; }
-#emk-lp .pf-case p { color:var(--muted-2); font-size:15px; line-height:1.65; }
-#emk-lp .pf-case__stats { display:flex; gap:22px; padding-top:16px; border-top:1px solid var(--line-soft); margin-top:auto; }
-#emk-lp .pf-case__stats b { display:block; font-family:'Manrope'; font-size:20px; color:var(--ink); }
-#emk-lp .pf-case__stats span { font-size:12px; color:var(--muted); }
+#emk-lp .pf-sec-head h2 em { font-style:normal; color:var(--gold); }
+#emk-lp .pf-cases { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+#emk-lp .pf-case { position:relative; background:var(--card); border:1px solid var(--line); border-radius:22px; padding:40px 40px 32px;
+  display:flex; flex-direction:column; transition:border-color .3s, transform .3s; }
+#emk-lp .pf-case:hover { border-color:rgba(223,164,56,.45); transform:translateY(-3px); }
+#emk-lp .pf-case__tag { align-self:flex-start; font-family:'Manrope'; font-size:11px; font-weight:800; letter-spacing:1.8px; text-transform:uppercase;
+  color:var(--gold); background:var(--gold-light); padding:7px 14px; border-radius:100px; margin-bottom:28px; }
+#emk-lp .pf-case__num { font-family:'Manrope'; font-weight:800; font-size:clamp(56px,7vw,92px); line-height:.95; letter-spacing:-3px; color:var(--cream); }
+#emk-lp .pf-case__label { font-family:'Manrope'; font-weight:700; font-size:16px; color:var(--gold); margin:12px 0 18px; }
+#emk-lp .pf-case p { color:var(--muted-2); font-size:15.5px; line-height:1.7; max-width:480px; margin-bottom:28px; }
+#emk-lp .pf-case__stats { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:auto; }
+#emk-lp .pf-case__stats div { background:var(--card-deep); border:1px solid var(--line-soft); border-radius:14px; padding:16px 18px; }
+#emk-lp .pf-case__stats b { display:block; font-family:'Manrope'; font-size:20px; font-weight:800; color:var(--ink); white-space:nowrap; }
+#emk-lp .pf-case__stats span { font-size:12.5px; color:var(--muted); }
 
 /* ===== CTA + FOOTER ===== */
 #emk-lp .pf-cta { margin:70px 0 0; padding:56px 40px; border:1px solid var(--line); border-radius:24px; background:var(--card);
@@ -136,7 +141,6 @@ body { margin:0; background:#111111; }
 /* ===== SURFPLATTA ===== */
 @media (max-width:1100px){
   #emk-lp .pf-grid { grid-template-columns:repeat(3,1fr); }
-  #emk-lp .pf-cases { grid-template-columns:1fr 1fr; }
 }
 
 /* ===== MOBIL ===== */
@@ -153,6 +157,7 @@ body { margin:0; background:#111111; }
   #emk-lp .pf-hero { padding:28px 4px 22px; gap:14px; }
   #emk-lp .pf-hero h1 { letter-spacing:-1.2px; }
   #emk-lp .pf-hero p { font-size:15px; }
+  #emk-lp .pf-intro { gap:10px; }
   #emk-lp .pf-filter { flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; margin:0 -14px 14px; padding:10px 14px; }
   #emk-lp .pf-filter::-webkit-scrollbar { display:none; }
   #emk-lp .pf-filter button, #emk-lp .pf-filter__link { padding:9px 16px; font-size:13px; flex-shrink:0; }
@@ -165,7 +170,10 @@ body { margin:0; background:#111111; }
   #emk-lp .pf-item__play { width:26px; height:26px; top:8px; right:8px; }
   #emk-lp .pf-results { padding:60px 4px 20px; }
   #emk-lp .pf-cases { grid-template-columns:1fr; gap:14px; }
-  #emk-lp .pf-case { padding:24px 22px; }
+  #emk-lp .pf-case { padding:28px 22px 22px; border-radius:18px; }
+  #emk-lp .pf-case__tag { margin-bottom:20px; }
+  #emk-lp .pf-case__num { letter-spacing:-2px; }
+  #emk-lp .pf-case__stats b { font-size:17px; }
   #emk-lp .pf-cta { margin-top:44px; padding:36px 22px; }
   #emk-lp .pf-cta .emk-btn { width:100%; }
   #emk-lp .emk-footer { flex-direction:column; gap:8px; padding:28px 4px 36px; }
@@ -197,7 +205,11 @@ body { margin:0; background:#111111; }
         <div class="emk-kicker"><span>Portfolio</span></div>
         <h1>Utvalt <em>arbete.</em></h1>
       </div>
-      <p>Ett urval av det vi har filmat, fotograferat och byggt kampanjer kring – för företag och föreningar vi tycker om att jobba med.</p>
+      <div class="pf-intro">
+        <p>Vi har haft förmånen att få skapa innehåll för en mängd olika verksamheter – från idrottsföreningar och evenemang till spännande företag.</p>
+        <p>Här hittar ni ett urval av det vi gör om dagarna, vare sig det handlar om stämningsfulla bilder, fartfyllda videoklipp eller kampanjer.</p>
+        <p>Letar ni efter en partner som kan fånga känslan i er verksamhet och ge kanalerna det där lilla extra? Tveka inte att höra av er, vi ser fram emot att förverkliga er vision tillsammans!</p>
+      </div>
     </header>
 
     <!-- FILTER (antalet räknas automatiskt) -->
@@ -435,47 +447,30 @@ body { margin:0; background:#111111; }
     <section class="pf-results" id="pf-resultat">
       <div class="pf-sec-head">
         <div class="emk-kicker"><span>Resultat</span></div>
-        <h2>Och det här blev resultatet.</h2>
-        <p>Innehållet ska kännas rätt – men det ska också göra nytta. Här är några siffror från kampanjer vi har drivit.</p>
+        <h2>Det här blev <em>resultatet.</em></h2>
+        <p>Snygga bilder och filmer är roligt att skapa. Men det är först när de gör skillnad för er verksamhet som vi blir riktigt nöjda. Här är några siffror vi är extra stolta över.</p>
       </div>
 
       <div class="pf-cases">
         <article class="pf-case">
-          <span class="pf-case__client">Meta Ads</span>
-          <div>
-            <div class="pf-case__num">13.5x</div>
-            <div class="pf-case__label">ROAS</div>
-          </div>
-          <p>Vi filmade annonserna, satte upp kampanjen i Meta och justerade den vecka för vecka. 37&nbsp;000 kr i annonsbudget blev 500&nbsp;000 kr i försäljning.</p>
+          <span class="pf-case__tag">Meta Ads</span>
+          <div class="pf-case__num">13,5x</div>
+          <div class="pf-case__label">Avkastning på annonsbudget</div>
+          <p>Vi filmade annonserna, byggde kampanjen i Meta och finjusterade den vecka för vecka. 37&nbsp;000 kr i annonsbudget blev 500&nbsp;000 kr i försäljning.</p>
           <div class="pf-case__stats">
-            <div><b>500k</b><span>Intäkt (kr)</span></div>
-            <div><b>37k</b><span>Annonsbudget (kr)</span></div>
+            <div><b>500&nbsp;000 kr</b><span>Försäljning</span></div>
+            <div><b>37&nbsp;000 kr</b><span>Annonsbudget</span></div>
           </div>
         </article>
 
         <article class="pf-case">
-          <span class="pf-case__client">Paid Social</span>
-          <div>
-            <div class="pf-case__num">-30%</div>
-            <div class="pf-case__label">Kostnad per köp</div>
-          </div>
-          <p>BYT: Berätta som till en kollega – vad kunden behövde, vad ni gjorde och vad som hände. Två–tre meningar.</p>
+          <span class="pf-case__tag">Organiskt</span>
+          <div class="pf-case__num">2,5 milj.</div>
+          <div class="pf-case__label">Visningar</div>
+          <p>Innehåll som känns äkta sprids av sig självt. Tillsammans med våra kunder har vi nått över 2,5 miljoner visningar – helt organiskt, utan en krona i annonsbudget.</p>
           <div class="pf-case__stats">
-            <div><b>BYT</b><span>Nyckeltal</span></div>
-            <div><b>BYT</b><span>Nyckeltal</span></div>
-          </div>
-        </article>
-
-        <article class="pf-case">
-          <span class="pf-case__client">Sociala medier</span>
-          <div>
-            <div class="pf-case__num">+150%</div>
-            <div class="pf-case__label">Räckvidd</div>
-          </div>
-          <p>BYT: Berätta som till en kollega – vad kunden behövde, vad ni gjorde och vad som hände. Två–tre meningar.</p>
-          <div class="pf-case__stats">
-            <div><b>BYT</b><span>Nyckeltal</span></div>
-            <div><b>BYT</b><span>Nyckeltal</span></div>
+            <div><b>2,5 milj.</b><span>Visningar</span></div>
+            <div><b>0 kr</b><span>Annonsbudget</span></div>
           </div>
         </article>
       </div>
@@ -483,8 +478,8 @@ body { margin:0; background:#111111; }
 
     <!-- CTA -->
     <section class="pf-cta">
-      <h3>Har du något du vill visa upp? <em>Vi hjälper gärna till.</em></h3>
-      <a class="emk-btn" href="index.html#emk-boka">Hör av dig →</a>
+      <h3>Har ni något ni vill visa upp? <em>Vi hjälper gärna till.</em></h3>
+      <a class="emk-btn" href="index.html#emk-boka">Hör av er →</a>
     </section>
 
     <footer class="emk-footer">
