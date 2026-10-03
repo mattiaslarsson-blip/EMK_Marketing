@@ -3,14 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
 <title>Om oss – EMK Marketing</title>
 <meta name="description" content="Lär känna EMK Marketing. Möt teamet bakom resultaten.">
 <link rel="icon" type="image/png" href="EMK_LOGO.png">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap');
-body { margin:0; background:#14130F; }
+body { margin:0; background:#111111; }
 #emk-lp {
-  --ink:#F5F1E8; --bg:#14130F; --card:#1F1D17; --line:#34312A; --line-soft:#2A2820; --muted:#908C80; --muted-2:#BDB8AB;
+  --ink:#F5F1E8; --bg:#111111; --card:#1A1A1A; --line:#2E2E2E; --line-soft:#242424; --muted:#908C80; --muted-2:#BDB8AB;
   --gold:#DFA438; --gold-light:rgba(223,164,56,0.14); --cream:#F2EEE4;
   --shadow-lg:0 18px 50px rgba(0,0,0,0.45);
   font-family:'Nunito Sans',sans-serif; color:var(--ink); background:var(--bg); line-height:1.6;
@@ -33,7 +34,7 @@ body { margin:0; background:#14130F; }
 #emk-lp .emk-nav__cta { border:1.5px solid var(--gold); color:var(--gold) !important;
   padding:9px 20px; border-radius:100px; font-weight:700; white-space:nowrap;
   transition:background .2s, color .2s; }
-#emk-lp .emk-nav__cta:hover { background:var(--gold); color:#14130F !important; }
+#emk-lp .emk-nav__cta:hover { background:var(--gold); color:#111111 !important; }
 
 /* Kicker */
 #emk-lp .emk-kicker { display:inline-flex; align-items:center; gap:9px; margin-bottom:16px; }
@@ -45,7 +46,7 @@ body { margin:0; background:#14130F; }
 #emk-lp .emk-om-hero__bg { position:absolute; inset:0; z-index:0; }
 #emk-lp .emk-om-hero__bg img { width:100%; height:100%; object-fit:cover; display:block; }
 #emk-lp .emk-om-hero__bg::after { content:""; position:absolute; inset:0;
-  background:linear-gradient(0deg, rgba(20,19,15,0.96) 0%, rgba(20,19,15,0.45) 38%, rgba(20,19,15,0.35) 100%); }
+  background:linear-gradient(0deg, rgba(17,17,17,0.96) 0%, rgba(17,17,17,0.45) 38%, rgba(17,17,17,0.35) 100%); }
 #emk-lp .emk-om-hero__inner { position:relative; z-index:1; max-width:1280px; margin:0 auto; width:100%; padding:0 32px 56px; }
 #emk-lp .emk-om-hero h1 { font-size:clamp(38px,6vw,72px); font-weight:800; line-height:1.04; letter-spacing:-1.5px; text-shadow:0 2px 30px rgba(0,0,0,.55); }
 #emk-lp .emk-om-hero h1 em { font-style:normal; color:var(--gold); }
@@ -75,7 +76,7 @@ body { margin:0; background:#14130F; }
 #emk-lp .emk-member img { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center top; display:block;
   transition:transform .7s cubic-bezier(.2,.8,.2,1), filter .5s ease; }
 #emk-lp .emk-member::after { content:""; position:absolute; top:0; left:0; right:0; bottom:0; pointer-events:none;
-  background:linear-gradient(180deg, rgba(20,19,15,.15), transparent 30%, transparent 52%, rgba(20,19,15,.94)); }
+  background:linear-gradient(180deg, rgba(17,17,17,.15), transparent 30%, transparent 52%, rgba(17,17,17,.94)); }
 #emk-lp .emk-member:hover { transform:translateY(-6px); box-shadow:0 26px 64px -14px rgba(0,0,0,.7), 0 0 46px -10px rgba(223,164,56,.4); }
 #emk-lp .emk-member:hover img { transform:scale(1.05); filter:brightness(1.05); }
 #emk-lp .emk-member__info { position:absolute; left:20px; right:20px; bottom:18px; z-index:2; }
@@ -95,7 +96,7 @@ body { margin:0; background:#14130F; }
 #emk-lp .emk-om-cta h3 { font-size:clamp(24px,3.5vw,34px); font-weight:800; letter-spacing:-0.7px; line-height:1.18; max-width:560px; }
 #emk-lp .emk-om-cta h3 em { font-style:normal; color:var(--gold); }
 #emk-lp .emk-btn { display:inline-flex; align-items:center; gap:9px; font-family:'Manrope'; font-size:15px; font-weight:700;
-  padding:16px 34px; border-radius:100px; text-decoration:none; background:var(--cream); color:#14130F;
+  padding:16px 34px; border-radius:100px; text-decoration:none; background:var(--cream); color:#111111;
   box-shadow:0 12px 28px -10px rgba(0,0,0,.6); transition:transform .2s, background .2s; letter-spacing:.3px; white-space:nowrap; }
 #emk-lp .emk-btn:hover { background:#fff; transform:translateY(-2px); }
 #emk-lp .emk-btn .emk-arr { transition:transform .2s; }
@@ -121,7 +122,7 @@ body { margin:0; background:#14130F; }
   #emk-lp .emk-nav__cta { padding:7px 14px; }
   /* Mobil: dölj "Tjänster" så menyn får plats på en rad */
   #emk-lp .emk-nav__links a { white-space:nowrap; }
-  #emk-lp .emk-nav__links a[href="index.html#emk-tjanster"] { display:none; }
+  #emk-lp .emk-nav__links a[href="/#emk-tjanster"] { display:none; }
   #emk-lp .emk-om-hero { min-height:46vh; }
   #emk-lp .emk-om-hero__inner { padding:0 18px 36px; }
   #emk-lp .emk-om-topnav .emk-nav { padding:16px 18px; }
@@ -160,12 +161,12 @@ body { margin:0; background:#14130F; }
     <div class="emk-om-hero__bg"><img src="images/foto/ovrigt/pexels-guilherme-pedrosa-2156844062-34406247.jpg" alt="" aria-hidden="true"></div>
     <div class="emk-om-topnav">
       <nav class="emk-nav">
-        <a href="index.html" class="emk-nav__logo"><img src="images/logos/emk-logo-gold.svg" alt="EMK Marketing"></a>
+        <a href="/" class="emk-nav__logo"><img src="images/logos/emk-logo-gold.svg" alt="EMK Marketing"></a>
         <div class="emk-nav__links">
-          <a href="index.html#emk-tjanster">Tjänster</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="om-oss.html" class="is-active">Om oss</a>
-          <a class="emk-nav__cta" href="index.html#emk-boka">Boka möte</a>
+          <a href="/#emk-tjanster">Tjänster</a>
+          <a href="/portfolio">Portfolio</a>
+          <a href="/om-oss" class="is-active">Om oss</a>
+          <a class="emk-nav__cta" href="/#emk-boka">Boka möte</a>
         </div>
       </nav>
     </div>
@@ -230,13 +231,13 @@ body { margin:0; background:#14130F; }
     <!-- 4. SLUT-CTA -->
     <section class="emk-om-cta">
       <h3>Nyfiken på hur vi kan <em>växla upp er marknadsföring?</em></h3>
-      <a class="emk-btn" href="index.html#emk-boka">Kontakta oss <span class="emk-arr">→</span></a>
+      <a class="emk-btn" href="/#emk-boka">Kontakta oss <span class="emk-arr">→</span></a>
     </section>
 
     <!-- FOOTER (minimal) -->
     <footer class="emk-footer">
       <span>© <span id="emk-year"></span> EMK Marketing</span>
-      <a href="index.html">Till startsidan →</a>
+      <a href="/">Till startsidan →</a>
     </footer>
 
   </div>
