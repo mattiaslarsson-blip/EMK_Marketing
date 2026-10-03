@@ -232,6 +232,9 @@ body { margin:0; background:#14130F; }
         <span class="pf-item__play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-51.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
         <img src="images/portfolio/bild-22.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
@@ -242,6 +245,9 @@ body { margin:0; background:#14130F; }
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
         <img src="images/portfolio/bild-19.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-49.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
         <img src="images/portfolio/bild-41.jpg" alt="Arbete av EMK Marketing" loading="lazy">
@@ -260,6 +266,9 @@ body { margin:0; background:#14130F; }
         <img src="images/portfolio/bild-20.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-46.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
         <img src="images/portfolio/bild-43.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
@@ -276,6 +285,9 @@ body { margin:0; background:#14130F; }
         <img src="images/portfolio/bild-36.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-47.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
         <img src="images/portfolio/bild-06.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
@@ -289,6 +301,9 @@ body { margin:0; background:#14130F; }
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
         <img src="images/portfolio/bild-03.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-50.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
         <img src="images/portfolio/bild-05.jpg" alt="Arbete av EMK Marketing" loading="lazy">
@@ -309,6 +324,9 @@ body { margin:0; background:#14130F; }
         <span class="pf-item__play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-48.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
         <img src="images/portfolio/bild-30.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
@@ -323,6 +341,9 @@ body { margin:0; background:#14130F; }
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
         <img src="images/portfolio/bild-23.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="bild">
+        <img src="images/portfolio/bild-45.jpg" alt="Arbete av EMK Marketing" loading="lazy">
       </figure>
       <figure class="pf-item" tabindex="0" data-type="video">
         <video src="videos/Sequence%2001_114.mp4" poster="videos/Sequence%2001_114.jpg" muted loop playsinline preload="metadata"></video>
@@ -381,6 +402,10 @@ body { margin:0; background:#14130F; }
       </figure>
       <figure class="pf-item" tabindex="0" data-type="bild">
         <img src="images/portfolio/bild-37.jpg" alt="Arbete av EMK Marketing" loading="lazy">
+      </figure>
+      <figure class="pf-item" tabindex="0" data-type="video" data-only="video">
+        <video src="videos/Fest2.mp4" poster="videos/Fest2.jpg" muted loop playsinline preload="metadata"></video>
+        <span class="pf-item__play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
       </figure>
       <!--
         MALL – kopiera ett block ovanför denna kommentar:
@@ -521,6 +546,29 @@ body { margin:0; background:#14130F; }
 
   /* Filter: Alla, Bilder, Videoklipp + länk till Sociala medier-sidan */
   var bar = document.getElementById('pf-filter');
+  /* Egen ordning för fliken Videoklipp. Ändra listan för att byta ordning. */
+  var VIDEO_ORDER = ['stg','AR_mad','IPP_video','Informativ','Festi','AR_midsommar','Underhallande','Event','indiepem','AR_interjuv','Sequence 01_114','Sequence 01_140','Fest2'];
+  var ORIGINAL = items.slice();
+  function vidName(i){ var v=i.querySelector('video'); return v ? decodeURIComponent(v.getAttribute('src').replace(/^videos\//,'').replace(/\.mp4$/,'')) : null; }
+  function applyFilter(key, test){
+    var list = ORIGINAL.slice();
+    if(key === 'video'){
+      list.sort(function(a,b){
+        var ia=VIDEO_ORDER.indexOf(vidName(a)), ib=VIDEO_ORDER.indexOf(vidName(b));
+        return (ia<0?999:ia) - (ib<0?999:ib);
+      });
+    }
+    list.forEach(function(i){ grid.appendChild(i); });
+    items.forEach(function(i){
+      var onlyVideo = i.dataset.only === 'video';
+      var show = test(i) && (!onlyVideo || key === 'video');
+      if(key === 'video' && VIDEO_ORDER.indexOf(vidName(i)) < 0) show = false;
+      i.classList.toggle('is-hidden', !show);
+    });
+    layout(); syncVideos();
+  }
+  items.forEach(function(i){ if(i.dataset.only === 'video') i.classList.add('is-hidden'); });
+
   var FILTERS = [
     ['alla',  'Alla',       function(){ return true; }],
     ['bild',  'Bilder',     function(i){ return i.dataset.type === 'bild'; }],
@@ -535,8 +583,7 @@ body { margin:0; background:#14130F; }
     b.addEventListener('click', function(){
       current = f[0];
       Array.prototype.forEach.call(bar.querySelectorAll('button'), function(x){ x.classList.toggle('is-active', x === b); });
-      items.forEach(function(i){ i.classList.toggle('is-hidden', !f[2](i)); });
-      layout(); syncVideos();
+      applyFilter(f[0], f[2]);
     });
     bar.appendChild(b);
   });
@@ -580,7 +627,7 @@ body { margin:0; background:#14130F; }
     cap.textContent = (idx + 1) + ' / ' + list.length;
   }
   function open(el){
-    list = items.filter(isOn);
+    list = Array.prototype.slice.call(grid.querySelectorAll('.pf-item')).filter(isOn);
     var i = list.indexOf(el); if(i < 0) return;
     vids.forEach(function(v){ v.pause(); });
     lb.classList.add('is-open'); lb.setAttribute('aria-hidden','false');
