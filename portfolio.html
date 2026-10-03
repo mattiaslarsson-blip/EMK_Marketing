@@ -587,9 +587,11 @@ body { margin:0; background:#14130F; }
     });
     bar.appendChild(b);
   });
+  /* Sociala medier-länken är avstängd tills vidare. Ta bort /* och */ runt raderna nedan för att visa den igen.
   var sm = document.createElement('a');
   sm.href = 'sociala-medier.html'; sm.className = 'pf-filter__link'; sm.innerHTML = 'Sociala medier <span aria-hidden="true">→</span>';
   bar.appendChild(sm);
+  */
 
   /* Videor spelas tyst när de syns, pausas utanför skärmen */
   var vids = items.map(function(i){ return i.querySelector('video'); }).filter(Boolean);
