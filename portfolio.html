@@ -3,14 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
 <title>Portfolio – EMK Marketing</title>
 <meta name="description" content="Ett urval av foto, film och kampanjer som EMK Marketing har gjort – och vad de ledde till.">
 <link rel="icon" type="image/png" href="EMK_LOGO.png">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap');
-body { margin:0; background:#14130F; }
+body { margin:0; background:#111111; }
 #emk-lp {
-  --ink:#F5F1E8; --bg:#14130F; --card:#1F1D17; --card-deep:#17150F; --line:#34312A; --line-soft:#2A2820;
+  --ink:#F5F1E8; --bg:#111111; --card:#1A1A1A; --card-deep:#151515; --line:#2E2E2E; --line-soft:#242424;
   --muted:#908C80; --muted-2:#BDB8AB; --gold:#DFA438; --gold-light:rgba(223,164,56,0.14); --cream:#F2EEE4;
   font-family:'Nunito Sans',sans-serif; color:var(--ink); background:var(--bg); line-height:1.6;
   -webkit-font-smoothing:antialiased; position:relative; overflow:hidden;
@@ -18,8 +19,7 @@ body { margin:0; background:#14130F; }
 #emk-lp * { box-sizing:border-box; margin:0; padding:0; }
 #emk-lp h1, #emk-lp h2, #emk-lp h3, #emk-lp h4 { font-family:'Manrope',sans-serif; }
 #emk-lp a:focus-visible, #emk-lp button:focus-visible, #emk-lp .pf-item:focus-visible { outline:2px solid var(--gold); outline-offset:3px; border-radius:8px; }
-#emk-lp::before { content:""; position:absolute; inset:0; pointer-events:none;
-  background:radial-gradient(90% 60% at 85% -5%, rgba(223,164,56,.10), transparent 50%); }
+#emk-lp::before { content:none; }
 #emk-lp .emk-wrap { position:relative; z-index:1; max-width:1360px; margin:0 auto; padding:0 32px; }
 
 /* ===== NAV ===== */
@@ -31,7 +31,7 @@ body { margin:0; background:#14130F; }
 #emk-lp .emk-nav__links a:hover { color:#fff; }
 #emk-lp .emk-nav__links a.is-active { color:var(--gold); }
 #emk-lp .emk-nav__cta { border:1.5px solid var(--gold); color:var(--gold) !important; padding:9px 20px; border-radius:100px; font-weight:700; white-space:nowrap; transition:background .2s, color .2s; }
-#emk-lp .emk-nav__cta:hover { background:var(--gold); color:#14130F !important; }
+#emk-lp .emk-nav__cta:hover { background:var(--gold); color:#111111 !important; }
 
 /* ===== HERO ===== */
 #emk-lp .pf-hero { padding:56px 0 40px; display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; }
@@ -46,21 +46,24 @@ body { margin:0; background:#14130F; }
 #emk-lp .pf-filter button { font-family:'Manrope'; font-size:14px; font-weight:700; color:var(--muted-2); background:var(--card);
   border:1px solid var(--line); padding:10px 20px; border-radius:100px; cursor:pointer; transition:all .2s; }
 #emk-lp .pf-filter button:hover { color:var(--ink); border-color:var(--muted); }
-#emk-lp .pf-filter button.is-active { background:var(--gold); border-color:var(--gold); color:#14130F; }
+#emk-lp .pf-filter button.is-active { background:var(--gold); border-color:var(--gold); color:#111111; }
 #emk-lp .pf-filter__link { font-family:'Manrope'; font-size:14px; font-weight:700; color:var(--gold); text-decoration:none;
   border:1px solid rgba(223,164,56,.45); padding:10px 20px; border-radius:100px; transition:all .2s; white-space:nowrap; }
-#emk-lp .pf-filter__link:hover { background:var(--gold); color:#14130F; border-color:var(--gold); }
+#emk-lp .pf-filter__link:hover { background:var(--gold); color:#111111; border-color:var(--gold); }
 
 /* ===== GRID (masonry: höjd räknas ut av JS från bildformatet) ===== */
-#emk-lp .pf-grid { --gap:14px; display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:8px; column-gap:var(--gap); row-gap:var(--gap); grid-auto-flow:dense; }
+#emk-lp .pf-grid { --gap:14px; display:grid; grid-template-columns:repeat(4,1fr); column-gap:var(--gap); row-gap:var(--gap); grid-auto-flow:dense; }
 #emk-lp .pf-item { position:relative; border-radius:16px; overflow:hidden; background:var(--card); cursor:pointer;
   transition:transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease; }
 #emk-lp .pf-item.is-wide { grid-column:span 2; }
+/* Fallback om JS inte körts: fast format. Med JS: murverk (masonry). */
+#emk-lp .pf-grid:not(.is-masonry) .pf-item { aspect-ratio:4/5; }
+#emk-lp .pf-grid.is-masonry { grid-auto-rows:8px; }
 #emk-lp .pf-item.is-hidden { display:none; }
 #emk-lp .pf-item img, #emk-lp .pf-item video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
   transition:transform .7s cubic-bezier(.2,.8,.2,1); }
 /* Om en fil saknas: snygg tom ruta istället för trasig bild */
-#emk-lp .pf-item.is-broken { background:linear-gradient(135deg, #2A2820, #1A1813); }
+#emk-lp .pf-item.is-broken { background:linear-gradient(135deg, #242424, #161616); }
 #emk-lp .pf-item.is-broken img, #emk-lp .pf-item.is-broken video { display:none; }
 
 #emk-lp .pf-item__info { position:absolute; left:16px; right:16px; bottom:14px; z-index:2; display:flex; justify-content:space-between; align-items:flex-end; gap:10px;
@@ -69,7 +72,7 @@ body { margin:0; background:#14130F; }
 #emk-lp .pf-item__tag { font-family:'Manrope'; font-size:10px; font-weight:800; letter-spacing:1.6px; text-transform:uppercase; color:var(--gold); white-space:nowrap; }
 /* Videoikon uppe till höger */
 #emk-lp .pf-item__play { position:absolute; top:12px; right:12px; z-index:2; width:32px; height:32px; border-radius:50%;
-  background:rgba(20,19,15,.55); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; }
+  background:rgba(17,17,17,.55); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; }
 #emk-lp .pf-item__play svg { width:12px; height:12px; fill:var(--cream); margin-left:2px; }
 
 @media (hover:hover) and (pointer:fine){
@@ -104,7 +107,7 @@ body { margin:0; background:#14130F; }
 #emk-lp .pf-cta h3 { font-size:clamp(24px,3.4vw,34px); font-weight:800; letter-spacing:-0.7px; line-height:1.15; max-width:560px; }
 #emk-lp .pf-cta h3 em { font-style:normal; color:var(--gold); }
 #emk-lp .emk-btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; font-family:'Manrope'; font-size:15px; font-weight:700;
-  padding:16px 34px; border-radius:100px; text-decoration:none; background:var(--gold); color:#14130F; white-space:nowrap;
+  padding:16px 34px; border-radius:100px; text-decoration:none; background:var(--gold); color:#111111; white-space:nowrap;
   box-shadow:0 12px 28px -10px rgba(223,164,56,.5); transition:transform .2s, background .2s; }
 #emk-lp .emk-btn:hover { background:#ecb44b; transform:translateY(-2px); }
 #emk-lp .emk-footer { margin-top:70px; border-top:1px solid var(--line-soft); padding:36px 0 44px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
@@ -513,6 +516,7 @@ body { margin:0; background:#14130F; }
   function isOn(el){ return !el.classList.contains('is-hidden') && !el.classList.contains('is-broken'); }
 
   /* Masonry: varje objekt får rätt höjd utifrån sitt format */
+  grid.classList.add('is-masonry');
   function layout(){
     var gap = parseFloat(getComputedStyle(grid).rowGap) || 14;
     items.forEach(function(el){
@@ -587,7 +591,7 @@ body { margin:0; background:#14130F; }
     });
     bar.appendChild(b);
   });
-  /* Sociala medier-länken är avstängd tills vidare. Ta bort /* och */ runt raderna nedan för att visa den igen.
+  /* Sociala medier-länken är avstängd tills vidare (ta bort kommentaren runt raderna nedan för att visa den igen).
   var sm = document.createElement('a');
   sm.href = 'sociala-medier.html'; sm.className = 'pf-filter__link'; sm.innerHTML = 'Sociala medier <span aria-hidden="true">→</span>';
   bar.appendChild(sm);
