@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakta oss – Företagsfilm | EMK Marketing</title>
+<meta name="description" content="Berätta kort om ert behov av företagsfilm så återkommer vi inom 12 timmar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#14130F; --card:#1F1D17; --card2:#2A2720; --gold:#DFA438;
+  --cream:#F2EEE4; --muted:rgba(242,238,228,.66); --line:rgba(242,238,228,.12);
+  --max:1140px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--cream);font-family:'Nunito Sans',sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Manrope',sans-serif;line-height:1.15;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.kicker::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.btn{display:inline-block;font-family:'Manrope',sans-serif;font-weight:700;font-size:16px;padding:15px 26px;border-radius:10px;border:0;cursor:pointer;transition:.2s;text-align:center}
+.btn-gold{background:var(--gold);color:var(--bg)}
+.btn-gold:hover{filter:brightness(1.08);transform:translateY(-1px)}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(20,19,15,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:70px}
+.logo{font-family:'Manrope';font-weight:800;font-size:20px;letter-spacing:.04em}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:26px;font-size:15px;color:var(--muted)}
+.nav-links a:hover{color:var(--cream)}
+
+/* Layout */
+.contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;padding:88px 0 110px;align-items:start}
+.info h1{font-size:clamp(36px,4.6vw,56px);font-weight:800;margin-bottom:18px}
+.info h1 em{font-style:normal;color:var(--gold)}
+.info .lead{color:var(--muted);font-size:19px;margin-bottom:36px}
+.items{display:grid;gap:18px;margin-bottom:40px}
+.item{display:flex;gap:14px;align-items:center;font-weight:600}
+.item .ic{width:42px;height:42px;border-radius:10px;background:var(--card);display:grid;place-items:center;color:var(--gold);flex-shrink:0}
+.item a:hover{color:var(--gold)}
+.promise{background:var(--card);border-radius:14px;padding:22px 24px}
+.promise strong{font-family:'Manrope';display:block;margin-bottom:8px}
+.promise ol{padding-left:20px;color:var(--muted);font-size:15.5px;display:grid;gap:6px}
+
+/* Form */
+.formcard{background:var(--card);border-radius:20px;padding:42px}
+.formcard h2{font-size:28px;font-weight:800;margin-bottom:6px}
+.formcard .sub{color:var(--muted);font-size:15px;margin-bottom:28px}
+.field{margin-bottom:20px}
+label{display:block;font-weight:700;font-size:15px;margin-bottom:8px}
+label .req{color:var(--gold)}
+input,select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;color:var(--cream);font-family:inherit;font-size:16px;padding:14px 16px;transition:.2s;appearance:none;-webkit-appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23DFA438' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+select:invalid{color:rgba(242,238,228,.4)}
+option{color:#14130F;background:#F2EEE4}
+input::placeholder,textarea::placeholder{color:rgba(242,238,228,.4)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.formcard .btn{width:100%;margin-top:8px;font-size:17px;padding:17px}
+.small{font-size:13px;color:var(--muted);margin-top:14px;text-align:center}
+
+/* Popup */
+.overlay{position:fixed;inset:0;background:rgba(10,9,7,.78);backdrop-filter:blur(4px);display:none;place-items:center;z-index:100;padding:20px}
+.overlay.show{display:grid;animation:fade .25s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.popup{background:var(--card2);border-radius:20px;max-width:520px;width:100%;padding:42px 38px;position:relative;box-shadow:inset 0 0 0 1px rgba(223,164,56,.35)}
+.popup .close{position:absolute;top:14px;right:16px;background:none;border:0;color:var(--muted);font-size:28px;cursor:pointer;line-height:1}
+.popup .close:hover{color:var(--cream)}
+.popup h3{font-size:clamp(24px,3.4vw,30px);font-weight:800;margin-bottom:10px}
+.popup h3 em{font-style:normal;color:var(--gold)}
+.popup p{color:var(--muted);margin-bottom:22px}
+.popup ul{list-style:none;display:grid;gap:8px;margin-bottom:24px;font-size:15.5px}
+.popup li::before{content:"✓";color:var(--gold);font-weight:800;margin-right:10px}
+.popup input{margin-bottom:12px}
+.popup .btn{width:100%}
+
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+
+@media(max-width:900px){
+  .contact{grid-template-columns:1fr;gap:40px;padding:56px 0 80px}
+  .formcard{padding:30px 22px}
+  .row{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="logo">EMK<span>.</span></a>
+    <div class="nav-links">
+      <a href="foretagsfilm-priser.html">Priser</a>
+      <a href="index.html">Startsida</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap contact">
+  <!-- INFO -->
+  <div class="info">
+    <div class="kicker">Kontakt</div>
+    <h1>Låt oss göra film <em>till er.</em></h1>
+    <p class="lead">Berätta kort om ert behov så återkommer vi med ett förslag på paket och vilka filmer som ger mest effekt först.</p>
+
+    <div class="items">
+      <div class="item"><div class="ic">✉</div><a href="mailto:info@emkmarketing.se">info@emkmarketing.se</a></div>
+      <!-- Lägg in ert telefonnummer:
+      <div class="item"><div class="ic">☎</div><a href="tel:+46XXXXXXXXX">070-XXX XX XX</a></div> -->
+      <div class="item"><div class="ic">⌖</div><span>Läggestavägen 34, 124 31 Stockholm</span></div>
+    </div>
+
+    <div class="promise">
+      <strong>Så går det till</strong>
+      <ol>
+        <li>Ni fyller i formuläret – tar 30 sekunder.</li>
+        <li>Vi hör av oss inom 12 timmar.</li>
+        <li>15 minuters samtal – ni får en konkret filmplan.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="formcard">
+    <h2>Vill du veta mer? <span style="color:var(--gold)">Svar inom 12 h</span></h2>
+    <p class="sub">Inga säljsamtal i onödan. Vi svarar bara på det ni frågar om.</p>
+
+    <!-- Formuläret skickas via FormSubmit till info@emkmarketing.se (se instruktioner) -->
+    <form action="https://formsubmit.co/info@emkmarketing.se" method="POST">
+      <input type="hidden" name="_subject" value="Ny lead – Företagsfilm">
+      <input type="hidden" name="_next" value="https://emkmarketing.se/tack.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="field">
+        <label for="email">Företagsmail <span class="req">*</span></label>
+        <input id="email" type="email" name="Företagsmail" placeholder="namn@foretaget.se" required>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="namn">Namn <span class="req">*</span></label>
+          <input id="namn" type="text" name="Namn" placeholder="För- och efternamn" required>
+        </div>
+        <div class="field">
+          <label for="foretag">Företag</label>
+          <input id="foretag" type="text" name="Företag" placeholder="Företagsnamn">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="film">Använder ni film i er marknadsföring i dag? <span class="req">*</span></label>
+        <select id="film" name="Film i dag" required>
+          <option value="" disabled selected>Välj det som passar bäst</option>
+          <option>Ja, regelbundet</option>
+          <option>Ja, någon gång ibland</option>
+          <option>Nej, inte ännu</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="budget">Ungefärlig årsbudget för film? <span class="req">*</span></label>
+        <select id="budget" name="Årsbudget" required>
+          <option value="" disabled selected>Välj det som passar bäst</option>
+          <option>Under 50 000 kr</option>
+          <option>50 000 – 150 000 kr</option>
+          <option>150 000 – 300 000 kr</option>
+          <option>Över 300 000 kr</option>
+          <option>Vet inte än</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="mal">Vad behöver ni främst? <span class="req">*</span></label>
+        <select id="mal" name="Behov" required>
+          <option value="" disabled selected>Välj det som passar bäst</option>
+          <option>Löpande film varje månad</option>
+          <option>Film till annonser som ska sälja</option>
+          <option>En enskild film / ett projekt</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="msg">Något mer vi bör veta?</label>
+        <textarea id="msg" name="Meddelande" rows="3" placeholder="Valfritt"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-gold">Kontakta mig →</button>
+      <p class="small">Vi delar aldrig dina uppgifter.</p>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 EMK Marketing · Läggestavägen 34, 124 31 Stockholm</span>
+    <span><a href="mailto:info@emkmarketing.se">info@emkmarketing.se</a></span>
+  </div>
+</footer>
+
+<!-- EXIT-POPUP: gratisguide -->
+<div class="overlay" id="exitPopup" role="dialog" aria-modal="true" aria-labelledby="popTitle">
+  <div class="popup">
+    <button class="close" aria-label="Stäng" onclick="closePopup()">×</button>
+    <div class="kicker">Gratis guide</div>
+    <h3 id="popTitle">Innan du går – <em>5 filmer</em> som varje företag borde ha</h3>
+    <p>Lär dig vilka filmer som ger mest effekt för pengarna – och hur ni får ut dem i alla kanaler.</p>
+    <ul>
+      <li>Vilka filmer som säljer bäst</li>
+      <li>Hur långa de ska vara per kanal</li>
+      <li>Checklista inför inspelning</li>
+    </ul>
+    <form action="https://formsubmit.co/info@emkmarketing.se" method="POST">
+      <input type="hidden" name="_subject" value="Guide-nedladdning – Företagsfilm">
+      <input type="hidden" name="_next" value="https://emkmarketing.se/tack.html?guide=1">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="text" name="Namn" placeholder="Namn" required>
+      <input type="email" name="Företagsmail" placeholder="namn@foretaget.se" required>
+      <button type="submit" class="btn btn-gold">Skicka guiden →</button>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var popup=document.getElementById('exitPopup'), shown=false, KEY='emk_exit_seen';
+  function seen(){try{return sessionStorage.getItem(KEY)}catch(e){return false}}
+  function mark(){try{sessionStorage.setItem(KEY,'1')}catch(e){}}
+  function open(){ if(shown||seen())return; shown=true; mark(); popup.classList.add('show'); }
+  window.closePopup=function(){ popup.classList.remove('show'); };
+  popup.addEventListener('click',function(e){ if(e.target===popup) closePopup(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closePopup(); });
+  // Dator: musen lämnar fönstret uppåt
+  document.addEventListener('mouseout',function(e){ if(!e.relatedTarget && e.clientY<10) open(); });
+  // Mobil: efter 35 sek, eller snabb scroll uppåt efter att ha scrollat ner
+  if(window.matchMedia('(max-width:900px)').matches){
+    setTimeout(open,35000);
+    var lastY=0, maxY=0;
+    window.addEventListener('scroll',function(){
+      var y=window.scrollY; maxY=Math.max(maxY,y);
+      if(maxY>600 && lastY-y>120) open();
+      lastY=y;
+    },{passive:true});
+  }
+})();
+</script>
+</body>
+</html>
