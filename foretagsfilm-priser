@@ -112,7 +112,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
 <nav>
   <div class="wrap">
     <a href="index.html" class="logo">EMK<span>.</span></a>
-    <a href="#kontakt" class="btn btn-gold">Boka samtal</a>
+    <a href="kontakt.html" class="btn btn-gold">Boka samtal</a>
   </div>
 </nav>
 
@@ -150,7 +150,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
           <li>Alla format + undertexter</li>
           <li>2 revideringsrundor per film</li>
         </ul>
-        <a href="#kontakt" class="btn btn-ghost">Välj Bas</a>
+        <a href="kontakt.html" class="btn btn-ghost">Välj Bas</a>
       </div>
       <div class="plan pop">
         <div class="badge">Populärast</div>
@@ -166,7 +166,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
           <li>Korta versioner för sociala medier (15/30 s)</li>
           <li>Allt i Bas</li>
         </ul>
-        <a href="#kontakt" class="btn btn-gold">Välj Medel</a>
+        <a href="kontakt.html" class="btn btn-gold">Välj Medel</a>
       </div>
       <div class="plan">
         <div class="tier">Premium</div>
@@ -180,7 +180,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
           <li>Prioriterad leverans</li>
           <li>Allt i Medel</li>
         </ul>
-        <a href="#kontakt" class="btn btn-ghost">Välj Premium</a>
+        <a href="kontakt.html" class="btn btn-ghost">Välj Premium</a>
       </div>
     </div>
     <div class="terms">
@@ -250,7 +250,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
       <h2>Osäkra på vilket paket som passar?</h2>
       <p class="lead">Boka 15 minuter så föreslår vi rätt nivå och vilka filmer som ger mest effekt först.</p>
       <!-- Byt till Calendly-länk när den finns -->
-      <a href="mailto:info@emkmarketing.se?subject=F%C3%B6retagsfilm%20%E2%80%93%20boka%20samtal" class="btn btn-gold">Boka ett kostnadsfritt samtal</a>
+      <a href="kontakt.html" class="btn btn-gold">Boka ett kostnadsfritt samtal</a>
     </div>
   </div>
 </section>
