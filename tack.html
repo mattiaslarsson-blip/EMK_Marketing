@@ -6,7 +6,8 @@
 <title>Tack! – EMK Marketing</title>
 <meta name="robots" content="noindex">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
-<!-- Lägg Meta Pixel här, med fbq('track','Lead'); – då räknas varje lead som konvertering -->
+<script>window.EMK_EVENT = location.search.indexOf('guide=1')>-1 ? 'CompleteRegistration' : 'Lead';</script>
+<script src="emk-tracking.js"></script>
 <style>
 body{margin:0;min-height:100vh;display:grid;place-items:center;background:#14130F;color:#F2EEE4;font-family:'Nunito Sans',sans-serif;text-align:center;padding:24px}
 .box{max-width:560px}
@@ -21,12 +22,13 @@ a{display:inline-block;background:#DFA438;color:#14130F;font-family:'Manrope';fo
   <div class="dot">✓</div>
   <h1 id="t">Tack! Vi hör av oss inom 12 timmar.</h1>
   <p id="p">Under tiden kan du kika på våra paket och fundera på vilka filmer ni behöver mest.</p>
-  <a href="foretagsfilm-priser.html">Se paket och priser</a>
+  <a id="cta" href="foretagsfilm-priser.html">Se paket och priser</a>
 </div>
 <script>
 if(location.search.indexOf('guide=1')>-1){
   document.getElementById('t').textContent='Tack! Guiden är på väg till din inkorg.';
-  document.getElementById('p').textContent='Vill du att vi tar fram en filmplan för just ert företag? Boka 15 minuter så går vi igenom den tillsammans.';
+  document.getElementById('p').textContent='Du kan också ladda ner den direkt här. Vill ni ha en filmplan för just ert företag? Hör av er så går vi igenom den på 15 minuter.';
+  var c=document.getElementById('cta'); c.href='guide-5-filmer.pdf'; c.setAttribute('download',''); c.textContent='Ladda ner guiden (PDF)';
 }
 </script>
 </body>

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>Företagsfilm varje månad till fast pris | EMK Marketing</title>
+<meta name="description" content="Ett filmteam som tar era filmer från idé till färdig leverans. Fast pris från 24 900 kr/mån, första filmen inom 2 veckor, alla format ingår.">
+<meta property="og:title" content="Företagsfilm varje månad – utan krångel">
+<meta property="og:description" content="Fast pris från 24 900 kr/mån. Första filmen inom 2 veckor. Alla format ingår.">
+<meta property="og:image" content="https://emkmarketing.se/videos/web/GT_amalfi.jpg">
+<link rel="icon" href="images/logos/emk-logo-gold.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="emk-tracking.js"></script>
+<style>
+:root{
+  --bg:#14130F; --card:#1F1D17; --card2:#2A2720; --gold:#DFA438; --gold-dim:rgba(223,164,56,.13);
+  --cream:#F2EEE4; --muted:rgba(242,238,228,.68); --faint:rgba(242,238,228,.42); --line:rgba(242,238,228,.11);
+  --radius:14px; --max:1140px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:'Nunito Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Manrope',system-ui,sans-serif;line-height:1.12;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.tight{padding-top:0}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.kicker::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0}
+h2{font-size:clamp(30px,4vw,46px);font-weight:800;margin-bottom:16px;max-width:780px}
+h2 em,h1 em{font-style:normal;color:var(--gold)}
+.lead{color:var(--muted);font-size:19px;max-width:640px}
+.center{text-align:center}.center h2,.center .lead{margin-left:auto;margin-right:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Manrope',sans-serif;font-weight:700;font-size:16px;padding:16px 28px;border-radius:10px;border:0;cursor:pointer;transition:.2s;text-align:center}
+.btn-gold{background:var(--gold);color:var(--bg)}
+.btn-gold:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-ghost{color:var(--cream);box-shadow:inset 0 0 0 1px var(--line)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1px var(--gold);color:var(--gold)}
+.arr{transition:transform .2s}.btn:hover .arr{transform:translateX(4px)}
+
+/* Header – ingen meny, bara logga + CTA */
+header.top{position:sticky;top:0;z-index:50;background:rgba(20,19,15,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
+header.top img{height:30px;width:auto}
+header.top .btn{padding:11px 18px;font-size:14px}
+
+/* Hero */
+.hero{padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(40px,5.8vw,72px);font-weight:800;margin-bottom:22px}
+.hero .lead{font-size:21px;margin-bottom:30px}
+.checks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;margin-bottom:36px;font-weight:600;max-width:560px}
+.checks li{display:flex;gap:10px;align-items:flex-start}
+.checks li::before{content:"✓";color:var(--gold);font-weight:800}
+.ctas{display:flex;gap:14px;flex-wrap:wrap}
+.micro{margin-top:16px;font-size:14px;color:var(--faint)}
+.phone{position:relative;justify-self:center;width:100%;max-width:330px;aspect-ratio:9/16;border-radius:28px;overflow:hidden;background:var(--card);box-shadow:0 30px 80px -20px rgba(0,0,0,.8),0 0 0 1px var(--line)}
+.phone video{width:100%;height:100%;object-fit:cover}
+.phone .tag{position:absolute;left:14px;bottom:14px;background:rgba(20,19,15,.78);backdrop-filter:blur(6px);padding:8px 12px;border-radius:8px;font-size:13px;font-weight:700}
+.phone .tag span{color:var(--gold)}
+
+/* Logos */
+.band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0;overflow:hidden;position:relative}
+.band p{text-align:center;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-bottom:20px}
+.band::before,.band::after{content:"";position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.band::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.band::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
+.track{display:flex;align-items:center;gap:64px;width:max-content;animation:scroll 38s linear infinite}
+.track img{height:34px;width:auto;max-width:180px;object-fit:contain;opacity:.6;filter:grayscale(1) brightness(1.1)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.track{animation:none;flex-wrap:wrap;justify-content:center;width:auto}.track .dup{display:none}}
+
+/* Cards */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.card{background:var(--card);border-radius:var(--radius);padding:30px}
+.card .num{font-family:'Manrope',system-ui,sans-serif;font-weight:800;color:var(--gold);font-size:14px;letter-spacing:.1em;margin-bottom:14px;display:block}
+.card h3{font-size:20px;margin-bottom:10px}
+.card p{color:var(--muted);font-size:16px}
+
+/* Jämförelse */
+.vs{display:grid;grid-template-columns:1fr 1fr;margin-top:44px;border-radius:18px;overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+.vs .col{padding:32px 30px}
+.vs .old{background:var(--card)}
+.vs .new{background:var(--gold-dim);box-shadow:inset 0 0 0 1px rgba(223,164,56,.35)}
+.vs h3{font-size:14px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:20px;color:var(--faint)}
+.vs .new h3{color:var(--gold)}
+.vs ul{list-style:none;display:grid;gap:14px}
+.vs li{display:flex;gap:12px;font-size:16.5px}
+.vs .old li{color:var(--muted)}
+.vs .old li::before{content:"–";color:var(--faint);font-weight:800}
+.vs .new li::before{content:"✓";color:var(--gold);font-weight:800}
+
+/* Steg */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.step{border-top:2px solid var(--gold);padding-top:24px}
+.step .n{font-family:'Manrope',system-ui,sans-serif;font-weight:800;color:var(--gold);font-size:14px;letter-spacing:.1em}
+.step h3{font-size:22px;margin:10px 0 10px}
+.step p{color:var(--muted);font-size:16px}
+.step .when{display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--gold)}
+
+/* Exempel */
+.reels{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.reel{position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:var(--card);cursor:pointer}
+.reel video{width:100%;height:100%;object-fit:cover}
+.reel .play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,transparent 55%,rgba(10,9,7,.85));transition:.2s}
+.reel .play i{width:58px;height:58px;border-radius:50%;background:var(--gold);display:grid;place-items:center}
+.reel .play i::after{content:"";border-left:17px solid var(--bg);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:5px}
+.reel.playing .play{opacity:0}
+.reel .cap{position:absolute;left:14px;right:14px;bottom:14px;font-size:14px;font-weight:700;pointer-events:none;transition:.2s}
+.reel .cap span{display:block;font-weight:400;color:var(--muted);font-size:13px}
+.reel.playing .cap{opacity:0}
+.more{margin-top:24px;text-align:center;color:var(--muted);font-size:15px}
+.more a{color:var(--gold);font-weight:700}
+
+/* Format-chips */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.chips span{background:var(--card);padding:11px 18px;border-radius:9px;font-weight:600;font-size:15.5px}
+
+/* Citat */
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+.quote{background:var(--card);border-radius:18px;padding:36px}
+.quote blockquote{font-family:'Manrope',system-ui,sans-serif;font-size:21px;font-weight:700;line-height:1.4;margin-bottom:24px}
+.quote blockquote::before{content:"“";display:block;color:var(--gold);font-size:56px;line-height:.6;margin-bottom:12px}
+.quote cite{font-style:normal;font-size:15px;color:var(--muted)}
+.quote cite strong{display:block;color:var(--cream);font-size:16px}
+
+/* Passar det */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+.fit .box{border-radius:18px;padding:32px}
+.fit .yes{background:var(--card2);box-shadow:inset 0 0 0 1px rgba(223,164,56,.35)}
+.fit .no{background:var(--card)}
+.fit h3{font-size:20px;margin-bottom:18px}
+.fit ul{list-style:none;display:grid;gap:13px}
+.fit li{position:relative;padding-left:26px;font-size:16.5px}
+.fit li::before{position:absolute;left:0;top:0}
+.fit .yes li::before{content:"✓";color:var(--gold);font-weight:800}
+.fit .no li{color:var(--muted)}
+.fit .no li::before{content:"✕";color:var(--faint);font-weight:800}
+.fit .no a{color:var(--gold);font-weight:700}
+
+/* Paket */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px;align-items:stretch}
+.plan{background:var(--card);border-radius:18px;padding:34px 30px;display:flex;flex-direction:column;position:relative}
+.plan.pop{background:var(--card2);box-shadow:inset 0 0 0 1.5px var(--gold)}
+.badge{position:absolute;top:-13px;left:30px;background:var(--gold);color:var(--bg);font-family:'Manrope',system-ui,sans-serif;font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:6px}
+.tier{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.plan h3{font-size:25px;margin:6px 0 4px}
+.desc{color:var(--muted);font-size:15px;min-height:48px}
+.price{font-family:'Manrope',system-ui,sans-serif;font-weight:800;font-size:40px;margin:20px 0 2px}
+.price span{font-size:16px;font-weight:600;color:var(--muted)}
+.per{font-size:14px;color:var(--gold);margin-bottom:22px}
+.plan ul{list-style:none;display:grid;gap:10px;margin-bottom:28px;flex:1}
+.plan li{display:flex;gap:10px;font-size:15.5px}
+.plan li::before{content:"✓";color:var(--gold);font-weight:800;flex-shrink:0}
+.express{margin-top:18px;display:flex;justify-content:space-between;align-items:center;gap:20px;background:var(--card);border-radius:14px;padding:22px 28px;flex-wrap:wrap}
+.express strong{font-family:'Manrope',system-ui,sans-serif;font-size:18px}
+.express p{color:var(--muted);font-size:15px}
+.terms{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-top:28px;color:var(--muted);font-size:14.5px}
+.terms span::before{content:"•";color:var(--gold);margin-right:8px}
+
+/* Garanti */
+.guarantee{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;background:var(--gold-dim);box-shadow:inset 0 0 0 1px rgba(223,164,56,.4);border-radius:22px;padding:44px 48px}
+.seal{width:112px;height:112px;border-radius:50%;background:var(--gold);color:var(--bg);display:grid;place-items:center;text-align:center;font-family:'Manrope',system-ui,sans-serif;font-weight:800;font-size:13px;letter-spacing:.08em;line-height:1.3;text-transform:uppercase}
+.guarantee h2{margin-bottom:10px}
+.guarantee p{color:var(--muted);font-size:18px;max-width:640px}
+
+/* Om */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}
+.portrait{aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:var(--card)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.about p{color:var(--muted);margin-bottom:16px;font-size:17.5px}
+.about p strong{color:var(--cream)}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin:24px 0 8px}
+.facts div strong{display:block;font-family:'Manrope',system-ui,sans-serif;font-size:30px;font-weight:800;color:var(--gold);line-height:1.1}
+.facts div span{font-size:14px;color:var(--muted)}
+
+/* FAQ */
+.faq{max-width:800px;margin:44px auto 0}
+details{border-bottom:1px solid var(--line);padding:22px 0}
+summary{font-family:'Manrope',system-ui,sans-serif;font-weight:700;font-size:18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:24px;line-height:1;transition:.2s;flex-shrink:0}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin-top:12px;font-size:16.5px}
+details a{color:var(--gold);font-weight:700}
+
+/* Boka */
+.book{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start;background:var(--card);border-radius:24px;padding:56px}
+.book h2{font-size:clamp(30px,3.6vw,42px)}
+.book .lead{font-size:18px;margin-bottom:26px}
+.book ul{list-style:none;display:grid;gap:12px;margin-bottom:28px}
+.book li{display:flex;gap:12px}
+.book li::before{content:"✓";color:var(--gold);font-weight:800}
+.contactline{color:var(--muted);font-size:15px}
+.contactline a{color:var(--cream);font-weight:700}
+form .field{margin-bottom:16px}
+label{display:block;font-weight:700;font-size:14.5px;margin-bottom:7px}
+label .req{color:var(--gold)}
+label .opt{color:var(--faint);font-weight:400}
+input,select{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;color:var(--cream);font-family:inherit;font-size:16px;padding:14px 16px;transition:.2s;appearance:none;-webkit-appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23DFA438' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+select:invalid{color:var(--faint)}
+option{color:#14130F;background:#F2EEE4}
+input::placeholder{color:var(--faint)}
+input:focus,select:focus{outline:none;border-color:var(--gold)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form .btn{width:100%;margin-top:6px;font-size:17px;padding:17px}
+.small{font-size:13px;color:var(--faint);margin-top:12px;text-align:center}
+
+footer{border-top:1px solid var(--line);padding:32px 0 40px;color:var(--faint);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a:hover{color:var(--cream)}
+
+/* Mobil-CTA */
+.sticky{display:none}
+
+@media(max-width:960px){
+  section{padding:72px 0}
+  .hero{padding:44px 0 64px}
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .phone{max-width:280px}
+  .grid3,.steps,.plans,.quotes,.fit,.vs{grid-template-columns:1fr}
+  .reels{grid-template-columns:1fr 1fr}
+  .about,.book{grid-template-columns:1fr;gap:36px}
+  .book{padding:34px 22px}
+  .guarantee{grid-template-columns:1fr;padding:34px 26px;text-align:left}
+  .seal{width:92px;height:92px;font-size:11px}
+  .portrait{max-width:420px}
+  footer{padding-bottom:110px}
+  .sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;transform:translateY(140%);transition:transform .3s}
+  .sticky.show{transform:none}
+  .sticky .btn{width:100%;box-shadow:0 12px 30px -8px rgba(0,0,0,.8)}
+}
+@media(max-width:560px){
+  body{font-size:16.5px}
+  .wrap{padding:0 18px}
+  .checks{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr}
+  .ctas .btn{width:100%}
+  header.top .btn{padding:10px 14px;font-size:13px}
+  .quote{padding:28px}
+  .quote blockquote{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="index.html" aria-label="EMK Marketing startsida"><img src="images/logos/emk-logo-gold.svg" alt="EMK Marketing"></a>
+    <a href="#boka" class="btn btn-gold">Boka samtal</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Företagsfilm till fast månadspris</div>
+      <h1>Företagsfilm varje månad – <em>utan krångel.</em></h1>
+      <p class="lead">Ett filmteam som tar era filmer hela vägen från idé till färdig leverans, till ett fast pris. Ni godkänner – vi levererar.</p>
+      <ul class="checks">
+        <li>Från 24 900 kr/mån</li>
+        <li>Första filmen inom 2 veckor</li>
+        <li>Alla format ingår</li>
+        <li>Nöjd-garanti på första filmen</li>
+      </ul>
+      <div class="ctas">
+        <a href="#boka" class="btn btn-gold">Boka ett första samtal <span class="arr">→</span></a>
+        <a href="#exempel" class="btn btn-ghost">Se exempel</a>
+      </div>
+      <p class="micro">Kostnadsfritt, 15 minuter. Vi börjar med era behov – inte med en säljpitch.</p>
+    </div>
+    <div class="phone">
+      <video autoplay muted loop playsinline preload="metadata" poster="videos/web/GT_amalfi.jpg">
+        <source src="videos/web/GT_amalfi.mp4" type="video/mp4">
+      </video>
+      <div class="tag"><span>●</span> Grand Tours</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<div class="band" aria-label="Kunder">
+  <p>Företag som filmar med oss</p>
+  <div class="track">
+    <img src="images/logos/grand-tours.png" alt="Grand Tours">
+    <img src="images/logos/aventyrsresor.png" alt="Äventyrsresor">
+    <img src="images/logos/fjallfrid.png" alt="Fjällfrid">
+    <img src="images/logos/festivalborg.png" alt="Festivalborg">
+    <img src="images/logos/gtg-golf.png" alt="Golf to Go">
+    <img src="images/logos/indie-pen-publishing.png" alt="Indie Pen Publishing">
+    <img src="images/logos/linsblocker.png" alt="Linsblocker">
+    <img src="images/logos/reseskaparna.png" alt="Reseskaparna">
+    <img src="images/logos/bonnie.png" alt="Bonnie">
+    <img src="images/logos/joina.png" alt="Joina">
+    <img class="dup" src="images/logos/grand-tours.png" alt="" aria-hidden="true">
+    <img class="dup" src="images/logos/aventyrsresor.png" alt="" aria-hidden="true">
+    <img class="dup" src="images/logos/fjallfrid.png" alt="" aria-hidden="true">
+    <img class="dup" src="images/logos/festivalborg.png" alt="" aria-hidden="true">
+    <img class="dup" src="images/logos/gtg-golf.png" alt="" aria-hidden="true">
+    <img class="dup" src="images/logos/indie-pen-publishing.png" alt="" aria-hidden="true">
+    <img class="dup" src="images/logos/linsblocker.png" alt="" aria-hidden="true">
+    <img class="dup" src="images/logos/reseskaparna.png" alt="" aria-hidden="true">
+    <img class="dup" src="images/logos/bonnie.png" alt="" aria-hidden="true">
+    <img class="dup" src="images/logos/joina.png" alt="" aria-hidden="true">
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section>
+  <div class="wrap">
+    <div class="kicker">Känns det igen?</div>
+    <h2>Film borde inte vara ett <em>nytt projekt</em> varje gång.</h2>
+    <div class="grid3">
+      <div class="card"><span class="num">01</span><h3>Idéerna blir liggande</h3><p>Alla vet att ni borde ha mer film. Men när ingen äger frågan blir det aldrig av – eller så blir det en enda film om året.</p></div>
+      <div class="card"><span class="num">02</span><h3>Varje film är en ny start</h3><p>Ny brief, ny offert, ny leverantör som ska lära känna er. Samma startsträcka, gång på gång.</p></div>
+      <div class="card"><span class="num">03</span><h3>Ni samordnar allt själva</h3><p>Manus, inspelningsdag, vem som ska vara med, feedback i flera led. Det tar tid som ni egentligen inte har.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- JÄMFÖRELSE -->
+<section class="tight">
+  <div class="wrap">
+    <div class="kicker">Ett annat sätt att köpa film</div>
+    <h2>Från projekt till ett <em>jämnt flöde</em></h2>
+    <p class="lead">I stället för att köpa en film i taget får ni ett eget filmteam som levererar varje månad.</p>
+    <div class="vs">
+      <div class="col old">
+        <h3>Film per projekt</h3>
+        <ul>
+          <li>Ny offert för varje film</li>
+          <li>Ny leverantör och ny startsträcka</li>
+          <li>Ofta 30 000 kr eller mer per film</li>
+          <li>En inspelning blir en film</li>
+          <li>Ni driver och samordnar allt</li>
+        </ul>
+      </div>
+      <div class="col new">
+        <h3>EMK – löpande film</h3>
+        <ul>
+          <li>Ett fast pris per månad</li>
+          <li>Samma team som känner ert varumärke</li>
+          <li>Runt 6 200 kr per film i Bas-paketet</li>
+          <li>En inspelningsdag blir flera filmer</li>
+          <li>Vi driver – ni godkänner</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METOD -->
+<section class="tight">
+  <div class="wrap">
+    <div class="kicker">Så funkar det</div>
+    <h2>En inspelningsdag. <em>Fyra färdiga filmer.</em></h2>
+    <p class="lead">Vi planerar månaden så att varje inspelning ger så mycket som möjligt – intervjuer, miljöer och detaljer som räcker till flera filmer och format.</p>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><h3>Idé &amp; manus</h3><p>Vi går igenom era mål och föreslår månadens filmer. Vi skriver manus och frågeunderlag – ni godkänner innan vi spelar in.</p><span class="when">Vecka 1</span></div>
+      <div class="step"><span class="n">02</span><h3>Inspelning &amp; redigering</h3><p>Vi kommer till er med kamera, ljus och ljud. Sedan klipper vi, färgsätter, lägger musik och undertexter.</p><span class="when">Vecka 1–2</span></div>
+      <div class="step"><span class="n">03</span><h3>Leverans &amp; nästa film</h3><p>Ni får färdiga filmer i alla format och ger feedback i två rundor. Sedan planerar vi nästa månad.</p><span class="when">Vecka 2 och löpande</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXEMPEL -->
+<section id="exempel" class="tight">
+  <div class="wrap">
+    <div class="kicker">Exempel</div>
+    <h2>Film vi gjort för våra kunder</h2>
+    <p class="lead">Tryck för att spela upp med ljud.</p>
+    <div class="reels">
+      <div class="reel" data-src="videos/web/GT_opera.mp4" data-poster="videos/web/GT_opera.jpg">
+        <div class="play"><i></i></div><div class="cap">Grand Tours<span>Resefilm</span></div>
+      </div>
+      <div class="reel" data-src="videos/web/AR_interjuv.mp4" data-poster="videos/web/AR_interjuv.jpg">
+        <div class="play"><i></i></div><div class="cap">Äventyrsresor<span>Intervju</span></div>
+      </div>
+      <div class="reel" data-src="videos/web/Festi.mp4" data-poster="videos/web/Festi.jpg">
+        <div class="play"><i></i></div><div class="cap">Festivalborg<span>Eventfilm</span></div>
+      </div>
+      <div class="reel" data-src="videos/web/IPP_video.mp4" data-poster="videos/web/IPP_video.jpg">
+        <div class="play"><i></i></div><div class="cap">Indie Pen Publishing<span>Produktfilm</span></div>
+      </div>
+    </div>
+    <p class="more">Fler filmer i vår <a href="showreel.html">showreel →</a></p>
+  </div>
+</section>
+
+<!-- FORMAT -->
+<section class="tight">
+  <div class="wrap">
+    <div class="kicker">Allt ni behöver</div>
+    <h2>Film för varje behov och kanal</h2>
+    <p class="lead">Alla filmer levereras i 16:9, 9:16 och 1:1 med undertexter – redo för hemsidan, LinkedIn, Instagram och annonser.</p>
+    <div class="chips">
+      <span>Företagsfilm</span><span>Kundcase</span><span>Testimonials</span><span>Produkt- och tjänstefilm</span><span>Rekryteringsfilm</span><span>Eventfilm</span><span>Annonsfilm</span><span>Utbildning &amp; internt</span><span>Korta klipp för sociala medier</span>
+    </div>
+  </div>
+</section>
+
+<!-- CITAT -->
+<section class="tight">
+  <div class="wrap">
+    <div class="kicker">Kunderna om oss</div>
+    <h2>Partner – inte bara leverantör</h2>
+    <div class="quotes">
+      <figure class="quote">
+        <blockquote>Vi anlitade EMK Marketing och fick en partner som verkligen förstod vårt varumärke och våra mål.</blockquote>
+        <cite><strong>Katarina Skugge</strong>Director of Marketing, Grand Tours</cite>
+      </figure>
+      <figure class="quote">
+        <blockquote>EMK Marketing har varit en avgörande partner i vår digitala utveckling — med kreativitet, struktur och leveranser i toppklass.</blockquote>
+        <cite><strong>Monika Lykvist</strong>Digital Marketing Manager, We Travel Group AB</cite>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- VARFÖR LÖPANDE -->
+<section class="tight">
+  <div class="wrap">
+    <div class="kicker">Varför löpande</div>
+    <h2>Filmerna blir <em>bättre</em> för varje månad</h2>
+    <div class="grid3">
+      <div class="card"><h3>Samma team varje gång</h3><p>Vi lär känna ert varumärke, er ton och era kunder. Ingen ny startsträcka inför varje film.</p></div>
+      <div class="card"><h3>Testa och förbättra</h3><p>Med flera filmer i månaden ser ni vad som fungerar – och vi gör mer av det som ger resultat.</p></div>
+      <div class="card"><h3>En kostnad ni kan budgetera</h3><p>Fast pris varje månad. Inga timmar som tickar och inga tilläggsfakturor.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PASSAR DET -->
+<section class="tight">
+  <div class="wrap">
+    <div class="kicker">Passar det er?</div>
+    <h2>Ärligt talat – det här passar inte alla</h2>
+    <div class="fit">
+      <div class="box yes">
+        <h3>Det passar er som</h3>
+        <ul>
+          <li>behöver film flera gånger per år</li>
+          <li>vill ha en fast kostnad i stället för offerter</li>
+          <li>kan ge feedback inom ett par dagar</li>
+          <li>har en budget från 24 900 kr i månaden</li>
+        </ul>
+      </div>
+      <div class="box no">
+        <h3>Det passar inte er som</h3>
+        <ul>
+          <li>bara behöver en enstaka film – välj <a href="expresspaket.html">Expresspaketet</a></li>
+          <li>redan har ett eget filmteam internt</li>
+          <li>vill att någon publicerar och sköter era kanaler – vi gör filmerna, ni publicerar</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAKET -->
+<section id="paket" class="tight">
+  <div class="wrap">
+    <div class="center"><div class="kicker">Priser</div><h2>Fast pris. Inga tilläggsfakturor.</h2>
+    <p class="lead">Välj nivå efter hur mycket film ni behöver. Ni kan byta paket inför varje ny månad.</p></div>
+    <div class="plans">
+      <div class="plan">
+        <div class="tier">Bas</div>
+        <h3>Löpande film</h3>
+        <p class="desc">Ett jämnt flöde av företagsfilm, kundcase och testimonials.</p>
+        <div class="price">24 900 <span>kr/mån</span></div>
+        <div class="per">≈ 6 200 kr per film</div>
+        <ul>
+          <li>4 filmer per månad (1–2 min)</li>
+          <li>1 inspelningsdag per månad</li>
+          <li>Koncept, manus och redigering</li>
+          <li>Alla format + undertexter</li>
+          <li>2 revideringsrundor per film</li>
+        </ul>
+        <a href="#boka" class="btn btn-ghost">Välj Bas</a>
+      </div>
+      <div class="plan pop">
+        <div class="badge">Populärast</div>
+        <div class="tier">Medel</div>
+        <h3>Mer och snyggare</h3>
+        <p class="desc">Högre produktionsvärde för film som ska synas brett.</p>
+        <div class="price">36 900 <span>kr/mån</span></div>
+        <div class="per">≈ 6 150 kr per film</div>
+        <ul>
+          <li>6 filmer per månad</li>
+          <li>2 inspelningsdagar per månad</li>
+          <li>Grafik och animation</li>
+          <li>Korta versioner för sociala medier (15/30 s)</li>
+          <li>Allt i Bas</li>
+        </ul>
+        <a href="#boka" class="btn btn-gold">Välj Medel</a>
+      </div>
+      <div class="plan">
+        <div class="tier">Premium</div>
+        <h3>Flaggskepp</h3>
+        <p class="desc">För tillfällena som räknas – lansering, event eller varumärkesfilm.</p>
+        <div class="price">49 900 <span>kr/mån</span></div>
+        <div class="per">Allt i Medel + kvartalsfilm</div>
+        <ul>
+          <li>1 flaggskeppsfilm per kvartal med regi och extra crew</li>
+          <li>Drönare och eventfilmning</li>
+          <li>Prioriterad leverans</li>
+          <li>Allt i Medel</li>
+        </ul>
+        <a href="#boka" class="btn btn-ghost">Välj Premium</a>
+      </div>
+    </div>
+    <div class="express">
+      <div><strong>Behöver ni bara en film?</strong><p>Expresspaket: en färdig företagsfilm på 5 arbetsdagar – 19 900 kr.</p></div>
+      <a href="expresspaket.html" class="btn btn-ghost">Se Expresspaketet <span class="arr">→</span></a>
+    </div>
+    <div class="terms">
+      <span>Priser ex moms</span>
+      <span>3 månaders startperiod, sedan 1 månads uppsägning</span>
+      <span>Ni äger alla filmer</span>
+      <span>Inspelning i Stockholm ingår</span>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTI -->
+<section class="tight">
+  <div class="wrap">
+    <div class="guarantee">
+      <div class="seal">Nöjd-<br>garanti</div>
+      <div>
+        <h2>Nöjda med första filmen – <em>annars gör vi om den.</em></h2>
+        <p>Vi vill att ni ska känna er trygga från dag ett. Om första filmen inte blir som ni tänkt er gör vi om den, utan extra kostnad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OM -->
+<section class="tight">
+  <div class="wrap about">
+    <div class="portrait"><img src="images/lp/mattias.jpg" alt="Mattias Larsson, grundare av EMK Marketing"></div>
+    <div>
+      <div class="kicker">Vem gör filmen</div>
+      <h2>Ni pratar med den som <em>gör filmen</em></h2>
+      <p><strong>Mattias Larsson</strong> grundade EMK Marketing 2022 och har klippt film i över tolv år. Redan som landslagsgymnast byggde han Instagramkonton som nådde hundratusentals följare – långt innan det var ett yrke.</p>
+      <p>Hos oss finns ingen säljare som lämnar över till någon ni aldrig träffat. Den som planerar era filmer är samma person som spelar in och klipper dem.</p>
+      <div class="facts">
+        <div><strong>12+ år</strong><span>med filmredigering</span></div>
+        <div><strong>2022</strong><span>grundade EMK</span></div>
+        <div><strong>10+</strong><span>aktiva kundsamarbeten</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="tight">
+  <div class="wrap">
+    <div class="center"><div class="kicker">Vanliga frågor</div><h2>Bra att veta</h2></div>
+    <div class="faq">
+      <details><summary>Vad kostar det?</summary><p>Från 24 900 kr i månaden för fyra filmer (Bas). Medel kostar 36 900 kr och Premium 49 900 kr. Alla priser är ex moms och fasta – inga tilläggsfakturor. Se alla detaljer på <a href="foretagsfilm-priser.html">prissidan</a>.</p></details>
+      <details><summary>Finns det någon bindningstid?</summary><p>De första tre månaderna är en startperiod så att vi hinner bygga upp ett flöde som ger resultat. Därefter har ni en månads uppsägning.</p></details>
+      <details><summary>Hur snabbt får vi första filmen?</summary><p>Inom två veckor från kickoff. Kickoffen bokar vi inom några dagar efter att ni sagt ja.</p></details>
+      <details><summary>Behöver vi ha egna idéer?</summary><p>Nej. Vi föreslår vilka filmer som gör mest nytta utifrån era mål och skriver manusen. Ni godkänner innan vi spelar in.</p></details>
+      <details><summary>Vad händer om vi inte behöver film en månad?</summary><p>Ni kan spara månadens filmer till nästa månad, eller lägga tiden på planering inför en större produktion.</p></details>
+      <details><summary>Vem äger filmerna?</summary><p>Ni. Filmerna och musiken är licensierade för er användning, utan tidsgräns.</p></details>
+      <details><summary>Publicerar ni filmerna åt oss?</summary><p>Nej, ni får färdiga filmer i alla format, redo att publicera i era egna kanaler. Vi fokuserar helt på att göra filmerna riktigt bra.</p></details>
+      <details><summary>Spelar ni in utanför Stockholm?</summary><p>Ja. Inspelning i Stockholm ingår, och för inspelningar utanför tillkommer reskostnad.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- BOKA -->
+<section id="boka" class="tight">
+  <div class="wrap">
+    <div class="book">
+      <div>
+        <div class="kicker">Boka ett första samtal</div>
+        <h2>Behöver ni mer film?</h2>
+        <p class="lead">Berätta kort om ert behov så hör vi av oss inom 12 timmar och bokar 15 minuter.</p>
+        <ul>
+          <li>Förslag på vilka filmer som ger mest effekt först</li>
+          <li>Vilket paket som passar er</li>
+          <li>En ungefärlig tidsplan till första filmen</li>
+        </ul>
+        <p class="contactline">Hellre mejl? <a href="mailto:info@emkmarketing.se">info@emkmarketing.se</a></p>
+      </div>
+      <form action="https://formsubmit.co/info@emkmarketing.se" method="POST">
+        <input type="hidden" name="_subject" value="Ny lead – Företagsfilm (annonssida)">
+        <input type="hidden" name="_next" value="https://emkmarketing.se/tack.html">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="field">
+          <label for="email">Företagsmail <span class="req">*</span></label>
+          <input id="email" type="email" name="Företagsmail" placeholder="namn@foretaget.se" required autocomplete="email">
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="namn">Namn <span class="req">*</span></label>
+            <input id="namn" type="text" name="Namn" placeholder="För- och efternamn" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="foretag">Företag</label>
+            <input id="foretag" type="text" name="Företag" placeholder="Företagsnamn" autocomplete="organization">
+          </div>
+        </div>
+        <div class="field">
+          <label for="tel">Telefon <span class="opt">(valfritt)</span></label>
+          <input id="tel" type="tel" name="Telefon" placeholder="070-123 45 67" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="behov">Vad behöver ni främst? <span class="req">*</span></label>
+          <select id="behov" name="Behov" required>
+            <option value="" disabled selected>Välj det som passar bäst</option>
+            <option>Löpande film varje månad</option>
+            <option>Film till annonser som ska sälja</option>
+            <option>En enstaka film (Expresspaket)</option>
+            <option>Vet inte än – vill ha förslag</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="budget">Ungefärlig årsbudget för film? <span class="req">*</span></label>
+          <select id="budget" name="Årsbudget" required>
+            <option value="" disabled selected>Välj det som passar bäst</option>
+            <option>Under 50 000 kr</option>
+            <option>50 000 – 150 000 kr</option>
+            <option>150 000 – 300 000 kr</option>
+            <option>Över 300 000 kr</option>
+            <option>Vet inte än</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-gold">Boka mitt samtal <span class="arr">→</span></button>
+        <p class="small">Svar inom 12 timmar. Vi använder bara dina uppgifter för att kontakta dig om din förfrågan.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 EMK Marketing · Läggestavägen 34, 124 31 Stockholm</span>
+    <span><a href="mailto:info@emkmarketing.se">info@emkmarketing.se</a> · <a href="index.html">emkmarketing.se</a></span>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><a href="#boka" class="btn btn-gold">Boka ett första samtal <span class="arr">→</span></a></div>
+
+<script>
+/* Exempelvideor: laddas först när man trycker – sparar data i mobilen */
+document.querySelectorAll('.reel').forEach(function(el){
+  var v=document.createElement('video');
+  v.setAttribute('playsinline','');v.preload='none';v.poster=el.dataset.poster;
+  el.insertBefore(v,el.firstChild);
+  el.addEventListener('click',function(){
+    if(!v.src){v.src=el.dataset.src;}
+    if(v.paused){
+      document.querySelectorAll('.reel video').forEach(function(o){if(o!==v){o.pause();o.parentNode.classList.remove('playing');}});
+      v.muted=false;v.play();el.classList.add('playing');
+    }else{v.pause();el.classList.remove('playing');}
+  });
+  v.addEventListener('ended',function(){el.classList.remove('playing');});
+});
+/* Mobil-CTA: visas efter hero, döljs vid formuläret */
+(function(){
+  var s=document.getElementById('sticky'),book=document.getElementById('boka'),hero=document.querySelector('.hero');
+  if(!('IntersectionObserver' in window))return;
+  var heroVis=true,bookVis=false;
+  function upd(){s.classList.toggle('show',!heroVis&&!bookVis);}
+  new IntersectionObserver(function(e){heroVis=e[e.length-1].isIntersecting;upd();}).observe(hero);
+  new IntersectionObserver(function(e){bookVis=e[e.length-1].isIntersecting;upd();}).observe(book);
+})();
+</script>
+</body>
+</html>

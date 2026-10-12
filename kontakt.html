@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="emk-tracking.js"></script>
 <style>
 :root{
   --bg:#14130F; --card:#1F1D17; --card2:#2A2720; --gold:#DFA438;
@@ -92,8 +93,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
 
 <nav>
   <div class="wrap">
-    <a href="index.html" class="logo">EMK<span>.</span></a>
+    <a href="index.html" class="logo"><img src="images/logos/emk-logo-gold.svg" alt="EMK Marketing" style="height:30px;width:auto;display:block"></a>
     <div class="nav-links">
+      <a href="foretagsfilm.html">Företagsfilm</a>
       <a href="foretagsfilm-priser.html">Priser</a>
       <a href="index.html">Startsida</a>
     </div>
@@ -181,7 +183,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
           <option value="" disabled selected>Välj det som passar bäst</option>
           <option>Löpande film varje månad</option>
           <option>Film till annonser som ska sälja</option>
-          <option>En enskild film / ett projekt</option>
+          <option>En enstaka film (Expresspaket)</option>
         </select>
       </div>
 
@@ -218,11 +220,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
     <form action="https://formsubmit.co/info@emkmarketing.se" method="POST">
       <input type="hidden" name="_subject" value="Guide-nedladdning – Företagsfilm">
       <input type="hidden" name="_next" value="https://emkmarketing.se/tack.html?guide=1">
+      <input type="hidden" name="_autoresponse" value="Tack för att du laddade ner guiden! Här är den: https://emkmarketing.se/guide-5-filmer.pdf – Vill ni ha en filmplan för just ert företag? Svara på det här mejlet eller boka 15 minuter på https://emkmarketing.se/kontakt.html /Mattias, EMK Marketing">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <input type="text" name="Namn" placeholder="Namn" required>
-      <input type="email" name="Företagsmail" placeholder="namn@foretaget.se" required>
+      <input type="email" name="email" placeholder="namn@foretaget.se" required>
       <button type="submit" class="btn btn-gold">Skicka guiden →</button>
     </form>
   </div>
