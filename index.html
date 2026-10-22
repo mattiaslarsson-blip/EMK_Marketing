@@ -301,23 +301,18 @@
     /* Resultat som svävande bubblor */
     #emk-lp .emk-bubbles { position: relative; display: flex; justify-content: center; align-items: center; flex-wrap: wrap;
       gap: 18px 34px; padding: 44px 0 20px; }
-    #emk-lp .emk-bubble { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 999px;
-      background: rgba(31,29,23,.85); border: 1px solid rgba(223,164,56,.35);
-      box-shadow: 0 18px 40px -18px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.04);
-      -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    #emk-lp .emk-bubble { display: inline-flex; align-items: center; gap: 10px; padding: 6px 4px;
+      will-change: transform;
       font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 23px; line-height: 1.1; letter-spacing: -0.01em;
       color: #CFC9BC; white-space: nowrap;
-      animation: emk-float 7s ease-in-out infinite; }
+      animation: emk-float 9s cubic-bezier(.45,0,.55,1) infinite; }
     #emk-lp .emk-bubble b { color: var(--gold); font-weight: 400; font-style: italic; }
     #emk-lp .emk-bubble:nth-child(1) { margin-top: 26px; animation-delay: -1s; }
-    #emk-lp .emk-bubble:nth-child(2) { margin-top: -10px; animation-duration: 8.5s; animation-delay: -3s; animation-direction: reverse; }
-    #emk-lp .emk-bubble:nth-child(3) { margin-top: 34px; animation-duration: 7.5s; animation-delay: -5s; }
+    #emk-lp .emk-bubble:nth-child(2) { margin-top: -10px; animation-duration: 11s; animation-delay: -4s; animation-direction: reverse; }
+    #emk-lp .emk-bubble:nth-child(3) { margin-top: 34px; animation-duration: 10s; animation-delay: -7s; }
     @keyframes emk-float {
-      0%   { transform: translate(0, 0) rotate(-1.5deg); }
-      25%  { transform: translate(8px, -14px) rotate(0deg); }
-      50%  { transform: translate(0, -22px) rotate(1.5deg); }
-      75%  { transform: translate(-8px, -10px) rotate(0deg); }
-      100% { transform: translate(0, 0) rotate(-1.5deg); }
+      0%, 100% { transform: translate3d(0, 0, 0); }
+      50%      { transform: translate3d(3px, -7px, 0); }
     }
     #emk-lp .emk-res__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 40px; }
     #emk-lp .emk-res__card { position: relative; isolation: isolate; overflow: hidden; min-height: 340px;
@@ -337,7 +332,7 @@
     @media (max-width: 900px) {
       #emk-lp .emk-res { padding: 10px 0 48px; }
       #emk-lp .emk-bubbles { flex-direction: column; gap: 14px; padding: 18px 0 0; }
-      #emk-lp .emk-bubble { font-size: 18px; padding: 10px 16px; white-space: nowrap; max-width: 100%; }
+      #emk-lp .emk-bubble { font-size: 19px; padding: 4px 2px; white-space: nowrap; max-width: 100%; }
       #emk-lp .emk-bubble:nth-child(1) { margin: 0 30px 0 0; }
       #emk-lp .emk-bubble:nth-child(2) { margin: 0 0 0 10px; }
       #emk-lp .emk-bubble:nth-child(3) { margin: 0 24px 0 0; }
