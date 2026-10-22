@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<title>Priser – EMK Marketing</title>
+<meta name="description" content="Fasta månadspriser för företagsfilm. Ingen offert per film, inga tilläggsfakturor.">
+<link rel="icon" type="image/png" href="EMK_LOGO.png">
+<script src="emk-tracking.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<style>
+:root{
+  --ground:#111111;
+  --card:#1A1A1A;
+  --card-pop:#221F19;
+  --ink:#F2EEE4;
+  --muted:#A9A396;
+  --line:#2E2E2E;
+  --gold:#DFA438;
+  --display:"Manrope",system-ui,sans-serif;
+  --body:"Nunito Sans",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--ground);color:var(--ink)}
+body{font-family:var(--body);-webkit-font-smoothing:antialiased}
+
+/* Nav – samma som övriga sidor */
+.emk-topnav{position:absolute;top:0;left:0;right:0;z-index:5}
+.emk-nav{max-width:1280px;margin:0 auto;padding:24px 32px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.emk-nav__logo{display:block;line-height:0}
+.emk-nav__logo img{height:40px;width:auto;display:block}
+.emk-nav__links{display:flex;align-items:center;gap:26px}
+.emk-nav__links a{color:rgba(245,241,232,.85);text-decoration:none;font-size:14.5px;font-weight:600;transition:color .2s;white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.emk-nav__links a:hover{color:#fff}
+.emk-nav__links a.is-active{color:var(--gold)}
+.emk-nav__cta{border:1.5px solid var(--gold);color:var(--gold)!important;padding:9px 20px;border-radius:100px;font-weight:700;text-shadow:none!important;transition:background .2s,color .2s}
+.emk-nav__cta:hover{background:var(--gold);color:#111111!important}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* Prissektion */
+.band{
+  position:relative;isolation:isolate;background:var(--ground);
+  padding-top:clamp(120px,13vw,170px);padding-bottom:clamp(56px,8vw,104px);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:flex;flex-direction:column;align-items:center;gap:clamp(28px,4vw,44px);
+}
+/* foto från en inspelning, mörkat upptill och tonat ut i bakgrundsfärgen */
+.band::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:clamp(600px,66vw,880px);z-index:-1;
+  background:
+    linear-gradient(180deg,rgba(17,17,17,.88) 0%,rgba(17,17,17,.74) 40%,rgba(17,17,17,.45) 66%,var(--ground) 100%),
+    url("images/web/priser-bakgrund.jpg") center 35%/cover no-repeat;
+}
+.head{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;max-width:760px}
+h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4vw,76px);line-height:1.06;letter-spacing:-.045em;text-wrap:balance}
+.lead{margin:0;color:#D9D3C6;font-size:clamp(16px,1.7vw,19px);line-height:1.5}
+.fine{margin:4px 0 0;font-size:12.5px;color:#BDB6A8}
+
+.switch{display:inline-flex;gap:4px;padding:5px;border-radius:14px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line),0 10px 30px -18px rgba(0,0,0,.6)}
+.switch button{font:600 15px/1 var(--display);color:var(--ink);background:transparent;border:0;cursor:pointer;padding:13px clamp(14px,2.4vw,26px);border-radius:10px;min-height:44px;transition:background .2s,color .2s}
+.switch button[aria-selected="true"]{background:var(--ink);color:var(--ground)}
+
+.plans{width:100%;max-width:1080px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.plan{background:var(--card);border-radius:28px;padding:30px 26px 26px;display:flex;flex-direction:column;gap:22px;min-width:0;box-shadow:inset 0 0 0 1px var(--line),0 30px 60px -36px rgba(0,0,0,.8);transition:opacity .25s ease,transform .25s ease}
+.plan.pop{background:var(--card-pop);transform:translateY(-10px);box-shadow:inset 0 0 0 1.5px var(--gold),0 30px 60px -30px rgba(0,0,0,.8)}
+.plan.wide{grid-column:1/-1;max-width:640px;width:100%;justify-self:center;align-items:center;text-align:center}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.name{display:flex;align-items:center;gap:10px;font:700 16px/1.2 var(--display)}
+.mark{width:28px;height:28px;border-radius:8px;background:var(--ink);display:grid;place-items:center;flex-shrink:0}
+.mark span{width:14px;height:3px;border-radius:2px;background:var(--ground)}
+.pop .mark{background:var(--gold)}
+.badge{font:700 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:#111111;background:var(--gold);padding:7px 10px;border-radius:999px}
+.desc{margin:-8px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted)}
+.price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.amount{font:800 clamp(44px,5vw,58px)/1 var(--display);letter-spacing:-.045em;font-variant-numeric:tabular-nums}
+.unit{font:600 17px/1 var(--display);color:var(--muted)}
+.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;flex:1}
+.list li{display:flex;gap:11px;align-items:flex-start;font-size:15px;line-height:1.4}
+.list svg{flex-shrink:0;margin-top:1px}
+.pop .list svg path{stroke:var(--gold)}
+.cta{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border-radius:14px;font:700 16px/1 var(--display);text-decoration:none;background:var(--ink);color:var(--ground);transition:transform .15s ease}
+.cta:hover{transform:translateY(-1px)}
+.pop .cta{background:var(--gold);color:#111111}
+.wide .cta{width:100%;max-width:320px}
+.wide h2{margin:0;font:800 clamp(26px,3vw,34px)/1.1 var(--display);letter-spacing:-.02em}
+
+.terms{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;font-size:13px;color:var(--muted)}
+.terms span{display:flex;align-items:center;gap:8px}
+.terms span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.fade .plan{opacity:0;transform:translateY(6px)}
+.fade .plan.pop{transform:translateY(-4px)}
+
+.emk-footer{max-width:1280px;margin:0 auto;border-top:1px solid #242424;padding:36px 32px 44px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.emk-footer span,.emk-footer a{color:#908C80;font-size:13px;text-decoration:none}
+.emk-footer a:hover{color:var(--gold)}
+
+@media (max-width:880px){
+  .plans{grid-template-columns:minmax(0,1fr);max-width:440px}
+  .plan.pop{transform:none}
+  .fade .plan.pop{transform:translateY(6px)}
+}
+@media (max-width:768px){
+  .emk-nav{padding:16px 18px}
+  .emk-nav__logo img{height:32px}
+  .emk-nav__links{gap:14px;flex-wrap:wrap;justify-content:flex-end}
+  .emk-nav__links a{font-size:12.5px}
+  .emk-nav__cta{padding:7px 14px}
+  .emk-nav__links a[href="/#emk-tjanster"]{display:none}
+  .emk-footer{flex-direction:column;gap:8px;padding:28px 18px 36px}
+}
+@media (max-width:374px){
+  .emk-nav__logo img{height:28px}
+  .emk-nav__links{gap:10px}
+  .emk-nav__links a{font-size:11.5px}
+  .emk-nav__cta{padding:6px 11px}
+}
+@media (prefers-reduced-motion:reduce){
+  .plan,.switch button,.cta{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="emk-topnav">
+  <nav class="emk-nav">
+    <a href="/" class="emk-nav__logo"><img src="images/logos/emk-logo-gold.svg" alt="EMK Marketing"></a>
+    <div class="emk-nav__links">
+      <a href="/#emk-tjanster">Tjänster</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/priser" class="is-active">Priser</a>
+      <a href="/om-oss">Om oss</a>
+      <a class="emk-nav__cta" href="/#emk-boka">Boka möte</a>
+    </div>
+  </nav>
+</div>
+
+<main>
+<section class="band" aria-labelledby="pris-rubrik">
+  <div class="head">
+    <h1 id="pris-rubrik">Ett fast pris.<br>Varje månad.</h1>
+    <p class="lead">Ingen offert per film, inga tilläggsfakturor.<br>Välj tjänst och nivå efter hur mycket ni behöver.</p>
+    <p class="fine">Inte nöjda med första leveransen? Vi gör om den utan extra kostnad.</p>
+  </div>
+
+  <div class="switch" role="tablist" aria-label="Välj tjänst">
+    <button type="button" role="tab" id="tab-film" aria-selected="true" aria-controls="plans" data-k="film">Företagsfilm</button>
+    <button type="button" role="tab" id="tab-reels" aria-selected="false" aria-controls="plans" data-k="reels" tabindex="-1">Reels</button>
+    <button type="button" role="tab" id="tab-foto" aria-selected="false" aria-controls="plans" data-k="foto" tabindex="-1">Foto</button>
+  </div>
+
+  <div class="plans" id="plans" role="tabpanel" aria-labelledby="tab-film" aria-live="polite"></div>
+
+  <div class="terms">
+    <span>Priser ex moms</span>
+    <span>3 månaders start, sedan 1 månads uppsägning</span>
+    <span>Ni äger allt material</span>
+    <span>Inspelning i Stockholm ingår</span>
+  </div>
+</section>
+</main>
+
+<footer class="emk-footer">
+  <span>© <span id="emk-year"></span> EMK Marketing</span>
+  <a href="/">Till startsidan →</a>
+</footer>
+
+<script>
+document.getElementById('emk-year').textContent = new Date().getFullYear();
+(function(){
+  /* PAKET – priser enligt "Grunden – Företagsfilm" i Notion.
+     Reels och Foto: när paketen är klara, byt ut "snart: true" mot tre paket i samma format som film. */
+  var data = {
+    film: [
+      {name:"Bas", desc:"Ett jämnt flöde av film till hemsida och sociala medier.", amount:"24 500",
+       list:["4 filmer i månaden, 30 sek – 2 min","1 inspelningsdag","Planering, manus och redigering","Alla format med undertexter","Leverans inom 3 veckor"]},
+      {name:"Medel", pop:true, desc:"Mer film och högre produktionsvärde.", amount:"36 900",
+       list:["6 filmer i månaden","2 inspelningsdagar","Grafik och animation","Korta versioner 15 och 30 sek","Allt i Bas"]},
+      {name:"Premium", desc:"För lanseringar, event och varumärkesfilm.", amount:"49 900",
+       list:["1 flaggskeppsfilm per kvartal","Regi och extra crew","Drönare och eventfilmning","Prioriterad leverans","Allt i Medel"]}
+    ],
+    reels: {snart:true, titel:"Reels", text:"Vi sätter ihop ett upplägg med fast månadspris efter hur ofta ni vill publicera."},
+    foto:  {snart:true, titel:"Foto",  text:"Vi sätter ihop ett upplägg med fast månadspris efter hur mycket bilder ni behöver."}
+  };
+  var BOKA = "/kontakt.html";
+
+  var check = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.5" stroke="#4A463D" stroke-width="1.4"/><path d="M6.4 10.2l2.4 2.4 4.8-5" stroke="#F2EEE4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var plansEl = document.getElementById('plans');
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.switch button'));
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+  function render(k){
+    var d = data[k];
+    if (d.snart){
+      plansEl.innerHTML = '<article class="plan wide"><h2>'+esc(d.titel)+' på månadsbasis</h2>'
+        + '<p class="desc" style="margin:0">'+esc(d.text)+'</p>'
+        + '<a class="cta" href="'+BOKA+'">Boka 15 min samtal</a></article>';
+      return;
+    }
+    plansEl.innerHTML = d.map(function(p){
+      return '<article class="plan'+(p.pop?' pop':'')+'">'
+        + '<div class="top"><div class="name"><span class="mark" aria-hidden="true"><span></span></span>'+esc(p.name)+'</div>'
+        + (p.pop?'<span class="badge">Populärast</span>':'') + '</div>'
+        + '<p class="desc">'+esc(p.desc)+'</p>'
+        + '<div class="price"><span class="amount">'+p.amount+'</span><span class="unit">kr/mån</span></div>'
+        + '<ul class="list">'+p.list.map(function(li){return '<li>'+check+'<span>'+esc(li)+'</span></li>';}).join('')+'</ul>'
+        + '<a class="cta" href="'+BOKA+'">Boka 15 min samtal</a>'
+        + '</article>';
+    }).join('');
+  }
+
+  function select(btn){
+    tabs.forEach(function(t){
+      var on = t === btn;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+    });
+    plansEl.setAttribute('aria-labelledby', btn.id);
+    plansEl.classList.add('fade');
+    setTimeout(function(){
+      render(btn.dataset.k);
+      requestAnimationFrame(function(){ plansEl.classList.remove('fade'); });
+    }, 160);
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ select(t); });
+    t.addEventListener('keydown', function(e){
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      var n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      n.focus(); select(n);
+    });
+  });
+  render('film');
+})();
+</script>
+</body>
+</html>
