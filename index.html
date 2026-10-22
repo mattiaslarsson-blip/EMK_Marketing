@@ -327,6 +327,7 @@
     #emk-lp .emk-res__by { display: flex; align-items: center; gap: 12px; }
     #emk-lp .emk-res__av { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center;
       background: var(--gold-light); color: var(--gold); font-family: 'Manrope'; font-weight: 800; font-size: 12.5px; }
+    #emk-lp .emk-res__av--img { object-fit: cover; border: 1.5px solid rgba(223,164,56,.6); }
     #emk-lp .emk-res__name { font-family: 'Manrope'; font-weight: 700; font-size: 14.5px; color: var(--ink); }
     #emk-lp .emk-res__role { font-size: 13px; color: var(--gold); }
     @media (max-width: 900px) {
@@ -592,9 +593,9 @@
     <div class="emk-wrap">
       <div class="emk-res__grid">
         <figure class="emk-res__card">
-          <img class="emk-res__bg" src="images/web/testi-aventyrsresor.jpg" alt="" loading="lazy">
+          <img class="emk-res__bg" src="images/foto/portratt/monika-lykvist.jpg" alt="" loading="lazy">
           <blockquote class="emk-res__q">&rdquo;Vi anlitade EMK Marketing och är mycket nöjda med deras arbete. De visade upp en bred kompetens och innovativt tänkande.&rdquo;</blockquote>
-          <figcaption class="emk-res__by"><span class="emk-res__av" aria-hidden="true">ML</span><span><span class="emk-res__name">Monika Lykvist</span><br><span class="emk-res__role">We Travel Group AB</span></span></figcaption>
+          <figcaption class="emk-res__by"><img class="emk-res__av emk-res__av--img" src="images/foto/portratt/monika-lykvist-avatar.jpg" alt=""><span><span class="emk-res__name">Monika Lykvist</span><br><span class="emk-res__role">We Travel Group AB</span></span></figcaption>
         </figure>
         <figure class="emk-res__card">
           <img class="emk-res__bg" src="images/web/testi-hammarby.jpg" alt="" loading="lazy">
@@ -781,12 +782,12 @@
            FAKTA: "emk-tc__big" = stort ord/siffra, "emk-tc__small" = förklaring. Lägg gärna in riktiga resultat här (t.ex. "+150 %"). -->
       <div class="emk-tc-stage" id="emk-tc-stage" aria-roledescription="karusell" aria-label="Kundrecensioner">
 
-        <article style="--img:url('images/web/testi-grandtours.jpg')" class="emk-tc emk-tc--long is-active" aria-roledescription="recension" aria-label="1 av 7">
+        <article style="--img:url('images/foto/portratt/monika-lykvist.jpg')" class="emk-tc emk-tc--long is-active" aria-roledescription="recension" aria-label="1 av 7">
           <div class="emk-tc__text">
             <blockquote class="emk-tc__q">&rdquo;Vi anlitade EMK Marketing och är mycket nöjda med deras arbete. De visade upp en bred kompetens och innovativt tänkande. Att jobba med EMK Marketing var enkelt, eftersom de alltid var öppna för feedback.&rdquo;</blockquote>
             <div><div class="emk-tc__name">Monika Lykvist</div><div class="emk-tc__role">We Travel Group AB</div></div>
           </div>
-          <div class="emk-tc__media"><img src="images/web/testi-grandtours.jpg" alt="" loading="lazy"><div class="emk-tc__facts"><div><span class="emk-tc__big">Film</span><span class="emk-tc__small">för Grand Tours och Äventyrsresor</span></div><div><span class="emk-tc__big">Meta Ads</span><span class="emk-tc__small">och organiskt i sociala medier</span></div></div></div>
+          <div class="emk-tc__media"><img src="images/foto/portratt/monika-lykvist.jpg" style="object-position:center 20%" alt="" loading="lazy"><div class="emk-tc__facts"><div><span class="emk-tc__big">Film</span><span class="emk-tc__small">för Grand Tours och Äventyrsresor</span></div><div><span class="emk-tc__big">Meta Ads</span><span class="emk-tc__small">och organiskt i sociala medier</span></div></div></div>
         </article>
 
         <article style="--img:url('images/foto/portratt/580E75D9-7C49-4B3E-8AD1-587A264B07D0%20(1)%204%20copy.jpg')" class="emk-tc emk-tc--long" aria-roledescription="recension" aria-label="2 av 7" aria-hidden="true">
