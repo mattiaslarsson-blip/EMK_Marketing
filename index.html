@@ -298,41 +298,52 @@
 
     /* ===== RESULTAT DIREKT EFTER HERO: rullande band + tre recensioner ===== */
     #emk-lp .emk-res { padding: 26px 0 70px; }
-    #emk-lp .emk-ticker { position: relative; overflow: hidden; padding: 18px 0;
-      border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-              mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-    #emk-lp .emk-ticker__track { display: flex; width: max-content; animation: emk-ticker 38s linear infinite; }
-    #emk-lp .emk-ticker:hover .emk-ticker__track { animation-play-state: paused; }
-    #emk-lp .emk-ticker__group { display: flex; align-items: center; gap: 44px; padding-right: 44px; }
-    #emk-lp .emk-ticker__item { display: flex; align-items: center; gap: 44px; white-space: nowrap;
-      font-family: 'Manrope'; font-weight: 600; font-size: 17px; color: var(--muted-2, #BDB8AB); }
-    #emk-lp .emk-ticker__item b { color: var(--ink); font-weight: 800; }
-    #emk-lp .emk-ticker__item::after { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
-    @keyframes emk-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    /* Resultat som svävande bubblor */
+    #emk-lp .emk-bubbles { position: relative; display: flex; justify-content: center; align-items: center; flex-wrap: wrap;
+      gap: 18px 34px; padding: 34px 0 10px; }
+    #emk-lp .emk-bubble { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 999px;
+      background: rgba(31,29,23,.85); border: 1px solid rgba(223,164,56,.35);
+      box-shadow: 0 18px 40px -18px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.04);
+      -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+      font-family: 'Manrope'; font-weight: 600; font-size: 16.5px; color: #BDB8AB; white-space: nowrap;
+      animation: emk-float 6s ease-in-out infinite; }
+    #emk-lp .emk-bubble b { color: var(--ink); font-weight: 800; }
+    #emk-lp .emk-bubble::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(223,164,56,.18); flex-shrink: 0; }
+    #emk-lp .emk-bubble:nth-child(1) { margin-top: 26px; animation-delay: -1s; }
+    #emk-lp .emk-bubble:nth-child(2) { margin-top: -10px; animation-duration: 7s; animation-delay: -3s; }
+    #emk-lp .emk-bubble:nth-child(3) { margin-top: 34px; animation-duration: 6.5s; animation-delay: -5s; }
+    @keyframes emk-float {
+      0%, 100% { transform: translateY(0) rotate(-1deg); }
+      50% { transform: translateY(-12px) rotate(1deg); }
+    }
     #emk-lp .emk-res__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 40px; }
-    #emk-lp .emk-res__card { background: var(--card); border: 1px solid var(--line-soft); border-radius: 22px;
-      padding: 28px 26px 24px; display: flex; flex-direction: column; gap: 26px; min-width: 0; }
+    #emk-lp .emk-res__card { position: relative; isolation: isolate; overflow: hidden; min-height: 380px;
+      background: #141310; border: 1px solid var(--line-soft); border-radius: 22px; margin: 0;
+      padding: 28px 26px 24px; display: flex; flex-direction: column; justify-content: flex-end; gap: 26px; min-width: 0; }
+    #emk-lp .emk-res__bg { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
+    #emk-lp .emk-res__card::after { content: ""; position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(180deg, rgba(14,13,11,.55) 0%, rgba(14,13,11,.82) 45%, rgba(14,13,11,.95) 100%); }
     #emk-lp .emk-res__q { font-family: 'Instrument Serif', Georgia, serif; font-size: 23px; line-height: 1.22;
-      letter-spacing: -0.01em; color: var(--ink); flex: 1; }
+      letter-spacing: -0.01em; color: #F5F1E8; }
     #emk-lp .emk-res__by { display: flex; align-items: center; gap: 12px; }
     #emk-lp .emk-res__av { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center;
       background: var(--gold-light); color: var(--gold); font-family: 'Manrope'; font-weight: 800; font-size: 12.5px; }
     #emk-lp .emk-res__name { font-family: 'Manrope'; font-weight: 700; font-size: 14.5px; color: var(--ink); }
-    #emk-lp .emk-res__role { font-size: 13px; color: var(--muted); }
+    #emk-lp .emk-res__role { font-size: 13px; color: var(--gold); }
     @media (max-width: 900px) {
       #emk-lp .emk-res { padding: 10px 0 48px; }
-      #emk-lp .emk-ticker { padding: 14px 0; }
-      #emk-lp .emk-ticker__item, #emk-lp .emk-ticker__group { gap: 28px; }
-      #emk-lp .emk-ticker__group { padding-right: 28px; }
-      #emk-lp .emk-ticker__item { font-size: 15px; }
+      #emk-lp .emk-bubbles { flex-direction: column; gap: 14px; padding: 18px 0 0; }
+      #emk-lp .emk-bubble { font-size: 14.5px; padding: 11px 16px; white-space: normal; max-width: calc(100% - 24px); }
+      #emk-lp .emk-bubble:nth-child(1) { margin: 0 30px 0 0; }
+      #emk-lp .emk-bubble:nth-child(2) { margin: 0 0 0 18px; }
+      #emk-lp .emk-bubble:nth-child(3) { margin: 0 24px 0 0; }
+      #emk-lp .emk-res__card { min-height: 320px; }
       #emk-lp .emk-res__grid { grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 28px; }
       #emk-lp .emk-res__q { font-size: 21px; }
     }
     @media (prefers-reduced-motion: reduce) {
-      #emk-lp .emk-ticker__track { animation: none; width: auto; }
-      #emk-lp .emk-ticker__group { flex-wrap: wrap; justify-content: center; row-gap: 10px; }
-      #emk-lp .emk-ticker__group[aria-hidden="true"] { display: none; }
+      #emk-lp .emk-bubble { animation: none; }
     }
 
     /* ===== SOCIAL PROOF ===== */
@@ -573,37 +584,27 @@
 
   <!-- RESULTAT: rullande band + tre korta recensioner (direkt efter hero) -->
   <section class="emk-res" aria-label="Resultat och kundomdömen">
-    <div class="emk-ticker">
-      <div class="emk-ticker__track">
-        <div class="emk-ticker__group">
-            <span class="emk-ticker__item"><span><b>5 miljoner</b> organiska visningar</span></span>
-            <span class="emk-ticker__item"><span><b>625 000 kr</b> på en annonsbudget på 25 000 kr</span></span>
-            <span class="emk-ticker__item"><span><b>Film</b> som levererar resultat</span></span>
-            <span class="emk-ticker__item"><span><b>5 miljoner</b> organiska visningar</span></span>
-            <span class="emk-ticker__item"><span><b>625 000 kr</b> på en annonsbudget på 25 000 kr</span></span>
-            <span class="emk-ticker__item"><span><b>Film</b> som levererar resultat</span></span>
-        </div>
-        <div class="emk-ticker__group" aria-hidden="true">
-            <span class="emk-ticker__item"><span><b>5 miljoner</b> organiska visningar</span></span>
-            <span class="emk-ticker__item"><span><b>625 000 kr</b> på en annonsbudget på 25 000 kr</span></span>
-            <span class="emk-ticker__item"><span><b>Film</b> som levererar resultat</span></span>
-            <span class="emk-ticker__item"><span><b>5 miljoner</b> organiska visningar</span></span>
-            <span class="emk-ticker__item"><span><b>625 000 kr</b> på en annonsbudget på 25 000 kr</span></span>
-            <span class="emk-ticker__item"><span><b>Film</b> som levererar resultat</span></span>
-        </div>
+    <div class="emk-wrap">
+      <div class="emk-bubbles">
+        <span class="emk-bubble"><span><b>5&nbsp;miljoner</b> organiska visningar</span></span>
+        <span class="emk-bubble"><span><b>625&nbsp;000&nbsp;kr</b> på en annonsbudget på 25&nbsp;000&nbsp;kr</span></span>
+        <span class="emk-bubble"><span><b>Film</b> som levererar resultat</span></span>
       </div>
     </div>
     <div class="emk-wrap">
       <div class="emk-res__grid">
         <figure class="emk-res__card">
+          <img class="emk-res__bg" src="images/web/testi-aventyrsresor.jpg" alt="" loading="lazy">
           <blockquote class="emk-res__q">&rdquo;Vi anlitade EMK Marketing och är mycket nöjda med deras arbete. De visade upp en bred kompetens och innovativt tänkande.&rdquo;</blockquote>
           <figcaption class="emk-res__by"><span class="emk-res__av" aria-hidden="true">ML</span><span><span class="emk-res__name">Monika Lykvist</span><br><span class="emk-res__role">We Travel Group AB</span></span></figcaption>
         </figure>
         <figure class="emk-res__card">
+          <img class="emk-res__bg" src="images/web/testi-hammarby.jpg" alt="" loading="lazy">
           <blockquote class="emk-res__q">&rdquo;EMK Marketing har tagit fram fantastiska filmer och bilder som visar vår glädje, gemenskap och utveckling.&rdquo;</blockquote>
           <figcaption class="emk-res__by"><span class="emk-res__av" aria-hidden="true">ER</span><span><span class="emk-res__name">Emma Raask</span><br><span class="emk-res__role">Sportchef, Hammarbygymnasterna</span></span></figcaption>
         </figure>
         <figure class="emk-res__card">
+          <img class="emk-res__bg" src="images/foto/portratt/580E75D9-7C49-4B3E-8AD1-587A264B07D0%20(1)%204%20copy.jpg" alt="" loading="lazy">
           <blockquote class="emk-res__q">&rdquo;Ett verkligt lyft i sociala medier. EMK har varit lyhörda, proffsiga och enkla att kommunicera med. Jag kan varmt rekommendera dem!&rdquo;</blockquote>
           <figcaption class="emk-res__by"><span class="emk-res__av" aria-hidden="true">CW</span><span><span class="emk-res__name">Christina Wissinger</span><br><span class="emk-res__role">Sportchef, STG</span></span></figcaption>
         </figure>
