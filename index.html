@@ -314,19 +314,25 @@
       50%      { transform: translate3d(3px, -7px, 0); }
     }
     #emk-lp .emk-res__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 40px; }
-    #emk-lp .emk-res__card { position: relative; isolation: isolate; overflow: hidden; min-height: 340px;
-      background: #141310; border: 1px solid var(--line-soft); border-radius: 22px; margin: 0;
-      padding: 28px 26px 24px; display: flex; flex-direction: column; justify-content: flex-end; gap: 26px; min-width: 0; }
-    #emk-lp .emk-res__bg { position: absolute; inset: -40px; z-index: -2; width: calc(100% + 80px); height: calc(100% + 80px);
-      object-fit: cover; filter: blur(28px) saturate(1.1); transform: scale(1.1); }
-    #emk-lp .emk-res__card::after { content: ""; position: absolute; inset: 0; z-index: -1;
-      background: linear-gradient(100deg, rgba(14,13,11,.9) 0%, rgba(14,13,11,.82) 45%, rgba(14,13,11,.7) 100%); }
+    #emk-lp .emk-res__card { position: relative; margin: 0; background: #181715; border: 1px solid #262420; border-radius: 24px;
+      overflow: hidden; display: flex; flex-direction: column; min-width: 0;
+      transition: transform .4s cubic-bezier(.2,.8,.2,1), border-color .4s ease; }
+    #emk-lp .emk-res__card:hover { transform: translateY(-4px); border-color: rgba(223,164,56,.4); }
+    #emk-lp .emk-res__photo { position: relative; aspect-ratio: 4 / 3.1; overflow: hidden; background: #111; }
+    #emk-lp .emk-res__photo img { width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform .8s cubic-bezier(.2,.8,.2,1); }
+    #emk-lp .emk-res__card:hover .emk-res__photo img { transform: scale(1.04); }
+    #emk-lp .emk-res__photo::after { content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 45%, rgba(24,23,21,.55) 75%, #181715 100%); }
+    #emk-lp .emk-res__tag { position: absolute; top: 16px; left: 16px; z-index: 1; padding: 7px 12px; border-radius: 999px;
+      background: rgba(17,17,17,.7); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+      font-family: 'Manrope'; font-size: 10.5px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink); }
+    #emk-lp .emk-res__body { position: relative; padding: 0 26px 24px; display: flex; flex-direction: column; gap: 20px; flex: 1; }
+    #emk-lp .emk-res__mark { display: block; height: 34px; margin-top: -30px; font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 84px; line-height: 1; color: var(--gold); }
     #emk-lp .emk-res__q { font-family: 'Instrument Serif', Georgia, serif; font-size: 23px; line-height: 1.22;
-      letter-spacing: -0.01em; color: #F5F1E8; }
-    #emk-lp .emk-res__by { display: flex; align-items: center; gap: 12px; }
-    #emk-lp .emk-res__av { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center;
-      background: var(--gold-light); color: var(--gold); font-family: 'Manrope'; font-weight: 800; font-size: 12.5px; }
-    #emk-lp .emk-res__av--img { object-fit: cover; border: 1.5px solid rgba(223,164,56,.6); }
+      letter-spacing: -0.01em; color: #F5F1E8; flex: 1; }
+    #emk-lp .emk-res__by { display: flex; flex-direction: column; gap: 2px; padding-top: 16px; border-top: 1px solid #2A2824; }
     #emk-lp .emk-res__name { font-family: 'Manrope'; font-weight: 700; font-size: 14.5px; color: var(--ink); }
     #emk-lp .emk-res__role { font-size: 13px; color: var(--gold); }
     @media (max-width: 900px) {
@@ -336,12 +342,13 @@
       #emk-lp .emk-bubble:nth-child(1) { margin: 0 30px 0 0; }
       #emk-lp .emk-bubble:nth-child(2) { margin: 0 0 0 10px; }
       #emk-lp .emk-bubble:nth-child(3) { margin: 0 24px 0 0; }
-      #emk-lp .emk-res__card { min-height: 320px; }
       #emk-lp .emk-res__grid { grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 28px; }
       #emk-lp .emk-res__q { font-size: 21px; }
+      #emk-lp .emk-res__photo { aspect-ratio: 4 / 3; }
     }
     @media (prefers-reduced-motion: reduce) {
       #emk-lp .emk-bubble { animation: none; }
+      #emk-lp .emk-res__card, #emk-lp .emk-res__photo img { transition: none; }
     }
 
     /* ===== SOCIAL PROOF ===== */
@@ -592,19 +599,28 @@
     <div class="emk-wrap">
       <div class="emk-res__grid">
         <figure class="emk-res__card">
-          <img class="emk-res__bg" src="images/foto/portratt/monika-lykvist.jpg" alt="" loading="lazy">
-          <blockquote class="emk-res__q">&rdquo;Vi anlitade EMK Marketing och är mycket nöjda med deras arbete. De visade upp en bred kompetens och innovativt tänkande.&rdquo;</blockquote>
-          <figcaption class="emk-res__by"><img class="emk-res__av emk-res__av--img" src="images/foto/portratt/monika-lykvist-avatar.jpg" alt=""><span><span class="emk-res__name">Monika Lykvist</span><br><span class="emk-res__role">We Travel Group AB</span></span></figcaption>
+          <div class="emk-res__photo"><img src="images/foto/portratt/monika-lykvist.jpg" alt="Monika Lykvist" loading="lazy" style="object-position:center 18%"><span class="emk-res__tag">Film &amp; annonser</span></div>
+          <div class="emk-res__body">
+            <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote class="emk-res__q">Vi anlitade EMK Marketing och är mycket nöjda med deras arbete. De visade upp en bred kompetens och innovativt tänkande.</blockquote>
+            <figcaption class="emk-res__by"><span class="emk-res__name">Monika Lykvist</span><span class="emk-res__role">We Travel Group AB</span></figcaption>
+          </div>
         </figure>
         <figure class="emk-res__card">
-          <img class="emk-res__bg" src="images/web/testi-hammarby.jpg" alt="" loading="lazy">
-          <blockquote class="emk-res__q">&rdquo;EMK Marketing har tagit fram fantastiska filmer och bilder som visar vår glädje, gemenskap och utveckling.&rdquo;</blockquote>
-          <figcaption class="emk-res__by"><span class="emk-res__av" aria-hidden="true">ER</span><span><span class="emk-res__name">Emma Raask</span><br><span class="emk-res__role">Sportchef, Hammarbygymnasterna</span></span></figcaption>
+          <div class="emk-res__photo"><img src="images/foto/portratt/580E75D9-7C49-4B3E-8AD1-587A264B07D0%20(1)%204%20copy.jpg" alt="Christina Wissinger" loading="lazy" style="object-position:center 30%"><span class="emk-res__tag">Sociala medier</span></div>
+          <div class="emk-res__body">
+            <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote class="emk-res__q">Ett verkligt lyft i sociala medier. EMK har varit lyhörda, proffsiga och enkla att kommunicera med. Jag kan varmt rekommendera dem!</blockquote>
+            <figcaption class="emk-res__by"><span class="emk-res__name">Christina Wissinger</span><span class="emk-res__role">Sportchef, STG</span></figcaption>
+          </div>
         </figure>
         <figure class="emk-res__card">
-          <img class="emk-res__bg" src="images/foto/portratt/580E75D9-7C49-4B3E-8AD1-587A264B07D0%20(1)%204%20copy.jpg" alt="" loading="lazy">
-          <blockquote class="emk-res__q">&rdquo;Ett verkligt lyft i sociala medier. EMK har varit lyhörda, proffsiga och enkla att kommunicera med. Jag kan varmt rekommendera dem!&rdquo;</blockquote>
-          <figcaption class="emk-res__by"><span class="emk-res__av" aria-hidden="true">CW</span><span><span class="emk-res__name">Christina Wissinger</span><br><span class="emk-res__role">Sportchef, STG</span></span></figcaption>
+          <div class="emk-res__photo"><img src="images/foto/portratt/leonie-sterner-sazesh.jpg" alt="Leonie Sterner Sazesh" loading="lazy" style="object-position:58% 22%"><span class="emk-res__tag">Film &amp; foto</span></div>
+          <div class="emk-res__body">
+            <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote class="emk-res__q">Vi är mycket nöjda med filmer och bilder som EMK Marketing tog fram.</blockquote>
+            <figcaption class="emk-res__by"><span class="emk-res__name">Leonie Sterner Sazesh</span><span class="emk-res__role">Co-founder, Joina</span></figcaption>
+          </div>
         </figure>
       </div>
     </div>
