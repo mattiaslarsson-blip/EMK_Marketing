@@ -270,7 +270,9 @@
     }
 
     /* Kunder — logotypband */
-    #emk-lp .emk-clients { padding: 64px 0 70px; overflow: hidden; }
+    #emk-lp .emk-clients { padding: 64px 0 70px; }
+    /* logotypbandet går kant till kant, utanför sidans innehållsbredd */
+    #emk-lp .emk-clients .emk-logo-band { width: 100vw; margin-left: calc(50% - 50vw); overflow: hidden; }
     #emk-lp .emk-clients__head { text-align: center; margin-bottom: 38px; }
     #emk-lp .emk-clients__head h2 { font-family: 'Manrope'; font-size: clamp(26px, 4vw, 38px); font-weight: 800; letter-spacing: -0.8px; }
 
