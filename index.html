@@ -316,10 +316,11 @@
       50%      { transform: translate3d(3px, -7px, 0); }
     }
     /* Recensionskarusell. Dator: glider ett kort i taget. Mobil: svep, nästa kort tittar fram. */
-    #emk-lp .emk-res__viewport { overflow: hidden; margin-top: 40px;
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 140px, #000 calc(100% - 140px), transparent);
-              mask-image: linear-gradient(90deg, transparent, #000 140px, #000 calc(100% - 140px), transparent); }
-    #emk-lp .emk-res__grid { --per: 4; --gap: 16px; --peek: 120px; display: flex; gap: var(--gap);
+    /* kant till kant så att korten blir bredare */
+    #emk-lp .emk-res__viewport { overflow: hidden; margin-top: 40px; width: 100vw; margin-left: calc(50% - 50vw);
+      -webkit-mask-image: linear-gradient(90deg, transparent 1%, #000 9.5%, #000 90.5%, transparent 99%);
+              mask-image: linear-gradient(90deg, transparent 1%, #000 9.5%, #000 90.5%, transparent 99%); }
+    #emk-lp .emk-res__grid { --per: 4; --gap: 18px; --peek: 9vw; display: flex; gap: var(--gap);
       transition: transform .8s cubic-bezier(.22,.8,.2,1); will-change: transform;
       touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab; }
     #emk-lp .emk-res__grid.is-dragging { cursor: grabbing; }
@@ -342,7 +343,7 @@
     #emk-lp .emk-res__dot::before { content: ""; position: absolute; inset: -14px -4px; }
     #emk-lp .emk-res__dot[aria-current="true"] { width: 26px; background: var(--gold); }
     #emk-lp .emk-res__arrow:focus-visible, #emk-lp .emk-res__dot:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
-    @media (max-width: 1180px) and (min-width: 901px) { #emk-lp .emk-res__grid { --per: 2; --peek: 90px; } }
+    @media (max-width: 1180px) and (min-width: 901px) { #emk-lp .emk-res__grid { --per: 2; --peek: 10vw; } }
     #emk-lp .emk-res__card { position: relative; margin: 0; background: #181715; border: 1px solid #262420; border-radius: 24px;
       overflow: hidden; display: flex; flex-direction: column; min-width: 0;
       transition: transform .4s cubic-bezier(.2,.8,.2,1), border-color .4s ease; }
@@ -368,7 +369,7 @@
       #emk-lp .emk-bubble:nth-child(1) { margin: 0 30px 0 0; }
       #emk-lp .emk-bubble:nth-child(2) { margin: 0 0 0 10px; }
       #emk-lp .emk-bubble:nth-child(3) { margin: 0 24px 0 0; }
-      #emk-lp .emk-res__viewport { overflow: visible; margin: 28px -18px 0; -webkit-mask-image: none; mask-image: none; }
+      #emk-lp .emk-res__viewport { overflow: visible; width: auto; margin: 28px -18px 0; -webkit-mask-image: none; mask-image: none; }
       #emk-lp .emk-res__grid { --gap: 12px; transform: none !important; transition: none; cursor: auto;
         overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 18px; padding: 0 18px 6px;
         -webkit-overflow-scrolling: touch; scrollbar-width: none; user-select: auto; -webkit-user-select: auto; }
@@ -1105,8 +1106,9 @@
   function place(animate){
     var cs = getComputedStyle(grid);
     per = parseInt(cs.getPropertyValue('--per'), 10) || 4;
-    var peek = parseFloat(cs.getPropertyValue('--peek')) || 0, gap = parseFloat(cs.columnGap) || 16;
+    var gap = parseFloat(cs.columnGap) || 16;
     var w = all[0].getBoundingClientRect().width, step = w + gap;
+    var peek = (grid.parentElement.clientWidth - per * w - (per + 1) * gap) / 2;   /* räknas i px, oavsett enhet i CSS */
     grid.style.transition = animate ? '' : 'none';
     grid.style.transform = 'translate3d(' + (peek + gap - idx * step) + 'px,0,0)';
     all.forEach(function(c, j){
