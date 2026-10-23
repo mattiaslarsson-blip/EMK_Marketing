@@ -313,7 +313,9 @@
       0%, 100% { transform: translate3d(0, 0, 0); }
       50%      { transform: translate3d(3px, -7px, 0); }
     }
-    #emk-lp .emk-res__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 40px; }
+    #emk-lp .emk-res__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 40px; }
+    #emk-lp .emk-res__dots { display: none; }
+    @media (max-width: 1180px) and (min-width: 901px) { #emk-lp .emk-res__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     #emk-lp .emk-res__card { position: relative; margin: 0; background: #181715; border: 1px solid #262420; border-radius: 24px;
       overflow: hidden; display: flex; flex-direction: column; min-width: 0;
       transition: transform .4s cubic-bezier(.2,.8,.2,1), border-color .4s ease; }
@@ -327,7 +329,7 @@
     #emk-lp .emk-res__body { position: relative; padding: 0 26px 24px; display: flex; flex-direction: column; gap: 20px; flex: 1; }
     #emk-lp .emk-res__mark { display: block; height: 34px; margin-top: -30px; font-family: 'Instrument Serif', Georgia, serif;
       font-size: 84px; line-height: 1; color: var(--gold); }
-    #emk-lp .emk-res__q { font-family: 'Instrument Serif', Georgia, serif; font-size: 23px; line-height: 1.22;
+    #emk-lp .emk-res__q { font-family: 'Instrument Serif', Georgia, serif; font-size: 21px; line-height: 1.22;
       letter-spacing: -0.01em; color: #F5F1E8; flex: 1; }
     #emk-lp .emk-res__by { display: flex; flex-direction: column; gap: 2px; padding-top: 16px; border-top: 1px solid #2A2824; }
     #emk-lp .emk-res__name { font-family: 'Manrope'; font-weight: 700; font-size: 14.5px; color: var(--ink); }
@@ -339,7 +341,18 @@
       #emk-lp .emk-bubble:nth-child(1) { margin: 0 30px 0 0; }
       #emk-lp .emk-bubble:nth-child(2) { margin: 0 0 0 10px; }
       #emk-lp .emk-bubble:nth-child(3) { margin: 0 24px 0 0; }
-      #emk-lp .emk-res__grid { grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 28px; }
+      /* mobil: svepbar karusell, nästa kort tittar fram */
+      #emk-lp .emk-res__grid { display: flex; gap: 12px; margin: 28px -18px 0; padding: 0 18px 6px;
+        overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 18px;
+        -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+      #emk-lp .emk-res__grid::-webkit-scrollbar { display: none; }
+      #emk-lp .emk-res__card { flex: 0 0 84%; scroll-snap-align: start; }
+      #emk-lp .emk-res__card:hover { transform: none; }
+      #emk-lp .emk-res__dots { display: flex; justify-content: center; gap: 7px; margin-top: 16px; }
+      #emk-lp .emk-res__dot { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 99px; background: #3A3A3A;
+        transition: width .3s ease, background .3s ease; position: relative; cursor: pointer; }
+      #emk-lp .emk-res__dot::before { content: ""; position: absolute; inset: -12px -4px; }
+      #emk-lp .emk-res__dot[aria-current="true"] { width: 22px; background: var(--gold); }
       #emk-lp .emk-res__q { font-size: 21px; }
       #emk-lp .emk-res__photo { aspect-ratio: 4 / 3; }
     }
@@ -619,7 +632,16 @@
             <figcaption class="emk-res__by"><span class="emk-res__name">Leonie Sterner Sazesh</span><span class="emk-res__role">Co-founder, Joina</span></figcaption>
           </div>
         </figure>
+        <figure class="emk-res__card">
+          <div class="emk-res__photo"><img src="images/foto/portratt/william-broman.jpg" alt="William Broman" loading="lazy" style="object-position:center 20%"></div>
+          <div class="emk-res__body">
+            <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote class="emk-res__q">En avgörande partner i att bygga mitt personliga varumärke.</blockquote>
+            <figcaption class="emk-res__by"><span class="emk-res__name">William Broman</span><span class="emk-res__role">Fd. lagkapten, svenska landslaget</span></figcaption>
+          </div>
+        </figure>
       </div>
+      <div class="emk-res__dots" id="emk-res-dots" aria-hidden="true"></div>
     </div>
     <div class="emk-wrap">
     <!-- 3. Kunder — logotypband -->
@@ -989,6 +1011,28 @@
     revealEls.forEach(function(el){ el.classList.add('is-in'); });
   }
 
+})();
+
+/* ===== Recensionsrutor: prickar för svepkarusellen på mobil ===== */
+(function(){
+  var grid = document.querySelector('#emk-lp .emk-res__grid');
+  var dotsEl = document.getElementById('emk-res-dots');
+  if(!grid || !dotsEl) return;
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.emk-res__card'));
+  var dots = cards.map(function(c, i){
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'emk-res__dot'; b.tabIndex = -1;
+    b.addEventListener('click', function(){ grid.scrollTo({ left: c.offsetLeft - grid.offsetLeft - 18, behavior: 'smooth' }); });
+    dotsEl.appendChild(b); return b;
+  });
+  function update(){
+    var mid = grid.scrollLeft + grid.clientWidth * 0.35, cur = 0;
+    cards.forEach(function(c, i){ if (c.offsetLeft - grid.offsetLeft <= mid) cur = i; });
+    if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4) cur = cards.length - 1;
+    dots.forEach(function(d, i){ d.setAttribute('aria-current', i === cur ? 'true' : 'false'); });
+  }
+  grid.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
 })();
 
 /* ===== Recensioner: ett kort i taget, pilar, prickar och svep ===== */
