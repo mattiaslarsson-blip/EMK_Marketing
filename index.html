@@ -270,11 +270,11 @@
     }
 
     /* Kunder — logotypband */
-    #emk-lp .emk-clients { padding: 64px 0 70px; }
+    #emk-lp .emk-clients { padding: 110px 0 70px; }
     /* logotypbandet går kant till kant, utanför sidans innehållsbredd */
     #emk-lp .emk-clients .emk-logo-band { width: 100vw; margin-left: calc(50% - 50vw); overflow: hidden; }
-    #emk-lp .emk-clients__head { text-align: center; margin-bottom: 38px; }
-    #emk-lp .emk-clients__head h2 { font-family: 'Manrope'; font-size: clamp(26px, 4vw, 38px); font-weight: 800; letter-spacing: -0.8px; }
+    #emk-lp .emk-clients__head { text-align: center; margin-bottom: 30px; }
+    #emk-lp .emk-clients__head h2 { font-family: 'Manrope'; font-size: clamp(20px, 2.4vw, 26px); font-weight: 800; letter-spacing: -0.5px; }
 
     #emk-lp .emk-logo-band { position: relative; display: flex; flex-direction: column; gap: 22px; }
     #emk-lp .emk-logo-band::before, #emk-lp .emk-logo-band::after { content: ""; position: absolute; top: 0; bottom: 0; width: 160px; z-index: 2; pointer-events: none; }
@@ -286,10 +286,10 @@
     @keyframes emkLogoScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     #emk-lp .emk-logo-group { display: flex; align-items: center; flex-shrink: 0; }
-    #emk-lp .emk-logo { display: flex; align-items: center; justify-content: center; height: 76px; padding: 0 44px; }
-    #emk-lp .emk-logo img { height: 38px; width: auto; max-width: 220px; object-fit: contain; display: block;
+    #emk-lp .emk-logo { display: flex; align-items: center; justify-content: center; height: 60px; padding: 0 36px; }
+    #emk-lp .emk-logo img { height: 28px; width: auto; max-width: 160px; object-fit: contain; display: block;
       opacity: .62; filter: grayscale(1) brightness(1.05); transition: opacity .3s ease, filter .3s ease, transform .3s ease; }
-    #emk-lp .emk-logo--tall img { height: 52px; }   /* runda/kvadratiska märken får lite mer höjd */
+    #emk-lp .emk-logo--tall img { height: 40px; }   /* runda/kvadratiska märken får lite mer höjd */
     #emk-lp .emk-logo:hover img { opacity: 1; filter: none; transform: scale(1.06); }
 
     @media (prefers-reduced-motion: reduce) {
@@ -484,13 +484,13 @@
       #emk-lp .emk-wrap { padding: 0 18px; }
 
       /* Kunder — mobil */
-      #emk-lp .emk-clients { padding: 46px 0 50px; }
+      #emk-lp .emk-clients { padding: 72px 0 50px; }
       #emk-lp .emk-clients__head { margin-bottom: 26px; }
       #emk-lp .emk-logo-band { gap: 14px; }
       #emk-lp .emk-logo-band::before, #emk-lp .emk-logo-band::after { width: 70px; }
-      #emk-lp .emk-logo { height: 60px; padding: 0 26px; }
-      #emk-lp .emk-logo img { height: 30px; max-width: 160px; }
-      #emk-lp .emk-logo--tall img { height: 42px; }
+      #emk-lp .emk-logo { height: 50px; padding: 0 22px; }
+      #emk-lp .emk-logo img { height: 22px; max-width: 120px; }
+      #emk-lp .emk-logo--tall img { height: 32px; }
       #emk-lp .emk-logo-row { animation-duration: 34s; }
       #emk-lp .emk-logo-row--rev { animation-duration: 40s; }
       /* Social proof — mobil */
