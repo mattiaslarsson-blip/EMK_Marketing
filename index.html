@@ -317,14 +317,14 @@
     }
     /* Recensionskarusell. Dator: glider ett kort i taget. Mobil: svep, nästa kort tittar fram. */
     #emk-lp .emk-res__viewport { overflow: hidden; margin-top: 40px;
-      -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 140px), transparent);
-              mask-image: linear-gradient(90deg, #000 calc(100% - 140px), transparent); }
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 140px, #000 calc(100% - 140px), transparent);
+              mask-image: linear-gradient(90deg, transparent, #000 140px, #000 calc(100% - 140px), transparent); }
     #emk-lp .emk-res__grid { --per: 4; --gap: 16px; --peek: 120px; display: flex; gap: var(--gap);
       transition: transform .8s cubic-bezier(.22,.8,.2,1); will-change: transform;
       touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab; }
     #emk-lp .emk-res__grid.is-dragging { cursor: grabbing; }
     /* --show = synliga kort inkl. en bit av nästa kort som tittar fram */
-    #emk-lp .emk-res__grid > .emk-res__card { flex: 0 0 calc((100% - (var(--per) - 1) * var(--gap) - var(--peek)) / var(--per));
+    #emk-lp .emk-res__grid > .emk-res__card { flex: 0 0 calc((100% - (var(--per) + 1) * var(--gap) - 2 * var(--peek)) / var(--per));
       transition: opacity .7s ease, transform .4s cubic-bezier(.2,.8,.2,1), border-color .4s ease; }
     #emk-lp .emk-res__grid > .emk-res__card.is-hidden { opacity: 0; }
     #emk-lp .emk-res__grid > .emk-res__card.is-peek { opacity: .45; cursor: pointer; }
@@ -378,6 +378,7 @@
       #emk-lp .emk-res__card:hover { transform: none; }
       #emk-lp .emk-res__nav { margin-top: 18px; }
       #emk-lp .emk-res__arrow { display: none; }
+      #emk-lp .emk-res__grid > .emk-res__card.is-clone { display: none; }
       #emk-lp .emk-res__q { font-size: 21px; }
       #emk-lp .emk-res__photo { aspect-ratio: 4 / 3; }
     }
@@ -1075,50 +1076,56 @@
 
 })();
 
-/* ===== Recensionsrutor: karusell. Dator glider ett kort i taget, mobil sveps med nästa kort synligt ===== */
+/* ===== Recensionsrutor: karusell. Dator: oändlig loop, ett kort i taget, grannkorten tittar fram på båda sidor.
+   Mobil: vanligt svep där nästa kort syns i kanten. ===== */
 (function(){
   var grid = document.getElementById('emk-res-grid');
   var dotsEl = document.getElementById('emk-res-dots');
   if(!grid || !dotsEl) return;
-  var cards = Array.prototype.slice.call(grid.querySelectorAll('.emk-res__card'));
+  var orig = Array.prototype.slice.call(grid.querySelectorAll('.emk-res__card'));
+  var N = orig.length;
+  /* kopior före och efter för sömlös loop på datorn */
+  function clone(c){ var k = c.cloneNode(true); k.classList.add('is-clone'); k.setAttribute('aria-hidden', 'true'); return k; }
+  orig.slice().reverse().forEach(function(c){ grid.insertBefore(clone(c), grid.firstChild); });
+  orig.forEach(function(c){ grid.appendChild(clone(c)); });
+  var all = Array.prototype.slice.call(grid.querySelectorAll('.emk-res__card'));
   var mobile = window.matchMedia('(max-width: 900px)');
-  var idx = 0, per = 4, dots = [];
-  function readPer(){ return parseInt(getComputedStyle(grid).getPropertyValue('--per'), 10) || 1; }
-  function count(){ return mobile.matches ? cards.length : cards.length - per + 1; }
-  function buildDots(){
-    dotsEl.innerHTML = ''; dots = [];
-    for (var i = 0; i < count(); i++) {
-      (function(i){
-        var b = document.createElement('button'); b.type = 'button'; b.className = 'emk-res__dot';
-        b.setAttribute('aria-label', 'Visa recension ' + (i + 1));
-        b.addEventListener('click', function(){ go(i); });
-        dotsEl.appendChild(b); dots.push(b);
-      })(i);
-    }
+  var idx = N, per = 4, dots = [];
+
+  orig.forEach(function(_, i){
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'emk-res__dot';
+    b.setAttribute('aria-label', 'Visa recension ' + (i + 1));
+    b.addEventListener('click', function(){
+      if (mobile.matches) { grid.scrollTo({ left: orig[i].offsetLeft - 18, behavior: 'smooth' }); return; }
+      var cur = ((idx - N) % N + N) % N; go(idx + (i - cur));
+    });
+    dotsEl.appendChild(b); dots.push(b);
+  });
+  function mark(i){ dots.forEach(function(d, j){ d.setAttribute('aria-current', j === i ? 'true' : 'false'); }); }
+  function place(animate){
+    var cs = getComputedStyle(grid);
+    per = parseInt(cs.getPropertyValue('--per'), 10) || 4;
+    var peek = parseFloat(cs.getPropertyValue('--peek')) || 0, gap = parseFloat(cs.columnGap) || 16;
+    var w = all[0].getBoundingClientRect().width, step = w + gap;
+    grid.style.transition = animate ? '' : 'none';
+    grid.style.transform = 'translate3d(' + (peek + gap - idx * step) + 'px,0,0)';
+    all.forEach(function(c, j){
+      c.style.transition = animate ? '' : 'none';
+      c.classList.toggle('is-hidden', j < idx - 1 || j > idx + per);
+      c.classList.toggle('is-peek', j === idx - 1 || j === idx + per);
+    });
+    if (!animate) { void grid.offsetWidth; grid.style.transition = ''; all.forEach(function(c){ c.style.transition = ''; }); }
+    mark(((idx - N) % N + N) % N);
   }
-  function mark(){ dots.forEach(function(d, i){ d.setAttribute('aria-current', i === idx ? 'true' : 'false'); }); }
-  function go(i){
-    var n = count(); idx = (i + n) % n;
-    if (mobile.matches) {
-      grid.scrollTo({ left: cards[idx].offsetLeft - 18, behavior: 'smooth' });
-    } else {
-      var step = cards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(grid).columnGap || 16);
-      grid.style.transform = 'translate3d(' + (-idx * step) + 'px,0,0)';
-      cards.forEach(function(c, j){
-        c.classList.toggle('is-hidden', j < idx || j > idx + per);
-        c.classList.toggle('is-peek', j === idx + per);
-      });
-    }
-    mark();
-  }
-  function setup(){
-    per = readPer(); idx = Math.min(idx, count() - 1);
-    if (mobile.matches) { grid.style.transform = ''; cards.forEach(function(c){ c.classList.remove('is-hidden', 'is-peek'); }); }
-    buildDots(); go(idx);
-  }
-  /* klick på kortet som tittar fram = nästa */
-  cards.forEach(function(c){ c.addEventListener('click', function(){ if (c.classList.contains('is-peek')) go(idx + 1); }); });
-  /* dator: dra med musen eller svep på surfplatta */
+  function go(i){ idx = i; place(true); }
+  grid.addEventListener('transitionend', function(e){
+    if (e.target !== grid || mobile.matches) return;
+    if (idx < N) { idx += N; place(false); }
+    else if (idx >= 2 * N) { idx -= N; place(false); }
+  });
+  all.forEach(function(c, j){ c.addEventListener('click', function(){
+    if (!mobile.matches && c.classList.contains('is-peek')) go(j < idx ? idx - 1 : idx + 1);
+  }); });
   var x0 = null;
   grid.addEventListener('pointerdown', function(e){ if (mobile.matches) return; x0 = e.clientX; grid.classList.add('is-dragging'); });
   window.addEventListener('pointerup', function(e){
@@ -1127,14 +1134,19 @@
     if (Math.abs(dx) > 50) go(idx + (dx < 0 ? 1 : -1));
   });
   window.addEventListener('pointercancel', function(){ x0 = null; grid.classList.remove('is-dragging'); });
-  /* mobil: prickarna följer svepet */
   grid.addEventListener('scroll', function(){
     if (!mobile.matches) return;
     var mid = grid.scrollLeft + grid.clientWidth * 0.35, cur = 0;
-    cards.forEach(function(c, i){ if (c.offsetLeft - 18 <= mid) cur = i; });
-    if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4) cur = cards.length - 1;
-    idx = cur; mark();
+    orig.forEach(function(c, i){ if (c.offsetLeft - 18 <= mid) cur = i; });
+    if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4) cur = N - 1;
+    mark(cur);
   }, { passive: true });
+  function setup(){
+    if (mobile.matches) {
+      grid.style.transform = ''; all.forEach(function(c){ c.classList.remove('is-hidden', 'is-peek'); });
+      grid.scrollLeft = 0; mark(0);
+    } else { place(false); }
+  }
   var t; window.addEventListener('resize', function(){ clearTimeout(t); t = setTimeout(setup, 120); });
   setup();
 })();
