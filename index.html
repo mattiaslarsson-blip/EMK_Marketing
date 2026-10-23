@@ -281,7 +281,6 @@
 
     #emk-lp .emk-logo-row { display: flex; width: max-content; animation: emkLogoScroll 46s linear infinite; }
     #emk-lp .emk-logo-row--rev { animation-direction: reverse; animation-duration: 54s; }
-    #emk-lp .emk-logo-band:hover .emk-logo-row { animation-play-state: paused; }
     @keyframes emkLogoScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     #emk-lp .emk-logo-group { display: flex; align-items: center; flex-shrink: 0; }
@@ -297,7 +296,7 @@
     }
 
     /* ===== RESULTAT DIREKT EFTER HERO: rullande band + tre recensioner ===== */
-    #emk-lp .emk-res { padding: 26px 0 70px; }
+    #emk-lp .emk-res { padding: 0 0 10px; margin-top: clamp(-120px, -7vw, -60px); position: relative; z-index: 4; }
     /* Resultat som svävande bubblor */
     #emk-lp .emk-bubbles { position: relative; display: flex; justify-content: center; align-items: center; flex-wrap: wrap;
       gap: 18px 34px; padding: 44px 0 20px; }
@@ -331,7 +330,7 @@
     #emk-lp .emk-res__name { font-family: 'Manrope'; font-weight: 700; font-size: 14.5px; color: var(--ink); }
     #emk-lp .emk-res__role { font-size: 13px; color: var(--gold); }
     @media (max-width: 900px) {
-      #emk-lp .emk-res { padding: 10px 0 48px; }
+      #emk-lp .emk-res { padding: 10px 0 48px; margin-top: 0; }
       #emk-lp .emk-bubbles { flex-direction: column; gap: 14px; padding: 18px 0 0; }
       #emk-lp .emk-bubble { font-size: 19px; padding: 4px 2px; white-space: nowrap; max-width: 100%; }
       #emk-lp .emk-bubble:nth-child(1) { margin: 0 30px 0 0; }
@@ -560,8 +559,8 @@
 
       <!-- INNEHÅLL: över bilden på desktop, under panelerna på mobil -->
       <div class="emk-hero-content">
-        <div class="emk-kicker"><span>Marknadsföringsbyrå</span></div>
-        <h1>Strategisk marknadsföring med fokus på <em>långsiktig lönsamhet.</em></h1>
+        <div class="emk-kicker"><span>Filmproduktionsbyrå</span></div>
+        <h1>Filmproduktion med fokus på <em>långsiktig lönsamhet.</em></h1>
         <p class="emk-lede">Vi kombinerar strategisk annonsering, engagerande content och video för att driva mätbar tillväxt.</p>
         <div class="emk-ctas">
           <a class="emk-btn emk-btn--gold-hero" id="emk-cta-top" href="#emk-boka">Kontakta oss <span class="emk-arr">→</span></a>
@@ -609,58 +608,7 @@
         </figure>
       </div>
     </div>
-  </section>
-
-  <div class="emk-wrap">
-
-    <!-- 2. Tjänster -->
-    <section class="emk-tjanster" id="emk-tjanster">
-      <div class="emk-sec-head">
-        <h2>Så hjälper vi dig att ta marknadsandelar.</h2>
-        <p>Vi erbjuder heltäckande lösningar inom digital annonsering, produktion och tillväxtoptimering.</p>
-      </div>
-
-      <div class="emk-svc-grid">
-
-        <!-- 1. ANNONSERING -->
-        <article class="emk-svc" tabindex="0" aria-label="Annonsering – tryck för mer">
-          <img src="images/foto/traningsapp/41C292C0-5D42-4FC6-8171-C4ABA51DB4C8%202%20copy.JPG" alt="">
-          <span class="emk-svc__hint" aria-hidden="true">+</span>
-          <div class="emk-svc__title">Annonsering</div>
-          <div class="emk-svc__panel">
-            <h3>Annonsering</h3>
-            <p>Betald annonsering på Meta och Google som är byggd för att ge tillbaka mer än den kostar. Vi sätter strategin, producerar materialet och optimerar löpande mot era mål.</p>
-            <a class="emk-svc__cta" href="#emk-boka">Kontakta oss →</a>
-          </div>
-        </article>
-
-        <!-- 2. SOCIALA MEDIER -->
-        <article class="emk-svc" tabindex="0" aria-label="Sociala medier – tryck för mer">
-          <img src="images/foto/portratt/580E75D9-7C49-4B3E-8AD1-587A264B07D0%20(1)%204%20copy.jpg" alt="">
-          <span class="emk-svc__hint" aria-hidden="true">+</span>
-          <div class="emk-svc__title">Sociala medier</div>
-          <div class="emk-svc__panel">
-            <h3>Sociala medier</h3>
-            <p>Löpande hantering av era kanaler – innehåll, publicering och dialog. Ni får en närvaro som bygger förtroende över tid, utan att behöva sköta det själva.</p>
-            <a class="emk-svc__cta" href="#emk-boka">Kontakta oss →</a>
-          </div>
-        </article>
-
-        <!-- 3. FOTO & FILM -->
-        <article class="emk-svc" tabindex="0" aria-label="Foto och film – tryck för mer">
-          <img src="images/foto/ovrigt/IMG_5322%202%20copy.jpg" alt="">
-          <span class="emk-svc__hint" aria-hidden="true">+</span>
-          <div class="emk-svc__title">Foto &amp; film</div>
-          <div class="emk-svc__panel">
-            <h3>Foto &amp; film</h3>
-            <p>Vi producerar materialet själva – varumärkesfilm, produktfoto och kortformat för sociala medier. Företagsfilm varje månad till fast pris, från 24&nbsp;900 kr/mån.</p>
-            <a class="emk-svc__cta" href="foretagsfilm.html">Se paket och priser →</a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
+    <div class="emk-wrap">
     <!-- 3. Kunder — logotypband -->
     <section class="emk-clients" aria-label="Ett urval av våra kunder">
       <div class="emk-clients__head">
@@ -731,6 +679,59 @@
 
       </div>
     </section>
+    </div>
+  </section>
+
+  <div class="emk-wrap">
+
+    <!-- 2. Tjänster -->
+    <section class="emk-tjanster" id="emk-tjanster">
+      <div class="emk-sec-head">
+        <h2>Så hjälper vi dig att ta marknadsandelar.</h2>
+        <p>Vi erbjuder heltäckande lösningar inom digital annonsering, produktion och tillväxtoptimering.</p>
+      </div>
+
+      <div class="emk-svc-grid">
+
+        <!-- 1. ANNONSERING -->
+        <article class="emk-svc" tabindex="0" aria-label="Annonsering – tryck för mer">
+          <img src="images/foto/traningsapp/41C292C0-5D42-4FC6-8171-C4ABA51DB4C8%202%20copy.JPG" alt="">
+          <span class="emk-svc__hint" aria-hidden="true">+</span>
+          <div class="emk-svc__title">Annonsering</div>
+          <div class="emk-svc__panel">
+            <h3>Annonsering</h3>
+            <p>Betald annonsering på Meta och Google som är byggd för att ge tillbaka mer än den kostar. Vi sätter strategin, producerar materialet och optimerar löpande mot era mål.</p>
+            <a class="emk-svc__cta" href="#emk-boka">Kontakta oss →</a>
+          </div>
+        </article>
+
+        <!-- 2. SOCIALA MEDIER -->
+        <article class="emk-svc" tabindex="0" aria-label="Sociala medier – tryck för mer">
+          <img src="images/foto/portratt/580E75D9-7C49-4B3E-8AD1-587A264B07D0%20(1)%204%20copy.jpg" alt="">
+          <span class="emk-svc__hint" aria-hidden="true">+</span>
+          <div class="emk-svc__title">Sociala medier</div>
+          <div class="emk-svc__panel">
+            <h3>Sociala medier</h3>
+            <p>Löpande hantering av era kanaler – innehåll, publicering och dialog. Ni får en närvaro som bygger förtroende över tid, utan att behöva sköta det själva.</p>
+            <a class="emk-svc__cta" href="#emk-boka">Kontakta oss →</a>
+          </div>
+        </article>
+
+        <!-- 3. FOTO & FILM -->
+        <article class="emk-svc" tabindex="0" aria-label="Foto och film – tryck för mer">
+          <img src="images/foto/ovrigt/IMG_5322%202%20copy.jpg" alt="">
+          <span class="emk-svc__hint" aria-hidden="true">+</span>
+          <div class="emk-svc__title">Foto &amp; film</div>
+          <div class="emk-svc__panel">
+            <h3>Foto &amp; film</h3>
+            <p>Vi producerar materialet själva – varumärkesfilm, produktfoto och kortformat för sociala medier. Företagsfilm varje månad till fast pris, från 24&nbsp;900 kr/mån.</p>
+            <a class="emk-svc__cta" href="foretagsfilm.html">Se paket och priser →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
 
     <!-- 4. Varför företag väljer oss — redaktionella rader -->
     <section class="emk-why">
