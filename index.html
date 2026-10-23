@@ -313,25 +313,32 @@
       0%, 100% { transform: translate3d(0, 0, 0); }
       50%      { transform: translate3d(3px, -7px, 0); }
     }
-    #emk-lp .emk-res__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 40px; }
-    #emk-lp .emk-res__card { position: relative; margin: 0; background: #181715; border: 1px solid #262420; border-radius: 24px;
+    #emk-lp .emk-res__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 40px; max-width: 1000px; margin-left: auto; margin-right: auto; }
+    #emk-lp .emk-res__card { position: relative; isolation: isolate; margin: 0; background: #181715; border: 1px solid #262420; border-radius: 20px;
       overflow: hidden; display: flex; flex-direction: column; min-width: 0;
       transition: transform .4s cubic-bezier(.2,.8,.2,1), border-color .4s ease; }
     #emk-lp .emk-res__card:hover { transform: translateY(-4px); border-color: rgba(223,164,56,.4); }
-    #emk-lp .emk-res__photo { position: relative; aspect-ratio: 4 / 3.1; overflow: hidden; background: #111; }
+    /* bakgrund bakom texten: samma porträtt, suddigt, under en mycket stark overlay */
+    #emk-lp .emk-res__card::before { content: ""; position: absolute; inset: -40px; z-index: -2;
+      background: var(--img) center/cover no-repeat; filter: blur(30px) saturate(1.2); transform: scale(1.15); }
+    #emk-lp .emk-res__card::after { content: ""; position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(180deg, rgba(17,16,14,.78) 0%, rgba(17,16,14,.9) 60%, rgba(17,16,14,.94) 100%); }
+    #emk-lp .emk-res__photo { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: transparent; }
     #emk-lp .emk-res__photo img { width: 100%; height: 100%; object-fit: cover; display: block;
       transition: transform .8s cubic-bezier(.2,.8,.2,1); }
     #emk-lp .emk-res__card:hover .emk-res__photo img { transform: scale(1.04); }
-    #emk-lp .emk-res__photo::after { content: ""; position: absolute; inset: 0;
-      background: linear-gradient(180deg, transparent 45%, rgba(24,23,21,.55) 75%, #181715 100%); }
-    #emk-lp .emk-res__body { position: relative; padding: 0 26px 24px; display: flex; flex-direction: column; gap: 20px; flex: 1; }
-    #emk-lp .emk-res__mark { display: block; height: 34px; margin-top: -30px; font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 84px; line-height: 1; color: var(--gold); }
-    #emk-lp .emk-res__q { font-family: 'Instrument Serif', Georgia, serif; font-size: 23px; line-height: 1.22;
+    #emk-lp .emk-res__photo { margin-bottom: -56px;
+      -webkit-mask-image: linear-gradient(180deg, #000 35%, rgba(0,0,0,.75) 55%, rgba(0,0,0,.35) 75%, rgba(0,0,0,.1) 90%, transparent 100%);
+              mask-image: linear-gradient(180deg, #000 35%, rgba(0,0,0,.75) 55%, rgba(0,0,0,.35) 75%, rgba(0,0,0,.1) 90%, transparent 100%); }
+    #emk-lp .emk-res__body { z-index: 1; }
+    #emk-lp .emk-res__body { position: relative; padding: 0 22px 20px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+    #emk-lp .emk-res__mark { display: block; height: 24px; margin-top: 0; font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 64px; line-height: 1; color: var(--gold); }
+    #emk-lp .emk-res__q { font-family: 'Instrument Serif', Georgia, serif; font-size: 19.5px; line-height: 1.24;
       letter-spacing: -0.01em; color: #F5F1E8; flex: 1; }
-    #emk-lp .emk-res__by { display: flex; flex-direction: column; gap: 2px; padding-top: 16px; border-top: 1px solid #2A2824; }
-    #emk-lp .emk-res__name { font-family: 'Manrope'; font-weight: 700; font-size: 14.5px; color: var(--ink); }
-    #emk-lp .emk-res__role { font-size: 13px; color: var(--gold); }
+    #emk-lp .emk-res__by { display: flex; flex-direction: column; gap: 1px; padding-top: 12px; border-top: 1px solid rgba(245,241,232,.1); }
+    #emk-lp .emk-res__name { font-family: 'Manrope'; font-weight: 700; font-size: 13.5px; color: var(--ink); }
+    #emk-lp .emk-res__role { font-size: 12.5px; color: var(--gold); }
     @media (max-width: 900px) {
       #emk-lp .emk-res { padding: 10px 0 48px; margin-top: 0; }
       #emk-lp .emk-bubbles { flex-direction: column; gap: 14px; padding: 18px 0 0; }
@@ -340,8 +347,8 @@
       #emk-lp .emk-bubble:nth-child(2) { margin: 0 0 0 10px; }
       #emk-lp .emk-bubble:nth-child(3) { margin: 0 24px 0 0; }
       #emk-lp .emk-res__grid { grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 28px; }
-      #emk-lp .emk-res__q { font-size: 21px; }
-      #emk-lp .emk-res__photo { aspect-ratio: 4 / 3; }
+      #emk-lp .emk-res__q { font-size: 19px; }
+      #emk-lp .emk-res__photo { aspect-ratio: 4 / 2.8; }
     }
     @media (prefers-reduced-motion: reduce) {
       #emk-lp .emk-bubble { animation: none; }
@@ -595,7 +602,7 @@
     </div>
     <div class="emk-wrap">
       <div class="emk-res__grid">
-        <figure class="emk-res__card">
+        <figure class="emk-res__card" style="--img:url('images/foto/portratt/monika-lykvist.jpg')">
           <div class="emk-res__photo"><img src="images/foto/portratt/monika-lykvist.jpg" alt="Monika Lykvist" loading="lazy" style="object-position:center 18%"></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
@@ -603,7 +610,7 @@
             <figcaption class="emk-res__by"><span class="emk-res__name">Monika Lykvist</span><span class="emk-res__role">We Travel Group AB</span></figcaption>
           </div>
         </figure>
-        <figure class="emk-res__card">
+        <figure class="emk-res__card" style="--img:url('images/foto/portratt/580E75D9-7C49-4B3E-8AD1-587A264B07D0%20(1)%204%20copy.jpg')">
           <div class="emk-res__photo"><img src="images/foto/portratt/580E75D9-7C49-4B3E-8AD1-587A264B07D0%20(1)%204%20copy.jpg" alt="Christina Wissinger" loading="lazy" style="object-position:center 30%"></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
@@ -611,7 +618,7 @@
             <figcaption class="emk-res__by"><span class="emk-res__name">Christina Wissinger</span><span class="emk-res__role">Sportchef, STG</span></figcaption>
           </div>
         </figure>
-        <figure class="emk-res__card">
+        <figure class="emk-res__card" style="--img:url('images/foto/portratt/leonie-sterner-sazesh.jpg')">
           <div class="emk-res__photo"><img src="images/foto/portratt/leonie-sterner-sazesh.jpg" alt="Leonie Sterner Sazesh" loading="lazy" style="object-position:58% 22%"></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
