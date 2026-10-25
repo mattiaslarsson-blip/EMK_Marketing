@@ -254,7 +254,7 @@
     }
 
     /* Kunder — logotypband */
-    #emk-lp .emk-clients { padding: 56px 0 70px; }
+    #emk-lp .emk-clients { padding: 48px 0 0; }
     /* logotypbandet går kant till kant, utanför sidans innehållsbredd */
     #emk-lp .emk-clients .emk-logo-band { width: 100vw; margin-left: calc(50% - 50vw); overflow: hidden; }
     #emk-lp .emk-clients__head { text-align: center; margin-bottom: 30px; }
@@ -265,7 +265,7 @@
     #emk-lp .emk-logo-band::before { left: 0; background: linear-gradient(90deg, var(--bg) 10%, transparent); }
     #emk-lp .emk-logo-band::after { right: 0; background: linear-gradient(270deg, var(--bg) 10%, transparent); }
 
-    #emk-lp .emk-logo-row { display: flex; width: max-content; animation: emkLogoScroll 46s linear infinite; }
+    #emk-lp .emk-logo-row { display: flex; width: max-content; animation: emkLogoScroll 92s linear infinite; }
     #emk-lp .emk-logo-row--rev { animation-direction: reverse; animation-duration: 54s; }
     @keyframes emkLogoScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
@@ -638,14 +638,14 @@
       #emk-lp .emk-wrap { padding: 0 18px; }
 
       /* Kunder — mobil */
-      #emk-lp .emk-clients { padding: 36px 0 50px; }
+      #emk-lp .emk-clients { padding: 32px 0 0; }
       #emk-lp .emk-clients__head { margin-bottom: 26px; }
       #emk-lp .emk-logo-band { gap: 14px; }
       #emk-lp .emk-logo-band::before, #emk-lp .emk-logo-band::after { width: 70px; }
       #emk-lp .emk-logo { height: 50px; padding: 0 22px; }
       #emk-lp .emk-logo img { height: 22px; max-width: 120px; }
       #emk-lp .emk-logo--tall img { height: 32px; }
-      #emk-lp .emk-logo-row { animation-duration: 34s; }
+      #emk-lp .emk-logo-row { animation-duration: 68s; }
       #emk-lp .emk-logo-row--rev { animation-duration: 40s; }
       /* Social proof — mobil */
       #emk-lp .emk-proof { padding: 48px 0; }
@@ -856,6 +856,62 @@
     <a class="emk-nav__cta" href="#emk-boka">Boka möte</a>
   </div>
 
+  <!-- Kunder — logotypband (en rad) -->
+    <section class="emk-clients" aria-label="Ett urval av våra kunder">
+      <div class="emk-logo-band">
+        <div class="emk-logo-row">
+          <div class="emk-logo-group">
+            <div class="emk-logo"><img src="images/logos/grand-tours.png" alt="Grand Tours"></div>
+            <div class="emk-logo"><img src="images/logos/joina.png" alt="Joina"></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/hg.png" alt="HG"></div>
+            <div class="emk-logo"><img src="images/logos/bonnie.png" alt="Bonnie Stockholm"></div>
+            <div class="emk-logo"><img src="images/logos/heylinn.png" alt="Heylinn"></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/foreningen-ekonomerna.png" alt="Föreningen Ekonomerna"></div>
+            <div class="emk-logo"><img src="images/logos/linsblocker.png" alt="Linsblocker"></div>
+            <div class="emk-logo"><img src="images/logos/caliente.png" alt="Caliente Tapas Bar"></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/snnc.png" alt="Students' Nobel NightCap"></div>
+            <div class="emk-logo"><img src="images/logos/the-lobby.png" alt="The Lobby"></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/tapas28.png" alt="Tapas28"></div>
+            <div class="emk-logo"><img src="images/logos/reseskaparna.png" alt="Reseskaparna"></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/indie-pen-publishing.png" alt="Indie Pen Publishing"></div>
+            <div class="emk-logo"><img src="images/logos/aventyrsresor.png" alt="Äventyrsresor"></div>
+            <div class="emk-logo"><img src="images/logos/festivalborg.png" alt="Festivalborg"></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/ballersapp.png" alt="BallersApp"></div>
+            <div class="emk-logo"><img src="images/logos/skarmskold.png" alt="Skärmsköld"></div>
+            <div class="emk-logo"><img src="images/logos/fjallfrid.png" alt="Fjällfrid"></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/coahdan.png" alt="Coach Dan Gymnastics"></div>
+            <div class="emk-logo"><img src="images/logos/svensk-gymnastik.png" alt="Svensk Gymnastik"></div>
+            <div class="emk-logo"><img src="images/logos/gtg-golf.png" alt="GTG Golf"></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/stg.png" alt="Stockholm Top Gymnastics"></div>
+          </div>
+          <div class="emk-logo-group" aria-hidden="true">
+            <div class="emk-logo"><img src="images/logos/grand-tours.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/joina.png" alt=""></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/hg.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/bonnie.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/heylinn.png" alt=""></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/foreningen-ekonomerna.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/linsblocker.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/caliente.png" alt=""></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/snnc.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/the-lobby.png" alt=""></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/tapas28.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/reseskaparna.png" alt=""></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/indie-pen-publishing.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/aventyrsresor.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/festivalborg.png" alt=""></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/ballersapp.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/skarmskold.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/fjallfrid.png" alt=""></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/coahdan.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/svensk-gymnastik.png" alt=""></div>
+            <div class="emk-logo"><img src="images/logos/gtg-golf.png" alt=""></div>
+            <div class="emk-logo emk-logo--tall"><img src="images/logos/stg.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   <!-- ===== EXEMPELFILMER ===== -->
 <section class="emk-ex" aria-labelledby="emk-ex-rubrik">
   <div class="emk-ex__inner">
@@ -977,73 +1033,7 @@
       </div>
     </div>
     <div class="emk-wrap">
-    <!-- 3. Kunder — logotypband -->
-    <section class="emk-clients" aria-label="Ett urval av våra kunder">
 
-      <div class="emk-logo-band">
-
-        <!-- RAD 1 (rullar vänster). Gruppen dubbleras för sömlös loop. -->
-        <div class="emk-logo-row">
-          <div class="emk-logo-group">
-            <div class="emk-logo"><img src="images/logos/grand-tours.png" alt="Grand Tours"></div>
-            <div class="emk-logo"><img src="images/logos/joina.png" alt="Joina"></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/hg.png" alt="HG"></div>
-            <div class="emk-logo"><img src="images/logos/bonnie.png" alt="Bonnie Stockholm"></div>
-            <div class="emk-logo"><img src="images/logos/heylinn.png" alt="Heylinn"></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/foreningen-ekonomerna.png" alt="Föreningen Ekonomerna"></div>
-            <div class="emk-logo"><img src="images/logos/linsblocker.png" alt="Linsblocker"></div>
-            <div class="emk-logo"><img src="images/logos/caliente.png" alt="Caliente Tapas Bar"></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/snnc.png" alt="Students' Nobel NightCap"></div>
-            <div class="emk-logo"><img src="images/logos/the-lobby.png" alt="The Lobby"></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/tapas28.png" alt="Tapas28"></div>
-          </div>
-          <div class="emk-logo-group" aria-hidden="true">
-            <div class="emk-logo"><img src="images/logos/grand-tours.png" alt=""></div>
-            <div class="emk-logo"><img src="images/logos/joina.png" alt=""></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/hg.png" alt=""></div>
-            <div class="emk-logo"><img src="images/logos/bonnie.png" alt=""></div>
-            <div class="emk-logo"><img src="images/logos/heylinn.png" alt=""></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/foreningen-ekonomerna.png" alt=""></div>
-            <div class="emk-logo"><img src="images/logos/linsblocker.png" alt=""></div>
-            <div class="emk-logo"><img src="images/logos/caliente.png" alt=""></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/snnc.png" alt=""></div>
-            <div class="emk-logo"><img src="images/logos/the-lobby.png" alt=""></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/tapas28.png" alt=""></div>
-          </div>
-        </div>
-
-        <!-- RAD 2 (rullar höger) -->
-        <div class="emk-logo-row emk-logo-row--rev">
-          <div class="emk-logo-group">
-            <div class="emk-logo"><img src="images/logos/reseskaparna.png" alt="Reseskaparna"></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/indie-pen-publishing.png" alt="Indie Pen Publishing"></div>
-            <div class="emk-logo"><img src="images/logos/aventyrsresor.png" alt="Äventyrsresor"></div>
-            <div class="emk-logo"><img src="images/logos/festivalborg.png" alt="Festivalborg"></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/ballersapp.png" alt="BallersApp"></div>
-            <div class="emk-logo"><img src="images/logos/skarmskold.png" alt="Skärmsköld"></div>
-            <div class="emk-logo"><img src="images/logos/fjallfrid.png" alt="Fjällfrid"></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/coahdan.png" alt="Coach Dan Gymnastics"></div>
-            <div class="emk-logo"><img src="images/logos/svensk-gymnastik.png" alt="Svensk Gymnastik"></div>
-            <div class="emk-logo"><img src="images/logos/gtg-golf.png" alt="GTG Golf"></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/stg.png" alt="Stockholm Top Gymnastics"></div>
-          </div>
-          <div class="emk-logo-group" aria-hidden="true">
-            <div class="emk-logo"><img src="images/logos/reseskaparna.png" alt=""></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/indie-pen-publishing.png" alt=""></div>
-            <div class="emk-logo"><img src="images/logos/aventyrsresor.png" alt=""></div>
-            <div class="emk-logo"><img src="images/logos/festivalborg.png" alt=""></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/ballersapp.png" alt=""></div>
-            <div class="emk-logo"><img src="images/logos/skarmskold.png" alt=""></div>
-            <div class="emk-logo"><img src="images/logos/fjallfrid.png" alt=""></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/coahdan.png" alt=""></div>
-            <div class="emk-logo"><img src="images/logos/svensk-gymnastik.png" alt=""></div>
-            <div class="emk-logo"><img src="images/logos/gtg-golf.png" alt=""></div>
-            <div class="emk-logo emk-logo--tall"><img src="images/logos/stg.png" alt=""></div>
-          </div>
-        </div>
-
-      </div>
-    </section>
     </div>
   </section>
 
