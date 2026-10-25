@@ -684,6 +684,31 @@
     #emk-lp .emk-res__q { font-weight: 500; font-size: 17.5px; line-height: 1.5; letter-spacing: -0.01em; }
     #emk-lp .emk-res__photo--initials span { font-weight: 700; font-size: 56px; }
     #emk-lp .emk-k h2 em, #emk-lp .emk-outro__name em, #emk-lp .emk-bubble b { font-style: normal; }
+    /* Startsida film: resultat i ljus fullbredd */
+    #emk-lp .emk-stats { background: #F5F1E8; padding: clamp(64px, 8vw, 110px) 0; margin-bottom: clamp(30px, 4vw, 60px); }
+    #emk-lp .emk-stats__card { background: transparent; box-shadow: none; padding: 0; border-radius: 0; }
+    #emk-lp .emk-stats__card::before, #emk-lp .emk-stats__card::after { display: none; }
+    #emk-lp .emk-stats__body { padding-left: 0; padding-right: 0; }
+    #emk-lp .emk-stats__kicker { color: #6B665C; }
+    #emk-lp .emk-stats__lead { color: #111111; }
+    #emk-lp .emk-stat { border-top-color: rgba(17,17,17,.14); }
+    #emk-lp .emk-stat__num { color: #A8761C; }
+    #emk-lp .emk-stat__num small { color: #111111; }
+    #emk-lp .emk-stat__label { color: #4A463E; }
+    #emk-lp .emk-stat__label b { color: #A8761C; }
+    #emk-lp .emk-stats .emk-btn--gold-hero { color: #111111; box-shadow: none; }
+    #emk-lp .emk-stats__addon { margin: -14px 0 0; font-size: 15px; line-height: 1.5; color: #4A463E; }
+    #emk-lp .emk-stats__addon a { color: #A8761C; font-weight: 600; text-decoration: none; }
+    #emk-lp .emk-stats__addon a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    #emk-lp .emk-acc-content p a { color: var(--gold); }
+    @media (max-width: 900px) {
+      #emk-lp .emk-stats { padding: 48px 0 56px; }
+      #emk-lp .emk-stats__card { padding: 0; }
+      #emk-lp .emk-stats__body { padding: 8px 0 0; }
+    }
+    /* Läsbarhet */
+    #emk-lp .emk-tl__card p { font-size: 16.5px; color: rgba(245,241,232,.92); }
+    #emk-lp .emk-tl__head p { color: #BDB8AB; font-size: 17px; }
   </style>
 </head>
 <body>
@@ -733,8 +758,8 @@
 
       <!-- INNEHÅLL: över bilden på desktop, under panelerna på mobil -->
       <div class="emk-hero-content">
-        <h1>Filmproduktion med fokus på <em>långsiktig lönsamhet.</em></h1>
-        <p class="emk-lede">Vi kombinerar strategisk annonsering, engagerande content och video för att driva mätbar tillväxt.</p>
+        <h1>Film varje månad.<br> <em>Utan krångel.</em></h1>
+        <p class="emk-lede">Vi spelar in, klipper och levererar nya filmer till er varje månad – till fast pris. Ni fokuserar på verksamheten, vi sköter filmen.</p>
         <div class="emk-ctas">
           <a class="emk-btn emk-btn--gold-hero" id="emk-cta-top" href="#emk-boka">Kontakta oss <span class="emk-arr">→</span></a>
         </div>
@@ -975,9 +1000,9 @@
             </div>
           </div>
           <div class="emk-stats__ctas">
-            <a class="emk-btn emk-btn--gold-hero" href="mailto:info@emkmarketing.se?subject=Hj%C3%A4lp%20med%20sociala%20medier">Hjälp med sociala medier <span class="emk-arr">→</span></a>
-            <a class="emk-btn emk-stats__ghost" href="mailto:info@emkmarketing.se?subject=Hj%C3%A4lp%20med%20paid%20ads">Hjälp med paid ads <span class="emk-arr">→</span></a>
+            <a class="emk-btn emk-btn--gold-hero" href="/priser">Se paket och priser <span class="emk-arr">→</span></a>
           </div>
+          <p class="emk-stats__addon">Vill ni även ha hjälp med <a href="/sociala-medier">sociala medier</a> eller <a href="mailto:info@emkmarketing.se?subject=Annonsering">annonsering</a>? Det lägger vi till →</p>
         </div>
         <div class="emk-stats__media">
           <img src="images/web/stats-bild.jpg" alt="EMK filmar på plats hos en kund" loading="lazy">
@@ -994,8 +1019,11 @@
       <h2>Vanliga frågor</h2>
       <div class="emk-accordion">
         <div class="emk-acc-item"><button class="emk-acc-btn">Binder jag upp mig på långa avtal?</button><div class="emk-acc-content"><p>Nej, vi tror på att leverera värde från dag ett. Därför har vi flexibla samarbetsformer och korta uppsägningstider om du av någon anledning skulle vilja avsluta samarbetet.</p></div></div>
-        <div class="emk-acc-item"><button class="emk-acc-btn">Hur snabbt ser vi resultat av annonseringen?</button><div class="emk-acc-content"><p>Med betald annonsering (Google/Meta Ads) kan du ofta se trafik och leads inom några dagar. För att algoritmerna ska optimeras fullt ut rekommenderar vi dock att utvärdera efter 1-3 månader.</p></div></div>
-        <div class="emk-acc-item"><button class="emk-acc-btn">Vilka plattformar är ni specialister på?</button><div class="emk-acc-content"><p>Vi arbetar dagligen med Google Ads, Meta (Facebook & Instagram), TikTok Ads, LinkedIn Ads, SEO och konverteringsoptimering för webbplatser.</p></div></div>
+        <div class="emk-acc-item"><button class="emk-acc-btn">Hur många filmer får vi per månad?</button><div class="emk-acc-content"><p>Det beror på paketet. I Bas får ni 4 filmer i månaden och i Medel 6. Premium bygger på en större flaggskeppsfilm per kvartal. Alla paket hittar ni under <a href="/priser">Priser</a>.</p></div></div>
+        <div class="emk-acc-item"><button class="emk-acc-btn">Behöver vi vara med vid inspelningen?</button><div class="emk-acc-content"><p>Inte nödvändigtvis. Vi planerar inspelningen tillsammans med er och kan ofta filma utan att ni behöver vara på plats.</p></div></div>
+        <div class="emk-acc-item"><button class="emk-acc-btn">Hur snabbt får vi filmerna?</button><div class="emk-acc-content"><p>Färdiga filmer inom 3 veckor från inspelning.</p></div></div>
+        <div class="emk-acc-item"><button class="emk-acc-btn">Kan vi använda filmerna i annonser?</button><div class="emk-acc-content"><p>Ja. Vi klipper i format för Instagram, TikTok, Facebook och annonsering, så ni kan använda dem direkt.</p></div></div>
+        <div class="emk-acc-item"><button class="emk-acc-btn">Kan ni även sköta sociala medier och annonsering?</button><div class="emk-acc-content"><p>Ja, som tillägg till filmpaketet. Vi kan publicera filmerna i era kanaler och köra annonser med dem på Meta och Google, så att filmen når rätt personer.</p></div></div>
       </div>
     </section>
 
@@ -1015,17 +1043,6 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- AVSLUT: stort varumärkesnamn + tre länkar -->
-    <section class="emk-outro" aria-labelledby="emk-outro-rubrik">
-      <h2 class="emk-outro__name" id="emk-outro-rubrik">Film varje månad. <em>Utan krångel.</em></h2>
-      <p class="emk-outro__lead">Vi gör film och annonser som faktiskt fungerar, till fast pris varje månad. Ta en titt på priserna eller hör av er så berättar vi hur det går till.</p>
-      <nav class="emk-outro__links" aria-label="Snabblänkar">
-        <a href="#emk-boka">Kontakta oss <span aria-hidden="true">→</span></a>
-        <a href="/priser">Priser <span aria-hidden="true">→</span></a>
-        <a href="/om-oss">Om oss <span aria-hidden="true">→</span></a>
-      </nav>
     </section>
 
     <!-- Footer -->
