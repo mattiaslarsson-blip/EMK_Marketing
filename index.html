@@ -298,7 +298,7 @@
     }
 
     /* ===== RESULTAT DIREKT EFTER HERO: rullande band + tre recensioner ===== */
-    #emk-lp .emk-res { padding: 0 0 10px; margin-top: clamp(-120px, -7vw, -60px); position: relative; z-index: 4; }
+    #emk-lp .emk-res { padding: 0 0 10px; margin-top: 0; position: relative; z-index: 4; }
     /* Resultat som svävande bubblor */
     #emk-lp .emk-bubbles { position: relative; display: flex; justify-content: center; align-items: center; flex-wrap: wrap;
       gap: 18px 34px; padding: 44px 0 20px; }
@@ -315,7 +315,7 @@
       0%, 100% { transform: translate3d(0, 0, 0); }
       50%      { transform: translate3d(3px, -7px, 0); }
     }
-    #emk-lp .emk-res__title { margin: 0; padding-top: 40px; text-align: center; font-family: 'Manrope'; font-size: 13px; font-weight: 700;
+    #emk-lp .emk-res__title { margin: 0; padding-top: clamp(70px, 8vw, 120px); text-align: center; font-family: 'Manrope'; font-size: 13px; font-weight: 700;
       letter-spacing: 2.6px; text-transform: uppercase; color: var(--muted); }
     /* Recensionskarusell. Dator: glider ett kort i taget. Mobil: svep, nästa kort tittar fram. */
     /* kant till kant så att korten blir bredare */
@@ -372,7 +372,7 @@
       #emk-lp .emk-bubble:nth-child(2) { margin: 0 0 0 10px; }
       #emk-lp .emk-bubble:nth-child(3) { margin: 0 24px 0 0; }
       #emk-lp .emk-res__viewport { overflow: visible; width: auto; margin: 28px -18px 0; -webkit-mask-image: none; mask-image: none; }
-      #emk-lp .emk-res__title { padding-top: 20px; font-size: 11.5px; letter-spacing: 2px; }
+      #emk-lp .emk-res__title { padding-top: 56px; font-size: 11.5px; letter-spacing: 2px; }
       #emk-lp .emk-res__grid { --gap: 12px; transform: none !important; transition: none; cursor: auto;
         overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 18px; padding: 0 18px 6px;
         -webkit-overflow-scrolling: touch; scrollbar-width: none; user-select: auto; -webkit-user-select: auto; }
