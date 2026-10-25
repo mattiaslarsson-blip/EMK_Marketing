@@ -450,6 +450,35 @@
     }
     @media (prefers-reduced-motion: reduce) { #emk-lp .emk-tl__line i, #emk-lp .emk-tl__dot { transition: none; } }
 
+    /* ===== RESULTAT I SIFFROR: en stor glasig ruta (siffror vänster, bild höger) ===== */
+    #emk-lp .emk-stats { padding: 0 0 clamp(60px, 7vw, 100px); }
+    #emk-lp .emk-stats__card { position: relative; isolation: isolate; overflow: hidden; max-width: 1180px; margin: 0 auto;
+      border-radius: 36px; padding: 18px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 18px;
+      background: #141310; box-shadow: inset 0 0 0 1px rgba(245,241,232,.08), 0 40px 80px -40px rgba(0,0,0,.85); }
+    #emk-lp .emk-stats__card::before { content: ""; position: absolute; inset: -60px; z-index: -2;
+      background: url("images/web/stats-bg.jpg") center/cover no-repeat; filter: blur(40px) saturate(1.2); transform: scale(1.15); }
+    #emk-lp .emk-stats__card::after { content: ""; position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(100deg, rgba(14,13,11,.92) 0%, rgba(14,13,11,.84) 50%, rgba(14,13,11,.7) 100%); }
+    #emk-lp .emk-stats__body { padding: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 36px); display: flex; flex-direction: column; gap: clamp(26px, 3vw, 40px); min-width: 0; }
+    #emk-lp .emk-stats__kicker { font-family: 'Manrope'; font-size: 12px; font-weight: 700; letter-spacing: 2.6px; text-transform: uppercase; color: var(--muted); }
+    #emk-lp .emk-stats__lead { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(30px, 3.2vw, 42px); line-height: 1.05; letter-spacing: -0.01em; color: #F5F1E8; margin-top: 10px; text-wrap: balance; }
+    #emk-lp .emk-stats__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 28px; margin-top: auto; }
+    #emk-lp .emk-stat { display: flex; flex-direction: column; gap: 8px; padding-top: 18px; border-top: 1px solid rgba(245,241,232,.12); }
+    #emk-lp .emk-stat__num { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(46px, 5vw, 68px); line-height: .95; letter-spacing: -0.02em; color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    #emk-lp .emk-stat__num small { font-size: .5em; color: #F5F1E8; margin-left: 6px; }
+    #emk-lp .emk-stat__label { font-size: 14.5px; line-height: 1.45; color: rgba(245,241,232,.78); max-width: 26ch; }
+    #emk-lp .emk-stats__media { position: relative; border-radius: 24px; overflow: hidden; min-height: 440px; background: #1A1A1A; }
+    #emk-lp .emk-stats__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+    #emk-lp .emk-stats__media::after { content: ""; position: absolute; inset: 50% 0 0 0; background: linear-gradient(180deg, transparent, rgba(10,10,10,.75)); }
+    #emk-lp .emk-stats__tag { position: absolute; left: 22px; bottom: 20px; z-index: 1; font-family: 'Instrument Serif', Georgia, serif; font-size: 24px; line-height: 1.1; color: #F5F1E8; max-width: 260px; }
+    @media (max-width: 900px) {
+      #emk-lp .emk-stats { padding-bottom: 56px; }
+      #emk-lp .emk-stats__card { grid-template-columns: minmax(0, 1fr); border-radius: 26px; padding: 12px; gap: 12px; }
+      #emk-lp .emk-stats__body { padding: 20px 14px 10px; }
+      #emk-lp .emk-stats__grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+      #emk-lp .emk-stats__media { min-height: 0; aspect-ratio: 4 / 3.4; order: -1; border-radius: 18px; }
+    }
+
     /* ===== SOCIAL PROOF ===== */
     #emk-lp .emk-proof { padding: 70px 0; }
 
@@ -883,6 +912,34 @@
         </div>
       </div>
       <div class="emk-tl__hint" aria-hidden="true"><b><span class="emk-tl__d">Dra eller scrolla i sidled</span><span class="emk-tl__m">Svep i sidled</span></b><span class="emk-tl__bar"><i></i></span></div>
+    </div>
+  </section>
+
+  <!-- RESULTAT I SIFFROR -->
+  <section class="emk-stats" aria-labelledby="emk-stats-rubrik">
+    <div class="emk-wrap">
+      <div class="emk-stats__card">
+        <div class="emk-stats__body">
+          <div>
+            <div class="emk-stats__kicker">Resultat</div>
+            <h2 class="emk-stats__lead" id="emk-stats-rubrik">Film som syns. Och som säljer.</h2>
+          </div>
+          <div class="emk-stats__grid">
+            <div class="emk-stat">
+              <span class="emk-stat__num">5<small>miljoner</small></span>
+              <span class="emk-stat__label">organiska visningar på innehåll vi har producerat</span>
+            </div>
+            <div class="emk-stat">
+              <span class="emk-stat__num">625&nbsp;000<small>kr</small></span>
+              <span class="emk-stat__label">i intäkt på en annonsbudget på 25&nbsp;000&nbsp;kr</span>
+            </div>
+          </div>
+        </div>
+        <div class="emk-stats__media">
+          <img src="images/web/stats-bild.jpg" alt="EMK filmar på plats hos en kund" loading="lazy">
+          <span class="emk-stats__tag">Vi filmar, redigerar och levererar. Ni ser resultatet.</span>
+        </div>
+      </div>
     </div>
   </section>
 
