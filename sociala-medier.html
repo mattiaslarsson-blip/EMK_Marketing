@@ -207,6 +207,28 @@ body { margin:0; background:#14130F; }
   #emk-lp .sm-cta .emk-btn { width:100%; }
   #emk-lp .emk-footer { flex-direction:column; gap:8px; }
 }
+/* Varför EMK – rader med bild och text (flyttad från startsidan) */
+#emk-lp .emk-why-list { display:flex; flex-direction:column; gap:22px; }
+#emk-lp .emk-why-row { display:grid; grid-template-columns:1.1fr 1fr; background:var(--card); border:1px solid var(--line-soft); border-radius:24px; overflow:hidden; transition:border-color .3s ease, box-shadow .3s ease; }
+#emk-lp .emk-why-row:hover { border-color:rgba(223,164,56,.5); box-shadow:0 18px 50px rgba(0,0,0,.45); }
+#emk-lp .emk-why-row:nth-child(even) .emk-why-row__img { order:2; }
+#emk-lp .emk-why-row__img { position:relative; min-height:320px; overflow:hidden; }
+#emk-lp .emk-why-row__img img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; transition:transform .7s cubic-bezier(.2,.8,.2,1); }
+#emk-lp .emk-why-row:hover .emk-why-row__img img { transform:scale(1.05); }
+#emk-lp .emk-why-row__body { padding:48px 52px; display:flex; flex-direction:column; justify-content:center; }
+#emk-lp .emk-why-row__num { font-family:'Manrope'; font-weight:800; font-size:13px; letter-spacing:2.5px; color:var(--gold); margin-bottom:14px; }
+#emk-lp .emk-why-row h3 { font-family:'Manrope'; font-size:clamp(22px,2.6vw,30px); font-weight:800; letter-spacing:-0.6px; line-height:1.15; margin-bottom:12px; }
+#emk-lp .emk-why-row p { color:var(--muted-2); font-size:16px; line-height:1.65; max-width:430px; }
+@media (max-width:768px){
+  #emk-lp .emk-why-list { gap:14px; }
+  #emk-lp .emk-why-row { grid-template-columns:1fr; border-radius:20px; }
+  #emk-lp .emk-why-row:nth-child(even) .emk-why-row__img { order:0; }
+  #emk-lp .emk-why-row__img { min-height:210px; }
+  #emk-lp .emk-why-row__body { padding:24px 22px 26px; }
+  #emk-lp .emk-why-row h3 { font-size:22px; margin-bottom:8px; }
+  #emk-lp .emk-why-row p { font-size:15px; }
+}
+@media (prefers-reduced-motion:reduce){ #emk-lp .emk-why-row__img img { transition:none; } }
 </style>
 </head>
 <body>
@@ -402,6 +424,40 @@ body { margin:0; background:#14130F; }
         <div><i>↗</i><h3>Publicering</h3><p>Vi trycker på knappen när det ger max effekt.</p></div>
         <div><i>✦</i><h3>Community</h3><p>Vi håller igång snacket med era följare – helt i er ton.</p></div>
         <div><i>▤</i><h3>Uppföljning</h3><p>Svart på vitt varje månad. Vad funkade och hur maxar vi nästa?</p></div>
+      </div>
+    </section>
+
+    <!-- ===== VARFÖR EMK (flyttad från startsidan) ===== -->
+    <section class="sm-sec">
+      <div class="sm-sec__head">
+        <span class="emk-kicker">Varför EMK</span>
+        <h2>Varför samarbetspartners stannar hos oss</h2>
+      </div>
+      <div class="emk-why-list">
+        <article class="emk-why-row">
+          <div class="emk-why-row__img"><img src="images/web/why-analys.jpg" alt="Videoanalys på surfplatta" loading="lazy" style="object-position:center 50%"></div>
+          <div class="emk-why-row__body">
+            <span class="emk-why-row__num">01</span>
+            <h3>Datadriven optimering.</h3>
+            <p>Vi baserar alla strategier på empirisk data och noggrann analys. Genom kontinuerlig A/B-testning och utvärdering säkerställer vi högsta möjliga avkastning på er investering.</p>
+          </div>
+        </article>
+        <article class="emk-why-row">
+          <div class="emk-why-row__img"><img src="images/web/why-produktion.jpg" alt="Fotograf från EMK fotograferar en kund" loading="lazy" style="object-position:center 38%"></div>
+          <div class="emk-why-row__body">
+            <span class="emk-why-row__num">02</span>
+            <h3>En kontakt. Hela kedjan.</h3>
+            <p>Strategi, produktion, annonsering och publicering från samma team. Ni slipper koordinera flera olika leverantörer.</p>
+          </div>
+        </article>
+        <article class="emk-why-row">
+          <div class="emk-why-row__img"><img src="images/web/why-partner.jpg" alt="Två kvinnor promenerar arm i arm i Gamla stan" loading="lazy" style="object-position:center 32%"></div>
+          <div class="emk-why-row__body">
+            <span class="emk-why-row__num">03</span>
+            <h3>Långsiktigt partnerskap.</h3>
+            <p>Vi fungerar som en integrerad del av er organisation. Genom att förstå er verksamhet på djupet agerar vi proaktivt och finns tillgängliga som ett strategiskt stöd i er tillväxt.</p>
+          </div>
+        </article>
       </div>
     </section>
 

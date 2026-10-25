@@ -246,27 +246,11 @@
     }
 
     /* ===== VARFÖR EMK: redaktionella rader, bild och text växelvis ===== */
-    #emk-lp .emk-why { padding: 60px 0 40px; }
-    #emk-lp .emk-why-list { display: flex; flex-direction: column; gap: 22px; }
-    #emk-lp .emk-why-row { display: grid; grid-template-columns: 1.1fr 1fr; background: var(--card);
-      border: 1px solid var(--line); border-radius: 24px; overflow: hidden;
-      transition: border-color .35s ease, box-shadow .35s ease; }
-    #emk-lp .emk-why-row:hover { border-color: rgba(223,164,56,.5); box-shadow: var(--shadow-lg); }
-    #emk-lp .emk-why-row:nth-child(even) .emk-why-row__img { order: 2; }
-    #emk-lp .emk-why-row__img { position: relative; min-height: 320px; overflow: hidden; }
-    #emk-lp .emk-why-row__img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
-      transition: transform .8s cubic-bezier(.2,.8,.2,1); }
-    #emk-lp .emk-why-row:hover .emk-why-row__img img { transform: scale(1.05); }
-    #emk-lp .emk-why-row__body { padding: 48px 52px; display: flex; flex-direction: column; justify-content: center; }
-    #emk-lp .emk-why-row__num { font-family: 'Manrope'; font-weight: 800; font-size: 13px; letter-spacing: 2.5px; color: var(--gold); margin-bottom: 14px; }
-    #emk-lp .emk-why-row h3 { font-size: clamp(22px, 2.6vw, 30px); font-weight: 800; letter-spacing: -0.6px; line-height: 1.15; margin-bottom: 12px; }
-    #emk-lp .emk-why-row p { color: var(--muted-2); font-size: 16px; line-height: 1.65; max-width: 430px; }
 
     #emk-lp .emk-reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2,0.8,0.2,1); }
     #emk-lp .emk-reveal.is-in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
       #emk-lp .emk-reveal { opacity: 1; transform: none; transition: none; }
-      #emk-lp .emk-why-row__img img { transition: none; }
     }
 
     /* Kunder — logotypband */
@@ -632,15 +616,6 @@
       #emk-lp .emk-svc__panel p { font-size: 14px; margin-bottom: 16px; }
       #emk-lp .emk-svc__cta { width: 100%; }
       /* Varför EMK — mobil: bild ovanför text */
-      #emk-lp .emk-why { padding: 44px 0 32px; }
-      #emk-lp .emk-why-list { gap: 14px; }
-      #emk-lp .emk-why-row { grid-template-columns: 1fr; border-radius: 20px; }
-      #emk-lp .emk-why-row:nth-child(even) .emk-why-row__img { order: 0; }
-      #emk-lp .emk-why-row__img { min-height: 210px; }
-      #emk-lp .emk-why-row__body { padding: 24px 22px 26px; }
-      #emk-lp .emk-why-row__num { margin-bottom: 10px; }
-      #emk-lp .emk-why-row h3 { font-size: 22px; margin-bottom: 8px; }
-      #emk-lp .emk-why-row p { font-size: 15px; }
       #emk-lp .emk-faq { padding: 44px 0; }
       #emk-lp .emk-boka { padding: 48px 0 32px; }
       #emk-lp .emk-cta-box { padding: 40px 24px; border-radius: 20px; }
@@ -1004,41 +979,6 @@
     </section>
 
 
-    <!-- 4. Varför företag väljer oss — redaktionella rader -->
-    <section class="emk-why">
-      <div class="emk-sec-head"><h2>Varför samarbetspartners stannar hos EMK</h2></div>
-      <div class="emk-why-list">
-
-        <!-- BYT BILD: lägg din egen sökväg i src -->
-        <article class="emk-why-row emk-reveal">
-          <div class="emk-why-row__img"><img src="images/web/why-analys.jpg" alt="Videoanalys på surfplatta" loading="lazy" style="object-position:center 50%"></div>
-          <div class="emk-why-row__body">
-            <span class="emk-why-row__num">01</span>
-            <h3>Datadriven optimering.</h3>
-            <p>Vi baserar alla strategier på empirisk data och noggrann analys. Genom kontinuerlig A/B-testning och utvärdering säkerställer vi högsta möjliga avkastning på er investering.</p>
-          </div>
-        </article>
-
-        <article class="emk-why-row emk-reveal">
-          <div class="emk-why-row__img"><img src="images/web/why-produktion.jpg" alt="Fotograf från EMK fotograferar en kund" loading="lazy" style="object-position:center 38%"></div>
-          <div class="emk-why-row__body">
-            <span class="emk-why-row__num">02</span>
-            <h3>En kontakt. Hela kedjan.</h3>
-            <p>Strategi, produktion, annonsering och publicering från samma team. Ni slipper koordinera flera olika leverantörer.</p>
-          </div>
-        </article>
-
-        <article class="emk-why-row emk-reveal">
-          <div class="emk-why-row__img"><img src="images/web/why-partner.jpg" alt="Två kvinnor promenerar arm i arm i Gamla stan" loading="lazy" style="object-position:center 32%"></div>
-          <div class="emk-why-row__body">
-            <span class="emk-why-row__num">03</span>
-            <h3>Långsiktigt partnerskap.</h3>
-            <p>Vi fungerar som en integrerad del av er organisation. Genom att förstå er verksamhet på djupet agerar vi proaktivt och finns tillgängliga som ett strategiskt stöd i er tillväxt.</p>
-          </div>
-        </article>
-
-      </div>
-    </section>
 
     <!-- 4. Social proof — recensionskarusell + resultat -->
     <section class="emk-proof">
