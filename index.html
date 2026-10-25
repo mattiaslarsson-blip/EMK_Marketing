@@ -709,6 +709,78 @@
     /* Läsbarhet */
     #emk-lp .emk-tl__card p { font-size: 16.5px; color: rgba(245,241,232,.92); }
     #emk-lp .emk-tl__head p { color: #BDB8AB; font-size: 17px; }
+  /* ===== EXEMPELFILMER ===== */
+  #emk-lp .emk-ex{padding:96px 4.5%;background:#111111}
+  #emk-lp .emk-ex__inner{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:64px;align-items:center}
+  #emk-lp .emk-ex__text{display:flex;flex-direction:column;max-width:460px}
+  #emk-lp .emk-ex__head{display:flex;flex-direction:column;gap:20px}
+  #emk-lp .emk-ex__head h2{font-size:52px;font-weight:800;line-height:1.05;letter-spacing:-.02em;color:#F5F1E8}
+  #emk-lp .emk-ex__head h2 em{font-style:normal;color:#DFA438;white-space:nowrap}
+  #emk-lp .emk-ex__head p{font-size:18px;line-height:1.55;color:#D6D1C4;max-width:460px}
+  #emk-lp .emk-ex__tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+  #emk-lp .emk-ex__tags li{display:inline-flex;padding:8px 16px;border-radius:0;background:#1C1B18;border:1px solid rgba(245,241,232,.10);font-size:14px;font-weight:600;color:#E6E1D5;cursor:default}
+  #emk-lp .emk-ex__results{display:flex;gap:40px;margin-top:36px}
+  #emk-lp .emk-ex__result{display:flex;flex-direction:column}
+  #emk-lp .emk-ex__result b{font-size:34px;font-weight:800;letter-spacing:-.02em;color:#DFA438;line-height:1;white-space:nowrap}
+  #emk-lp .emk-ex__result span{font-size:14px;font-weight:400;line-height:1.4;color:#A8A396;max-width:220px;margin-top:6px;text-wrap:balance}
+  #emk-lp .emk-ex__more{color:#DFA438;font-weight:700;font-size:16px;text-decoration:none;align-self:flex-start;margin-top:28px}
+  #emk-lp .emk-ex__more:hover{text-decoration:underline;text-underline-offset:4px}
+
+  /* Filmerna: samma höjd, högerjusterade. Höjden krymper om kolumnen blir smalare än 765px */
+  #emk-lp .emk-ex__films{container-type:inline-size;display:flex;justify-content:flex-end}
+  #emk-lp .emk-ex__group{display:flex;flex-direction:column}
+  #emk-lp .emk-ex__films-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#908C80;margin-bottom:14px}
+  #emk-lp .emk-ex__row{display:flex;gap:16px}
+  #emk-lp .emk-film{--h:min(320px, calc((100cqw - 16px) / 2.3403));
+    position:relative;flex:none;height:var(--h);aspect-ratio:9/16;border-radius:20px;overflow:hidden;cursor:pointer;
+    background:#1c1b18;border:1px solid rgba(245,241,232,.08);padding:0;color:inherit;font:inherit;text-align:left;display:block;
+    transition:transform .2s ease,border-color .2s ease}
+  #emk-lp .emk-film--wide{aspect-ratio:16/9}
+  #emk-lp .emk-film img,#emk-lp .emk-film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  #emk-lp .emk-film::after{content:"";position:absolute;inset:45% 0 0 0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.75));pointer-events:none}
+  #emk-lp .emk-film__cap{position:absolute;left:14px;right:14px;bottom:14px;z-index:1;display:flex;flex-direction:column;gap:3px}
+  #emk-lp .emk-film__cap b{font-size:16px;font-weight:700;color:#F5F1E8}
+  #emk-lp .emk-film__cap span{font-size:13px;color:#D6D1C4}
+  #emk-lp .emk-film__icon{position:absolute;top:10px;right:10px;z-index:1;width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,.5);display:grid;place-items:center;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+  #emk-lp .emk-film__icon svg{width:14px;height:14px;fill:#fff}
+  #emk-lp .emk-film:focus-visible{outline:2px solid #DFA438;outline-offset:3px}
+  @media (hover:hover){ #emk-lp .emk-film:hover{border-color:#DFA438;transform:scale(1.02)} }
+
+  /* Lightbox */
+  #emk-lp .emk-lb{position:fixed;inset:0;z-index:100;background:rgba(8,8,8,.9);display:none;align-items:center;justify-content:center;padding:24px}
+  #emk-lp .emk-lb.is-open{display:flex}
+  #emk-lp .emk-lb__box{position:relative;border-radius:16px;overflow:hidden;background:#000}
+  #emk-lp .emk-lb__box[data-ratio="9:16"]{aspect-ratio:9/16;height:min(88vh,calc(92vw * 16 / 9))}
+  #emk-lp .emk-lb__box[data-ratio="16:9"]{aspect-ratio:16/9;width:min(92vw,1100px,calc(88vh * 16 / 9))}
+  #emk-lp .emk-lb__box video,#emk-lp .emk-lb__box img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+  #emk-lp .emk-lb__tag{position:absolute;left:16px;bottom:14px;font-size:13px;color:#BDB8AB;background:rgba(0,0,0,.55);padding:6px 10px;border-radius:999px}
+  #emk-lp .emk-lb__close{position:fixed;top:18px;right:18px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font-size:24px;line-height:1;cursor:pointer}
+  #emk-lp .emk-lb__close:hover{background:rgba(255,255,255,.22)}
+
+  @media (max-width:1023px){ #emk-lp .emk-ex__inner{gap:40px} #emk-lp .emk-ex__head h2{font-size:40px} }
+
+  /* Mobil */
+  @media (max-width:767px){
+    #emk-lp .emk-ex{padding:64px 0}
+    #emk-lp .emk-ex__inner{grid-template-columns:minmax(0,1fr);gap:0}
+    #emk-lp .emk-ex__text{display:contents}
+    #emk-lp .emk-ex__head{order:1;align-items:center;text-align:center;padding:0 16px}
+    #emk-lp .emk-ex__head h2{font-size:34px}
+    #emk-lp .emk-ex__head p{font-size:16.5px}
+    #emk-lp .emk-ex__tags{order:2;justify-content:center;padding:0 16px}
+    #emk-lp .emk-ex__results{order:3;display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:0 16px;text-align:center}
+    #emk-lp .emk-ex__result{align-items:center}
+    #emk-lp .emk-ex__result b{font-size:28px}
+    #emk-lp .emk-ex__result span{font-size:13px}
+    #emk-lp .emk-ex__films{order:4;container-type:normal;display:block;margin-top:40px}
+    #emk-lp .emk-ex__group{display:block}
+    #emk-lp .emk-ex__films-label{text-align:center}
+    #emk-lp .emk-ex__row{gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 16px;scroll-padding-left:16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    #emk-lp .emk-ex__row::-webkit-scrollbar{display:none}
+    #emk-lp .emk-film{--h:240px;scroll-snap-align:start}
+    #emk-lp .emk-ex__more{order:5;align-self:center;justify-self:center;margin-top:28px}
+  }
+  @media (prefers-reduced-motion:reduce){ #emk-lp .emk-film{transition:none} }
   </style>
 </head>
 <body>
@@ -777,6 +849,48 @@
     <a href="/om-oss">Om oss</a>
     <a class="emk-nav__cta" href="#emk-boka">Boka möte</a>
   </div>
+
+  <!-- ===== EXEMPELFILMER ===== -->
+<section class="emk-ex" aria-labelledby="emk-ex-rubrik">
+  <div class="emk-ex__inner">
+    <div class="emk-ex__text">
+      <div class="emk-ex__head">
+        <h2 id="emk-ex-rubrik">Rätt film för<br> <em>varje behov.</em></h2>
+        <p>Annonser som säljer, varumärkesfilmer som bygger förtroende och kundcase som övertygar.</p>
+      </div>
+      <ul class="emk-ex__tags" aria-label="Typer av film">
+        <li>Annonsfilm</li><li>Varumärkesfilm</li><li>Kundcase</li><li>Reels</li>
+      </ul>
+      <div class="emk-ex__results">
+        <div class="emk-ex__result"><b>10 miljoner+</b><span>visningar för våra kunder</span></div>
+        <div class="emk-ex__result"><b>625&nbsp;000 kr</b><span>intäkt på 25&nbsp;000&nbsp;kr i&nbsp;annonser</span></div>
+      </div>
+      <a class="emk-ex__more" href="/portfolio">Se fler filmer →</a>
+    </div>
+
+    <div class="emk-ex__films">
+      <div class="emk-ex__group">
+      <div class="emk-ex__films-label">Exempel på filmer</div>
+      <div class="emk-ex__row">
+      <!-- BYT: data-src (mp4), data-poster (jpg), kundnamn, resultat -->
+      <button class="emk-film" type="button" aria-label="Spela film: [Kund]" data-src="" data-poster="images/web/ex-poster-1.jpg" data-ratio="9:16">
+        <span class="emk-film__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="emk-film__cap"><b>[Kund]</b><span>Annonsfilm · [resultat]</span></span>
+      </button>
+      <button class="emk-film emk-film--wide" type="button" aria-label="Spela film: [Kund]" data-src="" data-poster="images/web/ex-poster-2.jpg" data-ratio="16:9">
+        <span class="emk-film__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="emk-film__cap"><b>[Kund]</b><span>Varumärkesfilm · [resultat]</span></span>
+      </button>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <div class="emk-lb" id="emk-lb" role="dialog" aria-modal="true" aria-label="Film">
+  <button class="emk-lb__close" type="button" aria-label="Stäng">×</button>
+  <div class="emk-lb__box" id="emk-lb-box"></div>
+</div>
 
   <!-- RESULTAT: rullande band + tre korta recensioner (direkt efter hero) -->
   <section class="emk-res" aria-label="Resultat och kundomdömen">
@@ -991,7 +1105,7 @@
           </div>
           <div class="emk-stats__grid">
             <div class="emk-stat">
-              <span class="emk-stat__num">+7<small>miljoner</small></span>
+              <span class="emk-stat__num">+10<small>miljoner</small></span>
               <span class="emk-stat__label">visningar via organiskt material vi har producerat</span>
             </div>
             <div class="emk-stat">
@@ -1312,5 +1426,64 @@
 })();
 </script>
 
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var films = Array.prototype.slice.call(document.querySelectorAll('.emk-film'));
+
+  // Varje ruta: <video> om det finns en fil, annars bara posterbilden
+  films.forEach(function(f){
+    var el;
+    if (f.dataset.src && !reduce){
+      el = document.createElement('video');
+      el.muted = true; el.loop = true; el.playsInline = true; el.preload = 'none';
+      el.setAttribute('muted',''); el.setAttribute('playsinline',''); el.setAttribute('loop','');
+      if (f.dataset.poster) el.poster = f.dataset.poster;
+      el.dataset.src = f.dataset.src;
+    } else {
+      el = document.createElement('img'); el.src = f.dataset.poster || ''; el.alt = ''; el.loading = 'lazy';
+    }
+    f.insertBefore(el, f.firstChild);
+  });
+
+  // Spela först när rutan syns
+  if (!reduce && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var v = e.target.querySelector('video'); if (!v) return;
+        if (e.isIntersecting){ if (!v.src) v.src = v.dataset.src; v.play().catch(function(){}); }
+        else v.pause();
+      });
+    }, {threshold: .35});
+    films.forEach(function(f){ io.observe(f); });
+  }
+
+  // Lightbox: full storlek med ljud, klarar 9:16 och 16:9
+  var lb = document.getElementById('emk-lb'), box = document.getElementById('emk-lb-box'), last = null;
+  function open(f){
+    last = f; box.innerHTML = ''; box.dataset.ratio = f.dataset.ratio || '9:16';
+    if (f.dataset.src){
+      var v = document.createElement('video');
+      v.src = f.dataset.src; v.controls = true; v.playsInline = true; v.autoplay = true;
+      if (f.dataset.poster) v.poster = f.dataset.poster;
+      box.appendChild(v); v.play().catch(function(){});
+    } else {
+      var i = document.createElement('img'); i.src = f.dataset.poster || ''; i.alt = ''; box.appendChild(i);
+      var t = document.createElement('span'); t.className = 'emk-lb__tag'; t.textContent = 'Film kommer här · ' + box.dataset.ratio; box.appendChild(t);
+    }
+    lb.classList.add('is-open'); document.body.style.overflow = 'hidden';
+    lb.querySelector('.emk-lb__close').focus();
+  }
+  function close(){
+    var v = box.querySelector('video'); if (v) v.pause();
+    box.innerHTML = ''; lb.classList.remove('is-open'); document.body.style.overflow = '';
+    if (last) last.focus();
+  }
+  films.forEach(function(f){ f.addEventListener('click', function(){ open(f); }); });
+  lb.querySelector('.emk-lb__close').addEventListener('click', close);
+  lb.addEventListener('click', function(e){ if (e.target === lb) close(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && lb.classList.contains('is-open')) close(); });
+})();
+</script>
 </body>
 </html>
