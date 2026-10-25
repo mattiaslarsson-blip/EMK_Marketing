@@ -498,8 +498,8 @@
 
     /* Avslut med stort namn */
     #emk-lp .emk-outro { padding: clamp(70px, 9vw, 130px) 0 clamp(50px, 6vw, 80px); text-align: center; display: flex; flex-direction: column; align-items: center; gap: 22px; }
-    #emk-lp .emk-outro__name { font-family: 'Manrope'; font-weight: 800; text-transform: uppercase; letter-spacing: -0.03em; line-height: .9;
-      font-size: clamp(34px, 9.4vw, 150px); color: var(--cream); text-shadow: 0.045em 0.045em 0 var(--gold); white-space: nowrap; }
+    #emk-lp .emk-outro__name { margin: 0 0 10px; line-height: 0; }
+    #emk-lp .emk-outro__name img { display: block; width: clamp(200px, 32vw, 460px); height: auto; }
     #emk-lp .emk-outro__lead { max-width: 640px; color: var(--muted-2); font-size: clamp(15px, 1.4vw, 18px); line-height: 1.55; }
     #emk-lp .emk-outro__links { margin-top: 18px; width: 100%; max-width: 1100px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
       border: 1px solid #3A362C; border-radius: 20px; overflow: hidden; }
@@ -1008,7 +1008,7 @@
 
     <!-- AVSLUT: stort varumärkesnamn + tre länkar -->
     <section class="emk-outro" aria-labelledby="emk-outro-rubrik">
-      <h2 class="emk-outro__name" id="emk-outro-rubrik">EMK Marketing</h2>
+      <h2 class="emk-outro__name" id="emk-outro-rubrik"><img src="images/logos/emk-logo-gold.svg" alt="EMK Marketing"></h2>
       <p class="emk-outro__lead">Vi gör film och annonser som faktiskt fungerar, till fast pris varje månad. Ta en titt på priserna eller hör av er så berättar vi hur det går till.</p>
       <nav class="emk-outro__links" aria-label="Snabblänkar">
         <a href="#emk-boka">Kontakta oss <span aria-hidden="true">→</span></a>
