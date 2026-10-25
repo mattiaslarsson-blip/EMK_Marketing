@@ -315,9 +315,11 @@
       0%, 100% { transform: translate3d(0, 0, 0); }
       50%      { transform: translate3d(3px, -7px, 0); }
     }
+    #emk-lp .emk-res__title { margin: 0; padding-top: 40px; text-align: center; font-family: 'Manrope'; font-size: 13px; font-weight: 700;
+      letter-spacing: 2.6px; text-transform: uppercase; color: var(--muted); }
     /* Recensionskarusell. Dator: glider ett kort i taget. Mobil: svep, nästa kort tittar fram. */
     /* kant till kant så att korten blir bredare */
-    #emk-lp .emk-res__viewport { overflow: hidden; margin-top: 40px; width: 100vw; margin-left: calc(50% - 50vw);
+    #emk-lp .emk-res__viewport { overflow: hidden; margin-top: 28px; width: 100vw; margin-left: calc(50% - 50vw);
       -webkit-mask-image: linear-gradient(90deg, transparent 1%, #000 9.5%, #000 90.5%, transparent 99%);
               mask-image: linear-gradient(90deg, transparent 1%, #000 9.5%, #000 90.5%, transparent 99%); }
     #emk-lp .emk-res__grid { --per: 4; --gap: 18px; --peek: 9vw; display: flex; gap: var(--gap);
@@ -370,6 +372,7 @@
       #emk-lp .emk-bubble:nth-child(2) { margin: 0 0 0 10px; }
       #emk-lp .emk-bubble:nth-child(3) { margin: 0 24px 0 0; }
       #emk-lp .emk-res__viewport { overflow: visible; width: auto; margin: 28px -18px 0; -webkit-mask-image: none; mask-image: none; }
+      #emk-lp .emk-res__title { padding-top: 20px; font-size: 11.5px; letter-spacing: 2px; }
       #emk-lp .emk-res__grid { --gap: 12px; transform: none !important; transition: none; cursor: auto;
         overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 18px; padding: 0 18px 6px;
         -webkit-overflow-scrolling: touch; scrollbar-width: none; user-select: auto; -webkit-user-select: auto; }
@@ -604,7 +607,6 @@
 
       <!-- INNEHÅLL: över bilden på desktop, under panelerna på mobil -->
       <div class="emk-hero-content">
-        <div class="emk-kicker"><span>Filmproduktionsbyrå</span></div>
         <h1>Filmproduktion med fokus på <em>långsiktig lönsamhet.</em></h1>
         <p class="emk-lede">Vi kombinerar strategisk annonsering, engagerande content och video för att driva mätbar tillväxt.</p>
         <div class="emk-ctas">
@@ -628,11 +630,7 @@
   <!-- RESULTAT: rullande band + tre korta recensioner (direkt efter hero) -->
   <section class="emk-res" aria-label="Resultat och kundomdömen">
     <div class="emk-wrap">
-      <div class="emk-bubbles">
-        <span class="emk-bubble"><span><b>5&nbsp;miljoner</b> organiska visningar</span></span>
-        <span class="emk-bubble"><span><b>625&nbsp;000&nbsp;kr</b> på en annonsbudget på 25&nbsp;000&nbsp;kr</span></span>
-        <span class="emk-bubble"><span><b>Film</b> som levererar resultat</span></span>
-      </div>
+      <p class="emk-res__title">Betrodd av många företag</p>
     </div>
     <div class="emk-wrap">
       <div class="emk-res__viewport">
