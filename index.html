@@ -392,6 +392,50 @@
       #emk-lp .emk-res__grid { transition: none; }
     }
 
+    /* ===== TIDSLINJE: varför låta oss göra allt (vågrät på dator, lodrät på mobil) ===== */
+    #emk-lp .emk-tl { padding: clamp(70px, 8vw, 110px) 0 40px; }
+    #emk-lp .emk-tl__head { text-align: center; max-width: 640px; margin: 0 auto clamp(40px, 5vw, 64px); display: flex; flex-direction: column; gap: 14px; }
+    #emk-lp .emk-tl__head h2 { font-family: 'Manrope'; font-weight: 800; font-size: clamp(28px, 3.6vw, 42px); line-height: 1.08; letter-spacing: -0.9px; text-wrap: balance; }
+    #emk-lp .emk-tl__head h2 em { font-style: normal; color: var(--gold); }
+    #emk-lp .emk-tl__head p { color: var(--muted); font-size: 16px; line-height: 1.55; }
+    #emk-lp .emk-tl__track { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-rows: auto 64px auto; max-width: 1180px; margin: 0 auto; }
+    /* linjen: grå bas + guld som fylls på när sektionen syns */
+    #emk-lp .emk-tl__line { grid-column: 1 / -1; grid-row: 2; align-self: center; position: relative; height: 2px;
+      margin: 0 calc(10% - 1px); background: #2E2B26; border-radius: 2px; overflow: hidden; }
+    #emk-lp .emk-tl__line::after { content: ""; position: absolute; inset: 0; background: var(--gold);
+      transform-origin: left; transform: scaleX(var(--fill, 1)); transition: transform 1.8s cubic-bezier(.45,0,.2,1); }
+    #emk-lp .emk-tl__dot { grid-row: 2; align-self: center; justify-self: center; position: relative; z-index: 1;
+      width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 2px solid var(--gold);
+      transition: background .4s ease, box-shadow .4s ease; transition-delay: var(--d, 0s); }
+    #emk-lp .emk-tl.is-on .emk-tl__dot { background: var(--gold); box-shadow: 0 0 0 6px rgba(223,164,56,.15); }
+    #emk-lp .emk-tl__card { justify-self: center; width: min(300px, 175%); position: relative;
+      background: #181715; border: 1px solid #262420; border-radius: 18px; padding: 22px 22px 20px;
+      display: flex; flex-direction: column; gap: 10px; }
+    #emk-lp .emk-tl__card--up { grid-row: 1; align-self: end; margin-bottom: 4px; }
+    #emk-lp .emk-tl__card--down { grid-row: 3; align-self: start; margin-top: 4px; }
+    /* liten pil mot linjen */
+    #emk-lp .emk-tl__card::after { content: ""; position: absolute; left: 50%; width: 12px; height: 12px; background: #181715;
+      border: 1px solid #262420; transform: translateX(-50%) rotate(45deg); }
+    #emk-lp .emk-tl__card--up::after { bottom: -7px; border-top: 0; border-left: 0; }
+    #emk-lp .emk-tl__card--down::after { top: -7px; border-bottom: 0; border-right: 0; }
+    #emk-lp .emk-tl__icon { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+      background: var(--gold-light); color: var(--gold); }
+    #emk-lp .emk-tl__card h3 { font-family: 'Manrope'; font-weight: 800; font-size: 18px; letter-spacing: -0.3px; color: var(--ink); }
+    #emk-lp .emk-tl__card p { font-size: 14.5px; line-height: 1.5; color: var(--muted-2, #BDB8AB); }
+    #emk-lp .emk-tl__cta { display: flex; justify-content: center; margin-top: clamp(40px, 5vw, 56px); }
+    @media (max-width: 900px) {
+      #emk-lp .emk-tl { padding: 56px 0 24px; }
+      #emk-lp .emk-tl__track { grid-template-columns: 28px minmax(0, 1fr); grid-template-rows: none; row-gap: 14px; }
+      #emk-lp .emk-tl__line { grid-column: 1; grid-row: 1 / span 5; width: 2px; height: auto; margin: 22px 0; justify-self: center; align-self: stretch; }
+      #emk-lp .emk-tl__line::after { transform-origin: top; transform: scaleY(var(--fill, 1)); }
+      #emk-lp .emk-tl__dot { grid-column: 1 !important; align-self: start; margin-top: 24px; }
+      #emk-lp .emk-tl__card, #emk-lp .emk-tl__card--up, #emk-lp .emk-tl__card--down { grid-column: 2 !important; width: auto; justify-self: stretch; margin: 0; align-self: start; }
+      #emk-lp .emk-tl__card::after { left: -7px; top: 26px; bottom: auto; transform: rotate(45deg); border: 1px solid #262420; border-top: 0; border-right: 0; }
+      #emk-lp .emk-tl__card p { font-size: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) { #emk-lp .emk-tl__line::after, #emk-lp .emk-tl__dot { transition: none; } }
+
     /* ===== SOCIAL PROOF ===== */
     #emk-lp .emk-proof { padding: 70px 0; }
 
@@ -776,6 +820,50 @@
     </div>
   </section>
 
+  <!-- TIDSLINJE: varför låta oss göra allt. Punkterna kommer från "Grunden – Företagsfilm" i Notion. -->
+  <section class="emk-tl" id="emk-tl" aria-labelledby="emk-tl-rubrik">
+    <div class="emk-wrap">
+      <div class="emk-tl__head">
+        <h2 id="emk-tl-rubrik">Ni fokuserar på verksamheten. <em>Vi sköter filmen.</em></h2>
+        <p>Från idé till färdig film, varje månad. Så här blir det enklare för er.</p>
+      </div>
+      <div class="emk-tl__track">
+        <div class="emk-tl__line" aria-hidden="true"></div>
+        <span class="emk-tl__dot" style="grid-column:1;--d:0.25s" aria-hidden="true"></span>
+        <span class="emk-tl__dot" style="grid-column:2;--d:0.60s" aria-hidden="true"></span>
+        <span class="emk-tl__dot" style="grid-column:3;--d:0.95s" aria-hidden="true"></span>
+        <span class="emk-tl__dot" style="grid-column:4;--d:1.30s" aria-hidden="true"></span>
+        <span class="emk-tl__dot" style="grid-column:5;--d:1.65s" aria-hidden="true"></span>
+        <article class="emk-tl__card emk-tl__card--up" style="grid-column:1">
+          <span class="emk-tl__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <h3>Spara tid och huvudvärk</h3>
+          <p>Ni godkänner manuset. Planering, inspelning och redigering sköter vi.</p>
+        </article>
+        <article class="emk-tl__card emk-tl__card--down" style="grid-column:2">
+          <span class="emk-tl__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5"/></svg></span>
+          <h3>Lägg tiden på annat</h3>
+          <p>Er tid går till verksamheten, inte till att stå bakom en kamera.</p>
+        </article>
+        <article class="emk-tl__card emk-tl__card--up" style="grid-column:3">
+          <span class="emk-tl__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+          <h3>Förutsägbart</h3>
+          <p>Samma pris varje månad. Ni vet vad det kostar och när filmerna kommer.</p>
+        </article>
+        <article class="emk-tl__card emk-tl__card--down" style="grid-column:4">
+          <span class="emk-tl__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="14" height="11" rx="2"/><path d="M16 11l6-3v9l-6-3"/></svg></span>
+          <h3>Proffs i stället för gissningar</h3>
+          <p>Ni behöver inte veta vad som funkar på film. Det vet vi.</p>
+        </article>
+        <article class="emk-tl__card emk-tl__card--up" style="grid-column:5">
+          <span class="emk-tl__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19l5-6 4 3 7-9"/><path d="M15 7h5v5"/></svg></span>
+          <h3>En investering i varumärket</h3>
+          <p>Film som bygger förtroende för ert varumärke, månad efter månad.</p>
+        </article>
+      </div>
+      <div class="emk-tl__cta"><a class="emk-btn emk-btn--gold-hero" href="/priser">Se paket och priser <span class="emk-arr">→</span></a></div>
+    </div>
+  </section>
+
   <div class="emk-wrap">
 
     <!-- 2. Tjänster -->
@@ -1146,6 +1234,28 @@
   }
   var t; window.addEventListener('resize', function(){ clearTimeout(t); t = setTimeout(setup, 120); });
   setup();
+})();
+
+/* ===== Tidslinje: guldlinjen fylls och punkterna tänds när sektionen syns ===== */
+(function(){
+  var tl = document.getElementById('emk-tl');
+  if(!tl) return;
+  var mq = window.matchMedia('(max-width: 900px)');
+  /* på mobil hamnar varje kort på egen rad bredvid sin punkt */
+  function rows(){
+    var cards = tl.querySelectorAll('.emk-tl__card'), dots = tl.querySelectorAll('.emk-tl__dot');
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].style.gridRow = mq.matches ? String(i + 1) : '';
+      dots[i].style.gridRow = mq.matches ? String(i + 1) : '';
+    }
+  }
+  rows(); mq.addEventListener ? mq.addEventListener('change', rows) : mq.addListener(rows);
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { tl.classList.add('is-on'); return; }
+  tl.style.setProperty('--fill', '0');
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting) { tl.style.setProperty('--fill', '1'); tl.classList.add('is-on'); io.disconnect(); } });
+  }, { threshold: 0.35 });
+  io.observe(tl);
 })();
 
 /* ===== Recensioner: ett kort i taget, pilar, prickar och svep ===== */
