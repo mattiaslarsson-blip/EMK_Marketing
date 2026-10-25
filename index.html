@@ -467,6 +467,11 @@
     #emk-lp .emk-stat__num { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(46px, 5vw, 68px); line-height: .95; letter-spacing: -0.02em; color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap; }
     #emk-lp .emk-stat__num small { font-size: .5em; color: #F5F1E8; margin-left: 6px; }
     #emk-lp .emk-stat__label { font-size: 14.5px; line-height: 1.45; color: rgba(245,241,232,.78); max-width: 26ch; }
+    #emk-lp .emk-stat__label b { color: var(--gold); font-weight: 700; }
+    #emk-lp .emk-stats__ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+    #emk-lp .emk-stats__ctas .emk-btn { padding: 14px 24px; font-size: 15px; white-space: nowrap; justify-content: center; }
+    #emk-lp .emk-stats__ghost { background: transparent; color: var(--ink); border: 1px solid rgba(245,241,232,.25); box-shadow: none; }
+    #emk-lp .emk-stats__ghost:hover { border-color: var(--gold); color: var(--gold); }
     #emk-lp .emk-stats__media { position: relative; border-radius: 24px; overflow: hidden; min-height: 440px; background: #1A1A1A; }
     #emk-lp .emk-stats__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
     #emk-lp .emk-stats__media::after { content: ""; position: absolute; inset: 50% 0 0 0; background: linear-gradient(180deg, transparent, rgba(10,10,10,.75)); }
@@ -476,6 +481,7 @@
       #emk-lp .emk-stats__card { grid-template-columns: minmax(0, 1fr); border-radius: 26px; padding: 12px; gap: 12px; }
       #emk-lp .emk-stats__body { padding: 20px 14px 10px; }
       #emk-lp .emk-stats__grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+      #emk-lp .emk-stats__ctas .emk-btn { width: 100%; }
       #emk-lp .emk-stats__media { min-height: 0; aspect-ratio: 4 / 3.4; order: -1; border-radius: 18px; }
     }
 
@@ -926,13 +932,17 @@
           </div>
           <div class="emk-stats__grid">
             <div class="emk-stat">
-              <span class="emk-stat__num">5<small>miljoner</small></span>
-              <span class="emk-stat__label">organiska visningar på innehåll vi har producerat</span>
+              <span class="emk-stat__num">+7<small>miljoner</small></span>
+              <span class="emk-stat__label">visningar via organiskt material vi har producerat</span>
             </div>
             <div class="emk-stat">
               <span class="emk-stat__num">625&nbsp;000<small>kr</small></span>
-              <span class="emk-stat__label">i intäkt på en annonsbudget på 25&nbsp;000&nbsp;kr</span>
+              <span class="emk-stat__label">i intäkt på en annonsbudget på 25&nbsp;000&nbsp;kr. Det är en ROAS på <b>25x</b>.</span>
             </div>
+          </div>
+          <div class="emk-stats__ctas">
+            <a class="emk-btn emk-btn--gold-hero" href="mailto:info@emkmarketing.se?subject=Hj%C3%A4lp%20med%20sociala%20medier">Hjälp med sociala medier <span class="emk-arr">→</span></a>
+            <a class="emk-btn emk-stats__ghost" href="mailto:info@emkmarketing.se?subject=Hj%C3%A4lp%20med%20paid%20ads">Hjälp med paid ads <span class="emk-arr">→</span></a>
           </div>
         </div>
         <div class="emk-stats__media">
