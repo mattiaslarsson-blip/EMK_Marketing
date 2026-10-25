@@ -8,16 +8,16 @@
 <meta name="description" content="Ett urval av foto, film och kampanjer som EMK Marketing har gjort – och vad de ledde till.">
 <link rel="icon" type="image/png" href="EMK_LOGO.png">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap');
 body { margin:0; background:#111111; }
 #emk-lp {
   --ink:#F5F1E8; --bg:#111111; --card:#1A1A1A; --card-deep:#151515; --line:#2E2E2E; --line-soft:#242424;
   --muted:#908C80; --muted-2:#BDB8AB; --gold:#DFA438; --gold-light:rgba(223,164,56,0.14); --cream:#F2EEE4;
-  font-family:'Nunito Sans',sans-serif; color:var(--ink); background:var(--bg); line-height:1.6;
+  font-family:'DM Sans',sans-serif; color:var(--ink); background:var(--bg); line-height:1.6;
   -webkit-font-smoothing:antialiased; position:relative; overflow:hidden;
 }
 #emk-lp * { box-sizing:border-box; margin:0; padding:0; }
-#emk-lp h1, #emk-lp h2, #emk-lp h3, #emk-lp h4 { font-family:'Manrope',sans-serif; }
+#emk-lp h1, #emk-lp h2, #emk-lp h3, #emk-lp h4 { font-family:'DM Sans',sans-serif; }
 #emk-lp a:focus-visible, #emk-lp button:focus-visible, #emk-lp .pf-item:focus-visible { outline:2px solid var(--gold); outline-offset:3px; border-radius:8px; }
 #emk-lp::before { content:none; }
 #emk-lp .emk-wrap { position:relative; z-index:1; max-width:1360px; margin:0 auto; padding:0 32px; }
@@ -36,7 +36,7 @@ body { margin:0; background:#111111; }
 /* ===== HERO ===== */
 #emk-lp .pf-hero { padding:56px 0 40px; display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; }
 #emk-lp .emk-kicker { display:inline-flex; align-items:center; margin-bottom:16px; }
-#emk-lp .emk-kicker span { color:var(--muted); font-family:'Manrope'; font-size:11px; font-weight:800; letter-spacing:2.4px; text-transform:uppercase; }
+#emk-lp .emk-kicker span { color:var(--muted); font-family:'DM Sans'; font-size:11px; font-weight:800; letter-spacing:2.4px; text-transform:uppercase; }
 #emk-lp .pf-hero h1 { font-size:clamp(40px,6.5vw,80px); font-weight:800; line-height:1.02; letter-spacing:-2px; }
 #emk-lp .pf-hero h1 em { font-style:normal; color:var(--gold); }
 #emk-lp .pf-hero p { color:var(--muted-2); font-size:17px; }
@@ -44,11 +44,11 @@ body { margin:0; background:#111111; }
 
 /* ===== FILTER ===== */
 #emk-lp .pf-filter { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:26px; padding:14px 0; }
-#emk-lp .pf-filter button { font-family:'Manrope'; font-size:14px; font-weight:700; color:var(--muted-2); background:var(--card);
+#emk-lp .pf-filter button { font-family:'DM Sans'; font-size:14px; font-weight:700; color:var(--muted-2); background:var(--card);
   border:1px solid var(--line); padding:10px 20px; border-radius:100px; cursor:pointer; transition:all .2s; }
 #emk-lp .pf-filter button:hover { color:var(--ink); border-color:var(--muted); }
 #emk-lp .pf-filter button.is-active { background:var(--gold); border-color:var(--gold); color:#111111; }
-#emk-lp .pf-filter__link { font-family:'Manrope'; font-size:14px; font-weight:700; color:var(--gold); text-decoration:none;
+#emk-lp .pf-filter__link { font-family:'DM Sans'; font-size:14px; font-weight:700; color:var(--gold); text-decoration:none;
   border:1px solid rgba(223,164,56,.45); padding:10px 20px; border-radius:100px; transition:all .2s; white-space:nowrap; }
 #emk-lp .pf-filter__link:hover { background:var(--gold); color:#111111; border-color:var(--gold); }
 
@@ -69,8 +69,8 @@ body { margin:0; background:#111111; }
 
 #emk-lp .pf-item__info { position:absolute; left:16px; right:16px; bottom:14px; z-index:2; display:flex; justify-content:space-between; align-items:flex-end; gap:10px;
   opacity:0; transform:translateY(8px); transition:opacity .35s ease, transform .35s ease; }
-#emk-lp .pf-item__client { font-family:'Manrope'; font-weight:800; font-size:15px; color:var(--cream); }
-#emk-lp .pf-item__tag { font-family:'Manrope'; font-size:10px; font-weight:800; letter-spacing:1.6px; text-transform:uppercase; color:var(--gold); white-space:nowrap; }
+#emk-lp .pf-item__client { font-family:'DM Sans'; font-weight:800; font-size:15px; color:var(--cream); }
+#emk-lp .pf-item__tag { font-family:'DM Sans'; font-size:10px; font-weight:800; letter-spacing:1.6px; text-transform:uppercase; color:var(--gold); white-space:nowrap; }
 /* Videoikon uppe till höger */
 #emk-lp .pf-item__play { position:absolute; top:12px; right:12px; z-index:2; width:32px; height:32px; border-radius:50%;
   background:rgba(17,17,17,.55); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; }
@@ -96,14 +96,14 @@ body { margin:0; background:#111111; }
 #emk-lp .pf-case { position:relative; background:var(--card); border:1px solid var(--line); border-radius:22px; padding:40px 40px 32px;
   display:flex; flex-direction:column; transition:border-color .3s, transform .3s; }
 #emk-lp .pf-case:hover { border-color:rgba(223,164,56,.45); transform:translateY(-3px); }
-#emk-lp .pf-case__tag { align-self:flex-start; font-family:'Manrope'; font-size:11px; font-weight:800; letter-spacing:1.8px; text-transform:uppercase;
+#emk-lp .pf-case__tag { align-self:flex-start; font-family:'DM Sans'; font-size:11px; font-weight:800; letter-spacing:1.8px; text-transform:uppercase;
   color:var(--gold); background:var(--gold-light); padding:7px 14px; border-radius:100px; margin-bottom:28px; }
-#emk-lp .pf-case__num { font-family:'Manrope'; font-weight:800; font-size:clamp(56px,7vw,92px); line-height:.95; letter-spacing:-3px; color:var(--cream); }
-#emk-lp .pf-case__label { font-family:'Manrope'; font-weight:700; font-size:16px; color:var(--gold); margin:12px 0 18px; }
+#emk-lp .pf-case__num { font-family:'DM Sans'; font-weight:800; font-size:clamp(56px,7vw,92px); line-height:.95; letter-spacing:-3px; color:var(--cream); }
+#emk-lp .pf-case__label { font-family:'DM Sans'; font-weight:700; font-size:16px; color:var(--gold); margin:12px 0 18px; }
 #emk-lp .pf-case p { color:var(--muted-2); font-size:15.5px; line-height:1.7; max-width:480px; margin-bottom:28px; }
 #emk-lp .pf-case__stats { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:auto; }
 #emk-lp .pf-case__stats div { background:var(--card-deep); border:1px solid var(--line-soft); border-radius:14px; padding:16px 18px; }
-#emk-lp .pf-case__stats b { display:block; font-family:'Manrope'; font-size:20px; font-weight:800; color:var(--ink); white-space:nowrap; }
+#emk-lp .pf-case__stats b { display:block; font-family:'DM Sans'; font-size:20px; font-weight:800; color:var(--ink); white-space:nowrap; }
 #emk-lp .pf-case__stats span { font-size:12.5px; color:var(--muted); }
 
 /* ===== CTA + FOOTER ===== */
@@ -111,7 +111,7 @@ body { margin:0; background:#111111; }
   display:flex; justify-content:space-between; align-items:center; gap:28px; flex-wrap:wrap; }
 #emk-lp .pf-cta h3 { font-size:clamp(24px,3.4vw,34px); font-weight:800; letter-spacing:-0.7px; line-height:1.15; max-width:560px; }
 #emk-lp .pf-cta h3 em { font-style:normal; color:var(--gold); }
-#emk-lp .emk-btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; font-family:'Manrope'; font-size:15px; font-weight:700;
+#emk-lp .emk-btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; font-family:'DM Sans'; font-size:15px; font-weight:700;
   padding:16px 34px; border-radius:100px; text-decoration:none; background:var(--gold); color:#111111; white-space:nowrap;
   box-shadow:0 12px 28px -10px rgba(223,164,56,.5); transition:transform .2s, background .2s; }
 #emk-lp .emk-btn:hover { background:#ecb44b; transform:translateY(-2px); }
@@ -121,7 +121,7 @@ body { margin:0; background:#111111; }
 
 /* ===== LIGHTBOX ===== */
 .pf-lb { position:fixed; inset:0; z-index:200; background:rgba(10,9,7,.96); display:flex; align-items:center; justify-content:center;
-  opacity:0; pointer-events:none; transition:opacity .25s ease; font-family:'Manrope',sans-serif; }
+  opacity:0; pointer-events:none; transition:opacity .25s ease; font-family:'DM Sans',sans-serif; }
 .pf-lb.is-open { opacity:1; pointer-events:auto; }
 .pf-lb__stage { max-width:min(92vw, 1400px); max-height:84vh; display:flex; align-items:center; justify-content:center; }
 .pf-lb__stage img, .pf-lb__stage video { max-width:min(92vw, 1400px); max-height:84vh; width:auto; height:auto; display:block; border-radius:12px; background:#000; }
