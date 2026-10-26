@@ -804,6 +804,13 @@
     #emk-lp .emk-ex__more{order:5;align-self:center;justify-self:center;margin-top:28px}
   }
   @media (prefers-reduced-motion:reduce){ #emk-lp .emk-film{transition:none} }
+    /* Metod-sektion (ersätter resultat-siffrorna) */
+    #emk-lp .emk-metod__lead { margin-top: 16px; font-size: 17px; line-height: 1.6; color: #4A463E; max-width: 54ch; }
+    #emk-lp .emk-metod__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+    #emk-lp .emk-metod__list li { position: relative; padding-left: 34px; font-size: 16px; line-height: 1.55; color: #4A463E; }
+    #emk-lp .emk-metod__list li::before { content: ""; position: absolute; left: 0; top: 2px; width: 22px; height: 22px; border-radius: 50%;
+      background: #A8761C url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F5F1E8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat; }
+    #emk-lp .emk-metod__list b { color: #111111; font-weight: 700; }
   </style>
 </head>
 <body>
@@ -1113,23 +1120,17 @@
       <div class="emk-stats__card">
         <div class="emk-stats__body">
           <div>
-            <div class="emk-stats__kicker">Resultat</div>
-            <h2 class="emk-stats__lead" id="emk-stats-rubrik">Film som syns. Och som säljer.</h2>
+            <h2 class="emk-stats__lead" id="emk-stats-rubrik">En beprövad metod som ger resultat.</h2>
+            <p class="emk-metod__lead">Att försöka göra film själv slukar ofta både tid, energi och budget – och riskerar att bli bortkastad tid om det inte ger några resultat. Vi har utvecklat en smidig arbetsprocess som gör att ni slipper allt krångel och får professionellt material varje månad.</p>
           </div>
-          <div class="emk-stats__grid">
-            <div class="emk-stat">
-              <span class="emk-stat__num">+10<small>miljoner</small></span>
-              <span class="emk-stat__label">visningar via organiskt material vi har producerat</span>
-            </div>
-            <div class="emk-stat">
-              <span class="emk-stat__num">625&nbsp;000<small>kr</small></span>
-              <span class="emk-stat__label">i intäkt på en annonsbudget på 25&nbsp;000&nbsp;kr. Det är en ROAS på <b>25x</b>.</span>
-            </div>
-          </div>
+          <ul class="emk-metod__list">
+            <li><b>Slipp tidsstölden:</b> Inga utdragna projekt eller tröga processer som drar fokus från er kärnverksamhet.</li>
+            <li><b>100% tryggt:</b> Fasta rutiner, trygga fasta priser och garanterade leveranser.</li>
+            <li><b>Zero hassle:</b> Vi sköter allt från manus till färdig klippning – helt utan att störa er vardag.</li>
+          </ul>
           <div class="emk-stats__ctas">
             <a class="emk-btn emk-btn--gold-hero" href="/priser">Se paket och priser <span class="emk-arr">→</span></a>
           </div>
-          <p class="emk-stats__addon">Vill ni även ha hjälp med <a href="/sociala-medier">sociala medier</a> eller <a href="mailto:info@emkmarketing.se?subject=Annonsering">annonsering</a>? Det lägger vi till →</p>
         </div>
         <div class="emk-stats__media">
           <img src="images/web/stats-bild.jpg" alt="EMK filmar på plats hos en kund" loading="lazy">
