@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
 <title>Priser – EMK Marketing</title>
-<meta name="description" content="Fasta månadspriser för företagsfilm. Ingen offert per film, inga tilläggsfakturor.">
+<meta name="description" content="Fasta månadspriser för företagsfilm och annonsfilm från 24 500 kr/mån. Vi sköter allt från idé till färdig film.">
 <link rel="icon" type="image/png" href="EMK_LOGO.png">
 <script src="emk-tracking.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,9 +54,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     linear-gradient(180deg,rgba(17,17,17,.88) 0%,rgba(17,17,17,.74) 40%,rgba(17,17,17,.45) 66%,var(--ground) 100%),
     url("images/web/priser-bakgrund.jpg") center 35%/cover no-repeat;
 }
-.head{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;max-width:760px}
+.head{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;max-width:860px}
 h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4vw,76px);line-height:1.06;letter-spacing:-.045em;text-wrap:balance}
-.lead{margin:0;color:#D9D3C6;font-size:clamp(16px,1.7vw,19px);line-height:1.5}
+.lead{margin:0;max-width:640px;color:#D9D3C6;font-size:clamp(16px,1.7vw,19px);line-height:1.5}
 .fine{margin:4px 0 0;font-size:12.5px;color:#BDB6A8}
 
 .switch{display:inline-flex;gap:4px;padding:5px;border-radius:14px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line),0 10px 30px -18px rgba(0,0,0,.6)}
@@ -120,6 +120,67 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
 @media (prefers-reduced-motion:reduce){
   .plan,.switch button,.cta{transition:none}
 }
+
+/* ===== Priser v2: struktur efter syfte ===== */
+.checks{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin:6px 0 0;padding:0;list-style:none}
+.checks li{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:#E6E1D5}
+.checks svg{flex:none}
+.proof{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:6px}
+.proof p{margin:0;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#908C80;font-weight:700}
+.logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 34px}
+.logos img{height:24px;width:auto;max-width:130px;object-fit:contain;opacity:.7;filter:grayscale(1) brightness(1.6)}
+.logos img.tall{height:34px}
+
+.step{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0}
+.ask{margin:0;font:800 clamp(26px,3vw,34px)/1.15 var(--display);letter-spacing:-.025em;text-align:center}
+.purpose{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:100%;max-width:720px}
+.purpose button{all:unset;box-sizing:border-box;cursor:pointer;background:var(--card);border-radius:20px;padding:20px 22px;box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;gap:6px;transition:box-shadow .2s,background .2s}
+.purpose button b{font:800 18px/1.2 var(--display)}
+.purpose button span{font-size:14px;line-height:1.45;color:var(--muted)}
+.purpose button[aria-selected="true"]{background:var(--card-pop);box-shadow:inset 0 0 0 1.5px var(--gold)}
+.purpose button[aria-selected="true"] b{color:var(--gold)}
+.purpose button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+.plan .quote{margin:0;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;line-height:1.5;color:#CFC9BC}
+.plan .quote b{display:block;margin-top:6px;font-size:12.5px;color:var(--gold);font-weight:600}
+
+.sec{width:100%;max-width:1080px;margin:0 auto;padding:clamp(56px,7vw,96px) max(16px,env(safe-area-inset-left,0px))}
+.sec h2{margin:0 0 clamp(24px,3vw,36px);font:800 clamp(28px,3.6vw,42px)/1.1 var(--display);letter-spacing:-.03em;text-align:center}
+.sec h2 em{font-style:normal;color:var(--gold)}
+.incl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.incl div{background:var(--card);border-radius:18px;padding:20px 20px 18px;box-shadow:inset 0 0 0 1px var(--line)}
+.incl b{display:block;font:700 16px/1.3 var(--display);margin-bottom:6px}
+.incl span{font-size:14px;line-height:1.5;color:var(--muted)}
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.why h3{margin:0 0 8px;font:800 20px/1.2 var(--display);letter-spacing:-.01em}
+.why p{margin:0;font-size:15.5px;line-height:1.6;color:#CFC9BC}
+.why .n{display:block;font:800 15px/1 var(--display);color:var(--gold);margin-bottom:14px}
+.stats{display:flex;justify-content:center;gap:clamp(28px,6vw,72px);flex-wrap:wrap;margin-top:clamp(36px,5vw,56px);padding-top:clamp(28px,4vw,40px);border-top:1px solid var(--line);text-align:center}
+.stats b{display:block;font:800 clamp(30px,3.6vw,40px)/1 var(--display);letter-spacing:-.03em;color:var(--gold)}
+.stats span{display:block;margin-top:8px;font-size:14px;color:var(--muted)}
+
+.faq{max-width:760px;margin:0 auto;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 0;font:700 17.5px/1.35 var(--display);display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:400;font-size:24px;line-height:1;color:var(--muted);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg);color:var(--gold)}
+.faq p{margin:0;padding:0 28px 22px 0;font-size:16px;line-height:1.6;color:#CFC9BC}
+
+.final{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+.final p{margin:0;color:#D9D3C6;font-size:17px;line-height:1.55;max-width:52ch}
+.final .cta{background:var(--gold);color:#111;padding:0 30px}
+
+@media (max-width:880px){
+  .incl{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .why{grid-template-columns:minmax(0,1fr);gap:28px}
+}
+@media (max-width:560px){
+  .purpose{grid-template-columns:minmax(0,1fr)}
+  .incl{grid-template-columns:minmax(0,1fr)}
+  .checks{flex-direction:column;align-items:flex-start;gap:8px}
+  .logos{gap:12px 22px}.logos img{height:18px}.logos img.tall{height:26px}
+}
 </style>
 </head>
 <body>
@@ -140,25 +201,89 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
 <main>
 <section class="band" aria-labelledby="pris-rubrik">
   <div class="head">
-    <h1 id="pris-rubrik">Ett fast pris.<br>Varje månad.</h1>
-    <p class="lead">Ingen offert per film, inga tilläggsfakturor.<br>Välj tjänst och nivå efter hur mycket ni behöver.</p>
-    <p class="fine">Inte nöjda med första leveransen? Vi gör om den utan extra kostnad.</p>
+    <h1 id="pris-rubrik">All film ni behöver.<br>Ett fast pris i månaden.</h1>
+    <p class="lead">Vi tar hand om allt från idé och manus till inspelning och klippning. Ni slipper offerter per film och oväntade fakturor.</p>
+    <ul class="checks">
+      <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#DFA438"/><path d="M6.2 10.3l2.5 2.5 5-5.3" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Fast pris varje månad</li>
+      <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#DFA438"/><path d="M6.2 10.3l2.5 2.5 5-5.3" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Vi sköter hela produktionen</li>
+      <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#DFA438"/><path d="M6.2 10.3l2.5 2.5 5-5.3" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Alla format ingår</li>
+      <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#DFA438"/><path d="M6.2 10.3l2.5 2.5 5-5.3" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Skala upp eller ner</li>
+    </ul>
   </div>
 
-  <div class="switch" role="tablist" aria-label="Välj tjänst">
-    <button type="button" role="tab" id="tab-film" aria-selected="true" aria-controls="plans" data-k="film">Företagsfilm</button>
-    <button type="button" role="tab" id="tab-reels" aria-selected="false" aria-controls="plans" data-k="reels" tabindex="-1">Reels</button>
-    <button type="button" role="tab" id="tab-foto" aria-selected="false" aria-controls="plans" data-k="foto" tabindex="-1">Foto</button>
+  <div class="proof">
+    <p>Betrodd av företag över hela Sverige</p>
+    <div class="logos">
+      <img src="images/logos/grand-tours.png" alt="Grand Tours">
+      <img src="images/logos/joina.png" alt="Joina">
+      <img src="images/logos/svensk-gymnastik.png" alt="Svensk Gymnastik">
+      <img src="images/logos/festivalborg.png" alt="Festivalborg">
+      <img src="images/logos/the-lobby.png" alt="The Lobby">
+      <img src="images/logos/indie-pen-publishing.png" alt="Indie Pen Publishing" class="tall">
+    </div>
   </div>
 
-  <div class="plans" id="plans" role="tabpanel" aria-labelledby="tab-film" aria-live="polite"></div>
+  <p class="step">Steg 1 av 2</p>
+  <h2 class="ask">Vad ska filmen användas till?</h2>
+  <div class="purpose" role="tablist" aria-label="Välj syfte">
+    <button type="button" role="tab" id="tab-varumarke" aria-selected="true" aria-controls="plans" data-k="varumarke"><b>Varumärke</b><span>Företagsfilm, kundcase, intervjuer och produktfilm.</span></button>
+    <button type="button" role="tab" id="tab-annons" aria-selected="false" aria-controls="plans" data-k="annons" tabindex="-1"><b>Annonsering</b><span>Annonsfilm för Meta, Google och TikTok som testas och optimeras.</span></button>
+  </div>
 
+  <p class="step">Steg 2 av 2</p>
+  <h2 class="ask">Välj rätt paket för er</h2>
+  <div class="plans" id="plans" role="tabpanel" aria-labelledby="tab-varumarke" aria-live="polite"></div>
+
+  <p class="fine">Inte nöjda med första leveransen? Vi gör om den utan extra kostnad.</p>
   <div class="terms">
     <span>Priser ex moms</span>
     <span>3 månaders start, sedan 1 månads uppsägning</span>
     <span>Ni äger allt material</span>
     <span>Inspelning i Stockholm ingår</span>
   </div>
+</section>
+
+<section class="sec" aria-labelledby="ingar-rubrik">
+  <h2 id="ingar-rubrik">Det här ingår <em>i alla paket.</em></h2>
+  <div class="incl">
+    <div><b>Strategi varje månad</b><span>Vi går igenom vad som fungerat och planerar nästa månads filmer utifrån det.</span></div>
+    <div><b>Idé och manus</b><span>Vi tar fram koncept och manus, ni godkänner innan vi spelar in.</span></div>
+    <div><b>Inspelning och utrustning</b><span>Fotograf, kamera, ljud och ljus. Inget ni behöver ordna själva.</span></div>
+    <div><b>Klippning och efterarbete</b><span>Redigering, färg, ljud, musik och undertexter.</span></div>
+    <div><b>Feedback och justeringar</b><span>Ni tycker till, vi justerar tills filmen sitter.</span></div>
+    <div><b>Alla format</b><span>9:16, 1:1 och 16:9, klara för hemsida, sociala medier och annonser.</span></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="varfor-rubrik">
+  <h2 id="varfor-rubrik">Därför väljer företag <em>EMK.</em></h2>
+  <div class="why">
+    <div><span class="n">01</span><h3>Fast pris, inga överraskningar</h3><p>Ni vet exakt vad det kostar varje månad. Ingen timdebitering och inga tilläggsfakturor.</p></div>
+    <div><span class="n">02</span><h3>Samma team varje gång</h3><p>Vi lär känna er verksamhet, så varje film blir bättre än den förra och ni slipper börja om från noll.</p></div>
+    <div><span class="n">03</span><h3>Ni lägger ingen tid på det</h3><p>Vi sköter idé, manus, planering, inspelning och klippning. Ni godkänner och publicerar.</p></div>
+  </div>
+  <div class="stats">
+    <div><b>10 miljoner+</b><span>visningar åt våra kunder</span></div>
+    <div><b>625 000 kr</b><span>i intäkt från 25 000 kr i annonsbudget</span></div>
+    <div><b>3 veckor</b><span>till färdig film</span></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="faq-rubrik">
+  <h2 id="faq-rubrik">Vanliga frågor</h2>
+  <div class="faq">
+    <details><summary>Finns det någon bindningstid?</summary><p>Avtalet löper de första 3 månaderna, sedan har ni 1 månads uppsägning. Då hinner vi lära känna er och se vad som ger resultat.</p></details>
+    <details><summary>Hur snabbt får vi första filmen?</summary><p>Vi har ett uppstartsmöte inom en vecka. Färdiga filmer levereras inom 3 veckor från inspelning.</p></details>
+    <details><summary>Lönar det sig jämfört med att beställa film per projekt?</summary><p>Ofta, om ni behöver film regelbundet. Ni slipper ny offert och ny uppstart varje gång, och samma team bygger vidare på det som fungerar. Vi visar gärna en jämförelse på ett kort samtal.</p></details>
+    <details><summary>Vad händer om vi inte behöver film en månad?</summary><p>[FYLL I: kan man pausa eller flytta en månad?]</p></details>
+    <details><summary>Kan ni även publicera och annonsera med filmerna?</summary><p>Ja, som tillägg. Vi kan publicera i era kanaler och köra annonser på Meta och Google så att filmerna når rätt personer.</p></details>
+  </div>
+</section>
+
+<section class="sec final" aria-labelledby="slut-rubrik">
+  <h2 id="slut-rubrik">Osäkra på vilket paket <em>som passar?</em></h2>
+  <p>Boka ett kort samtal så går vi igenom era mål och föreslår ett upplägg. Helt utan förpliktelser.</p>
+  <a class="cta" href="/kontakt.html">Boka 15 min samtal →</a>
 </section>
 </main>
 
@@ -173,22 +298,24 @@ document.getElementById('emk-year').textContent = new Date().getFullYear();
   /* PAKET – priser enligt "Grunden – Företagsfilm" i Notion.
      Reels och Foto: när paketen är klara, byt ut "snart: true" mot tre paket i samma format som film. */
   var data = {
-    film: [
+    varumarke: [
       {name:"Bas", desc:"Ett jämnt flöde av film till hemsida och sociala medier.", amount:"24 500",
        list:["4 filmer i månaden, 30 sek – 2 min","1 inspelningsdag","Planering, manus och redigering","Alla format med undertexter","Leverans inom 3 veckor"]},
       {name:"Medel", pop:true, desc:"Mer film och högre produktionsvärde.", amount:"36 900",
-       list:["6 filmer i månaden","2 inspelningsdagar","Grafik och animation","Korta versioner 15 och 30 sek","Allt i Bas"]},
+       list:["6 filmer i månaden","2 inspelningsdagar","Grafik och animation","Korta versioner 15 och 30 sek","Allt i Bas"],
+       quote:{t:"Snabb och proffsig leverans med bra kommunikation genom hela processen.", by:"Thobias Wallin, VD Magnolia"}},
       {name:"Premium", desc:"För lanseringar, event och varumärkesfilm.", amount:"49 900",
        list:["1 flaggskeppsfilm per kvartal","Regi och extra crew","Drönare och eventfilmning","Prioriterad leverans","Allt i Medel"]}
     ],
-    reels: {snart:true, titel:"Reels", text:"Vi sätter ihop ett upplägg med fast månadspris efter hur ofta ni vill publicera."},
-    foto:  {snart:true, titel:"Foto",  text:"Vi sätter ihop ett upplägg med fast månadspris efter hur mycket bilder ni behöver."}
+    annons: {snart:true, titel:"Annonsfilm", text:"Flera versioner och hooks av samma koncept, klara att A/B-testa i Meta, Google och TikTok. Vi justerar nästa månads filmer efter vad som ger bäst resultat.",
+      list:["Koncept utifrån kampanjens mål","Flera hooks och vinklar att testa","Manus, inspelning och klippning","Alla format med undertexter","Korta versioner i flera längder"],
+      quote:{t:"625 000 kr i intäkt på en annonsbudget på 25 000 kr.", by:"Resultat för en av våra kunder"}}
   };
   var BOKA = "/kontakt.html";
 
   var check = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.5" stroke="#4A463D" stroke-width="1.4"/><path d="M6.4 10.2l2.4 2.4 4.8-5" stroke="#F2EEE4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var plansEl = document.getElementById('plans');
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.switch button'));
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.purpose button'));
   function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
 
   function render(k){
@@ -196,7 +323,11 @@ document.getElementById('emk-year').textContent = new Date().getFullYear();
     if (d.snart){
       plansEl.innerHTML = '<article class="plan wide"><h2>'+esc(d.titel)+' på månadsbasis</h2>'
         + '<p class="desc" style="margin:0">'+esc(d.text)+'</p>'
-        + '<a class="cta" href="'+BOKA+'">Boka 15 min samtal</a></article>';
+        + '<ul class="list" style="text-align:left;align-self:stretch;max-width:420px;margin:0 auto">'+d.list.map(function(li){return '<li>'+check+'<span>'+esc(li)+'</span></li>';}).join('')+'</ul>'
+        + '<p class="unit" style="margin:0">Pris efter upplägg</p>'
+        + '<a class="cta" href="'+BOKA+'">Boka 15 min samtal</a>'
+        + (d.quote?'<p class="quote" style="align-self:stretch">'+esc(d.quote.t)+'<b>'+esc(d.quote.by)+'</b></p>':'')
+        + '</article>';
       return;
     }
     plansEl.innerHTML = d.map(function(p){
@@ -206,6 +337,7 @@ document.getElementById('emk-year').textContent = new Date().getFullYear();
         + '<p class="desc">'+esc(p.desc)+'</p>'
         + '<div class="price"><span class="amount">'+p.amount+'</span><span class="unit">kr/mån</span></div>'
         + '<ul class="list">'+p.list.map(function(li){return '<li>'+check+'<span>'+esc(li)+'</span></li>';}).join('')+'</ul>'
+        + (p.quote?'<p class="quote">'+esc(p.quote.t)+'<b>'+esc(p.quote.by)+'</b></p>':'')
         + '<a class="cta" href="'+BOKA+'">Boka 15 min samtal</a>'
         + '</article>';
     }).join('');
@@ -232,7 +364,7 @@ document.getElementById('emk-year').textContent = new Date().getFullYear();
       n.focus(); select(n);
     });
   });
-  render('film');
+  render('varumarke');
 })();
 </script>
 </body>
