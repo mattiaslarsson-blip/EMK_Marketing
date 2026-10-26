@@ -181,6 +181,50 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
   .checks{flex-direction:column;align-items:flex-start;gap:8px}
   .logos{gap:12px 22px}.logos img{height:18px}.logos img.tall{height:26px}
 }
+
+/* ===== Glassy stil som startsidan ===== */
+.glass{position:relative;isolation:isolate;overflow:hidden;background:#15140F;
+  box-shadow:inset 0 0 0 1px rgba(245,241,232,.08),0 24px 50px -24px rgba(0,0,0,.8)}
+.glass::before{content:"";position:absolute;inset:-40px;z-index:-2;background:var(--img) center/cover no-repeat;filter:blur(26px) saturate(1.2);transform:scale(1.1)}
+.glass::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,rgba(14,13,11,.9) 0%,rgba(14,13,11,.8) 55%,rgba(14,13,11,.66) 100%)}
+
+.plan{background:#15140F;border-radius:24px}
+.plan.pop{background:#15140F;box-shadow:inset 0 0 0 1.5px var(--gold),0 30px 60px -30px rgba(0,0,0,.85)}
+.plan.pop::after{background:linear-gradient(110deg,rgba(20,17,10,.86) 0%,rgba(20,17,10,.74) 55%,rgba(20,17,10,.6) 100%)}
+.mark{border-radius:0}
+.badge{border-radius:0}
+.purpose button{position:relative;isolation:isolate;overflow:hidden;background:#15140F;border-radius:20px}
+.purpose button::before{content:"";position:absolute;inset:-40px;z-index:-2;background:var(--img) center/cover no-repeat;filter:blur(24px) saturate(1.2);transform:scale(1.1)}
+.purpose button::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,rgba(14,13,11,.9),rgba(14,13,11,.72))}
+.purpose button[aria-selected="true"]{background:#15140F}
+
+.incl div{border-radius:22px;padding:24px 24px 22px;background:#15140F}
+.incl b{font-size:17px}
+.incl span{color:rgba(245,241,232,.82);font-size:15px}
+
+.why>div{border-radius:22px;padding:28px 28px 26px;min-height:230px;display:flex;flex-direction:column;gap:10px}
+.why .n{font-size:28px;font-weight:800;margin:0}
+.why h3{font-size:22px;margin:0}
+.why p{font-size:16.5px;color:rgba(245,241,232,.92)}
+.why{gap:16px}
+
+.stats{border-top:0;padding-top:0;margin-top:clamp(28px,4vw,40px)}
+.stats>div{flex:1 1 220px;max-width:340px;border-radius:22px;padding:26px 22px}
+
+.faq{border-top:1px solid #2A2824}
+.faq details{border-bottom:1px solid #2A2824}
+.faq summary{font-size:18px}
+.faq summary:hover{color:var(--gold)}
+
+.final{max-width:1180px;border-radius:36px;padding:clamp(40px,6vw,80px) clamp(24px,5vw,64px);margin:clamp(40px,6vw,80px) auto clamp(56px,7vw,96px);
+  width:calc(100% - 2*max(16px,env(safe-area-inset-left,0px)))}
+.final::before{inset:-60px;filter:blur(50px) saturate(1.1);transform:scale(1.2)}
+.final::after{background:linear-gradient(100deg,rgba(14,13,11,.82) 0%,rgba(14,13,11,.9) 50%,rgba(14,13,11,.94) 100%)}
+.final .cta{border-radius:999px;padding:0 32px;box-shadow:0 12px 30px -10px rgba(223,164,56,.55)}
+.cta{border-radius:999px}
+.pop .cta{box-shadow:0 12px 30px -10px rgba(223,164,56,.55)}
+.sec h2{font-size:clamp(30px,3.8vw,44px)}
+@media (max-width:560px){ .why>div{min-height:0;padding:22px} .stats>div{max-width:none} }
 </style>
 </head>
 <body>
@@ -226,8 +270,8 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
   <p class="step">Steg 1 av 2</p>
   <h2 class="ask">Vad ska filmen användas till?</h2>
   <div class="purpose" role="tablist" aria-label="Välj syfte">
-    <button type="button" role="tab" id="tab-varumarke" aria-selected="true" aria-controls="plans" data-k="varumarke"><b>Varumärke</b><span>Företagsfilm, kundcase, intervjuer och produktfilm.</span></button>
-    <button type="button" role="tab" id="tab-annons" aria-selected="false" aria-controls="plans" data-k="annons" tabindex="-1"><b>Annonsering</b><span>Annonsfilm för Meta, Google och TikTok som testas och optimeras.</span></button>
+    <button type="button" role="tab" id="tab-varumarke" aria-selected="true" aria-controls="plans" data-k="varumarke" style="--img:url(images/web/tl-1.jpg)"><b>Varumärke</b><span>Företagsfilm, kundcase, intervjuer och produktfilm.</span></button>
+    <button type="button" role="tab" id="tab-annons" aria-selected="false" aria-controls="plans" data-k="annons" tabindex="-1" style="--img:url(images/web/tl-3.jpg)"><b>Annonsering</b><span>Annonsfilm för Meta, Google och TikTok som testas och optimeras.</span></button>
   </div>
 
   <p class="step">Steg 2 av 2</p>
@@ -246,26 +290,26 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
 <section class="sec" aria-labelledby="ingar-rubrik">
   <h2 id="ingar-rubrik">Det här ingår <em>i alla paket.</em></h2>
   <div class="incl">
-    <div><b>Strategi varje månad</b><span>Vi går igenom vad som fungerat och planerar nästa månads filmer utifrån det.</span></div>
-    <div><b>Idé och manus</b><span>Vi tar fram koncept och manus, ni godkänner innan vi spelar in.</span></div>
-    <div><b>Inspelning och utrustning</b><span>Fotograf, kamera, ljud och ljus. Inget ni behöver ordna själva.</span></div>
-    <div><b>Klippning och efterarbete</b><span>Redigering, färg, ljud, musik och undertexter.</span></div>
-    <div><b>Feedback och justeringar</b><span>Ni tycker till, vi justerar tills filmen sitter.</span></div>
-    <div><b>Alla format</b><span>9:16, 1:1 och 16:9, klara för hemsida, sociala medier och annonser.</span></div>
+    <div class="glass" style="--img:url(images/web/tl-1.jpg)"><b>Strategi varje månad</b><span>Vi går igenom vad som fungerat och planerar nästa månads filmer utifrån det.</span></div>
+    <div class="glass" style="--img:url(images/web/tl-2.jpg)"><b>Idé och manus</b><span>Vi tar fram koncept och manus, ni godkänner innan vi spelar in.</span></div>
+    <div class="glass" style="--img:url(images/web/tl-3.jpg)"><b>Inspelning och utrustning</b><span>Fotograf, kamera, ljud och ljus. Inget ni behöver ordna själva.</span></div>
+    <div class="glass" style="--img:url(images/web/tl-4.jpg)"><b>Klippning och efterarbete</b><span>Redigering, färg, ljud, musik och undertexter.</span></div>
+    <div class="glass" style="--img:url(images/web/tl-5.jpg)"><b>Feedback och justeringar</b><span>Ni tycker till, vi justerar tills filmen sitter.</span></div>
+    <div class="glass" style="--img:url(images/web/tl-2.jpg)"><b>Alla format</b><span>9:16, 1:1 och 16:9, klara för hemsida, sociala medier och annonser.</span></div>
   </div>
 </section>
 
 <section class="sec" aria-labelledby="varfor-rubrik">
   <h2 id="varfor-rubrik">Därför väljer företag <em>EMK.</em></h2>
   <div class="why">
-    <div><span class="n">01</span><h3>Fast pris, inga överraskningar</h3><p>Ni vet exakt vad det kostar varje månad. Ingen timdebitering och inga tilläggsfakturor.</p></div>
-    <div><span class="n">02</span><h3>Samma team varje gång</h3><p>Vi lär känna er verksamhet, så varje film blir bättre än den förra och ni slipper börja om från noll.</p></div>
-    <div><span class="n">03</span><h3>Ni lägger ingen tid på det</h3><p>Vi sköter idé, manus, planering, inspelning och klippning. Ni godkänner och publicerar.</p></div>
+    <div class="glass" style="--img:url(images/web/tl-2.jpg)"><span class="n">01</span><h3>Fast pris, inga överraskningar</h3><p>Ni vet exakt vad det kostar varje månad. Ingen timdebitering och inga tilläggsfakturor.</p></div>
+    <div class="glass" style="--img:url(images/web/tl-4.jpg)"><span class="n">02</span><h3>Samma team varje gång</h3><p>Vi lär känna er verksamhet, så varje film blir bättre än den förra och ni slipper börja om från noll.</p></div>
+    <div class="glass" style="--img:url(images/web/tl-5.jpg)"><span class="n">03</span><h3>Ni lägger ingen tid på det</h3><p>Vi sköter idé, manus, planering, inspelning och klippning. Ni godkänner och publicerar.</p></div>
   </div>
   <div class="stats">
-    <div><b>10 miljoner+</b><span>visningar åt våra kunder</span></div>
-    <div><b>625 000 kr</b><span>i intäkt från 25 000 kr i annonsbudget</span></div>
-    <div><b>3 veckor</b><span>till färdig film</span></div>
+    <div class="glass" style="--img:url(images/web/tl-1.jpg)"><b>10 miljoner+</b><span>visningar åt våra kunder</span></div>
+    <div class="glass" style="--img:url(images/web/tl-3.jpg)"><b>625 000 kr</b><span>i intäkt från 25 000 kr i annonsbudget</span></div>
+    <div class="glass" style="--img:url(images/web/tl-4.jpg)"><b>3 veckor</b><span>till färdig film</span></div>
   </div>
 </section>
 
@@ -280,7 +324,7 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
   </div>
 </section>
 
-<section class="sec final" aria-labelledby="slut-rubrik">
+<section class="sec final glass" aria-labelledby="slut-rubrik" style="--img:url(images/web/kontakt-pexels-bg.jpg)">
   <h2 id="slut-rubrik">Osäkra på vilket paket <em>som passar?</em></h2>
   <p>Boka ett kort samtal så går vi igenom era mål och föreslår ett upplägg. Helt utan förpliktelser.</p>
   <a class="cta" href="/kontakt.html">Boka 15 min samtal →</a>
@@ -312,6 +356,8 @@ document.getElementById('emk-year').textContent = new Date().getFullYear();
       quote:{t:"625 000 kr i intäkt på en annonsbudget på 25 000 kr.", by:"Resultat för en av våra kunder"}}
   };
   var BOKA = "/kontakt.html";
+  var PIMG=['tl-1','tl-2','tl-4'];
+
 
   var check = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.5" stroke="#4A463D" stroke-width="1.4"/><path d="M6.4 10.2l2.4 2.4 4.8-5" stroke="#F2EEE4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var plansEl = document.getElementById('plans');
@@ -321,7 +367,7 @@ document.getElementById('emk-year').textContent = new Date().getFullYear();
   function render(k){
     var d = data[k];
     if (d.snart){
-      plansEl.innerHTML = '<article class="plan wide"><h2>'+esc(d.titel)+' på månadsbasis</h2>'
+      plansEl.innerHTML = '<article class="plan wide glass" style="--img:url(images/web/tl-3.jpg)"><h2>'+esc(d.titel)+' på månadsbasis</h2>'
         + '<p class="desc" style="margin:0">'+esc(d.text)+'</p>'
         + '<ul class="list" style="text-align:left;align-self:stretch;max-width:420px;margin:0 auto">'+d.list.map(function(li){return '<li>'+check+'<span>'+esc(li)+'</span></li>';}).join('')+'</ul>'
         + '<p class="unit" style="margin:0">Pris efter upplägg</p>'
@@ -330,8 +376,8 @@ document.getElementById('emk-year').textContent = new Date().getFullYear();
         + '</article>';
       return;
     }
-    plansEl.innerHTML = d.map(function(p){
-      return '<article class="plan'+(p.pop?' pop':'')+'">'
+    plansEl.innerHTML = d.map(function(p,i){
+      return '<article class="plan glass'+(p.pop?' pop':'')+'" style="--img:url(images/web/'+PIMG[i%3]+'.jpg)">'
         + '<div class="top"><div class="name"><span class="mark" aria-hidden="true"><span></span></span>'+esc(p.name)+'</div>'
         + (p.pop?'<span class="badge">Populärast</span>':'') + '</div>'
         + '<p class="desc">'+esc(p.desc)+'</p>'
