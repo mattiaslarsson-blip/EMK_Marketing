@@ -815,6 +815,13 @@
       #emk-lp .emk-stats__card { gap: clamp(56px, 6vw, 96px); grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
       #emk-lp .emk-stats__body { padding-right: 0; }
     }
+    /* Recensioner: mindre kort, karusellen kvar */
+    #emk-lp .emk-res__photo { aspect-ratio: 4 / 2.6; }
+    #emk-lp .emk-res__body { padding: 0 22px 20px; gap: 16px; }
+    #emk-lp .emk-res__q { font-size: 16px; line-height: 1.5; }
+    #emk-lp .emk-res__by { padding-top: 14px; }
+    @media (min-width: 1500px) { #emk-lp .emk-res__grid { --per: 5; } }
+    @media (max-width: 900px) { #emk-lp .emk-res__photo { aspect-ratio: 4 / 2.8; } #emk-lp .emk-res__q { font-size: 17px; } #emk-lp .emk-res__grid > .emk-res__card { flex-basis: 78%; } }
   </style>
 </head>
 <body>
