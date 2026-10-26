@@ -822,11 +822,11 @@
     #emk-lp .emk-res__by { padding-top: 14px; }
     @media (min-width: 1500px) { #emk-lp .emk-res__grid { --per: 5; } }
     @media (max-width: 900px) { #emk-lp .emk-res__photo { aspect-ratio: 4 / 2.8; } #emk-lp .emk-res__q { font-size: 17px; } #emk-lp .emk-res__grid > .emk-res__card { flex-basis: 78%; } }
-    /* Recensioner: enhetliga porträtt (samma beskärning + svartvit ton) */
+    /* Recensioner: enhetliga porträtt (samma beskärning) */
     #emk-lp .emk-res__photo { background: #0f0f0e; }
     #emk-lp .emk-res__photo img { object-position: var(--ox, 50%) var(--oy, 25%); transform-origin: var(--ox, 50%) var(--oy, 25%);
-      transform: scale(var(--z, 1)); filter: grayscale(1) contrast(1.1) brightness(.88); transition: transform .8s cubic-bezier(.2,.8,.2,1), filter .5s ease; }
-    #emk-lp .emk-res__card:hover .emk-res__photo img { transform: scale(calc(var(--z, 1) * 1.04)); filter: grayscale(0) contrast(1.02) brightness(.95); }
+      transform: scale(var(--z, 1)); transition: transform .8s cubic-bezier(.2,.8,.2,1); }
+    #emk-lp .emk-res__card:hover .emk-res__photo img { transform: scale(calc(var(--z, 1) * 1.04)); }
     #emk-lp .emk-res__photo::after { background: linear-gradient(180deg, rgba(24,23,21,0) 64%, rgba(24,23,21,.65) 86%, #181715 100%); }
     #emk-lp .emk-res__photo { aspect-ratio: 4 / 2.85; }
   </style>
