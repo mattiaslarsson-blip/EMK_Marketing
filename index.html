@@ -822,6 +822,13 @@
     #emk-lp .emk-res__by { padding-top: 14px; }
     @media (min-width: 1500px) { #emk-lp .emk-res__grid { --per: 5; } }
     @media (max-width: 900px) { #emk-lp .emk-res__photo { aspect-ratio: 4 / 2.8; } #emk-lp .emk-res__q { font-size: 17px; } #emk-lp .emk-res__grid > .emk-res__card { flex-basis: 78%; } }
+    /* Recensioner: enhetliga porträtt (samma beskärning + svartvit ton) */
+    #emk-lp .emk-res__photo { background: #0f0f0e; }
+    #emk-lp .emk-res__photo img { object-position: var(--ox, 50%) var(--oy, 25%); transform-origin: var(--ox, 50%) var(--oy, 25%);
+      transform: scale(var(--z, 1)); filter: grayscale(1) contrast(1.1) brightness(.88); transition: transform .8s cubic-bezier(.2,.8,.2,1), filter .5s ease; }
+    #emk-lp .emk-res__card:hover .emk-res__photo img { transform: scale(calc(var(--z, 1) * 1.04)); filter: grayscale(0) contrast(1.02) brightness(.95); }
+    #emk-lp .emk-res__photo::after { background: linear-gradient(180deg, rgba(24,23,21,0) 64%, rgba(24,23,21,.65) 86%, #181715 100%); }
+    #emk-lp .emk-res__photo { aspect-ratio: 4 / 2.85; }
   </style>
 </head>
 <body>
@@ -998,7 +1005,7 @@
       <div class="emk-res__viewport">
       <div class="emk-res__grid" id="emk-res-grid" aria-roledescription="karusell" aria-label="Kundrecensioner">
         <figure class="emk-res__card">
-          <div class="emk-res__photo"><img src="images/foto/portratt/monika-lykvist.jpg" alt="Monika Lykvist" loading="lazy" style="object-position:center 18%"></div>
+          <div class="emk-res__photo"><img src="images/foto/portratt/monika-lykvist.jpg" alt="Monika Lykvist" loading="lazy" style="--z:1.1;--ox:52%;--oy:20%"></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="emk-res__q">Vi anlitade EMK Marketing och är mycket nöjda med deras arbete. De visade upp en bred kompetens och innovativt tänkande.</blockquote>
@@ -1006,7 +1013,7 @@
           </div>
         </figure>
         <figure class="emk-res__card">
-          <div class="emk-res__photo"><img src="images/foto/portratt/christina-wissinger.jpg" alt="Christina Wissinger" loading="lazy" style="object-position:center 28%"></div>
+          <div class="emk-res__photo"><img src="images/foto/portratt/christina-wissinger.jpg" alt="Christina Wissinger" loading="lazy" style="--z:1.1;--ox:50%;--oy:36%"></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="emk-res__q">Ett verkligt lyft i sociala medier. EMK har varit lyhörda, proffsiga och enkla att kommunicera med. Jag kan varmt rekommendera dem!</blockquote>
@@ -1014,7 +1021,7 @@
           </div>
         </figure>
         <figure class="emk-res__card">
-          <div class="emk-res__photo"><img src="images/foto/portratt/leonie-sterner-sazesh.jpg" alt="Leonie Sterner Sazesh" loading="lazy" style="object-position:58% 22%"></div>
+          <div class="emk-res__photo"><img src="images/foto/portratt/leonie-sterner-sazesh.jpg" alt="Leonie Sterner Sazesh" loading="lazy" style="--z:1.6;--ox:57%;--oy:12%"></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="emk-res__q">Vi är mycket nöjda med filmer och bilder som EMK Marketing tog fram.</blockquote>
@@ -1022,7 +1029,7 @@
           </div>
         </figure>
         <figure class="emk-res__card">
-          <div class="emk-res__photo"><img src="images/foto/portratt/william-broman.jpg" alt="William Broman" loading="lazy" style="object-position:center 20%"></div>
+          <div class="emk-res__photo"><img src="images/foto/portratt/william-broman.jpg" alt="William Broman" loading="lazy" style="--z:1.05;--ox:50%;--oy:22%"></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="emk-res__q">Jag är mycket imponerad av EMK Marketings arbete. De visade en hög nivå av professionalism och har varit avgörande i att bygga upp B2C-innehåll av hög kvalitet.</blockquote>
