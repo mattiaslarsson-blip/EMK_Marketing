@@ -48,7 +48,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   display:flex;flex-direction:column;align-items:center;gap:clamp(28px,4vw,44px);
 }
 /* foto från en inspelning, mörkat upptill och tonat ut i bakgrundsfärgen */
-.band::before{content:none}
+.band::before{content:"";position:absolute;inset:0 0 auto 0;height:clamp(640px,70vw,920px);z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(60% 55% at 50% 0%,rgba(223,164,56,.16) 0%,rgba(223,164,56,.05) 45%,transparent 70%),
+    linear-gradient(rgba(245,241,232,.045) 1px,transparent 1px) 0 0/64px 64px,
+    linear-gradient(90deg,rgba(245,241,232,.045) 1px,transparent 1px) 0 0/64px 64px;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 45%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 45%,transparent 100%)}
 .head{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;max-width:860px}
 h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4vw,76px);line-height:1.06;letter-spacing:-.045em;text-wrap:balance}
 .lead{margin:0;max-width:640px;color:#D9D3C6;font-size:clamp(16px,1.7vw,19px);line-height:1.5}
@@ -247,18 +252,6 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
       <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#DFA438"/><path d="M6.2 10.3l2.5 2.5 5-5.3" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Alla format ingår</li>
       <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#DFA438"/><path d="M6.2 10.3l2.5 2.5 5-5.3" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Skala upp eller ner</li>
     </ul>
-  </div>
-
-  <div class="proof">
-    <p>Betrodd av företag över hela Sverige</p>
-    <div class="logos">
-      <img src="images/logos/grand-tours.png" alt="Grand Tours">
-      <img src="images/logos/joina.png" alt="Joina">
-      <img src="images/logos/svensk-gymnastik.png" alt="Svensk Gymnastik">
-      <img src="images/logos/festivalborg.png" alt="Festivalborg">
-      <img src="images/logos/the-lobby.png" alt="The Lobby">
-      <img src="images/logos/indie-pen-publishing.png" alt="Indie Pen Publishing" class="tall">
-    </div>
   </div>
 
   <p class="step">Steg 1 av 2</p>
