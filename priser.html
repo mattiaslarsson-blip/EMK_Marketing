@@ -48,12 +48,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   display:flex;flex-direction:column;align-items:center;gap:clamp(28px,4vw,44px);
 }
 /* foto från en inspelning, mörkat upptill och tonat ut i bakgrundsfärgen */
-.band::before{
-  content:"";position:absolute;inset:0 0 auto 0;height:clamp(600px,66vw,880px);z-index:-1;
-  background:
-    linear-gradient(180deg,rgba(17,17,17,.88) 0%,rgba(17,17,17,.74) 40%,rgba(17,17,17,.45) 66%,var(--ground) 100%),
-    url("images/web/priser-bakgrund.jpg") center 35%/cover no-repeat;
-}
+.band::before{content:none}
 .head{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;max-width:860px}
 h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4vw,76px);line-height:1.06;letter-spacing:-.045em;text-wrap:balance}
 .lead{margin:0;max-width:640px;color:#D9D3C6;font-size:clamp(16px,1.7vw,19px);line-height:1.5}
