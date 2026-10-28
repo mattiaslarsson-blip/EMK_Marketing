@@ -349,6 +349,28 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
 .st-prev{background:rgba(255,255,255,.06);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),inset 0 0 0 1px rgba(255,255,255,.14)}
 .st-next{box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 12px 30px -12px rgba(223,164,56,.6)}
 .st-foot{border-top-color:rgba(255,255,255,.14)}
+
+/* ===== Levande: bilder, ansikte, CTA, scroll-in ===== */
+.st-pane{grid-template-columns:auto minmax(0,1fr) minmax(0,.9fr);align-items:center}
+.st-img{margin:0;align-self:stretch;min-height:180px;border-radius:16px;overflow:hidden;position:relative;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 18px 40px -20px rgba(0,0,0,.8)}
+.st-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kb 9s ease-out both}
+@keyframes kb{from{transform:scale(1.08)}to{transform:scale(1)}}
+.st-who{display:inline-flex;align-items:center;gap:10px;margin:0 0 12px;padding:5px 12px 5px 5px;border-radius:999px;font-size:13.5px;color:rgba(245,241,232,.85);
+  background:rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),inset 0 0 0 1px rgba(255,255,255,.12)}
+.st-who img{width:30px;height:30px;border-radius:50%;object-fit:cover}
+.st-who b{color:var(--ink)}
+.st-cta{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin:28px 0 0}
+.st-cta .cta{display:inline-flex;padding:0 28px;background:var(--gold);color:#111;box-shadow:0 12px 30px -12px rgba(223,164,56,.6)}
+.st-cta span{font-size:14px;color:var(--muted)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (max-width:760px){
+  .st-pane{grid-template-columns:minmax(0,1fr)}
+  .st-img{order:-1;min-height:0;aspect-ratio:16/10}
+}
+@media (prefers-reduced-motion:reduce){.st-img img{animation:none}.rv{opacity:1;transform:none;transition:none}}
+main{overflow-x:clip}
 </style>
 </head>
 <body>
@@ -380,7 +402,7 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
     
     <div class="st-tabs" role="tablist" aria-label="Kom igång"><button type="button" role="tab" class="st-tab" id="start-t0" aria-controls="start-p0" aria-selected="true"><i>01</i><b>Kort samtal</b></button><button type="button" role="tab" class="st-tab" id="start-t1" aria-controls="start-p1" aria-selected="false" tabindex="-1"><i>02</i><b>Uppstartsmöte</b></button><button type="button" role="tab" class="st-tab" id="start-t2" aria-controls="start-p2" aria-selected="false" tabindex="-1"><i>03</i><b>Första inspelningen</b></button></div>
     <div class="st-box glass" style="--img:url(images/web/tl-1.jpg)">
-      <div class="st-pane" role="tabpanel" id="start-p0" aria-labelledby="start-t0" style="--img:url(images/web/tl-1.jpg)"><span class="st-n">01</span><div><h3>Kort samtal</h3><p>15 minuter där ni berättar om verksamheten och vad ni vill uppnå. Vi föreslår ett paket som passar.</p></div></div><div class="st-pane" role="tabpanel" id="start-p1" aria-labelledby="start-t1" hidden style="--img:url(images/web/tl-2.jpg)"><span class="st-n">02</span><div><h3>Uppstartsmöte</h3><p>Vi går igenom mål, målgrupp och kanaler och planerar de första filmerna tillsammans.</p></div></div><div class="st-pane" role="tabpanel" id="start-p2" aria-labelledby="start-t2" hidden style="--img:url(images/web/tl-4.jpg)"><span class="st-n">03</span><div><h3>Första inspelningen</h3><p>Vi kommer ut med fotograf och utrustning. Färdiga filmer inom 3 veckor från inspelning.</p></div></div>
+      <div class="st-pane" role="tabpanel" id="start-p0" aria-labelledby="start-t0" style="--img:url(images/web/tl-1.jpg)"><span class="st-n">01</span><div><h3>Kort samtal</h3><span class="st-who"><img src="images/web/p-mattias.jpg" alt=""><span>Med <b>Mattias</b>, grundare</span></span><p>15 minuter där ni berättar om verksamheten och vad ni vill uppnå. Vi föreslår ett paket som passar.</p></div><figure class="st-img"><img src="images/web/p-samtal.jpg" alt="" loading="lazy"></figure></div><div class="st-pane" role="tabpanel" id="start-p1" aria-labelledby="start-t1" hidden style="--img:url(images/web/tl-2.jpg)"><span class="st-n">02</span><div><h3>Uppstartsmöte</h3><p>Vi går igenom mål, målgrupp och kanaler och planerar de första filmerna tillsammans.</p></div><figure class="st-img"><img src="images/web/p-mote.jpg" alt="" loading="lazy"></figure></div><div class="st-pane" role="tabpanel" id="start-p2" aria-labelledby="start-t2" hidden style="--img:url(images/web/tl-4.jpg)"><span class="st-n">03</span><div><h3>Första inspelningen</h3><p>Vi kommer ut med fotograf och utrustning. Färdiga filmer inom 3 veckor från inspelning.</p></div><figure class="st-img"><img src="images/web/p-inspelning.jpg" alt="" loading="lazy"></figure></div>
       <div class="st-foot">
         <span class="st-count"><b class="st-cur">01</b> / 03</span>
         <span class="st-bar"><span class="st-fill"></span></span>
@@ -389,6 +411,7 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
       </div>
     </div>
   </div>
+  <p class="st-cta"><a class="cta" href="/kontakt.html">Boka 15 min samtal →</a><span>Helt utan förpliktelser.</span></p>
 </section>
 
 <section class="sec" aria-labelledby="manad-rubrik">
@@ -399,7 +422,7 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
     <div class="ruler" aria-hidden="true"><span>00:00</span><span>01:00</span><span>02:00</span><span>03:00</span><span>04:00</span><span>05:00</span></div>
     <div class="st-tabs" role="tablist" aria-label="Varje månad"><button type="button" role="tab" class="st-tab" id="manad-t0" aria-controls="manad-p0" aria-selected="true"><i>01</i><b>Strategi</b></button><button type="button" role="tab" class="st-tab" id="manad-t1" aria-controls="manad-p1" aria-selected="false" tabindex="-1"><i>02</i><b>Idé och manus</b></button><button type="button" role="tab" class="st-tab" id="manad-t2" aria-controls="manad-p2" aria-selected="false" tabindex="-1"><i>03</i><b>Inspelning</b></button><button type="button" role="tab" class="st-tab" id="manad-t3" aria-controls="manad-p3" aria-selected="false" tabindex="-1"><i>04</i><b>Klippning</b></button><button type="button" role="tab" class="st-tab" id="manad-t4" aria-controls="manad-p4" aria-selected="false" tabindex="-1"><i>05</i><b>Feedback</b></button><button type="button" role="tab" class="st-tab" id="manad-t5" aria-controls="manad-p5" aria-selected="false" tabindex="-1"><i>06</i><b>Leverans</b></button><span class="ph" aria-hidden="true"></span></div>
     <div class="st-box glass" style="--img:url(images/web/tl-1.jpg)">
-      <div class="st-pane" role="tabpanel" id="manad-p0" aria-labelledby="manad-t0" style="--img:url(images/web/tl-1.jpg)"><span class="st-n">01</span><div><h3>Strategi</h3><p>Vi går igenom vad som fungerat och planerar nästa månads filmer utifrån det.</p></div></div><div class="st-pane" role="tabpanel" id="manad-p1" aria-labelledby="manad-t1" hidden style="--img:url(images/web/tl-2.jpg)"><span class="st-n">02</span><div><h3>Idé och manus</h3><p>Vi tar fram koncept och manus. Ni godkänner innan vi spelar in.</p></div></div><div class="st-pane" role="tabpanel" id="manad-p2" aria-labelledby="manad-t2" hidden style="--img:url(images/web/tl-3.jpg)"><span class="st-n">03</span><div><h3>Inspelning</h3><p>Fotograf, kamera, ljud och ljus. Inget ni behöver ordna själva.</p></div></div><div class="st-pane" role="tabpanel" id="manad-p3" aria-labelledby="manad-t3" hidden style="--img:url(images/web/tl-4.jpg)"><span class="st-n">04</span><div><h3>Klippning</h3><p>Redigering, färg, ljud, musik och undertexter.</p></div></div><div class="st-pane" role="tabpanel" id="manad-p4" aria-labelledby="manad-t4" hidden style="--img:url(images/web/tl-5.jpg)"><span class="st-n">05</span><div><h3>Feedback</h3><p>Ni tycker till, vi justerar tills filmen sitter.</p></div></div><div class="st-pane" role="tabpanel" id="manad-p5" aria-labelledby="manad-t5" hidden style="--img:url(images/web/tl-2.jpg)"><span class="st-n">06</span><div><h3>Leverans</h3><p>9:16, 1:1 och 16:9, klara för hemsida, sociala medier och annonser. Sen börjar nästa månad.</p></div></div>
+      <div class="st-pane" role="tabpanel" id="manad-p0" aria-labelledby="manad-t0" style="--img:url(images/web/tl-1.jpg)"><span class="st-n">01</span><div><h3>Strategi</h3><p>Vi går igenom vad som fungerat och planerar nästa månads filmer utifrån det.</p></div><figure class="st-img"><img src="images/web/p-samtal.jpg" alt="" loading="lazy"></figure></div><div class="st-pane" role="tabpanel" id="manad-p1" aria-labelledby="manad-t1" hidden style="--img:url(images/web/tl-2.jpg)"><span class="st-n">02</span><div><h3>Idé och manus</h3><p>Vi tar fram koncept och manus. Ni godkänner innan vi spelar in.</p></div><figure class="st-img"><img src="images/web/p-manus.jpg" alt="" loading="lazy"></figure></div><div class="st-pane" role="tabpanel" id="manad-p2" aria-labelledby="manad-t2" hidden style="--img:url(images/web/tl-3.jpg)"><span class="st-n">03</span><div><h3>Inspelning</h3><p>Fotograf, kamera, ljud och ljus. Inget ni behöver ordna själva.</p></div><figure class="st-img"><img src="images/web/p-inspelning.jpg" alt="" loading="lazy"></figure></div><div class="st-pane" role="tabpanel" id="manad-p3" aria-labelledby="manad-t3" hidden style="--img:url(images/web/tl-4.jpg)"><span class="st-n">04</span><div><h3>Klippning</h3><p>Redigering, färg, ljud, musik och undertexter.</p></div><figure class="st-img"><img src="images/web/p-klipp.jpg" alt="" loading="lazy"></figure></div><div class="st-pane" role="tabpanel" id="manad-p4" aria-labelledby="manad-t4" hidden style="--img:url(images/web/tl-5.jpg)"><span class="st-n">05</span><div><h3>Feedback</h3><p>Ni tycker till, vi justerar tills filmen sitter.</p></div><figure class="st-img"><img src="images/web/p-feedback.jpg" alt="" loading="lazy"></figure></div><div class="st-pane" role="tabpanel" id="manad-p5" aria-labelledby="manad-t5" hidden style="--img:url(images/web/tl-2.jpg)"><span class="st-n">06</span><div><h3>Leverans</h3><p>9:16, 1:1 och 16:9, klara för hemsida, sociala medier och annonser. Sen börjar nästa månad.</p></div><figure class="st-img"><img src="images/web/p-leverans.jpg" alt="" loading="lazy"></figure></div>
       <div class="st-foot">
         <span class="st-count"><b class="st-cur">01</b> / 06</span>
         <span class="st-bar"><span class="st-fill"></span></span>
@@ -418,7 +441,7 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
     
     <div class="st-tabs" role="tablist" aria-label="Er del"><button type="button" role="tab" class="st-tab" id="ni-t0" aria-controls="ni-p0" aria-selected="true"><i>01</i><b>Godkänna manus</b></button><button type="button" role="tab" class="st-tab" id="ni-t1" aria-controls="ni-p1" aria-selected="false" tabindex="-1"><i>02</i><b>Vara med vid behov</b></button><button type="button" role="tab" class="st-tab" id="ni-t2" aria-controls="ni-p2" aria-selected="false" tabindex="-1"><i>03</i><b>Ge feedback</b></button><button type="button" role="tab" class="st-tab" id="ni-t3" aria-controls="ni-p3" aria-selected="false" tabindex="-1"><i>04</i><b>Publicera</b></button></div>
     <div class="st-box glass" style="--img:url(images/web/tl-3.jpg)">
-      <div class="st-pane" role="tabpanel" id="ni-p0" aria-labelledby="ni-t0" style="--img:url(images/web/tl-3.jpg)"><span class="st-n">01</span><div><h3>Godkänna manus</h3><p>Ni säger ja eller ber om ändringar innan vi spelar in.</p></div></div><div class="st-pane" role="tabpanel" id="ni-p1" aria-labelledby="ni-t1" hidden style="--img:url(images/web/tl-4.jpg)"><span class="st-n">02</span><div><h3>Vara med vid behov</h3><p>Ofta kan vi filma utan att ni behöver vara på plats.</p></div></div><div class="st-pane" role="tabpanel" id="ni-p2" aria-labelledby="ni-t2" hidden style="--img:url(images/web/tl-5.jpg)"><span class="st-n">03</span><div><h3>Ge feedback</h3><p>Ni tittar på filmen och tycker till, vi justerar.</p></div></div><div class="st-pane" role="tabpanel" id="ni-p3" aria-labelledby="ni-t3" hidden style="--img:url(images/web/tl-1.jpg)"><span class="st-n">04</span><div><h3>Publicera</h3><p>Eller låt oss göra det åt er, som tillägg.</p></div></div>
+      <div class="st-pane" role="tabpanel" id="ni-p0" aria-labelledby="ni-t0" style="--img:url(images/web/tl-3.jpg)"><span class="st-n">01</span><div><h3>Godkänna manus</h3><p>Ni säger ja eller ber om ändringar innan vi spelar in.</p></div><figure class="st-img"><img src="images/web/p-manus.jpg" alt="" loading="lazy"></figure></div><div class="st-pane" role="tabpanel" id="ni-p1" aria-labelledby="ni-t1" hidden style="--img:url(images/web/tl-4.jpg)"><span class="st-n">02</span><div><h3>Vara med vid behov</h3><p>Ofta kan vi filma utan att ni behöver vara på plats.</p></div><figure class="st-img"><img src="images/web/p-plats.jpg" alt="" loading="lazy"></figure></div><div class="st-pane" role="tabpanel" id="ni-p2" aria-labelledby="ni-t2" hidden style="--img:url(images/web/tl-5.jpg)"><span class="st-n">03</span><div><h3>Ge feedback</h3><p>Ni tittar på filmen och tycker till, vi justerar.</p></div><figure class="st-img"><img src="images/web/p-feedback.jpg" alt="" loading="lazy"></figure></div><div class="st-pane" role="tabpanel" id="ni-p3" aria-labelledby="ni-t3" hidden style="--img:url(images/web/tl-1.jpg)"><span class="st-n">04</span><div><h3>Publicera</h3><p>Eller låt oss göra det åt er, som tillägg.</p></div><figure class="st-img"><img src="images/web/p-leverans.jpg" alt="" loading="lazy"></figure></div>
       <div class="st-foot">
         <span class="st-count"><b class="st-cur">01</b> / 04</span>
         <span class="st-bar"><span class="st-fill"></span></span>
@@ -465,6 +488,15 @@ document.querySelectorAll('[data-stepper]').forEach(function(st){
   prev.addEventListener('click',function(){ go(i-1); });
   go(0);
 });
+</script>
+<script>
+(function(){
+  var els=[].slice.call(document.querySelectorAll('main > section'));
+  if(!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  els.slice(1).forEach(function(e){ e.classList.add('rv'); });
+  var io=new IntersectionObserver(function(es){ es.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target);} }); },{threshold:.15});
+  els.forEach(function(e){ io.observe(e); });
+})();
 </script>
 </body>
 </html>
