@@ -1,0 +1,9 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "test.emkmarketing.se" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
+  ]
+}
