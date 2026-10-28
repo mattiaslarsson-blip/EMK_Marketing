@@ -485,6 +485,15 @@ main .glass::before,main .glass::after{display:none!important}
   .split__text{padding:48px 24px}
   .split__img{aspect-ratio:4/3}
 }
+
+/* split: mindre + punktlista */
+.split{min-height:480px;max-width:1120px;margin:96px auto 0;border:1px solid rgba(245,241,232,.12);border-radius:24px;overflow:hidden;width:calc(100% - 48px)}
+.split__text{padding:48px;gap:32px;justify-content:center}
+.split h2{font-size:clamp(32px,3vw,44px);max-width:14ch}
+.split__list{border-top:0;display:flex;flex-direction:column;gap:12px}
+.split__list li{padding:0 0 0 24px;border-bottom:0;font-size:17px;position:relative}
+.split__list li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+@media (max-width:900px){.split{width:calc(100% - 32px);margin-top:64px}.split__text{padding:32px 24px}}
 </style>
 </head>
 <body>
