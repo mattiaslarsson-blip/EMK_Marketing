@@ -451,6 +451,70 @@ main{overflow-x:clip}
   .sk-body h3{font-size:20px}
 }
 @media (prefers-reduced-motion:reduce){.sk-card,.sk-img img{transition:none}}
+
+/* ===== Hero: sökare med kort ===== */
+.vf-hero{padding:144px 24px 64px;max-width:1360px;margin:0 auto}
+.vf-head{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:32px}
+.vf-head h1{margin:0;text-align:left}
+.vf-head .lead{margin:0;max-width:400px;text-align:left}
+.vf{position:relative;border-radius:24px;overflow:hidden;min-height:600px;aspect-ratio:16/9;max-height:760px;isolation:isolate;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 40px 80px -40px rgba(0,0,0,.9)}
+.vf-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 100%;z-index:-2;transform:scale(1.04);animation:vfz 18s ease-in-out infinite alternate}
+@keyframes vfz{to{transform:scale(1.1)}}
+.vf::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(14,13,11,.55) 0%,rgba(14,13,11,.1) 45%,rgba(14,13,11,.25) 100%),linear-gradient(0deg,rgba(14,13,11,.45),transparent 40%)}
+.vf-cards{position:relative;z-index:2;display:flex;flex-direction:column;gap:8px;width:400px;padding:32px}
+.vf-card{display:flex;align-items:center;gap:16px;padding:16px 24px 16px 16px;border-radius:16px;background:rgba(245,241,232,.96);color:#141310;
+  box-shadow:0 16px 32px -16px rgba(0,0,0,.6);opacity:0;transform:translateX(-16px);animation:vfin .6s cubic-bezier(.2,.8,.2,1) forwards}
+.vf-card:nth-child(2){animation-delay:.12s}.vf-card:nth-child(3){animation-delay:.24s}.vf-card:nth-child(4){animation-delay:.36s}
+@keyframes vfin{to{opacity:1;transform:none}}
+.vf-card h3{margin:0 0 4px;font:800 16px/1.2 var(--display);color:#141310}
+.vf-card p{margin:0;font-size:14px;line-height:1.45;color:#4A463E}
+.vf-ring{--p:50;flex:none;width:72px;height:72px;border-radius:50%;display:grid;place-items:center;align-content:center;position:relative;
+  background:conic-gradient(#DFA438 calc(var(--p)*1%),#E3DDD0 0)}
+.vf-ring::before{content:"";position:absolute;inset:6px;border-radius:50%;background:#F5F1E8}
+.vf-ring b,.vf-ring i{position:relative;line-height:1}
+.vf-ring b{font:800 24px var(--display);letter-spacing:-.02em;color:#141310}
+.vf-ring i{font:600 11px var(--display);font-style:normal;color:#6B665C;margin-top:2px}
+
+.vf-hud{position:absolute;inset:0;z-index:1;pointer-events:none;font:500 14px/1 ui-monospace,'SFMono-Regular',Menlo,monospace;letter-spacing:.08em;color:rgba(255,255,255,.9);text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.vf-hud>span{position:absolute}
+.vf-rec{top:32px;right:32px;display:flex;align-items:center;gap:8px}
+.vf-rec i{width:10px;height:10px;border-radius:50%;background:#E5483D;animation:blink 1.2s steps(2) infinite}
+@keyframes blink{50%{opacity:.2}}
+.vf-rec em{font-style:normal}
+.vf-r1{right:32px;top:72px}.vf-r2{right:32px;top:104px}.vf-r3{right:32px;top:136px}.vf-r4{right:32px;bottom:40px;color:#DFA438}
+.vf-bl{left:32px;bottom:40px;display:none}
+.vf-focus{left:var(--fx,74%);top:var(--fy,85%);width:104px;height:104px;margin:-52px 0 0 -52px;border:1px dashed rgba(255,255,255,.7);border-radius:50%}
+.vf-focus::before,.vf-focus::after{content:"";position:absolute;background:rgba(255,255,255,.85)}
+.vf-focus::before{left:50%;top:32px;bottom:32px;width:1px}
+.vf-focus::after{top:50%;left:32px;right:32px;height:1px}
+.vf-c{width:24px;height:24px;border-color:rgba(255,255,255,.7);border-style:solid;border-width:0}
+.vf-c.tl{top:24px;left:448px;border-top-width:2px;border-left-width:2px}
+.vf-c.tr{top:24px;right:24px;border-top-width:2px;border-right-width:2px;display:none}
+.vf-c.bl{bottom:24px;left:448px;border-bottom-width:2px;border-left-width:2px}
+.vf-c.br{bottom:24px;right:24px;border-bottom-width:2px;border-right-width:2px}
+
+@media (max-width:900px){
+  .vf-head{flex-direction:column;align-items:flex-start;gap:16px}
+  .vf{min-height:0;aspect-ratio:auto;max-height:none;border-radius:24px;display:flex;flex-direction:column}
+  .vf-bg{position:relative;height:320px;z-index:0;animation:none;transform:none}
+  .vf::after{bottom:auto;height:320px}
+  .vf-hud{bottom:auto;height:320px}
+  .vf-cards{width:auto;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;background:#141310}
+  .vf-card{flex-direction:column;align-items:flex-start;padding:16px}
+  .vf-r1,.vf-r2,.vf-r3{display:none}
+  .vf-r4{display:none}
+  .vf-c.tl{left:24px}.vf-c.bl{left:24px;bottom:24px}.vf-c.br{display:none}
+  .vf-focus{--fx:79%;--fy:84%;width:72px;height:72px;margin:-36px 0 0 -36px}
+  .vf-focus::before{top:20px;bottom:20px}.vf-focus::after{left:20px;right:20px}
+}
+@media (max-width:560px){
+  .vf-hero{padding:112px 16px 48px}
+  .vf-bg,.vf::after,.vf-hud{height:256px}
+  .vf-cards{grid-template-columns:minmax(0,1fr)}
+  .vf-card{flex-direction:row;align-items:center}
+  .vf-hud{font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){.vf-bg,.vf-card,.vf-rec i{animation:none}.vf-card{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -469,9 +533,25 @@ main{overflow-x:clip}
 </div>
 
 <main>
-<section class="p-hero" aria-labelledby="p-rubrik">
-  <h1 id="p-rubrik">Så går det till.</h1>
-  <p class="lead">Från första samtal till nya filmer varje månad. Ni lägger lite tid, vi sköter resten.</p>
+<section class="vf-hero" aria-labelledby="p-rubrik">
+  <div class="vf-head">
+    <h1 id="p-rubrik">Så går det till.</h1>
+    <p class="lead">Från första samtal till nya filmer varje månad. Ni lägger lite tid, vi sköter resten.</p>
+  </div>
+  <div class="vf">
+    <img class="vf-bg" src="images/web/priser-bakgrund.jpg" alt="Fotograf från EMK filmar en kund">
+    <div class="vf-cards"><div class="vf-card"><span class="vf-ring" style="--p:25"><b>15</b><i>min</i></span><div><h3>Första samtalet</h3><p>Ett kort samtal där ni berättar om verksamheten och vad ni vill uppnå.</p></div></div><div class="vf-card"><span class="vf-ring" style="--p:50"><b>1</b><i>dag</i></span><div><h3>Inspelning</h3><p>Vi kommer ut med fotograf, kamera, ljud och ljus. Inget ni behöver ordna.</p></div></div><div class="vf-card"><span class="vf-ring" style="--p:75"><b>3</b><i>v</i></span><div><h3>Till färdig film</h3><p>Klippt, färgsatt och med undertexter, inom tre veckor från inspelning.</p></div></div><div class="vf-card"><span class="vf-ring" style="--p:100"><b>4+</b></span><div><h3>Filmer i månaden</h3><p>Nya filmer varje månad i alla format, till ett fast pris.</p></div></div></div>
+    <div class="vf-hud" aria-hidden="true">
+      <span class="vf-rec"><i></i>REC <em id="vf-tc">00:00:00:00</em></span>
+      <span class="vf-r1">4K · 25 FPS</span>
+      <span class="vf-r2">ISO 800 · F/2.8 · 1/50</span>
+      <span class="vf-r3">WB 5600K</span>
+      <span class="vf-r4">EMK_MANADSPRODUKTION</span>
+      <span class="vf-bl">+&nbsp; FOKUS: KUND</span>
+      <span class="vf-focus"></span>
+      <span class="vf-c tl"></span><span class="vf-c tr"></span><span class="vf-c bl"></span><span class="vf-c br"></span>
+    </div>
+  </div>
 </section>
 
 <section class="sec sk-sec" aria-labelledby="start-rubrik">
@@ -609,7 +689,7 @@ document.querySelectorAll('[data-stepper]').forEach(function(st){
 </script>
 <script>
 (function(){
-  var b=document.getElementById('m-cta'), hero=document.querySelector('.p-hero'), fin=document.querySelector('.final');
+  var b=document.getElementById('m-cta'), hero=document.querySelector('.vf-hero'), fin=document.querySelector('.final');
   if(!b||!('IntersectionObserver' in window)) return;
   var vis={hero:true,fin:false};
   function upd(){ b.classList.toggle('is-hidden', vis.hero||vis.fin); }
@@ -642,6 +722,11 @@ document.querySelectorAll('[data-sk]').forEach(function(sk){
   window.addEventListener('pointerup',function(){ if(!down) return; down=false; sk.classList.remove('is-drag'); if(moved){ var x=sk.scrollLeft+pad(),best=0,bd=1e9; cards.forEach(function(c,j){var d=Math.abs(c.offsetLeft-x); if(d<bd){bd=d;best=j;}}); go(best); setTimeout(function(){moved=false;},50);} });
   setOn(0);
 });
+</script>
+<script>
+(function(){var el=document.getElementById('vf-tc');if(!el)return;var t0=performance.now();
+function pad(n){return String(n).padStart(2,'0');}
+(function tick(){var f=Math.floor((performance.now()-t0)/40),s=Math.floor(f/25);el.textContent='00:'+pad(Math.floor(s/60)%60)+':'+pad(s%60)+':'+pad(f%25);requestAnimationFrame(tick);})();})();
 </script>
 </body>
 </html>
