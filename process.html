@@ -515,6 +515,31 @@ main{overflow-x:clip}
   .vf-hud{font-size:12px}
 }
 @media (prefers-reduced-motion:reduce){.vf-bg,.vf-card,.vf-rec i{animation:none}.vf-card{opacity:1;transform:none}}
+
+/* Hero: enklare och tydligare */
+.vf-side{display:flex;flex-direction:column;align-items:flex-start;gap:24px;max-width:400px}
+.vf-cta{display:inline-flex;padding:0 32px;background:var(--gold);color:#111;box-shadow:0 12px 32px -12px rgba(223,164,56,.6)}
+.vf::after{background:linear-gradient(90deg,rgba(14,13,11,.7) 0%,rgba(14,13,11,.25) 40%,rgba(14,13,11,0) 70%),linear-gradient(0deg,rgba(14,13,11,.35),transparent 35%)}
+.vf-cards{width:360px;gap:16px;padding:40px}
+.vf-card{padding:16px 24px 16px 16px;gap:16px}
+.vf-card h3{font-size:18px;margin-bottom:4px}
+.vf-card p{font-size:16px;line-height:1.4}
+.vf-ring{width:64px;height:64px}
+.vf-ring b{font-size:22px}
+.vf-focus{border-style:solid;border-color:rgba(255,255,255,.45)}
+.vf-c.tl,.vf-c.bl{left:416px}
+@media (max-width:900px){
+  .vf-side{max-width:none}
+  .vf-cards{padding:16px;gap:8px}
+  .vf-c.tl,.vf-c.bl{left:24px}
+}
+@media (max-width:560px){
+  .vf-cards{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .vf-card{flex-direction:column;align-items:flex-start;padding:16px}
+  .vf-card h3{font-size:16px}
+  .vf-card p{font-size:15px}
+  .vf-cta{width:100%;justify-content:center}
+}
 </style>
 </head>
 <body>
@@ -536,18 +561,14 @@ main{overflow-x:clip}
 <section class="vf-hero" aria-labelledby="p-rubrik">
   <div class="vf-head">
     <h1 id="p-rubrik">Så går det till.</h1>
-    <p class="lead">Från första samtal till nya filmer varje månad. Ni lägger lite tid, vi sköter resten.</p>
+    <div class="vf-side"><p class="lead">Från första samtal till nya filmer varje månad. Ni lägger lite tid, vi sköter resten.</p>
+    <a class="cta vf-cta" href="/kontakt.html">Boka 15 min samtal →</a></div>
   </div>
   <div class="vf">
     <img class="vf-bg" src="images/web/priser-bakgrund.jpg" alt="Fotograf från EMK filmar en kund">
-    <div class="vf-cards"><div class="vf-card"><span class="vf-ring" style="--p:25"><b>15</b><i>min</i></span><div><h3>Första samtalet</h3><p>Ett kort samtal där ni berättar om verksamheten och vad ni vill uppnå.</p></div></div><div class="vf-card"><span class="vf-ring" style="--p:50"><b>1</b><i>dag</i></span><div><h3>Inspelning</h3><p>Vi kommer ut med fotograf, kamera, ljud och ljus. Inget ni behöver ordna.</p></div></div><div class="vf-card"><span class="vf-ring" style="--p:75"><b>3</b><i>v</i></span><div><h3>Till färdig film</h3><p>Klippt, färgsatt och med undertexter, inom tre veckor från inspelning.</p></div></div><div class="vf-card"><span class="vf-ring" style="--p:100"><b>4+</b></span><div><h3>Filmer i månaden</h3><p>Nya filmer varje månad i alla format, till ett fast pris.</p></div></div></div>
+    <div class="vf-cards"><div class="vf-card"><span class="vf-ring" style="--p:25"><b>15</b><i>min</i></span><div><h3>Första samtal</h3><p>Ni berättar vad ni vill uppnå.</p></div></div><div class="vf-card"><span class="vf-ring" style="--p:50"><b>1</b><i>dag</i></span><div><h3>Inspelning</h3><p>Vi tar med allt som behövs.</p></div></div><div class="vf-card"><span class="vf-ring" style="--p:75"><b>3</b><i>veckor</i></span><div><h3>Till färdig film</h3><p>Klippt och klar att publicera.</p></div></div><div class="vf-card"><span class="vf-ring" style="--p:100"><b>4+</b></span><div><h3>Filmer i månaden</h3><p>Till ett fast pris.</p></div></div></div>
     <div class="vf-hud" aria-hidden="true">
       <span class="vf-rec"><i></i>REC <em id="vf-tc">00:00:00:00</em></span>
-      <span class="vf-r1">4K · 25 FPS</span>
-      <span class="vf-r2">ISO 800 · F/2.8 · 1/50</span>
-      <span class="vf-r3">WB 5600K</span>
-      <span class="vf-r4">EMK_MANADSPRODUKTION</span>
-      <span class="vf-bl">+&nbsp; FOKUS: KUND</span>
       <span class="vf-focus"></span>
       <span class="vf-c tl"></span><span class="vf-c tr"></span><span class="vf-c bl"></span><span class="vf-c br"></span>
     </div>
