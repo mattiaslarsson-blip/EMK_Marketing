@@ -470,6 +470,21 @@ main .glass::before,main .glass::after{display:none!important}
   background:rgba(245,241,232,.06);box-shadow:inset 0 0 0 1px rgba(245,241,232,.16)}
 .fl-pills svg{color:var(--gold);flex:none}
 .fl-cta{margin-top:16px}
+
+/* Det här ingår: text vänster, bild höger kant till kant */
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:720px;margin-top:128px;border-top:1px solid rgba(245,241,232,.12);border-bottom:1px solid rgba(245,241,232,.12)}
+.split__text{display:flex;flex-direction:column;justify-content:space-between;gap:48px;padding:64px max(24px,calc((100vw - 1120px)/2)) 64px max(24px,calc((100vw - 1120px)/2));padding-right:64px}
+.split h2{margin:0;font-weight:800;font-size:clamp(40px,4.4vw,64px);line-height:1.05;letter-spacing:-.035em;max-width:11ch;text-align:left}
+.split__list{list-style:none;margin:0;padding:0;border-top:1px solid rgba(245,241,232,.12)}
+.split__list li{padding:16px 0;border-bottom:1px solid rgba(245,241,232,.12);font-size:18px;color:var(--ink)}
+.split__note{margin:0;font-size:16px;color:var(--muted)}
+.split__img{position:relative;overflow:hidden}
+.split__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+@media (max-width:900px){
+  .split{grid-template-columns:minmax(0,1fr);min-height:0;margin-top:96px}
+  .split__text{padding:48px 24px}
+  .split__img{aspect-ratio:4/3}
+}
 </style>
 </head>
 <body>
@@ -517,16 +532,13 @@ main .glass::before,main .glass::after{display:none!important}
   </div>
 </section>
 
-<section class="sec" aria-labelledby="ingar-rubrik">
-  <div class="shead"><h2 id="ingar-rubrik">Det här ingår <em>i alla paket.</em></h2><p>Samma produktion varje månad, oavsett paket.</p></div>
-  <div class="incl bento">
-    <div class="glass" style="--img:url(images/web/tl-1.jpg)"><b>Strategi varje månad</b><span>Vi går igenom vad som fungerat och planerar nästa månads filmer utifrån det.</span></div>
-    <div class="glass" style="--img:url(images/web/tl-2.jpg)"><b>Idé och manus</b><span>Vi tar fram koncept och manus, ni godkänner innan vi spelar in.</span></div>
-    <div class="glass" style="--img:url(images/web/tl-3.jpg)"><b>Inspelning och utrustning</b><span>Fotograf, kamera, ljud och ljus. Inget ni behöver ordna själva.</span></div>
-    <div class="glass" style="--img:url(images/web/tl-4.jpg)"><b>Klippning och efterarbete</b><span>Redigering, färg, ljud, musik och undertexter.</span></div>
-    <div class="glass" style="--img:url(images/web/tl-5.jpg)"><b>Feedback och justeringar</b><span>Ni tycker till, vi justerar tills filmen sitter.</span></div>
-    <div class="glass" style="--img:url(images/web/tl-2.jpg)"><b>Alla format</b><span>9:16, 1:1 och 16:9, klara för hemsida, sociala medier och annonser.</span></div>
+<section class="split" aria-labelledby="ingar-rubrik">
+  <div class="split__text">
+    <h2 id="ingar-rubrik">Det här ingår i alla paket.</h2>
+    <ul class="split__list"><li>Strategi varje månad</li><li>Idé och manus</li><li>Inspelning och utrustning</li><li>Klippning och efterarbete</li><li>Feedback och justeringar</li><li>Alla format: 9:16, 1:1 och 16:9</li></ul>
+    <p class="split__note">Samma produktion varje månad, oavsett paket.</p>
   </div>
+  <div class="split__img"><img src="images/portfolio/bild-08.jpg" alt="EMK filmar på plats hos en kund" loading="lazy"></div>
 </section>
 
 <section class="sec" aria-labelledby="varfor-rubrik">
