@@ -385,6 +385,56 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
 .plan.pop .cta{background:var(--ink);color:#111;box-shadow:none}
 .plan.wide{max-width:640px}
 @media (max-width:560px){.fl-switch button{padding:12px 16px}}
+
+/* ===== Flow-stil på resten av sidan ===== */
+main .glass{background:#121212!important;box-shadow:inset 0 0 0 1px rgba(245,241,232,.14)!important;-webkit-backdrop-filter:none;backdrop-filter:none}
+main .glass::before,main .glass::after{display:none!important}
+.sec{padding:128px 24px 0}
+.shead{flex-direction:column;align-items:center;text-align:center;gap:16px;margin-bottom:56px}
+.shead h2,.sec h2,.faq2__side h2{font-weight:500;font-size:clamp(40px,5vw,64px);letter-spacing:-.035em;line-height:1.05;text-align:center;max-width:none}
+.sec h2 em{color:inherit;font-style:normal}
+.shead p{text-align:center;max-width:520px;font-size:18px;color:#BDB8AB}
+.terms{border-radius:24px}
+.terms>div+div{border-left-color:rgba(245,241,232,.14)}
+.band>.fine{text-align:center}
+
+.incl.bento{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:auto}
+.incl.bento>div,.incl.bento>div:nth-child(1),.incl.bento>div:nth-child(6){grid-column:auto;grid-row:auto;padding:32px;min-height:0;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px}
+.incl.bento>div:nth-child(1) b,.incl.bento b{font:500 20px/1.3 var(--display);padding-bottom:16px;margin-bottom:8px;border-bottom:1px solid rgba(245,241,232,.14);width:100%;display:block}
+.incl.bento>div:nth-child(1) span,.incl.bento span{font-size:16px;max-width:none;color:#BDB8AB}
+
+.why2{grid-template-columns:repeat(3,minmax(0,1fr))}
+.why2>div,.why2 .w1,.why2 .w2,.why2 .w3,.why2 .s1,.why2 .s2,.why2 .s3{grid-column:auto;grid-row:auto;min-height:0;padding:32px;justify-content:flex-start}
+.why2 .w1{order:1}.why2 .w2{order:2}.why2 .w3{order:3}.why2 .s1{order:4}.why2 .s2{order:5}.why2 .s3{order:6}
+.why2 .n{font:500 14px var(--display);color:var(--muted);padding-bottom:16px;border-bottom:1px solid rgba(245,241,232,.14);margin-bottom:16px}
+.why2 h3,.why2 .w1 h3{font:500 22px/1.25 var(--display);letter-spacing:-.01em}
+.why2 p,.why2 .w1 p{font-size:16px;color:#BDB8AB;max-width:none}
+.why2 .st{align-items:flex-start}
+.why2 .st b{font:400 clamp(44px,4.4vw,56px)/1 var(--display);letter-spacing:-.04em;color:var(--ink)}
+.why2 .st span{color:#BDB8AB}
+
+.rev{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.rev figure,.rev figure:first-child{grid-row:auto;border-top:0;padding:32px;border-radius:24px;background:#121212;box-shadow:inset 0 0 0 1px rgba(245,241,232,.14)}
+.rev figure:first-child blockquote,.rev blockquote{font-size:18px;line-height:1.55;letter-spacing:0}
+.rev figcaption{padding-top:24px;border-top:1px solid rgba(245,241,232,.14)}
+
+.faq2{grid-template-columns:minmax(0,1fr);gap:48px;max-width:800px;margin:0 auto}
+.faq2__side{position:static;align-items:center;text-align:center}
+.faq2__side p{text-align:center}
+.faq{border-top:1px solid rgba(245,241,232,.14)}
+.faq summary{font-weight:500;font-size:20px;padding:24px 0}
+
+.final{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center;padding:96px 32px;margin:128px auto 96px;border-radius:32px}
+.final__text{align-items:center}
+.final h2{text-align:center}
+.final p{text-align:center}
+.final .cta{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(245,241,232,.35);height:56px;padding:0 32px;font-size:18px}
+.final .cta:hover{box-shadow:inset 0 0 0 1.5px var(--gold)}
+
+@media (max-width:900px){
+  .incl.bento,.why2,.rev{grid-template-columns:minmax(0,1fr)}
+  .sec{padding-top:96px}
+}
 </style>
 </head>
 <body>
