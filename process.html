@@ -280,6 +280,58 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
   .you{grid-template-columns:minmax(0,1fr)}.you>div:nth-child(even){border-left:0}.you>div+div{border-top:1px solid rgba(245,241,232,.12)}
 }
 @media (prefers-reduced-motion:reduce){.tl2 .ph{display:none}}
+
+/* ===== Klickbara steg ===== */
+.stepper{position:relative;max-width:980px;margin:0 auto}
+.st-tabs{position:relative;display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:8px;margin-bottom:14px}
+.st-tab{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:14px;
+  background:rgba(245,241,232,.04);box-shadow:inset 0 0 0 1px rgba(245,241,232,.08);color:rgba(245,241,232,.6);transition:background .25s,color .25s,box-shadow .25s,transform .25s}
+.st-tab i{font:500 12px ui-monospace,monospace;font-style:normal;opacity:.7}
+.st-tab b{font:700 15px/1.2 var(--display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st-tab:hover{color:var(--ink);background:rgba(245,241,232,.07)}
+.st-tab.is-done{color:rgba(245,241,232,.85)}
+.st-tab.is-done i{color:var(--gold);opacity:1}
+.st-tab[aria-selected="true"]{background:linear-gradient(180deg,rgba(223,164,56,.95),rgba(190,135,40,.95));color:#141310;box-shadow:0 12px 28px -14px rgba(223,164,56,.8);transform:translateY(-2px)}
+.st-tab:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+.is-tl .ruler{display:flex;justify-content:space-between;font:400 11px ui-monospace,monospace;color:#6f6a60;padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.is-tl .st-tab{border-radius:10px}
+.is-tl .ph{position:absolute;top:-30px;bottom:-6px;width:2px;background:var(--ink);pointer-events:none;
+  left:calc((100% + 8px) * (var(--i,0) + .5) / var(--n) - 4px);transition:left .5s cubic-bezier(.2,.8,.2,1)}
+.is-tl .ph::before{content:"";position:absolute;top:0;left:-6px;width:14px;height:12px;background:var(--ink);clip-path:polygon(0 0,100% 0,100% 55%,50% 100%,0 55%)}
+
+.st-box{border-radius:24px;padding:clamp(28px,4vw,48px) clamp(24px,4vw,48px) 22px;min-height:250px;display:flex;flex-direction:column}
+.st-box::before{transition:background-image .4s}
+.st-pane{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start;flex:1;animation:stIn .45s cubic-bezier(.2,.8,.2,1)}
+.st-pane[hidden]{display:none}
+.st-n{font:800 clamp(56px,7vw,88px)/.9 var(--display);letter-spacing:-.04em;color:var(--gold)}
+.st-pane h3{margin:4px 0 10px;font:800 clamp(24px,2.6vw,32px)/1.15 var(--display);letter-spacing:-.02em}
+.st-pane p{margin:0;font-size:clamp(16px,1.5vw,18.5px);line-height:1.6;color:rgba(245,241,232,.9);max-width:46ch}
+@keyframes stIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+
+.st-foot{display:flex;align-items:center;gap:16px;margin-top:28px;padding-top:18px;border-top:1px solid rgba(245,241,232,.1)}
+.st-count{font:500 13px ui-monospace,monospace;color:var(--muted);white-space:nowrap}.st-count b{color:var(--ink);font-weight:500}
+.st-bar{flex:1;height:3px;border-radius:3px;background:rgba(245,241,232,.1);overflow:hidden}
+.st-fill{display:block;height:100%;width:calc(100% * (var(--i,0) + 1) / var(--n));background:var(--gold);transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.st-prev,.st-next{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;border-radius:999px;font:700 15px var(--display);transition:background .2s,color .2s,opacity .2s}
+.st-prev{width:44px;box-shadow:inset 0 0 0 1px rgba(245,241,232,.2);color:var(--ink)}
+.st-prev:hover{box-shadow:inset 0 0 0 1px var(--gold);color:var(--gold)}
+.st-prev[disabled]{opacity:.3;cursor:default}
+.st-next{padding:0 22px;background:var(--gold);color:#111;box-shadow:0 12px 30px -12px rgba(223,164,56,.6)}
+.st-next:hover{background:#E9B451}
+.st-prev:focus-visible,.st-next:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+@media (max-width:760px){
+  .st-tabs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:16px;scrollbar-width:none;margin:0 -16px 14px;padding:4px 16px}
+  .st-tabs::-webkit-scrollbar{display:none}
+  .st-tab{flex:0 0 auto;scroll-snap-align:start}
+  .is-tl .ruler,.is-tl .ph{display:none}
+  .st-pane{grid-template-columns:minmax(0,1fr);gap:8px}
+  .st-n{font-size:52px}
+  .st-box{min-height:300px}
+  .st-count{display:none}
+}
+@media (prefers-reduced-motion:reduce){.st-pane{animation:none}.st-tab,.st-fill,.is-tl .ph{transition:none}}
 </style>
 </head>
 <body>
@@ -306,38 +358,57 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
 <section class="sec" aria-labelledby="start-rubrik">
   <p class="kick">Kom igång</p>
   <h2 id="start-rubrik">Tre steg <em>till första filmen.</em></h2>
-  <div class="start">
-    <div class="glass" style="--img:url(images/web/tl-1.jpg)"><span class="n">01</span><h3>Kort samtal</h3><p>15 minuter där ni berättar om verksamheten och vad ni vill uppnå. Vi föreslår ett paket som passar.</p></div>
-    <div class="glass" style="--img:url(images/web/tl-2.jpg)"><span class="n">02</span><h3>Uppstartsmöte</h3><p>Vi går igenom mål, målgrupp och kanaler och planerar de första filmerna tillsammans.</p></div>
-    <div class="glass" style="--img:url(images/web/tl-4.jpg)"><span class="n">03</span><h3>Första inspelningen</h3><p>Vi kommer ut med fotograf och utrustning. Färdiga filmer inom 3 veckor från inspelning.</p></div>
+  
+  <div class="stepper" data-stepper style="--n:3">
+    
+    <div class="st-tabs" role="tablist" aria-label="Kom igång"><button type="button" role="tab" class="st-tab" id="start-t0" aria-controls="start-p0" aria-selected="true"><i>01</i><b>Kort samtal</b></button><button type="button" role="tab" class="st-tab" id="start-t1" aria-controls="start-p1" aria-selected="false" tabindex="-1"><i>02</i><b>Uppstartsmöte</b></button><button type="button" role="tab" class="st-tab" id="start-t2" aria-controls="start-p2" aria-selected="false" tabindex="-1"><i>03</i><b>Första inspelningen</b></button></div>
+    <div class="st-box glass" style="--img:url(images/web/tl-1.jpg)">
+      <div class="st-pane" role="tabpanel" id="start-p0" aria-labelledby="start-t0" style="--img:url(images/web/tl-1.jpg)"><span class="st-n">01</span><div><h3>Kort samtal</h3><p>15 minuter där ni berättar om verksamheten och vad ni vill uppnå. Vi föreslår ett paket som passar.</p></div></div><div class="st-pane" role="tabpanel" id="start-p1" aria-labelledby="start-t1" hidden style="--img:url(images/web/tl-2.jpg)"><span class="st-n">02</span><div><h3>Uppstartsmöte</h3><p>Vi går igenom mål, målgrupp och kanaler och planerar de första filmerna tillsammans.</p></div></div><div class="st-pane" role="tabpanel" id="start-p2" aria-labelledby="start-t2" hidden style="--img:url(images/web/tl-4.jpg)"><span class="st-n">03</span><div><h3>Första inspelningen</h3><p>Vi kommer ut med fotograf och utrustning. Färdiga filmer inom 3 veckor från inspelning.</p></div></div>
+      <div class="st-foot">
+        <span class="st-count"><b class="st-cur">01</b> / 03</span>
+        <span class="st-bar"><span class="st-fill"></span></span>
+        <button type="button" class="st-prev" aria-label="Föregående steg">←</button>
+        <button type="button" class="st-next">Nästa steg <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="sec" aria-labelledby="manad-rubrik">
   <p class="kick">Varje månad</p>
   <h2 id="manad-rubrik">Samma produktion, <em>varje månad.</em></h2>
-  <p class="intro">När samarbetet är igång följer varje månad samma flöde, från strategi till färdig film.</p>
-  <div class="tl2">
+  <p class="intro">När samarbetet är igång följer varje månad samma flöde. Klicka dig igenom stegen.</p>
+  <div class="stepper is-tl" data-stepper style="--n:6">
     <div class="ruler" aria-hidden="true"><span>00:00</span><span>01:00</span><span>02:00</span><span>03:00</span><span>04:00</span><span>05:00</span></div>
-    <div class="tstep"><div class="clip"><i>01</i><b>Strategi</b></div><p>Vi går igenom vad som fungerat och planerar nästa månads filmer.</p></div>
-    <div class="tstep"><div class="clip"><i>02</i><b>Idé och manus</b></div><p>Vi tar fram koncept och manus. Ni godkänner innan vi spelar in.</p></div>
-    <div class="tstep"><div class="clip"><i>03</i><b>Inspelning</b></div><p>Fotograf, kamera, ljud och ljus. Inget ni behöver ordna.</p></div>
-    <div class="tstep"><div class="clip"><i>04</i><b>Klippning</b></div><p>Redigering, färg, ljud, musik och undertexter.</p></div>
-    <div class="tstep"><div class="clip"><i>05</i><b>Feedback</b></div><p>Ni tycker till, vi justerar tills filmen sitter.</p></div>
-    <div class="tstep"><div class="clip"><i>06</i><b>Leverans</b></div><p>9:16, 1:1 och 16:9, klara för hemsida, sociala medier och annonser.</p></div>
-    <span class="ph" aria-hidden="true"></span>
+    <div class="st-tabs" role="tablist" aria-label="Varje månad"><button type="button" role="tab" class="st-tab" id="manad-t0" aria-controls="manad-p0" aria-selected="true"><i>01</i><b>Strategi</b></button><button type="button" role="tab" class="st-tab" id="manad-t1" aria-controls="manad-p1" aria-selected="false" tabindex="-1"><i>02</i><b>Idé och manus</b></button><button type="button" role="tab" class="st-tab" id="manad-t2" aria-controls="manad-p2" aria-selected="false" tabindex="-1"><i>03</i><b>Inspelning</b></button><button type="button" role="tab" class="st-tab" id="manad-t3" aria-controls="manad-p3" aria-selected="false" tabindex="-1"><i>04</i><b>Klippning</b></button><button type="button" role="tab" class="st-tab" id="manad-t4" aria-controls="manad-p4" aria-selected="false" tabindex="-1"><i>05</i><b>Feedback</b></button><button type="button" role="tab" class="st-tab" id="manad-t5" aria-controls="manad-p5" aria-selected="false" tabindex="-1"><i>06</i><b>Leverans</b></button><span class="ph" aria-hidden="true"></span></div>
+    <div class="st-box glass" style="--img:url(images/web/tl-1.jpg)">
+      <div class="st-pane" role="tabpanel" id="manad-p0" aria-labelledby="manad-t0" style="--img:url(images/web/tl-1.jpg)"><span class="st-n">01</span><div><h3>Strategi</h3><p>Vi går igenom vad som fungerat och planerar nästa månads filmer utifrån det.</p></div></div><div class="st-pane" role="tabpanel" id="manad-p1" aria-labelledby="manad-t1" hidden style="--img:url(images/web/tl-2.jpg)"><span class="st-n">02</span><div><h3>Idé och manus</h3><p>Vi tar fram koncept och manus. Ni godkänner innan vi spelar in.</p></div></div><div class="st-pane" role="tabpanel" id="manad-p2" aria-labelledby="manad-t2" hidden style="--img:url(images/web/tl-3.jpg)"><span class="st-n">03</span><div><h3>Inspelning</h3><p>Fotograf, kamera, ljud och ljus. Inget ni behöver ordna själva.</p></div></div><div class="st-pane" role="tabpanel" id="manad-p3" aria-labelledby="manad-t3" hidden style="--img:url(images/web/tl-4.jpg)"><span class="st-n">04</span><div><h3>Klippning</h3><p>Redigering, färg, ljud, musik och undertexter.</p></div></div><div class="st-pane" role="tabpanel" id="manad-p4" aria-labelledby="manad-t4" hidden style="--img:url(images/web/tl-5.jpg)"><span class="st-n">05</span><div><h3>Feedback</h3><p>Ni tycker till, vi justerar tills filmen sitter.</p></div></div><div class="st-pane" role="tabpanel" id="manad-p5" aria-labelledby="manad-t5" hidden style="--img:url(images/web/tl-2.jpg)"><span class="st-n">06</span><div><h3>Leverans</h3><p>9:16, 1:1 och 16:9, klara för hemsida, sociala medier och annonser. Sen börjar nästa månad.</p></div></div>
+      <div class="st-foot">
+        <span class="st-count"><b class="st-cur">01</b> / 06</span>
+        <span class="st-bar"><span class="st-fill"></span></span>
+        <button type="button" class="st-prev" aria-label="Föregående steg">←</button>
+        <button type="button" class="st-next">Nästa steg <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
   </div>
-  <p class="loop">…och sen börjar nästa månad. <b>Samma team, varje gång.</b></p>
 </section>
 
 <section class="sec" aria-labelledby="ni-rubrik">
   <p class="kick">Er del</p>
   <h2 id="ni-rubrik">Det här <em>behöver ni göra.</em></h2>
-  <div class="you glass" style="--img:url(images/web/tl-3.jpg)">
-    <div><b>Godkänna manus</b><span>Ni säger ja eller ber om ändringar innan vi spelar in.</span></div>
-    <div><b>Vara med vid behov</b><span>Ofta kan vi filma utan att ni behöver vara på plats.</span></div>
-    <div><b>Ge feedback</b><span>Ni tittar på filmen och tycker till, vi justerar.</span></div>
-    <div><b>Publicera</b><span>Eller låt oss göra det åt er, som tillägg.</span></div>
+  
+  <div class="stepper" data-stepper style="--n:4">
+    
+    <div class="st-tabs" role="tablist" aria-label="Er del"><button type="button" role="tab" class="st-tab" id="ni-t0" aria-controls="ni-p0" aria-selected="true"><i>01</i><b>Godkänna manus</b></button><button type="button" role="tab" class="st-tab" id="ni-t1" aria-controls="ni-p1" aria-selected="false" tabindex="-1"><i>02</i><b>Vara med vid behov</b></button><button type="button" role="tab" class="st-tab" id="ni-t2" aria-controls="ni-p2" aria-selected="false" tabindex="-1"><i>03</i><b>Ge feedback</b></button><button type="button" role="tab" class="st-tab" id="ni-t3" aria-controls="ni-p3" aria-selected="false" tabindex="-1"><i>04</i><b>Publicera</b></button></div>
+    <div class="st-box glass" style="--img:url(images/web/tl-3.jpg)">
+      <div class="st-pane" role="tabpanel" id="ni-p0" aria-labelledby="ni-t0" style="--img:url(images/web/tl-3.jpg)"><span class="st-n">01</span><div><h3>Godkänna manus</h3><p>Ni säger ja eller ber om ändringar innan vi spelar in.</p></div></div><div class="st-pane" role="tabpanel" id="ni-p1" aria-labelledby="ni-t1" hidden style="--img:url(images/web/tl-4.jpg)"><span class="st-n">02</span><div><h3>Vara med vid behov</h3><p>Ofta kan vi filma utan att ni behöver vara på plats.</p></div></div><div class="st-pane" role="tabpanel" id="ni-p2" aria-labelledby="ni-t2" hidden style="--img:url(images/web/tl-5.jpg)"><span class="st-n">03</span><div><h3>Ge feedback</h3><p>Ni tittar på filmen och tycker till, vi justerar.</p></div></div><div class="st-pane" role="tabpanel" id="ni-p3" aria-labelledby="ni-t3" hidden style="--img:url(images/web/tl-1.jpg)"><span class="st-n">04</span><div><h3>Publicera</h3><p>Eller låt oss göra det åt er, som tillägg.</p></div></div>
+      <div class="st-foot">
+        <span class="st-count"><b class="st-cur">01</b> / 04</span>
+        <span class="st-bar"><span class="st-fill"></span></span>
+        <button type="button" class="st-prev" aria-label="Föregående steg">←</button>
+        <button type="button" class="st-next">Nästa steg <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -354,5 +425,29 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
 </footer>
 
 <script>document.getElementById('emk-year').textContent=new Date().getFullYear();</script>
+<script>
+document.querySelectorAll('[data-stepper]').forEach(function(st){
+  var tabs=[].slice.call(st.querySelectorAll('.st-tab')), panes=[].slice.call(st.querySelectorAll('.st-pane'));
+  var box=st.querySelector('.st-box'), cur=st.querySelector('.st-cur'), prev=st.querySelector('.st-prev'), next=st.querySelector('.st-next'), i=0, n=tabs.length;
+  function go(k, focus){
+    i=(k+n)%n;
+    tabs.forEach(function(t,j){ t.setAttribute('aria-selected', j===i?'true':'false'); t.tabIndex = j===i?0:-1; t.classList.toggle('is-done', j<i); });
+    panes.forEach(function(p,j){ p.hidden = j!==i; });
+    st.style.setProperty('--i', i); box.style.setProperty('--img', panes[i].style.getPropertyValue('--img'));
+    cur.textContent=String(i+1).padStart(2,'0');
+    prev.disabled = i===0;
+    next.innerHTML = i===n-1 ? 'Börja om <span aria-hidden="true">↺</span>' : 'Nästa steg <span aria-hidden="true">→</span>';
+    var tb=tabs[i]; var row=tb.parentNode; if(row.scrollWidth>row.clientWidth) row.scrollTo({left:tb.offsetLeft-tabs[0].offsetLeft,behavior:'smooth'});
+    if(focus) tabs[i].focus();
+  }
+  tabs.forEach(function(t,j){
+    t.addEventListener('click',function(){ go(j); });
+    t.addEventListener('keydown',function(e){ if(e.key==='ArrowRight'){e.preventDefault();go(i+1,true);} if(e.key==='ArrowLeft'){e.preventDefault();go(i-1,true);} });
+  });
+  next.addEventListener('click',function(){ go(i+1); });
+  prev.addEventListener('click',function(){ go(i-1); });
+  go(0);
+});
+</script>
 </body>
 </html>
