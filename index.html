@@ -763,7 +763,7 @@
     #emk-lp .emk-ex__text{max-width:none}
     #emk-lp .emk-ex__films{position:relative}
     #emk-lp .emk-ex__group{position:absolute;top:0;bottom:0;right:0}
-    #emk-lp .emk-ex__group{display:flex;flex-direction:column;justify-content:flex-end}
+    #emk-lp .emk-ex__group{display:flex;flex-direction:column;justify-content:center}
     #emk-lp .emk-ex__tags{gap:8px;flex-wrap:nowrap}
     #emk-lp .emk-ex__tags li{padding:8px 16px}
     #emk-lp .emk-ex__results{gap:32px}
@@ -1017,16 +1017,15 @@
 
     <div class="emk-ex__films">
       <div class="emk-ex__group">
-      <div class="emk-ex__films-label">Exempel på filmer</div>
       <div class="emk-ex__row">
       <!-- BYT: data-src (mp4), data-poster (jpg), kundnamn, resultat -->
-      <button class="emk-film" type="button" aria-label="Spela film: Intervju" data-src="videos/web/stg-loop.mp4" data-full="videos/stg.mp4" data-poster="videos/stg.jpg" data-ratio="9:16">
+      <button class="emk-film" type="button" aria-label="Spela film: Varumärkesfilm" data-src="videos/web/stg-loop.mp4" data-full="videos/stg.mp4" data-poster="videos/stg.jpg" data-ratio="9:16">
         <span class="emk-film__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="emk-film__cap"><b>Intervju</b><span>Varumärkesfilm för sociala medier</span></span>
+        <span class="emk-film__cap"><b>Varumärkesfilm</b></span>
       </button>
-      <button class="emk-film emk-film--wide" type="button" aria-label="Spela film: Eventfilm" data-src="videos/web/fadderiet-loop.mp4" data-full="videos/web/fadderiet.mp4" data-poster="videos/web/fadderiet.jpg" data-ratio="16:9">
+      <button class="emk-film emk-film--wide" type="button" aria-label="Spela film: Eventtrailer" data-src="videos/web/fadderiet-loop.mp4" data-full="videos/web/fadderiet.mp4" data-poster="videos/web/fadderiet.jpg" data-ratio="16:9">
         <span class="emk-film__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="emk-film__cap"><b>Eventfilm</b><span>Stämningsfilm från ett event</span></span>
+        <span class="emk-film__cap"><b>Eventtrailer</b></span>
       </button>
       </div>
       </div>
@@ -1592,7 +1591,7 @@
       row=sec.querySelector('.emk-ex__row'), films=sec.querySelector('.emk-ex__films');
   function size(){
     if (window.innerWidth < 1200){ row.style.removeProperty('--exh'); return; }
-    var avail = group.clientHeight - label.offsetHeight - 14;
+    var avail = group.clientHeight - (label ? label.offsetHeight + 14 : 0);
     var byWidth = (films.clientWidth - 16) / 2.3403;
     row.style.setProperty('--exh', Math.floor(Math.min(avail, byWidth)) + 'px');
   }
