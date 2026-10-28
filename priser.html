@@ -453,11 +453,12 @@ main .glass::before,main .glass::after{display:none!important}
 .fl-t{position:absolute;aspect-ratio:16/9;border-radius:16px;overflow:hidden;box-shadow:0 0 0 1px rgba(245,241,232,.12),0 24px 48px -16px rgba(0,0,0,.8);
   animation:flf 9s ease-in-out infinite alternate}
 .fl-t img{width:100%;height:100%;object-fit:cover;display:block}
-.fl-t.t1{width:clamp(200px,17vw,320px);left:max(24px,calc(50% - 640px));top:200px;transform:rotate(-4deg)}
-.fl-t.t2{width:clamp(160px,13vw,248px);left:max(48px,calc(50% - 560px));top:480px;transform:rotate(3deg);animation-delay:-3s}
-.fl-t.t3{width:clamp(200px,17vw,320px);right:max(24px,calc(50% - 640px));top:240px;transform:rotate(4deg);animation-delay:-5s}
-.fl-t.t4{width:clamp(160px,13vw,248px);right:max(48px,calc(50% - 560px));top:520px;transform:rotate(-3deg);animation-delay:-1s}
+.fl-t.t1{width:clamp(200px,17vw,320px);left:max(24px,calc(50% - 640px));top:200px}
+.fl-t.t2{width:clamp(160px,13vw,248px);left:max(48px,calc(50% - 560px));top:480px;animation-delay:-3s}
+.fl-t.t3{width:clamp(200px,17vw,320px);right:max(24px,calc(50% - 640px));top:240px;animation-delay:-5s}
+.fl-t.t4{width:clamp(160px,13vw,248px);right:max(48px,calc(50% - 560px));top:520px;animation-delay:-1s}
 @keyframes flf{to{translate:0 -16px}}
+.fl-hero h1{font-size:clamp(44px,5.2vw,72px);line-height:1.05;max-width:13ch;text-wrap:balance}
 @media (max-width:1100px){.fl-tiles{display:none}}
 @media (prefers-reduced-motion:reduce){.fl-t{animation:none}}
 </style>
@@ -486,7 +487,7 @@ main .glass::before,main .glass::after{display:none!important}
     <span class="fl-t t4"><img src="images/web/h-4.jpg" alt=""></span>
   </div>
   <div class="fl-hero">
-    <h1 id="pris-rubrik">Ett pris.<br>All film.</h1>
+    <h1 id="pris-rubrik">All film ni behöver till ett fast pris i månaden.</h1>
     <p class="fl-lead">Nya filmer varje månad, utan offerter per film<br>och utan oväntade fakturor.</p>
     <div class="fl-cta"><a class="fl-btn" href="/kontakt.html">Boka 15 min samtal</a><span>helt utan förpliktelser</span></div>
   </div>
