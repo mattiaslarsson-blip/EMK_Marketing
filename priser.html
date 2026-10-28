@@ -435,6 +435,39 @@ main .glass::before,main .glass::after{display:none!important}
   .incl.bento,.why2,.rev{grid-template-columns:minmax(0,1fr)}
   .sec{padding-top:96px}
 }
+
+/* ===== Varmare och mer film ===== */
+.sec h2 em{color:var(--gold)!important}
+.fms{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.fm{position:relative;aspect-ratio:9/16;border-radius:24px;overflow:hidden;display:block;background:#121212;box-shadow:inset 0 0 0 1px rgba(245,241,232,.14);text-decoration:none;color:var(--ink)}
+.fm img,.fm video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.fm::after{content:"";position:absolute;inset:50% 0 0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.8))}
+.fm:hover img,.fm:hover video{transform:scale(1.03)}
+.fm-play{position:absolute;top:16px;right:16px;z-index:2;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(17,17,17,.6);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.fm-play svg{width:16px;height:16px;fill:#fff}
+.fm-cap{position:absolute;left:24px;right:24px;bottom:24px;z-index:2;font-size:14px;color:#D6D1C4}
+.fm-cap b{display:block;font:600 18px/1.3 var(--display);color:var(--ink);margin-bottom:4px}
+.fms-more{text-align:center;margin:32px 0 0}
+.fms-more a{color:var(--gold);font-weight:700;text-decoration:none}
+.why2 .w1,.why2 .w2,.why2 .w3{padding:0;overflow:hidden}
+.why-img{margin:0;height:200px;overflow:hidden}
+.why-img img{width:100%;height:100%;object-fit:cover;display:block}
+.why2 .w1>*:not(.why-img),.why2 .w2>*:not(.why-img),.why2 .w3>*:not(.why-img){margin-left:32px;margin-right:32px}
+.why2 .w1>.n,.why2 .w2>.n,.why2 .w3>.n{margin-top:24px}
+.why2 .w1>p,.why2 .w2>p,.why2 .w3>p{margin-bottom:32px}
+.rev--img figure,.rev--img figure:first-child{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.rev-ph{height:240px;overflow:hidden;position:relative}
+.rev .rev-ph img{width:100%;height:100%;object-fit:cover;display:block;border-radius:0}
+.rev-ph::after{content:"";position:absolute;inset:55% 0 0;background:linear-gradient(180deg,transparent,#121212)}
+.rev--img blockquote{padding:24px 32px 0;flex:1}
+.rev--img figcaption{margin:24px 32px 32px;padding-top:24px}
+.rev--img figcaption b{color:var(--ink)}
+.rev--img figcaption span{color:var(--gold);font-size:14px}
+@media (max-width:900px){
+  .fms{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 -24px;padding:0 24px;scroll-padding-left:24px}
+  .fms::-webkit-scrollbar{display:none}
+  .fm{flex:0 0 64%;scroll-snap-align:start}
+}
 </style>
 </head>
 <body>
@@ -475,6 +508,12 @@ main .glass::before,main .glass::after{display:none!important}
   </div>
 </section>
 
+<section class="sec" aria-labelledby="film-rubrik">
+  <div class="shead"><h2 id="film-rubrik">Det här får ni <em>varje månad.</em></h2><p>Ett urval av filmer vi gjort för våra kunder.</p></div>
+  <div class="fms"><a class="fm" href="/portfolio" data-v="videos/GT_amalfi.mp4"><img src="videos/GT_amalfi.jpg" alt="" loading="lazy"><span class="fm-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="fm-cap"><b>Grand Tours</b>Resefilm</span></a><a class="fm" href="/portfolio" data-v="videos/AR_midsommar.mp4"><img src="videos/AR_midsommar.jpg" alt="" loading="lazy"><span class="fm-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="fm-cap"><b>Äventyrsresor</b>Intervju</span></a><a class="fm" href="/portfolio" data-v="videos/Fest2.mp4"><img src="videos/Fest2.jpg" alt="" loading="lazy"><span class="fm-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="fm-cap"><b>Festivalborg</b>Eventfilm</span></a><a class="fm" href="/portfolio" data-v="videos/stg.mp4"><img src="videos/stg.jpg" alt="" loading="lazy"><span class="fm-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="fm-cap"><b>Stockholm Top Gymnastics</b>Varumärkesfilm</span></a></div>
+  <p class="fms-more"><a href="/portfolio">Se fler filmer →</a></p>
+</section>
+
 <section class="sec" aria-labelledby="ingar-rubrik">
   <div class="shead"><h2 id="ingar-rubrik">Det här ingår <em>i alla paket.</em></h2><p>Samma produktion varje månad, oavsett paket.</p></div>
   <div class="incl bento">
@@ -490,24 +529,21 @@ main .glass::before,main .glass::after{display:none!important}
 <section class="sec" aria-labelledby="varfor-rubrik">
   <div class="shead"><h2 id="varfor-rubrik">Därför väljer företag <em>EMK.</em></h2><p>Det handlar inte bara om snygg film, utan om film som gör jobbet varje månad.</p></div>
   <div class="why2">
-    <div class="glass w1" style="--img:url(images/web/tl-2.jpg)"><span class="n">01</span><h3>Fast pris, inga överraskningar</h3><p>Ni vet exakt vad det kostar varje månad. Ingen timdebitering och inga tilläggsfakturor.</p></div>
+    <div class="glass w1" style="--img:url(images/web/tl-2.jpg)"><figure class="why-img"><img src="images/web/p-inspelning.jpg" alt="" loading="lazy"></figure><span class="n">01</span><h3>Fast pris, inga överraskningar</h3><p>Ni vet exakt vad det kostar varje månad. Ingen timdebitering och inga tilläggsfakturor.</p></div>
     <div class="glass st s1" style="--img:url(images/web/tl-1.jpg)"><b>10 miljoner+</b><span>visningar åt våra kunder</span></div>
     <div class="glass st s2" style="--img:url(images/web/tl-3.jpg)"><b>625 000 kr</b><span>i intäkt från 25 000 kr i annonsbudget</span></div>
-    <div class="glass w2" style="--img:url(images/web/tl-4.jpg)"><span class="n">02</span><h3>Samma team varje gång</h3><p>Vi lär känna er verksamhet, så varje film blir bättre än den förra och ni slipper börja om från noll.</p></div>
-    <div class="glass w3" style="--img:url(images/web/tl-5.jpg)"><span class="n">03</span><h3>Ni lägger ingen tid på det</h3><p>Vi sköter idé, manus, planering, inspelning och klippning. Ni godkänner och publicerar.</p></div>
+    <div class="glass w2" style="--img:url(images/web/tl-4.jpg)"><figure class="why-img"><img src="images/web/p-mote.jpg" alt="" loading="lazy"></figure><span class="n">02</span><h3>Samma team varje gång</h3><p>Vi lär känna er verksamhet, så varje film blir bättre än den förra och ni slipper börja om från noll.</p></div>
+    <div class="glass w3" style="--img:url(images/web/tl-5.jpg)"><figure class="why-img"><img src="images/web/p-klipp.jpg" alt="" loading="lazy"></figure><span class="n">03</span><h3>Ni lägger ingen tid på det</h3><p>Vi sköter idé, manus, planering, inspelning och klippning. Ni godkänner och publicerar.</p></div>
     <div class="glass st s3" style="--img:url(images/web/tl-4.jpg)"><b>3 veckor</b><span>till färdig film</span></div>
   </div>
 </section>
 
 <section class="sec" aria-labelledby="rec-rubrik">
   <div class="shead"><h2 id="rec-rubrik">Vad våra kunder <em>säger.</em></h2><p class="rev-more"><a href="/#emk-res">Läs fler recensioner →</a></p></div>
-  <div class="rev">
-    <figure><blockquote>Snabb och proffsig leverans med bra kommunikation genom hela processen. Väldigt smidigt samarbete och ett bra slutresultat.</blockquote>
-      <figcaption><span class="ini">TW</span><span><b>Thobias Wallin</b>VD, Magnolia</span></figcaption></figure>
-    <figure><blockquote>Vi är mycket nöjda med filmer och bilder som EMK Marketing tog fram.</blockquote>
-      <figcaption><img src="images/foto/portratt/leonie-sterner-sazesh.jpg" alt="" style="object-position:58% 20%"><span><b>Leonie Sterner Sazesh</b>Co-founder, Joina</span></figcaption></figure>
-    <figure><blockquote>Smidigt samarbete, proffsigt och snabbt arbete. Dessutom har Mattias en blick för vad som väsentligt. Suveränt!</blockquote>
-      <figcaption><span class="ini">LS</span><span><b>Lars Stenberg</b>Google-recension</span></figcaption></figure>
+  <div class="rev rev--img">
+    <figure><div class="rev-ph"><img src="images/foto/portratt/william-broman.jpg" alt="" style="object-position:center 20%"></div><blockquote>Jag är mycket imponerad av EMK Marketings arbete. De visade en hög nivå av professionalism och har varit avgörande i att bygga upp innehåll av hög kvalitet.</blockquote><figcaption><span><b>William Broman</b>Fd. lagkapten, svenska landslaget</span></figcaption></figure>
+    <figure><div class="rev-ph"><img src="images/foto/portratt/leonie-sterner-sazesh.jpg" alt="" style="object-position:58% 22%"></div><blockquote>Vi är mycket nöjda med filmer och bilder som EMK Marketing tog fram.</blockquote><figcaption><span><b>Leonie Sterner Sazesh</b>Co-founder, Joina</span></figcaption></figure>
+    <figure><div class="rev-ph"><img src="images/foto/portratt/christina-wissinger.jpg" alt="" style="object-position:center 28%"></div><blockquote>Ett verkligt lyft i sociala medier. EMK har varit lyhörda, proffsiga och enkla att kommunicera med.</blockquote><figcaption><span><b>Christina Wissinger</b>Sportchef, STG</span></figcaption></figure>
   </div>
 </section>
 
@@ -614,6 +650,11 @@ document.getElementById('emk-year').textContent = new Date().getFullYear();
 </script>
 <script>
 (function(){var n=document.querySelector('.emk-topnav');if(!n)return;function on(){n.classList.toggle('is-scrolled',window.scrollY>40);}on();window.addEventListener('scroll',on,{passive:true});})();
+</script>
+<script>
+if(matchMedia('(hover:hover)').matches){document.querySelectorAll('.fm[data-v]').forEach(function(a){var v;
+ a.addEventListener('mouseenter',function(){ if(!v){v=document.createElement('video');v.src=a.dataset.v;v.muted=true;v.loop=true;v.playsInline=true;v.setAttribute('muted','');a.insertBefore(v,a.firstChild.nextSibling);} v.play().catch(function(){}); });
+ a.addEventListener('mouseleave',function(){ if(v) v.pause(); });});}
 </script>
 </body>
 </html>
