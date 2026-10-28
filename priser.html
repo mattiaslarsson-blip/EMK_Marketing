@@ -230,6 +230,19 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
 .pop .cta{box-shadow:0 12px 30px -10px rgba(223,164,56,.55)}
 .sec h2{font-size:clamp(30px,3.8vw,44px)}
 @media (max-width:560px){ .why>div{min-height:0;padding:22px} .stats>div{max-width:none} }
+
+/* Recensioner (enkla) */
+.rev{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.rev figure{margin:0;display:flex;flex-direction:column;gap:18px;padding-top:20px;border-top:2px solid var(--gold)}
+.rev blockquote{margin:0;font-size:17px;line-height:1.55;color:var(--ink);flex:1}
+.rev figcaption{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted)}
+.rev figcaption b{display:block;color:var(--ink);font-size:14.5px;font-weight:700}
+.rev img,.rev .ini{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none}
+.rev .ini{display:grid;place-items:center;background:#24221e;color:var(--gold);font-weight:800;font-size:13px}
+.rev-more{text-align:center;margin:32px 0 0}
+.rev-more a{color:var(--gold);font-weight:700;text-decoration:none}
+.rev-more a:hover{text-decoration:underline;text-underline-offset:4px}
+@media (max-width:880px){.rev{grid-template-columns:minmax(0,1fr);gap:28px;max-width:560px;margin:0 auto}}
 </style>
 </head>
 <body>
@@ -304,6 +317,19 @@ h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4v
     <div class="glass" style="--img:url(images/web/tl-3.jpg)"><b>625 000 kr</b><span>i intäkt från 25 000 kr i annonsbudget</span></div>
     <div class="glass" style="--img:url(images/web/tl-4.jpg)"><b>3 veckor</b><span>till färdig film</span></div>
   </div>
+</section>
+
+<section class="sec" aria-labelledby="rec-rubrik">
+  <h2 id="rec-rubrik">Vad våra kunder <em>säger.</em></h2>
+  <div class="rev">
+    <figure><blockquote>Snabb och proffsig leverans med bra kommunikation genom hela processen. Väldigt smidigt samarbete och ett bra slutresultat.</blockquote>
+      <figcaption><span class="ini">TW</span><span><b>Thobias Wallin</b>VD, Magnolia</span></figcaption></figure>
+    <figure><blockquote>Vi är mycket nöjda med filmer och bilder som EMK Marketing tog fram.</blockquote>
+      <figcaption><img src="images/foto/portratt/leonie-sterner-sazesh.jpg" alt="" style="object-position:58% 20%"><span><b>Leonie Sterner Sazesh</b>Co-founder, Joina</span></figcaption></figure>
+    <figure><blockquote>Smidigt samarbete, proffsigt och snabbt arbete. Dessutom har Mattias en blick för vad som väsentligt. Suveränt!</blockquote>
+      <figcaption><span class="ini">LS</span><span><b>Lars Stenberg</b>Google-recension</span></figcaption></figure>
+  </div>
+  <p class="rev-more"><a href="/#emk-res">Läs fler recensioner →</a></p>
 </section>
 
 <section class="sec" aria-labelledby="faq-rubrik">
