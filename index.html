@@ -1020,13 +1020,13 @@
       <div class="emk-ex__films-label">Exempel på filmer</div>
       <div class="emk-ex__row">
       <!-- BYT: data-src (mp4), data-poster (jpg), kundnamn, resultat -->
-      <button class="emk-film" type="button" aria-label="Spela film: [Kund]" data-src="" data-poster="images/web/ex-poster-1.jpg" data-ratio="9:16">
+      <button class="emk-film" type="button" aria-label="Spela film: Stockholm Top Gymnastics" data-src="videos/web/stg-loop.mp4" data-full="videos/stg.mp4" data-poster="videos/stg.jpg" data-ratio="9:16">
         <span class="emk-film__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="emk-film__cap"><b>[Kund]</b><span>Annonsfilm · [resultat]</span></span>
+        <span class="emk-film__cap"><b>Stockholm Top Gymnastics</b><span>Varumärkesfilm</span></span>
       </button>
-      <button class="emk-film emk-film--wide" type="button" aria-label="Spela film: [Kund]" data-src="" data-poster="images/web/ex-poster-2.jpg" data-ratio="16:9">
+      <button class="emk-film emk-film--wide" type="button" aria-label="Spela film: Fadderiet" data-src="videos/web/fadderiet-loop.mp4" data-full="videos/web/fadderiet.mp4" data-poster="videos/web/fadderiet.jpg" data-ratio="16:9">
         <span class="emk-film__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="emk-film__cap"><b>[Kund]</b><span>Varumärkesfilm · [resultat]</span></span>
+        <span class="emk-film__cap"><b>Fadderiet</b><span>Eventfilm · SS25</span></span>
       </button>
       </div>
       </div>
@@ -1563,7 +1563,7 @@
     last = f; box.innerHTML = ''; box.dataset.ratio = f.dataset.ratio || '9:16';
     if (f.dataset.src){
       var v = document.createElement('video');
-      v.src = f.dataset.src; v.controls = true; v.playsInline = true; v.autoplay = true;
+      v.src = f.dataset.full || f.dataset.src; v.controls = true; v.playsInline = true; v.autoplay = true;
       if (f.dataset.poster) v.poster = f.dataset.poster;
       box.appendChild(v); v.play().catch(function(){});
     } else {
