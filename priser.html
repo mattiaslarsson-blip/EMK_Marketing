@@ -511,6 +511,21 @@ main .glass::before,main .glass::after{display:none!important}
   .team__grid::-webkit-scrollbar{display:none}
   .team__p{flex:0 0 72%;scroll-snap-align:start}
 }
+
+/* Teamet: bilder vänster, text höger, smal */
+@media (min-width:761px){
+  .team{padding-top:80px}
+  .team__wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:center}
+  .team__grid{gap:12px}
+  .team__p{aspect-ratio:3/4;border-radius:20px}
+  .team__p figcaption{left:16px;right:16px;bottom:16px}
+  .team__p b{font-size:16px}
+  .team__p span{font-size:13px}
+  .team .shead{align-items:flex-start;text-align:left;margin:0;gap:16px}
+  .team .shead h2{text-align:left;font-size:clamp(32px,3vw,44px)}
+  .team .shead p{text-align:left;max-width:380px;font-size:17px}
+}
+@media (min-width:761px) and (max-width:1000px){.team__wrap{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -558,8 +573,10 @@ main .glass::before,main .glass::after{display:none!important}
 </section>
 
 <section class="sec team" aria-labelledby="team-rubrik">
-  <div class="shead"><h2 id="team-rubrik">Teamet ni <em>jobbar med.</em></h2><p>Samma ansikten varje månad. Vi lär känna er verksamhet och blir er egen filmavdelning.</p></div>
+  <div class="team__wrap">
   <div class="team__grid"><figure class="team__p"><img src="images/web/team-mattias.jpg" alt="Mattias Larsson" loading="lazy"><figcaption><b>Mattias Larsson</b><span>Creative Strategist</span></figcaption></figure><figure class="team__p"><img src="images/web/team-frida.jpg" alt="Frida Jutgård" loading="lazy"><figcaption><b>Frida Jutgård</b><span>Content Producer</span></figcaption></figure><figure class="team__p"><img src="images/web/team-ella.jpg" alt="Ella Pertoft" loading="lazy"><figcaption><b>Ella Pertoft</b><span>Creative Designer</span></figcaption></figure></div>
+  <div class="shead"><h2 id="team-rubrik">Teamet ni <em>jobbar med.</em></h2><p>Samma ansikten varje månad. Vi lär känna er verksamhet och blir er egen filmavdelning.</p></div>
+  </div>
 </section>
 
 <section class="split" aria-labelledby="ingar-rubrik">
