@@ -31,11 +31,11 @@
   }
 
   const ART = {
-    // Moln: gult upptill, lavendel under, som en gryning
+    // Moln: ljust champagnguld upptill, dämpat guld under
     cloud(canvas, seed) {
       stipple(canvas, 600, 300, (c, W, H) => {
         const g = c.createLinearGradient(0, H * 0.25, 0, H * 0.95);
-        g.addColorStop(0, '#fff6c9'); g.addColorStop(0.45, '#f6dcc4'); g.addColorStop(1, '#aaa4e6');
+        g.addColorStop(0, '#f6ecd2'); g.addColorStop(0.45, '#e3cd9b'); g.addColorStop(1, '#9a8a63');
         c.fillStyle = g; c.beginPath();
         const r = rng(seed * 7);
         [[.18, .66, .15], [.34, .5, .2], [.52, .42, .22], [.7, .52, .19], [.84, .66, .14], [.5, .72, .2], [.28, .74, .15], [.72, .76, .15]].forEach(([x, y, rad]) => {
@@ -50,11 +50,11 @@
     body(canvas) {
       stipple(canvas, 600, 520, (c) => {
         const g = c.createLinearGradient(60, 210, 480, 470);
-        g.addColorStop(0, '#f9d8bd'); g.addColorStop(1, '#e49d74');
+        g.addColorStop(0, '#ecdcb4'); g.addColorStop(1, '#b58f45');
         c.fillStyle = g; roundRect(c, 60, 210, 420, 255, 20); c.fill();
-        c.fillStyle = 'rgba(178,100,72,.9)';
+        c.fillStyle = 'rgba(30,30,40,.85)';
         [[96, 262, 170, 11], [96, 296, 250, 11], [96, 330, 120, 11], [96, 364, 210, 11]].forEach(([x, y, w, h]) => roundRect(c, x, y, w, h, 5) && c.fill());
-        c.fillStyle = '#2b3a67'; for (let i = 0; i < 5; i++) { roundRect(c, 300 + i * 34, 410, 22, 22, 5); c.fill(); }
+        c.fillStyle = '#14182a'; for (let i = 0; i < 5; i++) { roundRect(c, 300 + i * 34, 410, 22, 22, 5); c.fill(); }
       }, { seed: 21, density: 0.2, rMin: .8, rMax: 1.8 });
     },
 
@@ -62,45 +62,45 @@
     arm(canvas) {
       stipple(canvas, 600, 520, (c) => {
         c.save(); roundRect(c, 60, 146, 420, 58, 14); c.clip();
-        c.fillStyle = '#fdf1dc'; c.fillRect(60, 146, 420, 58);
-        c.fillStyle = '#2b3a67';
+        c.fillStyle = '#f6efdc'; c.fillRect(60, 146, 420, 58);
+        c.fillStyle = '#14182a';
         for (let i = -1; i < 10; i++) { c.beginPath(); const x = 60 + i * 84; c.moveTo(x, 204); c.lineTo(x + 42, 204); c.lineTo(x + 74, 146); c.lineTo(x + 32, 146); c.closePath(); c.fill(); }
         c.restore();
-        c.fillStyle = '#e8a984'; c.beginPath(); c.arc(66, 204, 9, 0, 6.2832); c.fill();
+        c.fillStyle = '#b58f45'; c.beginPath(); c.arc(66, 204, 9, 0, 6.2832); c.fill();
       }, { seed: 34, density: 0.2, rMin: .8, rMax: 1.8 });
     },
 
     // Små ikoner till stegen
     'icon-target'(canvas) {
       stipple(canvas, 120, 120, (c) => {
-        [[50, '#cfcaf4'], [37, '#fdf7c9'], [24, '#f0c4a3'], [11, '#2b3a67']].forEach(([r, col]) => { c.fillStyle = col; c.beginPath(); c.arc(60, 60, r, 0, 6.2832); c.fill(); });
-        c.strokeStyle = '#2b3a67'; c.lineWidth = 6; c.lineCap = 'round'; c.beginPath(); c.moveTo(60, 60); c.lineTo(104, 16); c.stroke();
+        [[50, '#d9c9a0'], [37, '#f6efdc'], [24, '#c9a766'], [11, '#14182a']].forEach(([r, col]) => { c.fillStyle = col; c.beginPath(); c.arc(60, 60, r, 0, 6.2832); c.fill(); });
+        c.strokeStyle = '#14182a'; c.lineWidth = 6; c.lineCap = 'round'; c.beginPath(); c.moveTo(60, 60); c.lineTo(104, 16); c.stroke();
       }, { seed: 61, density: 0.34, rMin: .8, rMax: 1.6 });
     },
     'icon-camera'(canvas) {
       stipple(canvas, 120, 120, (c) => {
-        c.fillStyle = '#cfcaf4'; roundRect(c, 30, 24, 34, 18, 6); c.fill();
-        c.fillStyle = '#f0c4a3'; roundRect(c, 12, 38, 96, 64, 14); c.fill();
-        c.fillStyle = '#2b3a67'; c.beginPath(); c.arc(60, 70, 23, 0, 6.2832); c.fill();
-        c.fillStyle = '#fdf7c9'; c.beginPath(); c.arc(60, 70, 12, 0, 6.2832); c.fill();
-        c.fillStyle = '#2b3a67'; c.beginPath(); c.arc(94, 52, 5, 0, 6.2832); c.fill();
+        c.fillStyle = '#d9c9a0'; roundRect(c, 30, 24, 34, 18, 6); c.fill();
+        c.fillStyle = '#c9a766'; roundRect(c, 12, 38, 96, 64, 14); c.fill();
+        c.fillStyle = '#14182a'; c.beginPath(); c.arc(60, 70, 23, 0, 6.2832); c.fill();
+        c.fillStyle = '#f6efdc'; c.beginPath(); c.arc(60, 70, 12, 0, 6.2832); c.fill();
+        c.fillStyle = '#14182a'; c.beginPath(); c.arc(94, 52, 5, 0, 6.2832); c.fill();
       }, { seed: 62, density: 0.34, rMin: .8, rMax: 1.6 });
     },
     'icon-megaphone'(canvas) {
       stipple(canvas, 120, 120, (c) => {
-        c.fillStyle = '#f0c4a3'; c.beginPath(); c.moveTo(16, 50); c.lineTo(76, 22); c.lineTo(76, 98); c.lineTo(16, 70); c.closePath(); c.fill();
-        c.fillStyle = '#cfcaf4'; roundRect(c, 24, 68, 18, 34, 6); c.fill();
-        c.fillStyle = '#2b3a67'; roundRect(c, 8, 48, 14, 24, 5); c.fill();
-        c.strokeStyle = '#2b3a67'; c.lineWidth = 6; c.lineCap = 'round';
+        c.fillStyle = '#c9a766'; c.beginPath(); c.moveTo(16, 50); c.lineTo(76, 22); c.lineTo(76, 98); c.lineTo(16, 70); c.closePath(); c.fill();
+        c.fillStyle = '#d9c9a0'; roundRect(c, 24, 68, 18, 34, 6); c.fill();
+        c.fillStyle = '#14182a'; roundRect(c, 8, 48, 14, 24, 5); c.fill();
+        c.strokeStyle = '#14182a'; c.lineWidth = 6; c.lineCap = 'round';
         [[88, 14], [100, 22]].forEach(([x, r]) => { c.beginPath(); c.arc(x - 8, 60, r + 6, -0.9, 0.9); c.stroke(); });
       }, { seed: 63, density: 0.34, rMin: .8, rMax: 1.6 });
     },
     'icon-chart'(canvas) {
       stipple(canvas, 120, 120, (c) => {
-        c.fillStyle = '#cfcaf4'; roundRect(c, 14, 70, 22, 34, 5); c.fill();
-        c.fillStyle = '#f0c4a3'; roundRect(c, 44, 50, 22, 54, 5); c.fill();
-        c.fillStyle = '#2b3a67'; roundRect(c, 74, 24, 22, 80, 5); c.fill();
-        c.strokeStyle = '#fdf7c9'; c.lineWidth = 5; c.lineCap = 'round'; c.beginPath(); c.moveTo(18, 56); c.lineTo(52, 34); c.lineTo(84, 12); c.stroke();
+        c.fillStyle = '#d9c9a0'; roundRect(c, 14, 70, 22, 34, 5); c.fill();
+        c.fillStyle = '#c9a766'; roundRect(c, 44, 50, 22, 54, 5); c.fill();
+        c.fillStyle = '#14182a'; roundRect(c, 74, 24, 22, 80, 5); c.fill();
+        c.strokeStyle = '#f6efdc'; c.lineWidth = 5; c.lineCap = 'round'; c.beginPath(); c.moveTo(18, 56); c.lineTo(52, 34); c.lineTo(84, 12); c.stroke();
       }, { seed: 64, density: 0.34, rMin: .8, rMax: 1.6 });
     },
 
@@ -108,7 +108,7 @@
     trail(canvas) {
       stipple(canvas, 400, 400, (c, W, H) => {
         const g = c.createLinearGradient(W, 0, 0, H);
-        g.addColorStop(0, 'rgba(250,224,140,1)'); g.addColorStop(0.5, 'rgba(244,196,150,.6)'); g.addColorStop(1, 'rgba(240,190,170,0)');
+        g.addColorStop(0, 'rgba(226,196,120,1)'); g.addColorStop(0.5, 'rgba(214,182,120,.6)'); g.addColorStop(1, 'rgba(214,182,120,0)');
         c.fillStyle = g; c.beginPath(); c.moveTo(W * 0.98, H * 0.02); c.lineTo(0, H * 0.78); c.lineTo(W * 0.32, H); c.closePath(); c.fill();
       }, { seed: 55, density: 0.09, rMin: .7, rMax: 1.5 });
     }
