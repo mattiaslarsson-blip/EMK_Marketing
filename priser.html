@@ -580,6 +580,22 @@ main .glass::before,main .glass::after{display:none!important}
 
 .inc{flex-wrap:wrap;row-gap:12px}
 .inc__p{flex-basis:100%;margin:0;padding-top:12px;border-top:1px solid rgba(245,241,232,.1);font-size:15px;color:#BDB8AB}
+
+/* Ingår: fällbar */
+.inc{display:block;padding:0}
+.inc__d summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px;padding:20px 24px}
+.inc__d summary::-webkit-details-marker{display:none}
+.inc__d summary:focus-visible{outline:2px solid var(--gold);outline-offset:-2px;border-radius:20px}
+.inc__s{font-size:15px;color:var(--ink)}
+.inc__x{margin-left:auto;width:32px;height:32px;flex:none;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(245,241,232,.2);position:relative;transition:transform .25s}
+.inc__x::before,.inc__x::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
+.inc__x::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .25s}
+.inc__d[open] .inc__x::after{transform:translate(-50%,-50%) rotate(0)}
+.inc__d summary:hover .inc__x{box-shadow:inset 0 0 0 1px var(--gold)}
+.inc__d .inc__l{padding:0 24px 20px}
+.inc__p{margin:0 24px;padding:16px 0 20px}
+@media (max-width:900px){.inc__d summary{flex-wrap:wrap;gap:8px 16px}.inc__t{flex-basis:calc(100% - 48px)}.inc__s{order:3;flex-basis:100%}.inc__x{order:2}}
+@media (prefers-reduced-motion:reduce){.inc__x,.inc__x::after{transition:none}}
 </style>
 </head>
 <body>
@@ -616,8 +632,10 @@ main .glass::before,main .glass::after{display:none!important}
     <button type="button" role="tab" id="tab-annons" aria-selected="false" aria-controls="plans" data-k="annons" tabindex="-1">Annonsering</button>
   </div>
   <div class="inc">
-    <p class="inc__t">Det här ingår i alla paket</p>
-    <ul class="inc__l"><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Strategi varje månad</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Idé och manus</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Inspelning och utrustning</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Klippning och efterarbete</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Feedback och justeringar</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Alla format med undertexter</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Leverans inom 3 veckor</li></ul>
+    <details class="inc__d">
+      <summary><span class="inc__t">Det här ingår i alla paket</span><span class="inc__s">Strategi, manus, inspelning, klippning och mer</span><span class="inc__x" aria-hidden="true"></span></summary>
+      <ul class="inc__l"><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Strategi varje månad</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Idé och manus</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Inspelning och utrustning</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Klippning och efterarbete</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Feedback och justeringar</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Alla format med undertexter</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Leverans inom 3 veckor</li></ul>
+    </details>
     <p class="inc__p">Välj mellan fler filmer eller mer avancerade filmer. Ju högre paket, desto mer tid och produktion läggs på varje film.</p>
   </div>
   <div class="plans" id="plans" role="tabpanel" aria-labelledby="tab-varumarke" aria-live="polite"></div>
