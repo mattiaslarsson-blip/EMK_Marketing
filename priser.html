@@ -612,6 +612,15 @@ main .glass::before,main .glass::after{display:none!important}
 .inc__d summary:hover .inc__x::after{background:none;border-color:var(--gold)}
 .inc__d summary{justify-content:flex-start}
 .inc__x{margin-left:8px}
+
+/* Ingår: liten ruta i mitten som växer ut */
+.inc{width:100%;max-width:300px;margin-left:auto;margin-right:auto;border-radius:999px;transition:max-width .55s cubic-bezier(.2,.8,.2,1),border-radius .55s ease}
+.inc .inc__d summary{justify-content:center}
+.inc.is-open{max-width:1120px;border-radius:20px}
+.inc.is-open .inc__d summary{justify-content:flex-start}
+.inc .inc__l,.inc .inc__p{opacity:0;transform:translateY(-6px);transition:opacity .35s ease .25s,transform .35s ease .25s}
+.inc.is-open .inc__l,.inc.is-open .inc__p{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.inc,.inc .inc__l,.inc .inc__p{transition:none}}
 </style>
 </head>
 <body>
@@ -802,6 +811,13 @@ document.getElementById('emk-year').textContent = new Date().getFullYear();
 </script>
 <script>
 (function(){var n=document.querySelector('.emk-topnav');if(!n)return;function on(){n.classList.toggle('is-scrolled',window.scrollY>40);}on();window.addEventListener('scroll',on,{passive:true});})();
+</script>
+<script>
+(function(){var box=document.querySelector('.inc'),d=box&&box.querySelector('.inc__d');if(!d)return;
+d.querySelector('summary').addEventListener('click',function(e){e.preventDefault();
+  if(d.open){box.classList.remove('is-open');setTimeout(function(){d.open=false;},matchMedia('(prefers-reduced-motion: reduce)').matches?0:300);}
+  else{d.open=true;requestAnimationFrame(function(){box.classList.add('is-open');});}
+});})();
 </script>
 </body>
 </html>
