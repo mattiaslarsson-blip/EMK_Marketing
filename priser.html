@@ -494,6 +494,23 @@ main .glass::before,main .glass::after{display:none!important}
 .split__list li{padding:0 0 0 24px;border-bottom:0;font-size:17px;position:relative}
 .split__list li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--gold)}
 @media (max-width:900px){.split{width:calc(100% - 32px);margin-top:64px}.split__text{padding:32px 24px}}
+
+/* Teamet */
+.team{padding-top:96px}
+.team__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.team__p{margin:0;position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;box-shadow:inset 0 0 0 1px rgba(245,241,232,.12)}
+.team__p img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.team__p:hover img{transform:scale(1.03)}
+.team__p::after{content:"";position:absolute;inset:55% 0 0;background:linear-gradient(180deg,transparent,rgba(10,10,10,.85))}
+.team__p figcaption{position:absolute;left:24px;right:24px;bottom:24px;z-index:1}
+.team__p b{display:block;font:700 20px/1.2 var(--display);color:var(--ink)}
+.team__p span{display:block;margin-top:4px;font-size:15px;color:var(--gold)}
+.team + .split{margin-top:96px}
+@media (max-width:760px){
+  .team__grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 -24px;padding:0 24px;scroll-padding-left:24px;gap:12px}
+  .team__grid::-webkit-scrollbar{display:none}
+  .team__p{flex:0 0 72%;scroll-snap-align:start}
+}
 </style>
 </head>
 <body>
@@ -538,6 +555,11 @@ main .glass::before,main .glass::after{display:none!important}
     <div><b>Ni äger allt material</b><span>Använd filmerna fritt, överallt.</span></div>
     <div><b>Inspelning i Stockholm</b><span>Ingår i alla paket.</span></div>
   </div>
+</section>
+
+<section class="sec team" aria-labelledby="team-rubrik">
+  <div class="shead"><h2 id="team-rubrik">Teamet ni <em>jobbar med.</em></h2><p>Samma ansikten varje månad. Vi lär känna er verksamhet och blir er egen filmavdelning.</p></div>
+  <div class="team__grid"><figure class="team__p"><img src="images/web/team-mattias.jpg" alt="Mattias Larsson" loading="lazy"><figcaption><b>Mattias Larsson</b><span>Creative Strategist</span></figcaption></figure><figure class="team__p"><img src="images/web/team-frida.jpg" alt="Frida Jutgård" loading="lazy"><figcaption><b>Frida Jutgård</b><span>Content Producer</span></figcaption></figure><figure class="team__p"><img src="images/web/team-ella.jpg" alt="Ella Pertoft" loading="lazy"><figcaption><b>Ella Pertoft</b><span>Creative Designer</span></figcaption></figure></div>
 </section>
 
 <section class="split" aria-labelledby="ingar-rubrik">
