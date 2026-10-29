@@ -621,6 +621,26 @@ main .glass::before,main .glass::after{display:none!important}
 .inc .inc__l,.inc .inc__p{opacity:0;transform:translateY(-6px);transition:opacity .35s ease .25s,transform .35s ease .25s}
 .inc.is-open .inc__l,.inc.is-open .inc__p{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.inc,.inc .inc__l,.inc .inc__p{transition:none}}
+
+/* Garanti + trygghet */
+.vat{margin:-32px auto 0;text-align:center;font-size:14px;color:var(--muted)}
+.trust{width:100%;max-width:1120px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:16px;align-items:stretch}
+.trust__g{display:flex;gap:16px;align-items:flex-start;padding:24px;border-radius:20px;background:linear-gradient(135deg,rgba(223,164,56,.16),rgba(223,164,56,.04));box-shadow:inset 0 0 0 1px rgba(223,164,56,.45)}
+.trust__g svg{color:var(--gold);flex:none;width:32px;height:32px}
+.trust__g b{display:block;font:800 20px/1.2 var(--display);color:var(--ink);margin-bottom:8px}
+.trust__g span{font-size:16px;line-height:1.5;color:#E6E1D5}
+.trust__l{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-radius:20px;box-shadow:inset 0 0 0 1px rgba(245,241,232,.14)}
+.trust__l li{display:flex;flex-direction:column;gap:12px;padding:24px}
+.trust__l li+li{border-left:1px solid rgba(245,241,232,.12)}
+.trust__l svg{color:var(--gold)}
+.trust__l b{display:block;font:700 15px/1.3 var(--display);color:var(--ink);margin-bottom:4px}
+.trust__l span{font-size:14px;line-height:1.45;color:#BDB8AB}
+@media (max-width:900px){
+  .trust{grid-template-columns:minmax(0,1fr)}
+  .trust__l{grid-template-columns:minmax(0,1fr)}
+  .trust__l li{flex-direction:row;align-items:flex-start;padding:16px 24px}
+  .trust__l li+li{border-left:0;border-top:1px solid rgba(245,241,232,.12)}
+}
 </style>
 </head>
 <body>
@@ -665,12 +685,14 @@ main .glass::before,main .glass::after{display:none!important}
   </div>
   <div class="plans" id="plans" role="tabpanel" aria-labelledby="tab-varumarke" aria-live="polite"></div>
 
-  <p class="fine">Inte nöjda med första leveransen? Vi gör om den utan extra kostnad.</p>
-  <div class="terms glass" style="--img:url(images/web/tl-2.jpg)">
-    <div><b>Priser ex moms</b><span>Fast månadspris, inga tillägg.</span></div>
-    <div><b>3 månaders start</b><span>Därefter 1 månads uppsägning.</span></div>
-    <div><b>Ni äger allt material</b><span>Använd filmerna fritt, överallt.</span></div>
-    <div><b>Inspelning i Stockholm</b><span>Ingår i alla paket.</span></div>
+  <p class="vat">Alla priser är exkl. moms. Fast månadspris, inga tillägg.</p>
+  <div class="trust">
+    <div class="trust__g"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><b>Nöjd-garanti</b><span>Inte nöjda med första leveransen? Vi gör om den utan extra kostnad.</span></div></div>
+    <ul class="trust__l">
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span><b>3 månaders start</b>Därefter 1 månads uppsägning</span></li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg><span><b>Ni äger allt material</b>Använd filmerna fritt, överallt</span></li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><b>Inspelning i Stockholm</b>Ingår i alla paket</span></li>
+    </ul>
   </div>
 </section>
 
