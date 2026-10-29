@@ -560,6 +560,21 @@ main .glass::before,main .glass::after{display:none!important}
   .team .shead p{color:#BDB8AB}
   .team .shead::before{content:"";display:block;width:40px;height:2px;background:var(--gold);margin-bottom:8px}
 }
+
+/* Ingår (kompakt) + skala + paketnamn */
+.inc{max-width:1120px;border-radius:20px;padding:20px 24px;display:flex;align-items:center;gap:24px;box-shadow:inset 0 0 0 1px rgba(245,241,232,.14)}
+.inc__t{margin:0;flex:none;font:700 13px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.inc__l{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 20px}
+.inc__l li{display:inline-flex;align-items:center;gap:8px;font-size:15px;color:var(--ink);white-space:nowrap}
+.inc__l svg{color:var(--gold)}
+.scale{max-width:1120px;display:flex;align-items:center;gap:16px;margin:-16px auto -24px;font:700 12px var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.scale i{flex:1;height:3px;border-radius:3px;background:linear-gradient(90deg,rgba(223,164,56,.25),var(--gold))}
+.plan .name{flex-direction:column;align-items:flex-start;gap:4px;font:800 24px/1.1 var(--display);letter-spacing:-.02em;color:var(--ink)}
+.plan .name small{font:700 11px var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.plan .tag{order:2;margin:-16px 0 0;font-size:14px;color:var(--gold)}
+.plan .price{order:1}
+.plan .desc{order:3}
+@media (max-width:900px){.inc{flex-direction:column;align-items:flex-start;gap:16px}.inc__l li{white-space:normal}.scale{display:none}}
 </style>
 </head>
 <body>
@@ -595,6 +610,11 @@ main .glass::before,main .glass::after{display:none!important}
     <button type="button" role="tab" id="tab-varumarke" aria-selected="true" aria-controls="plans" data-k="varumarke">Varumärke</button>
     <button type="button" role="tab" id="tab-annons" aria-selected="false" aria-controls="plans" data-k="annons" tabindex="-1">Annonsering</button>
   </div>
+  <div class="inc">
+    <p class="inc__t">Det här ingår i alla paket</p>
+    <ul class="inc__l"><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Strategi varje månad</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Idé och manus</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Inspelning och utrustning</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Klippning och efterarbete</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Feedback och justeringar</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Alla format (9:16, 1:1, 16:9)</li></ul>
+  </div>
+  <div class="scale" aria-hidden="true"><span>Fler filmer</span><i></i><span>Färre, mer påkostade</span></div>
   <div class="plans" id="plans" role="tabpanel" aria-labelledby="tab-varumarke" aria-live="polite"></div>
 
   <p class="fine">Inte nöjda med första leveransen? Vi gör om den utan extra kostnad.</p>
@@ -613,14 +633,7 @@ main .glass::before,main .glass::after{display:none!important}
   </div>
 </section>
 
-<section class="split" aria-labelledby="ingar-rubrik">
-  <div class="split__text">
-    <h2 id="ingar-rubrik">Det här ingår i alla paket.</h2>
-    <ul class="split__list"><li>Strategi varje månad</li><li>Idé och manus</li><li>Inspelning och utrustning</li><li>Klippning och efterarbete</li><li>Feedback och justeringar</li><li>Alla format: 9:16, 1:1 och 16:9</li></ul>
-    <p class="split__note">Samma produktion varje månad, oavsett paket.</p>
-  </div>
-  <div class="split__img"><img src="images/portfolio/bild-08.jpg" alt="EMK filmar på plats hos en kund" loading="lazy"></div>
-</section>
+
 
 <section class="sec" aria-labelledby="varfor-rubrik">
   <div class="shead"><h2 id="varfor-rubrik">Därför väljer företag <em>EMK.</em></h2><p>Det handlar inte bara om snygg film, utan om film som gör jobbet varje månad.</p></div>
@@ -677,12 +690,12 @@ document.getElementById('emk-year').textContent = new Date().getFullYear();
      Reels och Foto: när paketen är klara, byt ut "snart: true" mot tre paket i samma format som film. */
   var data = {
     varumarke: [
-      {name:"Bas", desc:"Ett jämnt flöde av film till hemsida och sociala medier.", amount:"24 500",
+      {name:"Scen", lvl:"Bas", tag:"Löpande film · ren och tydlig produktion", desc:"Ett jämnt flöde av film till hemsida och sociala medier.", amount:"24 500",
        list:["4 filmer i månaden, 30 sek – 2 min","1 inspelningsdag","Planering, manus och redigering","Alla format med undertexter","Leverans inom 3 veckor"]},
-      {name:"Medel", pop:true, desc:"Mer film och högre produktionsvärde.", amount:"36 900",
+      {name:"Regi", lvl:"Medel", tag:"Högre produktionsvärde · grafik och animation", pop:true, desc:"Mer film och högre produktionsvärde.", amount:"36 900",
        list:["6 filmer i månaden","2 inspelningsdagar","Grafik och animation","Korta versioner 15 och 30 sek","Allt i Bas"],
        quote:{t:"Snabb och proffsig leverans med bra kommunikation genom hela processen.", by:"Thobias Wallin, VD Magnolia"}},
-      {name:"Premium", desc:"För lanseringar, event och varumärkesfilm.", amount:"49 900",
+      {name:"Premiär", lvl:"Premium", tag:"Flaggskeppsfilm · regi och extra crew", desc:"För lanseringar, event och varumärkesfilm.", amount:"49 900",
        list:["1 flaggskeppsfilm per kvartal","Regi och extra crew","Drönare och eventfilmning","Prioriterad leverans","Allt i Medel"]}
     ],
     annons: {snart:true, titel:"Annonsfilm", text:"Flera versioner och hooks av samma koncept, klara att A/B-testa i Meta, Google och TikTok. Vi justerar nästa månads filmer efter vad som ger bäst resultat.",
@@ -712,10 +725,11 @@ document.getElementById('emk-year').textContent = new Date().getFullYear();
     }
     plansEl.innerHTML = d.map(function(p,i){
       return '<article class="plan glass'+(p.pop?' pop':'')+'" style="--img:url(images/web/'+PIMG[i%3]+'.jpg)">'
-        + '<div class="top"><div class="name"><span class="mark" aria-hidden="true"><span></span></span>'+esc(p.name)+'</div>'
+        + '<div class="top"><div class="name"><small>'+esc(p.lvl||'')+'</small>'+esc(p.name)+'</div>'
         + (p.pop?'<span class="badge">Populärast</span>':'') + '</div>'
-        + '<p class="desc">'+esc(p.desc)+'</p>'
         + '<div class="price"><span class="amount">'+p.amount+'</span><span class="unit">kr/mån</span></div>'
+        + '<p class="tag">'+esc(p.tag||'')+'</p>'
+        + '<p class="desc">'+esc(p.desc)+'</p>'
         + '<ul class="list">'+p.list.map(function(li){return '<li>'+check+'<span>'+esc(li)+'</span></li>';}).join('')+'</ul>'
         + (p.quote?'<p class="quote">'+esc(p.quote.t)+'<b>'+esc(p.quote.by)+'</b></p>':'')
         + '<a class="cta" href="'+BOKA+'">Boka 15 min samtal</a>'
