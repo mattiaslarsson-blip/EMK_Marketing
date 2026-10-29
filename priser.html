@@ -596,6 +596,14 @@ main .glass::before,main .glass::after{display:none!important}
 .inc__p{margin:0 24px;padding:16px 0 20px}
 @media (max-width:900px){.inc__d summary{flex-wrap:wrap;gap:8px 16px}.inc__t{flex-basis:calc(100% - 48px)}.inc__s{order:3;flex-basis:100%}.inc__x{order:2}}
 @media (prefers-reduced-motion:reduce){.inc__x,.inc__x::after{transition:none}}
+
+/* Ingår: diskretare */
+.inc__d summary{padding:16px 24px}
+.inc__x{width:16px;height:16px;box-shadow:none!important}
+.inc__x::before,.inc__x::after{width:10px;height:1.5px;background:var(--muted)}
+.inc__d summary:hover .inc__x::before,.inc__d summary:hover .inc__x::after{background:var(--gold)}
+.inc__s{color:#BDB8AB}
+.inc__d .inc__p{margin:0 24px;padding:16px 0 20px}
 </style>
 </head>
 <body>
@@ -635,8 +643,8 @@ main .glass::before,main .glass::after{display:none!important}
     <details class="inc__d">
       <summary><span class="inc__t">Det här ingår i alla paket</span><span class="inc__s">Strategi, manus, inspelning, klippning och mer</span><span class="inc__x" aria-hidden="true"></span></summary>
       <ul class="inc__l"><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Strategi varje månad</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Idé och manus</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Inspelning och utrustning</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Klippning och efterarbete</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Feedback och justeringar</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Alla format med undertexter</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Leverans inom 3 veckor</li></ul>
+      <p class="inc__p">Välj mellan fler filmer eller mer avancerade filmer. Ju högre paket, desto mer tid och produktion läggs på varje film.</p>
     </details>
-    <p class="inc__p">Välj mellan fler filmer eller mer avancerade filmer. Ju högre paket, desto mer tid och produktion läggs på varje film.</p>
   </div>
   <div class="plans" id="plans" role="tabpanel" aria-labelledby="tab-varumarke" aria-live="polite"></div>
 
