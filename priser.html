@@ -604,6 +604,14 @@ main .glass::before,main .glass::after{display:none!important}
 .inc__d summary:hover .inc__x::before,.inc__d summary:hover .inc__x::after{background:var(--gold)}
 .inc__s{color:#BDB8AB}
 .inc__d .inc__p{margin:0 24px;padding:16px 0 20px}
+
+/* Ingår: bara rubrik + pil */
+.inc__x::before{display:none}
+.inc__x::after{width:7px;height:7px;background:none;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:translate(-50%,-70%) rotate(45deg)}
+.inc__d[open] .inc__x::after{transform:translate(-50%,-30%) rotate(225deg)}
+.inc__d summary:hover .inc__x::after{background:none;border-color:var(--gold)}
+.inc__d summary{justify-content:flex-start}
+.inc__x{margin-left:8px}
 </style>
 </head>
 <body>
@@ -641,7 +649,7 @@ main .glass::before,main .glass::after{display:none!important}
   </div>
   <div class="inc">
     <details class="inc__d">
-      <summary><span class="inc__t">Det här ingår i alla paket</span><span class="inc__s">Strategi, manus, inspelning, klippning och mer</span><span class="inc__x" aria-hidden="true"></span></summary>
+      <summary><span class="inc__t">Det här ingår i alla paket</span><span class="inc__x" aria-hidden="true"></span></summary>
       <ul class="inc__l"><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Strategi varje månad</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Idé och manus</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Inspelning och utrustning</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Klippning och efterarbete</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Feedback och justeringar</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Alla format med undertexter</li><li><svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Leverans inom 3 veckor</li></ul>
       <p class="inc__p">Välj mellan fler filmer eller mer avancerade filmer. Ju högre paket, desto mer tid och produktion läggs på varje film.</p>
     </details>
