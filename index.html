@@ -874,6 +874,17 @@
     #emk-lp #emk-cta-top { background:var(--gold); color:#111111; box-shadow:0 12px 32px -12px rgba(223,164,56,.6); }
     #emk-lp #emk-cta-top:hover { background:#ecb44b; color:#111111; box-shadow:0 12px 32px -12px rgba(223,164,56,.8); }
     @media (max-width:768px){ #emk-lp .emk-hero-content .emk-btn { font-size:16px; padding:0 24px !important; } }
+  
+    /* Recensioner: runda profilbilder */
+    #emk-lp .emk-res__card { min-height: 0; }
+    #emk-lp .emk-res__body { padding: 32px; gap: 24px; }
+    #emk-lp .emk-res__mark { margin: 0; }
+    #emk-lp .emk-res__by { display: flex; flex-direction: row; align-items: center; gap: 16px; padding-top: 24px; margin-top: auto; }
+    #emk-lp .emk-res__q { flex: 1; }
+    #emk-lp .emk-res__who { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+    #emk-lp .emk-res__av { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex: none; display: block;
+      box-shadow: 0 0 0 2px #181715, 0 0 0 3px rgba(223,164,56,.55); }
+    #emk-lp .emk-res__av--ini { display: grid; place-items: center; background: #24221e; color: #DFA438; font-weight: 800; font-size: 18px; letter-spacing: .02em; }
   </style>
 </head>
 <body>
@@ -1047,91 +1058,80 @@
       <div class="emk-res__viewport">
       <div class="emk-res__grid" id="emk-res-grid" aria-roledescription="karusell" aria-label="Kundrecensioner">
         <figure class="emk-res__card">
-          <div class="emk-res__photo"><img src="images/foto/portratt/monika-lykvist.jpg" alt="Monika Lykvist" loading="lazy" style="--z:1.1;--ox:52%;--oy:20%"></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="emk-res__q">Vi anlitade EMK Marketing och är mycket nöjda med deras arbete. De visade upp en bred kompetens och innovativt tänkande.</blockquote>
-            <figcaption class="emk-res__by"><span class="emk-res__name">Monika Lykvist</span><span class="emk-res__role">We Travel Group AB</span></figcaption>
+            <figcaption class="emk-res__by"><img class="emk-res__av" src="images/web/av/monika-lykvist.jpg" alt="" loading="lazy" width="160" height="160"><span class="emk-res__who"><span class="emk-res__name">Monika Lykvist</span><span class="emk-res__role">We Travel Group AB</span></span></figcaption>
           </div>
         </figure>
         <figure class="emk-res__card">
-          <div class="emk-res__photo"><img src="images/foto/portratt/christina-wissinger.jpg" alt="Christina Wissinger" loading="lazy" style="--z:1.1;--ox:50%;--oy:36%"></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="emk-res__q">Ett verkligt lyft i sociala medier. EMK har varit lyhörda, proffsiga och enkla att kommunicera med. Jag kan varmt rekommendera dem!</blockquote>
-            <figcaption class="emk-res__by"><span class="emk-res__name">Christina Wissinger</span><span class="emk-res__role">Sportchef, STG</span></figcaption>
+            <figcaption class="emk-res__by"><img class="emk-res__av" src="images/web/av/christina-wissinger.jpg" alt="" loading="lazy" width="160" height="160"><span class="emk-res__who"><span class="emk-res__name">Christina Wissinger</span><span class="emk-res__role">Sportchef, STG</span></span></figcaption>
           </div>
         </figure>
         <figure class="emk-res__card">
-          <div class="emk-res__photo"><img src="images/foto/portratt/leonie-sterner-sazesh.jpg" alt="Leonie Sterner Sazesh" loading="lazy" style="--z:1.6;--ox:57%;--oy:12%"></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="emk-res__q">Vi är mycket nöjda med filmer och bilder som EMK Marketing tog fram.</blockquote>
-            <figcaption class="emk-res__by"><span class="emk-res__name">Leonie Sterner Sazesh</span><span class="emk-res__role">Co-founder, Joina</span></figcaption>
+            <figcaption class="emk-res__by"><img class="emk-res__av" src="images/web/av/leonie-sterner-sazesh.jpg" alt="" loading="lazy" width="160" height="160"><span class="emk-res__who"><span class="emk-res__name">Leonie Sterner Sazesh</span><span class="emk-res__role">Co-founder, Joina</span></span></figcaption>
           </div>
         </figure>
         <figure class="emk-res__card">
-          <div class="emk-res__photo"><img src="images/foto/portratt/william-broman.jpg" alt="William Broman" loading="lazy" style="--z:1.05;--ox:50%;--oy:22%"></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="emk-res__q">Jag är mycket imponerad av EMK Marketings arbete. De visade en hög nivå av professionalism och har varit avgörande i att bygga upp B2C-innehåll av hög kvalitet.</blockquote>
-            <figcaption class="emk-res__by"><span class="emk-res__name">William Broman</span><span class="emk-res__role">Fd. lagkapten, svenska landslaget</span></figcaption>
+            <figcaption class="emk-res__by"><img class="emk-res__av" src="images/web/av/william-broman.jpg" alt="" loading="lazy" width="160" height="160"><span class="emk-res__who"><span class="emk-res__name">William Broman</span><span class="emk-res__role">Fd. lagkapten, svenska landslaget</span></span></figcaption>
           </div>
         </figure>
         <figure class="emk-res__card">
-          <div class="emk-res__photo emk-res__photo--initials" aria-hidden="true"><span>LS</span></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="emk-res__q">Smidigt samarbete, proffsigt och snabbt arbete. Dessutom har Mattias en blick för vad som väsentligt. Suveränt!</blockquote>
-            <figcaption class="emk-res__by"><span class="emk-res__name">Lars Stenberg</span><span class="emk-res__role">Google-recension</span></figcaption>
+            <figcaption class="emk-res__by"><span class="emk-res__av emk-res__av--ini" aria-hidden="true">LS</span><span class="emk-res__who"><span class="emk-res__name">Lars Stenberg</span><span class="emk-res__role">Google-recension</span></span></figcaption>
           </div>
         </figure>
         <figure class="emk-res__card">
-          <div class="emk-res__photo emk-res__photo--initials" aria-hidden="true"><span>HF</span></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="emk-res__q">Grymma och mycket professionella.</blockquote>
-            <figcaption class="emk-res__by"><span class="emk-res__name">Hassan Fadavi</span><span class="emk-res__role">Entreprenör</span></figcaption>
+            <figcaption class="emk-res__by"><span class="emk-res__av emk-res__av--ini" aria-hidden="true">HF</span><span class="emk-res__who"><span class="emk-res__name">Hassan Fadavi</span><span class="emk-res__role">Entreprenör</span></span></figcaption>
           </div>
         </figure>
         <figure class="emk-res__card">
-          <div class="emk-res__photo emk-res__photo--initials" aria-hidden="true"><span>ER</span></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="emk-res__q">EMK Marketing har varit lyhörda, kreativa i sina idéer och tagit fram fantastiska filmer och bilder som visar vår glädje, gemenskap och utveckling.</blockquote>
-            <figcaption class="emk-res__by"><span class="emk-res__name">Emma Raask</span><span class="emk-res__role">Sportchef, Hammarbygymnasterna</span></figcaption>
+            <figcaption class="emk-res__by"><span class="emk-res__av emk-res__av--ini" aria-hidden="true">ER</span><span class="emk-res__who"><span class="emk-res__name">Emma Raask</span><span class="emk-res__role">Sportchef, Hammarbygymnasterna</span></span></figcaption>
           </div>
         </figure>
         <figure class="emk-res__card">
-          <div class="emk-res__photo emk-res__photo--initials" aria-hidden="true"><span>RC</span></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="emk-res__q">EMK Marketing skötte allt content och paid social. De är drivna, lojala, ödmjuka och vill genuint ha ärlig feedback.</blockquote>
-            <figcaption class="emk-res__by"><span class="emk-res__name">Rebecka Carlén</span><span class="emk-res__role">Brand Strategist &amp; Growth Hacker</span></figcaption>
+            <figcaption class="emk-res__by"><span class="emk-res__av emk-res__av--ini" aria-hidden="true">RC</span><span class="emk-res__who"><span class="emk-res__name">Rebecka Carlén</span><span class="emk-res__role">Brand Strategist &amp; Growth Hacker</span></span></figcaption>
           </div>
         </figure>
         <figure class="emk-res__card">
-          <div class="emk-res__photo emk-res__photo--initials" aria-hidden="true"><span>LB</span></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="emk-res__q">Vi fick högkvalitativa video-reklamfilmer av EMK Marketing.</blockquote>
-            <figcaption class="emk-res__by"><span class="emk-res__name">Leo Barrné</span><span class="emk-res__role">Co-founder, Heylinn</span></figcaption>
+            <figcaption class="emk-res__by"><span class="emk-res__av emk-res__av--ini" aria-hidden="true">LB</span><span class="emk-res__who"><span class="emk-res__name">Leo Barrné</span><span class="emk-res__role">Co-founder, Heylinn</span></span></figcaption>
           </div>
         </figure>
         <figure class="emk-res__card">
-          <div class="emk-res__photo emk-res__photo--initials" aria-hidden="true"><span>TW</span></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="emk-res__q">Snabb och proffsig leverans med bra kommunikation genom hela processen. Väldigt smidigt samarbete och ett bra slutresultat. Rekommenderas varmt!</blockquote>
-            <figcaption class="emk-res__by"><span class="emk-res__name">Thobias Wallin</span><span class="emk-res__role">VD, Magnolia</span></figcaption>
+            <figcaption class="emk-res__by"><span class="emk-res__av emk-res__av--ini" aria-hidden="true">TW</span><span class="emk-res__who"><span class="emk-res__name">Thobias Wallin</span><span class="emk-res__role">VD, Magnolia</span></span></figcaption>
           </div>
         </figure>
         <figure class="emk-res__card">
-          <div class="emk-res__photo emk-res__photo--initials" aria-hidden="true"><span>SS</span></div>
           <div class="emk-res__body">
             <span class="emk-res__mark" aria-hidden="true">&ldquo;</span>
             <blockquote class="emk-res__q">EMK Marketing har gjort ett jobb åt oss och kvaliteten på arbetet var utmärkt. Jag rekommenderar dem.</blockquote>
-            <figcaption class="emk-res__by"><span class="emk-res__name">Sachin Sood</span><span class="emk-res__role">Entreprenör</span></figcaption>
+            <figcaption class="emk-res__by"><span class="emk-res__av emk-res__av--ini" aria-hidden="true">SS</span><span class="emk-res__who"><span class="emk-res__name">Sachin Sood</span><span class="emk-res__role">Entreprenör</span></span></figcaption>
           </div>
         </figure>
       </div>
