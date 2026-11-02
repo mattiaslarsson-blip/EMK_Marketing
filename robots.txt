@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /tack
+
+Sitemap: https://emkmarketing.se/sitemap.xml
