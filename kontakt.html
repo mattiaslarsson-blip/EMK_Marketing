@@ -153,6 +153,27 @@ input,select,textarea{background-color:rgba(17,17,17,.7);border-radius:14px;padd
 .emk-footer span,.emk-footer a{color:#908C80;font-size:13px;text-decoration:none}
 .emk-footer a:hover{color:var(--gold)}
 @media(max-width:768px){.emk-footer{flex-direction:column;gap:8px;padding:32px 16px}}
+
+/* Layout med bild + recension */
+.contact{grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-areas:"info form" "side form";column-gap:64px;row-gap:40px}
+.info{grid-area:info}.side{grid-area:side;display:flex;flex-direction:column;gap:24px}.formcard{grid-area:form}
+.info .lead{margin-bottom:0}
+.shot{margin:0;border-radius:24px;overflow:hidden;aspect-ratio:4/3;box-shadow:inset 0 0 0 1px var(--line)}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
+.mini-rev{margin:-48px 24px 0;position:relative;padding:24px;border-radius:20px;background:rgba(26,25,23,.86);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:inset 0 0 0 1px var(--line),0 24px 48px -24px rgba(0,0,0,.8)}
+.mini-rev blockquote{margin:0 0 16px;font-size:16px;line-height:1.5;color:var(--cream)}
+.mini-rev figcaption{display:flex;align-items:center;gap:12px}
+.mini-rev img{width:40px;height:40px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #1A1917,0 0 0 3px rgba(223,164,56,.55)}
+.mini-rev b{display:block;font-size:14px;color:var(--cream)}
+.mini-rev span{font-size:13px;color:var(--gold)}
+@media(max-width:900px){
+  .contact{grid-template-columns:minmax(0,1fr);grid-template-areas:"info" "form" "side";row-gap:32px}
+  .info h1{font-size:clamp(36px,10vw,44px)}
+  .info .lead{font-size:17px}
+  .formcard h2{font-size:24px}
+  .mini-rev{margin:-40px 16px 0}
+  .promise{padding:24px}
+}
 </style>
 </head>
 <body>
@@ -175,14 +196,14 @@ input,select,textarea{background-color:rgba(17,17,17,.7);border-radius:14px;padd
   <div class="info">
     <h1>Låt oss göra film <em>till er.</em></h1>
     <p class="lead">Berätta kort om ert behov så återkommer vi med ett förslag på paket och vilka filmer som ger mest effekt först.</p>
+  </div>
 
-    <div class="items">
-      <div class="item"><div class="ic">✉</div><a href="mailto:info@emkmarketing.se">info@emkmarketing.se</a></div>
-      <!-- Lägg in ert telefonnummer:
-      <div class="item"><div class="ic">☎</div><a href="tel:+46XXXXXXXXX">070-XXX XX XX</a></div> -->
-      <div class="item"><div class="ic">⌖</div><span>Läggestavägen 34, 124 31 Stockholm</span></div>
-    </div>
-
+  <div class="side">
+    <figure class="shot"><img src="images/web/p-inspelning.jpg" alt="EMK Marketing under en inspelning" loading="lazy"></figure>
+    <figure class="mini-rev">
+      <blockquote>”Smidigt samarbete, proffsigt och snabbt arbete. Suveränt!”</blockquote>
+      <figcaption><img src="images/web/av/lars-stenberg.jpg" alt=""><span><b>Lars Stenberg</b>Svenska Gymnastikförbundet</span></figcaption>
+    </figure>
     <div class="promise">
       <strong>Så går det till</strong>
       <ol>
@@ -194,7 +215,7 @@ input,select,textarea{background-color:rgba(17,17,17,.7);border-radius:14px;padd
   </div>
 
   <!-- FORM -->
-  <div class="formcard">
+  <div class="formcard" id="form">
     <h2>Vill du veta mer? <span style="color:var(--gold)">Svar inom 12 h</span></h2>
     <p class="sub">Inga säljsamtal i onödan. Vi svarar bara på det ni frågar om.</p>
 
