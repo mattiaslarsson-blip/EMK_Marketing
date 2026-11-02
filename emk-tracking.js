@@ -3,7 +3,7 @@
    1) Klistra in ert Google Analytics-ID (G-...) och ev. Meta Pixel-ID nedan.
    2) Klart. Cookie-rutan visas automatiskt när ett ID finns.
    ========================================================= */
-var EMK_GA4_ID = '';    // <-- t.ex. 'G-ABC123XYZ9'
+var EMK_GA4_ID = 'G-KBCG4ZCM2T';    // <-- t.ex. 'G-ABC123XYZ9'
 var EMK_PIXEL_ID = '';  // <-- t.ex. '123456789012345'
 
 (function () {
