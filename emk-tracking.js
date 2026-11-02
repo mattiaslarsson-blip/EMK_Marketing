@@ -65,7 +65,8 @@ var EMK_PIXEL_ID = '';  // <-- t.ex. '123456789012345'
       + '#emk-cc p{margin:0 0 16px;font-size:15px;line-height:1.5;color:#D9D3C6}#emk-cc b{display:block;font-size:16px;color:#F5F1E8;margin-bottom:8px}'
       + '#emk-cc .r{display:flex;gap:8px;flex-wrap:wrap}#emk-cc button{flex:1 1 auto;min-height:44px;padding:0 24px;border-radius:999px;font-family:inherit;font-size:15px;font-weight:700;line-height:1;cursor:pointer;border:0}'
       + '#emk-cc .y{background:#DFA438;color:#111}#emk-cc .n{background:transparent;color:#F5F1E8;box-shadow:inset 0 0 0 1.5px rgba(245,241,232,.3)}'
-      + '#emk-cc button:focus-visible{outline:2px solid #DFA438;outline-offset:2px}';
+      + '#emk-cc button:focus-visible{outline:2px solid #DFA438;outline-offset:2px}'
+      + '@media(max-width:560px){#emk-cc{left:8px;right:8px;bottom:8px;padding:16px;border-radius:16px}#emk-cc b{font-size:15px;margin-bottom:4px}#emk-cc p{font-size:13.5px;margin-bottom:12px}#emk-cc button{min-height:40px;font-size:14px;padding:0 16px}}';
     var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
     var d = document.createElement('div'); d.id = 'emk-cc'; d.setAttribute('role', 'dialog'); d.setAttribute('aria-label', 'Cookies');
     d.innerHTML = '<b>Vi använder cookies</b><p>För att se hur sajten används och förbättra våra annonser. Du väljer själv.</p>'

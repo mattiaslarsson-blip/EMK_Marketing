@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Recensioner – vad kunderna säger | EMK Marketing</title>
   <meta name="description" content="Läs vad våra kunder säger om att ta fram företagsfilm, foto och innehåll med EMK Marketing i Stockholm.">
@@ -17,148 +17,117 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="EMK_LOGO.png" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap');
-
-    body { margin: 0; background: #14130F; }
-
-    #emk-rev {
-      --ink: #F5F1E8;
-      --bg: #14130F;
-      --card: #1F1D17;
-      --line: #34312A;
-      --muted: #908C80;
-      --muted-2: #BDB8AB;
-      --gold: #DFA438;
-      --gold-deep: #E2B25C;
-      --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.3);
-      --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.45);
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--ink); background: var(--bg); line-height: 1.6;
-      -webkit-font-smoothing: antialiased; position: relative; overflow: hidden; min-height: 100vh;
-    }
-    #emk-rev * { box-sizing: border-box; margin: 0; padding: 0; }
-    #emk-rev h1, #emk-rev h2, #emk-rev .emk-btn { font-family: 'DM Sans', sans-serif; }
-    #emk-rev a:focus-visible, #emk-rev button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
-
-    #emk-rev::before {
-      content: ""; position: absolute; inset: 0; pointer-events: none;
-      background:
-        radial-gradient(100% 80% at 85% -5%, rgba(223, 164, 56, 0.12), transparent 50%),
-        radial-gradient(90% 70% at -5% 105%, rgba(122, 32, 33, 0.18), transparent 60%);
-    }
-    #emk-rev .emk-wrap { position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; padding: 0 24px; }
-
-    /* Nav */
-    #emk-rev .emk-nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0 8px; gap: 16px; }
-    #emk-rev .emk-nav__logo img { height: 34px; width: auto; display: block; }
-    #emk-rev .emk-nav__links { display: flex; gap: 26px; }
-    #emk-rev .emk-nav__links a { color: var(--muted-2); text-decoration: none; font-size: 14.5px; font-weight: 600; transition: color 0.2s ease; }
-    #emk-rev .emk-nav__links a:hover { color: var(--ink); }
-
-    /* Header */
-    #emk-rev .emk-head { text-align: center; padding: 64px 0 48px; }
-    #emk-rev .emk-back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 600; margin-bottom: 22px; transition: color 0.2s ease; }
-    #emk-rev .emk-back:hover { color: var(--gold); }
-    #emk-rev h1 { font-size: clamp(30px, 5.5vw, 46px); font-weight: 800; letter-spacing: -1px; margin-bottom: 14px; }
-    #emk-rev .emk-head p { color: var(--muted-2); font-size: 17px; max-width: 540px; margin: 0 auto; }
-
-    /* Grid */
-    #emk-rev .emk-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; padding-bottom: 20px; }
-    #emk-rev .emk-quote {
-      background: var(--card); border: 1px solid var(--line); border-radius: 24px;
-      padding: 34px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-    #emk-rev .emk-quote:hover { transform: translateY(-3px); border-color: var(--gold); }
-    #emk-rev .emk-quote__mark { font-family: 'DM Sans'; font-size: 52px; line-height: 0.5; color: var(--gold); margin-bottom: 16px; }
-    #emk-rev .emk-quote__text { font-size: 17px; color: var(--ink); line-height: 1.6; font-style: italic; margin-bottom: 24px; }
-    #emk-rev .emk-quote__by { margin-top: auto; }
-    #emk-rev .emk-quote__name { font-family: 'DM Sans'; font-weight: 800; font-size: 15.5px; color: var(--ink); }
-    #emk-rev .emk-quote__role { display: block; font-size: 13.5px; color: var(--muted); margin-top: 3px; }
-
-    /* CTA */
-    #emk-rev .emk-cta { text-align: center; padding: 56px 0 72px; }
-    #emk-rev .emk-btn {
-      display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: #14130F;
-      font-weight: 700; font-size: 16px; padding: 16px 36px; border-radius: 100px; text-decoration: none;
-      box-shadow: 0 12px 28px -10px rgba(223, 164, 56, 0.5); transition: all 0.2s ease;
-    }
-    #emk-rev .emk-btn:hover { transform: translateY(-2px); background: #ecb44b; }
-
-    /* Footer */
-    #emk-rev .emk-footer { padding: 32px 0 48px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
-    #emk-rev .emk-footer a { color: var(--muted); text-decoration: none; }
-    #emk-rev .emk-footer a:hover { color: var(--gold); }
-
-    @media(max-width: 768px) {
-      #emk-rev .emk-grid { grid-template-columns: 1fr; gap: 16px; }
-      #emk-rev .emk-head { padding: 44px 0 36px; }
-      #emk-rev .emk-quote { padding: 28px 24px; }
-    }
-  </style>
-<script src="emk-tracking.js"></script>
+  <script src="emk-tracking.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap">
+<style>
+:root{--gold:#DFA438;--ink:#F5F1E8;--muted:#BDB8AB;--line:rgba(245,241,232,.14)}
+*{box-sizing:border-box}
+html,body{margin:0;background:#111111;color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{position:relative;isolation:isolate}
+body::before{content:"";position:absolute;inset:0 0 auto 0;height:1000px;z-index:-1;pointer-events:none;background:
+  radial-gradient(40% 45% at 18% 20%,rgba(60,90,120,.22),transparent 70%),
+  radial-gradient(45% 50% at 85% 35%,rgba(223,164,56,.16),transparent 70%),
+  radial-gradient(60% 50% at 50% 100%,rgba(120,80,40,.12),transparent 70%);
+  filter:blur(20px);-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent);mask-image:linear-gradient(180deg,#000 55%,transparent)}
+.emk-topnav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s ease,box-shadow .3s ease,backdrop-filter .3s ease}
+.emk-topnav .emk-nav{transition:padding .3s ease;display:grid;grid-template-columns:1fr auto 1fr;gap:24px;max-width:1280px}
+.emk-nav__logo{justify-self:start}.emk-nav__links{justify-self:center;gap:32px}.emk-nav__cta--side{justify-self:end;text-decoration:none;font-size:14.5px}
+@media (max-width:768px){.emk-topnav .emk-nav{grid-template-columns:auto 1fr auto;gap:16px}.emk-nav__links{justify-self:end}}
+@media (max-width:560px){.emk-topnav .emk-nav{grid-template-columns:auto 1fr;gap:16px;padding:16px}.emk-nav__cta--side{display:none}.emk-nav__links{flex-wrap:nowrap;gap:16px}.emk-nav__links a{font-size:13.5px}}
+.emk-topnav.is-scrolled{background:rgba(17,17,17,.78);-webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);box-shadow:0 1px 0 rgba(245,241,232,.08),0 16px 40px -24px rgba(0,0,0,.9)}
+.emk-topnav.is-scrolled .emk-nav{padding-top:16px;padding-bottom:16px}
+.emk-topnav.is-scrolled .emk-nav__links a{text-shadow:none}
+.emk-nav{max-width:1280px;margin:0 auto;padding:24px 32px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.emk-nav__logo{display:block;line-height:0}
+.emk-nav__logo img{height:40px;width:auto;display:block}
+.emk-nav__links{display:flex;align-items:center;gap:24px}
+.emk-nav__links a{color:rgba(245,241,232,.85);text-decoration:none;font-size:14.5px;font-weight:600;transition:color .2s;white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.emk-nav__links a:hover{color:#fff}
+.emk-nav__links a.is-active{color:var(--gold)}
+.emk-nav__cta{border:1.5px solid var(--gold);color:var(--gold)!important;padding:8px 16px;border-radius:100px;font-weight:700;text-shadow:none!important;transition:background .2s,color .2s}
+.emk-nav__cta:hover{background:var(--gold);color:#111111!important}
+@media (max-width:768px){.emk-nav{padding:16px 16px}.emk-nav__logo img{height:32px}.emk-nav__links{gap:16px;flex-wrap:wrap;justify-content:flex-end}.emk-nav__links a{font-size:12.5px}.emk-nav__cta{padding:8px 16px}}
+@media (max-width:374px){.emk-nav__logo img{height:28px}.emk-nav__links{gap:8px}.emk-nav__links a{font-size:11.5px}.emk-nav__cta{padding:8px 8px}}
+.hero{max-width:1120px;margin:0 auto;padding:clamp(144px,15vw,200px) 24px 56px;text-align:center}
+.hero h1{margin:0;font-weight:800;font-size:clamp(40px,6.4vw,76px);line-height:1.04;letter-spacing:-.045em;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{margin:24px auto 0;max-width:46ch;font-size:clamp(17px,1.6vw,20px);line-height:1.55;color:#E6E1D5}
+.grid{max-width:1180px;margin:0 auto;padding:0 24px 96px;columns:3 320px;column-gap:16px}
+.rc{break-inside:avoid;margin:0 0 16px;padding:32px;border-radius:24px;background:rgba(26,25,23,.72);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;gap:24px}
+.qm{font-weight:800;font-size:64px;line-height:.6;height:24px;color:var(--gold)}
+.rc blockquote{margin:0;font-size:17px;line-height:1.55;color:var(--ink)}
+.rc figcaption{display:flex;align-items:center;gap:16px;padding-top:24px;border-top:1px solid rgba(245,241,232,.1)}
+.rc img,.rc .ini{width:48px;height:48px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 2px #1A1917,0 0 0 3px rgba(223,164,56,.55)}
+.rc .ini{display:grid;place-items:center;background:#24221e;color:var(--gold);font-weight:800;font-size:16px}
+.rc figcaption span{display:flex;flex-direction:column;gap:2px;font-size:14px;color:var(--gold)}
+.rc figcaption b{font-size:15px;color:var(--ink)}
+.cta{max-width:1120px;margin:0 auto 96px;padding:clamp(40px,6vw,72px) clamp(24px,5vw,64px);border-radius:32px;text-align:center;
+  background:linear-gradient(100deg,rgba(14,13,11,.86),rgba(14,13,11,.94)),url(images/web/kontakt-pexels-bg.jpg) center/cover;box-shadow:inset 0 0 0 1px rgba(245,241,232,.1)}
+.cta h2{margin:0 0 16px;font-weight:800;font-size:clamp(28px,3.6vw,42px);letter-spacing:-.03em;line-height:1.1}
+.cta h2 em{font-style:normal;color:var(--gold)}
+.cta p{margin:0 auto 32px;max-width:48ch;color:#D9D3C6;font-size:17px;line-height:1.55}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:52px;padding:0 32px;border-radius:999px;background:var(--gold);color:#111;font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 12px 30px -10px rgba(223,164,56,.55)}
+.btn:hover{background:#E9B654}
+.emk-footer{max-width:1280px;margin:0 auto;border-top:1px solid #242424;padding:32px 32px 48px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.emk-footer span,.emk-footer a{color:#908C80;font-size:13px;text-decoration:none}
+.emk-footer a:hover{color:var(--gold)}
+@media(max-width:768px){.hero{padding:120px 16px 40px}.grid{padding:0 16px 64px}.rc{padding:24px}.cta{margin:0 16px 64px;border-radius:24px}.emk-footer{flex-direction:column;gap:8px;padding:32px 16px}}
+</style>
 </head>
 <body>
-
-<div id="emk-rev">
-  <div class="emk-wrap">
-
-    <nav class="emk-nav">
-      <a href="index.html" class="emk-nav__logo" aria-label="EMK Marketing">
-        <img src="EMK_Marketing_logotyp_transparent.png" alt="EMK Marketing">
-      </a>
-      <div class="emk-nav__links">
-        <a href="index.html">Hem</a>
-        <a href="/portfolio">Portfolio</a>
-      </div>
-    </nav>
-
-    <header class="emk-head">
-      <a href="index.html" class="emk-back">&larr; Tillbaka till startsidan</a>
-      <h1>Vad kunderna säger</h1>
-      <p>Riktiga ord från företag vi jobbar med – och fortsätter växa tillsammans med.</p>
-    </header>
-
-    <!-- LÄGG TILL FLER RECENSIONER: kopiera ett .emk-quote-block och fyll i text, namn och roll -->
-    <section class="emk-grid">
-
-      <div class="emk-quote">
-        <div class="emk-quote__mark">&ldquo;</div>
-        <p class="emk-quote__text">EMK Marketing har varit en avgörande partner i vår digitala utveckling — med kreativitet, struktur och leveranser i toppklass.</p>
-        <div class="emk-quote__by"><span class="emk-quote__name">Monika Lykvist</span><span class="emk-quote__role">Digital Marketing Manager, We Travel Group AB</span></div>
-      </div>
-
-      <div class="emk-quote">
-        <div class="emk-quote__mark">&ldquo;</div>
-        <p class="emk-quote__text">Vi anlitade EMK Marketing och fick en partner som verkligen förstod vårt varumärke och våra mål.</p>
-        <div class="emk-quote__by"><span class="emk-quote__name">Katarina Skugge</span><span class="emk-quote__role">Director of Marketing, Grand Tours</span></div>
-      </div>
-
-      <div class="emk-quote">
-        <div class="emk-quote__mark">&ldquo;</div>
-        <p class="emk-quote__text">EMK levererar innehåll som engagerar och bygger min profil — på riktigt.</p>
-        <div class="emk-quote__by"><span class="emk-quote__name">William Broman</span><span class="emk-quote__role">Idrottsinfluencer</span></div>
-      </div>
-
-    </section>
-
-    <div class="emk-cta">
-      <a class="emk-btn" href="index.html#emk-boka">Bli vår nästa nöjda kund <span>→</span></a>
+<div class="emk-topnav">
+  <nav class="emk-nav">
+    <a href="/" class="emk-nav__logo"><img src="images/logos/emk-logo-gold.svg" alt="EMK Marketing"></a>
+    <div class="emk-nav__links">
+      <a href="/process">Så funkar det</a>
+      <a href="/priser">Priser</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/om-oss">Om oss</a>
     </div>
-
-    <footer class="emk-footer">
-      <span>© <span id="emk-rev-year"></span> EMK Marketing. Alla rättigheter reserverade.</span>
-      <span><a href="mailto:info@emkmarketing.se">info@emkmarketing.se</a></span>
-    </footer>
-
-  </div>
+    <a class="emk-nav__cta emk-nav__cta--side" href="/kontakt">Boka möte</a>
+  </nav>
 </div>
-
-<script>
-  var y = document.getElementById('emk-rev-year');
-  if(y) y.textContent = new Date().getFullYear();
-</script>
-
+<main>
+  <section class="hero">
+    <h1>Vad våra kunder <em>säger.</em></h1>
+    <p>Riktiga ord från företag och organisationer vi har gjort film och innehåll åt.</p>
+  </section>
+  <section class="grid" aria-label="Kundrecensioner">
+    <figure class="rc"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>Vi anlitade EMK Marketing och är mycket nöjda med deras arbete. De visade upp en bred kompetens och innovativt tänkande.</blockquote>
+      <figcaption><img src="images/web/av/monika-lykvist.jpg" alt="" loading="lazy" width="48" height="48"><span><b>Monika Lykvist</b>We Travel Group AB</span></figcaption></figure>
+    <figure class="rc"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>Ett verkligt lyft i sociala medier. EMK har varit lyhörda, proffsiga och enkla att kommunicera med. Jag kan varmt rekommendera dem!</blockquote>
+      <figcaption><img src="images/web/av/christina-wissinger.jpg" alt="" loading="lazy" width="48" height="48"><span><b>Christina Wissinger</b>Sportchef, STG</span></figcaption></figure>
+    <figure class="rc"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>Vi är mycket nöjda med filmer och bilder som EMK Marketing tog fram.</blockquote>
+      <figcaption><img src="images/web/av/leonie-sterner-sazesh.jpg" alt="" loading="lazy" width="48" height="48"><span><b>Leonie Sterner Sazesh</b>Co-founder, Joina</span></figcaption></figure>
+    <figure class="rc"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>Jag är mycket imponerad av EMK Marketings arbete. De visade en hög nivå av professionalism och har varit avgörande i att bygga upp B2C-innehåll av hög kvalitet.</blockquote>
+      <figcaption><img src="images/web/av/william-broman.jpg" alt="" loading="lazy" width="48" height="48"><span><b>William Broman</b>Fd. lagkapten, svenska landslaget</span></figcaption></figure>
+    <figure class="rc"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>Smidigt samarbete, proffsigt och snabbt arbete. Dessutom har Mattias en blick för vad som väsentligt. Suveränt!</blockquote>
+      <figcaption><img src="images/web/av/lars-stenberg.jpg" alt="" loading="lazy" width="48" height="48"><span><b>Lars Stenberg</b>Svenska Gymnastikförbundet</span></figcaption></figure>
+    <figure class="rc"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>Grymma och mycket professionella.</blockquote>
+      <figcaption><img src="images/web/av/hassan-fadavi.jpg" alt="" loading="lazy" width="48" height="48"><span><b>Hassan Fadavi</b>Entreprenör</span></figcaption></figure>
+    <figure class="rc"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>EMK Marketing har varit lyhörda, kreativa i sina idéer och tagit fram fantastiska filmer och bilder som visar vår glädje, gemenskap och utveckling.</blockquote>
+      <figcaption><span class="ini" aria-hidden="true">ER</span><span><b>Emma Raask</b>Sportchef, Hammarbygymnasterna</span></figcaption></figure>
+    <figure class="rc"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>EMK Marketing skötte allt content och paid social. De är drivna, lojala, ödmjuka och vill genuint ha ärlig feedback.</blockquote>
+      <figcaption><span class="ini" aria-hidden="true">RC</span><span><b>Rebecka Carlén</b>Brand Strategist &amp; Growth Hacker</span></figcaption></figure>
+    <figure class="rc"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>Vi fick högkvalitativa video-reklamfilmer av EMK Marketing.</blockquote>
+      <figcaption><span class="ini" aria-hidden="true">LB</span><span><b>Leo Barrné</b>Co-founder, Heylinn</span></figcaption></figure>
+    <figure class="rc"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>Snabb och proffsig leverans med bra kommunikation genom hela processen. Väldigt smidigt samarbete och ett bra slutresultat. Rekommenderas varmt!</blockquote>
+      <figcaption><span class="ini" aria-hidden="true">TW</span><span><b>Thobias Wallin</b>VD, Magnolia</span></figcaption></figure>
+    <figure class="rc"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>EMK Marketing har gjort ett jobb åt oss och kvaliteten på arbetet var utmärkt. Jag rekommenderar dem.</blockquote>
+      <figcaption><span class="ini" aria-hidden="true">SS</span><span><b>Sachin Sood</b>Entreprenör</span></figcaption></figure>
+  </section>
+  <section class="cta">
+    <h2>Vill ni bli <em>nästa kund?</em></h2>
+    <p>Boka ett kort samtal så berättar vi hur vi jobbar och föreslår ett upplägg. Helt utan förpliktelser.</p>
+    <a class="btn" href="/kontakt">Boka 15 min samtal →</a>
+  </section>
+</main>
+<footer class="emk-footer">
+  <span>© <span id="emk-year"></span> EMK Marketing</span>
+  <a href="/">Till startsidan →</a>
+</footer>
+<script>document.getElementById('emk-year').textContent=new Date().getFullYear();
+(function(){var n=document.querySelector('.emk-topnav');if(!n)return;function on(){n.classList.toggle('is-scrolled',window.scrollY>40);}on();window.addEventListener('scroll',on,{passive:true});})();</script>
 </body>
 </html>
